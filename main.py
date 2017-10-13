@@ -8,7 +8,7 @@ Created on Mon Sep 25 17:24:54 2017
 # -------------------------Import Libaries------------------------------------
 
 import constants; import numpy as np; from calc_pressure_field import calc_pressure_field
-from array_grid import array_grid; from direction_vectors import direction_vectors from vti_writer import vti_writer
+from array_grid import array_grid; from direction_vectors import direction_vectors; from vti_writer import vti_writer
 from phifind import phifind; from random_transducer_placment import random_transducer_placment
 
 
@@ -21,7 +21,7 @@ ntrans = len (rt)   # Total number of transducers in grid
 
 nt = direction_vectors(ntrans) # nt is the direction vector of each transducer
 
-phi = phifind(rt,0,0.03,0).get('x',) # phi is the initial phase of each transducer
+phi = phifind(rt,0,0.03,0) # phi is the initial phase of each transducer
 
 # ---------------------- Defining constants ----------------------------------
 
