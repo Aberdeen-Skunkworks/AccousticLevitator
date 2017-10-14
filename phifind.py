@@ -2,7 +2,7 @@ def phifind(rt, x, y, z):
     
     # This function takes in a array of transducers and a position in space and
     # outputs the phases of all the transducers so that the magnitude of
-    # the complex pressure is zero at that point.
+    # the complex pressure at that point is maximum (ie a focus point).
 
     # -------------------------Import Libaries------------------------------------
     
@@ -23,7 +23,9 @@ def phifind(rt, x, y, z):
         
         dmag = np.linalg.norm(d)     # Distance between transducer and point in space
         
-        phi[transducer] = ( 1 - ((dmag/lamda) % 1) * 2 * math.pi ) / math.pi
-        
+        phi[transducer] = (( 1 - ((dmag/lamda) % 1)) * 2 * math.pi ) #/ math.pi ??????????????
+        ##
+        ## FIND OUT IF THE EQUATION NEEDS TO BE DIVIDED BY PI  
+        ## in the netbeams code ----> public class SimplePhaseAlgorithms   - focus     
 
     return phi

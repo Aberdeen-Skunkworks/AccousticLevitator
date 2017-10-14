@@ -21,7 +21,7 @@ ntrans = len (rt)   # Total number of transducers in grid
 
 nt = direction_vectors(ntrans) # nt is the direction vector of each transducer
 
-phi = phifind(rt,0,0.03,0) # phi is the initial phase of each transducer
+phi = phifind(rt,0,0.03,0) # phi is the initial phase of each transducer to focus
 
 # ---------------------- Defining constants ----------------------------------
 
