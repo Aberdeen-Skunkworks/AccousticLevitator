@@ -6,12 +6,13 @@ def phifind(rt, x, y, z):
 
     # -------------------------Import Libaries------------------------------------
     
-    import numpy as np; import math; import constants
+    import numpy as np; import math; import constants; from phase_discretize import phase_discretize
     
-    r = (x,y,z)                 # r is the position of desired minimum
-    ntrans = len (rt)           # Number of transducers to find phase for
-    phi = np.zeros((ntrans))    # Phase of all the transducers
-    lamda = constants.lamda     # Wavelegnth of sound from constants file
+    r = (x,y,z)                                 # r is the position of desired minimum
+    ntrans = len (rt)                           # Number of transducers to find phase for
+    phi = np.zeros((ntrans))                    # Phase of all the transducers
+    phase_with_resoluton = np.zeros((ntrans))   # Phase of all the transducers adjusted so they belong to a step of the phase resolution
+    lamda = constants.lamda                     # Wavelegnth of sound from constants file
     
     # -----------------Loop to calculate pressure field----------------------------
     for transducer in range (0,ntrans):
@@ -23,9 +24,7 @@ def phifind(rt, x, y, z):
         
         dmag = np.linalg.norm(d)     # Distance between transducer and point in space
         
-        phi[transducer] = (( 1 - ((dmag/lamda) % 1)) * 2 * math.pi ) #/ math.pi ??????????????
-        ##
-        ## FIND OUT IF THE EQUATION NEEDS TO BE DIVIDED BY PI  
-        ## in the netbeams code ----> public class SimplePhaseAlgorithms   - focus     
+        phi[transducer] = (( 1 - ((dmag/lamda) % 1)) * 2 * math.pi )
+        phase_with_resoluton[transducer] = phase_discretize(phi[transducer])
 
-    return phi
+    return phase_with_resoluton

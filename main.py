@@ -14,14 +14,14 @@ from phifind import phifind; from random_transducer_placment import random_trans
 
 # -------------------------Variables to set------------------------------------
 
-rt = array_grid(0.01,4,4) # (transducer spacing[m], number of xtrans, number of ztrans) rt is the position vector of each transducer
+rt = array_grid(0.01,5,5) # (transducer spacing[m], number of xtrans, number of ztrans) rt is the position vector of each transducer
 #rt =  random_transducer_placment(15,0.025,0.01) # (number of transducers ,half_grid_size[m], min_allowable_dist[m])
 
 ntrans = len (rt)   # Total number of transducers in grid
 
 nt = direction_vectors(ntrans) # nt is the direction vector of each transducer
 
-phi = phifind(rt,0,0.03,0) # phi is the initial phase of each transducer to focus
+phi = phifind(rt,0,0.03,0) # phi is the initial phase of each transducer to focus on a point
 
 # ---------------------- Defining constants ----------------------------------
 
