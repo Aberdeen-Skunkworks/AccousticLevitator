@@ -8,20 +8,20 @@ Created on Mon Sep 25 17:24:54 2017
 # -------------------------Import Libaries------------------------------------
 
 import constants; import numpy as np; from calc_pressure_field import calc_pressure_field
-from array_grid import array_grid; from direction_vectors import direction_vectors; from vti_writer import vti_writer
-from phifind import phifind; from random_transducer_placment import random_transducer_placment
+import transducer_placment; from vti_writer import vti_writer; import phase_algorithms; 
 
 
 # -------------------------Variables to set------------------------------------
 
-rt = array_grid(0.01,5,5) # (transducer spacing[m], number of xtrans, number of ztrans) rt is the position vector of each transducer
-#rt =  random_transducer_placment(15,0.025,0.01) # (number of transducers ,half_grid_size[m], min_allowable_dist[m])
+rt = transducer_placment.array_grid(0.01,6,6) # (transducer spacing[m], number of xtrans, number of ztrans) rt is the position vector of each transducer
+#rt =  transducer_placment.random(15,0.025,0.01) # (number of transducers ,half_grid_size[m], min_allowable_dist[m])
 
 ntrans = len (rt)   # Total number of transducers in grid
 
-nt = direction_vectors(ntrans) # nt is the direction vector of each transducer
+nt = transducer_placment.direction_vectors(ntrans) # nt is the direction vector of each transducer
 
-phi = phifind(rt,0,0.03,0) # phi is the initial phase of each transducer to focus on a point
+phi_focus = phase_algorithms.phase_find(rt,0,0.03,0) # phi is the initial phase of each transducer to focus on a point
+phi = phase_algorithms.add_twin_signature(rt,phi_focus)
 
 # ---------------------- Defining constants ----------------------------------
 
@@ -77,15 +77,13 @@ for xloop in range (0,npoints):
     for yloop in range (0,npoints):
         for zloop in range (0,npoints):
             u[xloop,yloop,zloop] = (2*k1*pabs[xloop,yloop,zloop]**2) - (2*k2*(pxabs[xloop,yloop,zloop]**2 + pyabs[xloop,yloop,zloop]**2 + pzabs[xloop,yloop,zloop]**2))
-
+            u[xloop,yloop,zloop] = u[xloop,yloop,zloop] + (p_mass*gravity*(yloop*deltaxyz)) # including force of gravity as energy (mass*g*height)
 
 # -----------------Calculating derrivitive of Gork’ov potential ---------------
 
 
 diff_u = np.gradient(u,deltaxyz)
 ux = -diff_u[0]; uy = -diff_u[1]; uz = -diff_u[2]
-
-uy = uy + (p_mass*gravity) # including force of gravity 
 
 # -------------------Creating output images and vtk file----------------------
 

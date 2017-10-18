@@ -1,4 +1,24 @@
-def phifind(rt, x, y, z):
+
+def phase_discretize(phase):
+    
+    # Function to take in a phase and output the closest value with phase resolution taken into account
+    
+    import numpy as np; import math; import constants
+    
+    cutoffs = np.linspace(0,(2*math.pi),constants.phaseresolution) # Calculates phase cutoffs from 0 to 2pi taking into account the resolution (infinite resolution would be continious)
+
+    def find_nearest(cutoffs, phase):  # Finds the value of cutoff that is closest to the "real phase"
+        idx = (np.abs(cutoffs-phase)).argmin()
+        return cutoffs[idx]
+    
+    phase_with_resoluton = find_nearest(cutoffs,phase)
+    
+    return phase_with_resoluton
+
+
+
+
+def phase_find(rt, x, y, z):
     
     # This function takes in a array of transducers and a position in space and
     # outputs the phases of all the transducers so that the magnitude of
@@ -6,7 +26,7 @@ def phifind(rt, x, y, z):
 
     # -------------------------Import Libaries------------------------------------
     
-    import numpy as np; import math; import constants; from phase_discretize import phase_discretize
+    import numpy as np; import math; import constants;
     
     r = (x,y,z)                                 # r is the position of desired minimum
     ntrans = len (rt)                           # Number of transducers to find phase for
@@ -28,3 +48,20 @@ def phifind(rt, x, y, z):
         phase_with_resoluton[transducer] = phase_discretize(phi[transducer])
 
     return phase_with_resoluton
+
+
+
+
+def add_twin_signature(rt, phi):
+
+    import algorithms; import math
+    
+    transducer_angles = algorithms.get_angle(rt)
+    ntrans = len(rt)
+    
+    for transducer in range(0, ntrans):
+        if 0 < transducer_angles[transducer] < math.pi: # all possitive y value transducers have pi added to their phase signature to create twin trap
+            phi[transducer] = phi[transducer] + math.pi
+            
+    
+    return (phi)
