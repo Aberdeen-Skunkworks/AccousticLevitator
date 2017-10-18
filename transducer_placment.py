@@ -36,6 +36,57 @@ def array_grid(tspacing,xtrans,ztrans):
             rt[transducer,0,2] = zv[transducer]
     
         return rt
+    
+def hex_grid(tspacing,xtrans,ztrans):
+    
+    # This function takes a spacing and number of x and z transducers and outputs
+    # a hexagonal grid that is equally spaced and centered on (0,0)
+    
+    # -------------------------Import Libaries--------------------------------
+    import numpy as np; import math
+    #----------------------------inputs---------------------------------------
+    # "tspacing" is spacing between transducer centers in [m] min value = 0.01 m
+    # "xtrans" is the number of transducers in the grid in the x direction 
+    # "ztrans" is the number of transducers in the grid in the z direction
+    #-------------------------------------------------------------------------
+        
+    xtrans = int(xtrans)
+    ztrans = int(ztrans)
+    
+    if tspacing < 0.01:
+        print ("Min value of spacing between transducer centers  = 0.01 m")
+    
+    else:
+        ntrans = int(xtrans*ztrans) # Total number of transducers in grid
+        #rt = np.zeros((ntrans,1,3)) # Defininf the output matrix of transducer positions
+        rt = np.arange(ntrans*2).reshape(ntrans,2)
+        
+        xspcaing = tspacing
+        zspacing = (2*tspacing*math.sin(math.pi/4))
+        
+        counter = 0
+        
+        for x in range(0, xtrans):
+            for z in range(0, ztrans):
+                rt[counter][0] = x * xspcaing
+                rt[counter][1] = z * zspacing
+                
+                counter = counter + 1
+
+    return rt
+                        
+
+                
+
+
+
+#import matplotlib.pyplot as plt
+test = hex_grid(0.01,2,2)
+#plt.plot(test[:,0,0],test[:,0,2], 'ro')
+#plt.show()
+
+
+
 
 
 def random(ntrans,half_grid_size, min_allowable_dist):
@@ -58,7 +109,7 @@ def random(ntrans,half_grid_size, min_allowable_dist):
     
     counter = 2
     end_counter = 1 # counter to terminate the function if stuck in infinate loop
-    while counter < ntrans and end_counter < 200:
+    while counter < ntrans and end_counter < 20000:
         
         trial_x = (random.random() * 2 * half_grid_size) - half_grid_size
         trial_z = (random.random() * 2 * half_grid_size) - half_grid_size
@@ -75,7 +126,7 @@ def random(ntrans,half_grid_size, min_allowable_dist):
         else:
             end_counter = end_counter + 1
             
-        if end_counter >199 :
+        if end_counter >19999 :
             print('#################################################################')
             print(' Could not fit that many transducers in with that minimum spacing')
             print('#################################################################')  
@@ -105,17 +156,6 @@ def direction_vectors(ntrans):
         nt[trans,0,1] = 1 
         
     return nt
-
-
-
-
-
-
-
-
-
-
-
 
 
 

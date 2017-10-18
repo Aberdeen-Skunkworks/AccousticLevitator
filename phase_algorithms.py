@@ -65,3 +65,21 @@ def add_twin_signature(rt, phi):
             
     
     return (phi)
+
+
+def add_vortex_signature(rt, phi):
+
+    import algorithms;
+    
+    transducer_angles = algorithms.get_angle(rt)
+    ntrans = len(rt)
+    
+    for transducer in range(0, ntrans):
+        phi[transducer] = phi[transducer] + transducer_angles[transducer]
+            
+    
+    return (phi)
+
+
+
+

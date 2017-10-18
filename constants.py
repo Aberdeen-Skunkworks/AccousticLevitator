@@ -22,7 +22,7 @@ rhoo = 1.18                 # Density of air kg/m^3
 rhos = 29                   # Density of particle kg/m^3
 co = 346                    # Speed of sound in Air m/s
 cs = 900                    # Speed of sound in particle material m/s
-particle_diamiter = 0.005   # Particle diamiter in m
+particle_diamiter = 0.001   # Particle diamiter in m
 
 
 v = (math.pi*particle_diamiter**3)/6          # Particle Volume 2.5mm sphere
