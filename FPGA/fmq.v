@@ -3,7 +3,7 @@ parameter CLOCK=50000000;
 parameter FREQ = 40000;
 parameter DIVIDE=CLOCK/FREQ/2-1;
 parameter DATA_WIDTH=8;
-parameter BAUD=9600;
+parameter BAUD=115200;
 
 reg reload;
 reg [24*OUTPUTS-1:0] offsets;
@@ -35,6 +35,7 @@ uart #(DATA_WIDTH)
 
 //The reset logic for the device
 integer i;
+reg [23:0] cmdbuffer;
 always@(posedge clk or negedge rst)
 begin
 	if (!rst) begin
@@ -45,6 +46,7 @@ begin
 			offsets[24*i+:24] = (i * 10);
 		end
 		reload <= 1'b0; //Bring the reload line low
+		cmdbuffer <= 24'd0;
 	end else begin 
 		reload <= 1'b1; //Bring the reload line high
       if (tx_valid) begin
@@ -64,10 +66,22 @@ begin
             // byte out of waiting for the transmitter to send one)
             rx_ready <= ~rx_ready;
             // send byte back out
-            tx_data <= rx_data;
-            tx_valid <= 1;
+            //tx_data <= rx_data;
+            //tx_valid <= 1;
+				cmdbuffer[16+:8] <= cmdbuffer[8+:8];
+				cmdbuffer[8+:8] <= cmdbuffer[0+:8];
+				cmdbuffer[0+:8] <= rx_data;
          end
       end
+		if (cmdbuffer[23]) begin//We have a command
+			//Echo the command back
+         tx_data <= cmdbuffer[16+:8];
+         tx_valid <= 1;
+			//Process the command
+			
+			//Wipe the command buffer
+			cmdbuffer <= 24'd0;
+		end
 	end
 end
 
