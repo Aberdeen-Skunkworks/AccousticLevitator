@@ -37,56 +37,42 @@ def array_grid(tspacing,xtrans,ztrans):
     
         return rt
     
-def hex_grid(tspacing,xtrans,ztrans):
     
-    # This function takes a spacing and number of x and z transducers and outputs
-    # a hexagonal grid that is equally spaced and centered on (0,0)
+def hex_grid(tspacing,xtrans,ztrans): 
     
-    # -------------------------Import Libaries--------------------------------
-    import numpy as np; import math
-    #----------------------------inputs---------------------------------------
-    # "tspacing" is spacing between transducer centers in [m] min value = 0.01 m
-    # "xtrans" is the number of transducers in the grid in the x direction 
-    # "ztrans" is the number of transducers in the grid in the z direction
-    #-------------------------------------------------------------------------
-        
-    xtrans = int(xtrans)
-    ztrans = int(ztrans)
+    # tspacing is transducer spacing in [m] between their centers
+    # xtrans is number of x transducers
+    # ztrans is number of z transducers
     
-    if tspacing < 0.01:
-        print ("Min value of spacing between transducer centers  = 0.01 m")
+    import math; import numpy as np
     
-    else:
-        ntrans = int(xtrans*ztrans) # Total number of transducers in grid
-        #rt = np.zeros((ntrans,1,3)) # Defininf the output matrix of transducer positions
-        rt = np.arange(ntrans*2).reshape(ntrans,2)
-        
-        xspcaing = tspacing
-        zspacing = (2*tspacing*math.sin(math.pi/4))
-        
-        counter = 0
-        
-        for x in range(0, xtrans):
-            for z in range(0, ztrans):
-                rt[counter][0] = x * xspcaing
-                rt[counter][1] = z * zspacing
-                
-                counter = counter + 1
+    columns = xtrans;    rows = ztrans;    space = tspacing
+    
+    sqrt3half = math.sqrt(3) / 2
+    rt = np.zeros((columns*rows,1,3)) # Defininf the output matrix of transducer positions
+    
+    counter = 0
+    for row in range (0, rows):
+        for column in range(0, columns):
 
+            if row % 2 == 0: # Calculating even row co-ordinates and adjusting to be centered on (0,0)
+                
+                rt[counter,0,0]= (column * space) - ((columns-1) * space /2)
+                rt[counter,0,2]= (sqrt3half * row * space ) - (((rows-1)*sqrt3half) * space/2)
+            
+            else: # Calculating odd row co-ordinates and adjusting to be centered on (0,0)
+                
+                rt[counter,0,0]= ((column + 0.5) * space) - ((columns-1) * space /2)
+                rt[counter,0,2]= ((sqrt3half * row) * space) - (((rows-1)*sqrt3half) * space/2)
+            
+            counter += 1
+   
     return rt
-                        
-
-                
-
-
-
-#import matplotlib.pyplot as plt
-test = hex_grid(0.01,2,2)
-#plt.plot(test[:,0,0],test[:,0,2], 'ro')
-#plt.show()
-
-
-
+    
+''' Test hex_grid
+rt = hex_grid(0.01,500,500)
+import matplotlib.pyplot as plt
+plt.plot(rt[:,0,0], rt[:,0,1], 'ro') '''
 
 
 def random(ntrans,half_grid_size, min_allowable_dist):

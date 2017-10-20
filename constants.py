@@ -12,7 +12,7 @@ z = -gsize
 npoints = int(1 + ((2 * gsize) / deltaxyz)) # Number of points on x y and z axis, plus 1 to index properly
 
 
-phaseresolution = 10        # Phase resolution x as in ( 2*pi )/( x ) number of divisions of the phases
+phaseresolution = 64        # Phase resolution x as in ( 2*pi )/( x ) number of divisions of the phases
 p0 = 0.17                   # Amplitude constant
 A = 17                      # Peak to peak amplitude
 a = 0.0045                  # Piston radius

@@ -13,14 +13,13 @@ import transducer_placment; from vti_writer import vti_writer; import phase_algo
 
 # -------------------------Variables to set------------------------------------
 
-rt = transducer_placment.array_grid(0.01,6,6) # (transducer spacing[m], number of xtrans, number of ztrans) rt is the position vector of each transducer
-#rt =  transducer_placment.random(25,0.03,0.01) # (number of transducers ,half_grid_size[m], min_allowable_dist[m])
+rt = transducer_placment.hex_grid(0.01,5,5) # See transducer_placment for variable inputs
 
 ntrans = len (rt)   # Total number of transducers in grid
 
 nt = transducer_placment.direction_vectors(ntrans) # nt is the direction vector of each transducer
 
-phi_focus = phase_algorithms.phase_find(rt,0.015,0.03,0) # phi is the initial phase of each transducer to focus on a point
+phi_focus = phase_algorithms.phase_find(rt,0,0.03,0) # phi is the initial phase of each transducer to focus on a point
 phi = phase_algorithms.add_vortex_signature(rt,phi_focus)
 
 # ---------------------- Defining constants ----------------------------------

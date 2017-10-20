@@ -67,6 +67,7 @@ def add_twin_signature(rt, phi):
     return (phi)
 
 
+
 def add_vortex_signature(rt, phi):
 
     import algorithms;
@@ -79,7 +80,5 @@ def add_vortex_signature(rt, phi):
             
     
     return (phi)
-
-
 
 
