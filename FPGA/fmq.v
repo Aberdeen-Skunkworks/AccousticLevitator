@@ -1,4 +1,10 @@
 module fmq #(parameter OUTPUTS = 16)(input clk, input rst, output [OUTPUTS-1:0] tx, output UART_TX, input UART_RX);
+parameter CLOCK=50000000;
+parameter FREQ = 40000;
+parameter DIVIDE=CLOCK/FREQ/2-1;
+parameter DATA_WIDTH=8;
+parameter BAUD=9600;
+
 reg reload;
 reg [24*OUTPUTS-1:0] offsets;
 
@@ -6,13 +12,9 @@ reg [24*OUTPUTS-1:0] offsets;
 genvar j;
 generate
 	for (j=0; j < OUTPUTS; j=j+1) begin : clock_generator
-		clock osc(clk, reload, offsets[24*j+:24], 650, tx[j]);	
+		clock osc(clk, reload, offsets[24*j+:24], DIVIDE, tx[j]);	
 	end
 endgenerate
-
-parameter CLOCK=50000000;
-parameter DATA_WIDTH=8;
-parameter BAUD=9600;
 
 reg [DATA_WIDTH-1:0]  tx_data;
 reg                   tx_valid;
