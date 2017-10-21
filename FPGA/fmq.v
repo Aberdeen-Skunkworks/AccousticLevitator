@@ -4,15 +4,15 @@ parameter FREQ = 40000;
 parameter DIVIDE=CLOCK/FREQ/2-1;
 parameter DATA_WIDTH=8;
 parameter BAUD=115200;
-
+parameter CLOCK_WIDTH = 10;
 reg reload;
-reg [24*OUTPUTS-1:0] offsets;
+reg [CLOCK_WIDTH*OUTPUTS-1:0] offsets;
 
 //Generate the parallel clocks
 genvar j;
 generate
 	for (j=0; j < OUTPUTS; j=j+1) begin : clock_generator
-		clock osc(clk, reload, offsets[24*j+:24], DIVIDE, tx[j]);	
+		clock #(CLOCK_WIDTH) osc(clk, reload, offsets[CLOCK_WIDTH*j+:CLOCK_WIDTH], DIVIDE, tx[j]);	
 	end
 endgenerate
 
@@ -43,7 +43,7 @@ begin
       tx_valid <= 0;
       rx_ready <= 0;
 		for (i=0; i < OUTPUTS; i=i+1) begin
-			offsets[24*i+:24] = (i * 10);
+			offsets[CLOCK_WIDTH*i+:CLOCK_WIDTH] = (i * 10);
 		end
 		reload <= 1'b0; //Bring the reload line low
 		cmdbuffer <= 24'd0;
