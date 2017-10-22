@@ -1,18 +1,19 @@
-module fmq #(parameter OUTPUTS = 16)(input clk, input rst, output [OUTPUTS-1:0] tx, output UART_TX, input UART_RX);
+module fmq #(parameter OUTPUTS = 64)(input clk, input rst, output [OUTPUTS-1:0] tx, output UART_TX, input UART_RX);
 parameter CLOCK=50000000;
 parameter FREQ = 40000;
-parameter DIVIDE=CLOCK/FREQ/2-1;
-parameter DATA_WIDTH=8;
-parameter BAUD=115200;
-parameter CLOCK_WIDTH = 10;
+parameter OFFSET_WIDTH = 11;
+parameter [OFFSET_WIDTH-2:0] DIVIDE = 624;//CLOCK / FREQ / 2 - 1;
+parameter DATA_WIDTH = 8;
+parameter BAUD = 460800;//115200;
+parameter [15:0] UART_SCALE = CLOCK/(BAUD*8);
 reg reload;
-reg [CLOCK_WIDTH*OUTPUTS-1:0] offsets;
+reg [OFFSET_WIDTH * OUTPUTS - 1:0] offsets;
 
 //Generate the parallel clocks
 genvar j;
 generate
 	for (j=0; j < OUTPUTS; j=j+1) begin : clock_generator
-		clock #(CLOCK_WIDTH) osc(clk, reload, offsets[CLOCK_WIDTH*j+:CLOCK_WIDTH], DIVIDE, tx[j]);	
+		clock #(OFFSET_WIDTH) osc(clk, reload, offsets[OFFSET_WIDTH*j+:OFFSET_WIDTH], DIVIDE, tx[j]);	
 	end
 endgenerate
 
@@ -31,7 +32,7 @@ uart #(DATA_WIDTH)
 		.input_axis_tdata(tx_data), .input_axis_tvalid(tx_valid), .input_axis_tready(tx_ready),
 		.output_axis_tdata(rx_data), .output_axis_tvalid(rx_valid), .output_axis_tready(rx_ready), 
 		.rxd(UART_RX), .txd(UART_TX), .tx_busy(), .rx_busy(), .rx_overrun_error(), .rx_frame_error(), 
-		.prescale(CLOCK/(BAUD*8)));
+		.prescale(UART_SCALE));
 
 //The reset logic for the device
 integer i;
@@ -43,7 +44,7 @@ begin
       tx_valid <= 0;
       rx_ready <= 0;
 		for (i=0; i < OUTPUTS; i=i+1) begin
-			offsets[CLOCK_WIDTH*i+:CLOCK_WIDTH] = (i * 10);
+			offsets[OFFSET_WIDTH*i+:OFFSET_WIDTH] <= 0;
 		end
 		reload <= 1'b0; //Bring the reload line low
 		cmdbuffer <= 24'd0;
@@ -75,10 +76,27 @@ begin
       end
 		if (cmdbuffer[23]) begin//We have a command
 			//Echo the command back
-         tx_data <= cmdbuffer[16+:8];
-         tx_valid <= 1;
+         //tx_data <= cmdbuffer[16+:8];
+         //tx_valid <= 1;
 			//Process the command
-			
+			case(cmdbuffer[22:21])
+			2'b00 : begin
+				for (i = 0; i < OUTPUTS; i = i+1)
+					if (i == {cmdbuffer[20:16],cmdbuffer[14:12]})
+						offsets[OFFSET_WIDTH*i +: OFFSET_WIDTH] <= {cmdbuffer[11:8], cmdbuffer[6:0]};
+			end
+			2'b01 : begin
+				reload <= 1'b0; //Bring the reload line low
+			end
+			2'b10 : begin //Output the number of outputs configured
+				tx_data <= OUTPUTS;
+				tx_valid <= 1;
+			end
+			default: begin
+				tx_data <= 8'd0;
+				tx_valid <= 1;
+			end
+			endcase
 			//Wipe the command buffer
 			cmdbuffer <= 24'd0;
 		end
