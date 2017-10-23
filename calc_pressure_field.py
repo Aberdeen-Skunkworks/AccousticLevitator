@@ -29,7 +29,7 @@ def calc_pressure_field(rt, nt, ntrans, phi):
                         p[xloop,yloop,zloop,transducer] = 0 
                     else:
                         
-                        dot = d[0]*nt[transducer,0,0] + d[1]*nt[transducer,0,1] + d[2]*nt[transducer,0,2] # Dot product of the direction of the transducr and the position in space
+                        dot = d[0]*nt[transducer,0,0] + d[1]*nt[transducer,0,1] + d[2]*nt[transducer,0,2] # Dot product of the direction of the transducer and the separation vector
                         theta = math.acos(dot/dmag)
     
                         k = (2*math.pi)/(float(lamda))                         # Wavenumber

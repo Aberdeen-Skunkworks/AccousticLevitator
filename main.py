@@ -13,13 +13,13 @@ import transducer_placment; from vti_writer import vti_writer; import phase_algo
 
 # -------------------------Variables to set------------------------------------
 
-rt = transducer_placment.hex_grid(0.01,6,5) # See transducer_placment for variable inputs
+rt = transducer_placment.hex_grid(0.01,8,8) # See transducer_placment for variable inputs
 
 ntrans = len (rt)   # Total number of transducers in grid
 
 nt = transducer_placment.direction_vectors(ntrans) # nt is the direction vector of each transducer
 
-phi_focus = phase_algorithms.phase_find(rt,0,0.03,0) # phi is the initial phase of each transducer to focus on a point
+phi_focus = phase_algorithms.phase_find(rt,0,0.04,0) # phi is the initial phase of each transducer to focus on a point
 phi = phase_algorithms.add_twin_signature(rt,phi_focus)
 
 # ---------------------- Defining constants ----------------------------------
@@ -76,7 +76,7 @@ for xloop in range (0,npoints):
     for yloop in range (0,npoints):
         for zloop in range (0,npoints):
             u[xloop,yloop,zloop] = (2*k1*pabs[xloop,yloop,zloop]**2) - (2*k2*(pxabs[xloop,yloop,zloop]**2 + pyabs[xloop,yloop,zloop]**2 + pzabs[xloop,yloop,zloop]**2))
-            u[xloop,yloop,zloop] = u[xloop,yloop,zloop] - (p_mass*gravity*(yloop*deltaxyz)) # including force of gravity as energy (mass*g*height) gravity is taken away even though it is negitive so that when the negitive gradient is takn then the force will be downwards
+            u[xloop,yloop,zloop] = u[xloop,yloop,zloop] - (p_mass*gravity*(yloop*deltaxyz)) # including potential energy (mass*g*height) it is taken away even though gravity is negitive so that when the negitive gradient is takn then the force will be downwards
 
 # -----------------Calculating derrivitive of Gork’ov potential ---------------
 
