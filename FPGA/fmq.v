@@ -1,8 +1,8 @@
-module fmq #(parameter OUTPUTS = 64)(input clk, input rst, output [OUTPUTS-1:0] tx, output UART_TX, input UART_RX);
+module fmq #(parameter OUTPUTS = 16)(input clk, input rst, output [OUTPUTS-1:0] tx, output UART_TX, input UART_RX);
 parameter CLOCK=50000000;
 parameter FREQ = 40000;
 parameter OFFSET_WIDTH = 11;
-parameter [OFFSET_WIDTH-2:0] DIVIDE = 624;//CLOCK / FREQ / 2 - 1;
+parameter [OFFSET_WIDTH-2:0] DIVIDE = CLOCK / FREQ / 2 - 1;
 parameter DATA_WIDTH = 8;
 parameter BAUD = 460800;//115200;
 parameter [15:0] UART_SCALE = CLOCK/(BAUD*8);
@@ -43,9 +43,7 @@ begin
       tx_data <= 0;
       tx_valid <= 0;
       rx_ready <= 0;
-		for (i=0; i < OUTPUTS; i=i+1) begin
-			offsets[OFFSET_WIDTH*i+:OFFSET_WIDTH] <= 0;
-		end
+		offsets <= {OUTPUTS*OFFSET_WIDTH{1'b0}};
 		reload <= 1'b0; //Bring the reload line low
 		cmdbuffer <= 24'd0;
 	end else begin 
@@ -69,9 +67,7 @@ begin
             // send byte back out
             //tx_data <= rx_data;
             //tx_valid <= 1;
-				cmdbuffer[16+:8] <= cmdbuffer[8+:8];
-				cmdbuffer[8+:8] <= cmdbuffer[0+:8];
-				cmdbuffer[0+:8] <= rx_data;
+				cmdbuffer <= {cmdbuffer[0+:16], rx_data};
          end
       end
 		if (cmdbuffer[23]) begin//We have a command
