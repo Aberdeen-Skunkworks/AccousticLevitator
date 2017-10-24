@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle version="8.4.0">
+<drawing>
+<settings>
+<setting alwaysvectorfont="no"/>
+<setting verticaltext="up"/>
+</settings>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<layers>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
+<layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
+<layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
+<layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+</layers>
+<library>
+<packages>
+<package name="CORE3S500E">
+<description>&lt;b&gt;Core3S500E&lt;/b&gt;&lt;p&gt;
+The Xilinx Spartan 3E FPGA board from WaveShare.</description>
+<pad name="1" x="5" y="27" drill="0.9" diameter="1.27"/>
+<text x="-21.62" y="28.54" size="1.27" layer="25">&gt;NAME</text>
+<text x="-15.27" y="28.54" size="1.27" layer="27">&gt;VALUE</text>
+<pad name="2" x="3" y="27" drill="0.9" diameter="1.27"/>
+<pad name="3" x="1" y="27" drill="0.9" diameter="1.27"/>
+<pad name="4" x="-1" y="27" drill="0.9" diameter="1.27"/>
+<pad name="5" x="-3" y="27" drill="0.9" diameter="1.27"/>
+<pad name="6" x="-5" y="27" drill="0.9" diameter="1.27"/>
+<pad name="7" x="-7" y="27" drill="0.9" diameter="1.27"/>
+<pad name="8" x="-9" y="27" drill="0.9" diameter="1.27"/>
+<pad name="9" x="-11" y="27" drill="0.9" diameter="1.27"/>
+<pad name="10" x="-13" y="27" drill="0.9" diameter="1.27"/>
+<pad name="11" x="-15" y="27" drill="0.9" diameter="1.27"/>
+<pad name="12" x="-17" y="27" drill="0.9" diameter="1.27"/>
+<pad name="13" x="-19" y="27" drill="0.9" diameter="1.27"/>
+<pad name="14" x="-21" y="27" drill="0.9" diameter="1.27"/>
+<pad name="15" x="-23" y="27" drill="0.9" diameter="1.27"/>
+<pad name="16" x="-25" y="27" drill="0.9" diameter="1.27"/>
+<pad name="17" x="5" y="25" drill="0.9" diameter="1.27"/>
+<pad name="18" x="3" y="25" drill="0.9" diameter="1.27"/>
+<pad name="19" x="1" y="25" drill="0.9" diameter="1.27"/>
+<pad name="20" x="-1" y="25" drill="0.9" diameter="1.27"/>
+<pad name="21" x="-3" y="25" drill="0.9" diameter="1.27"/>
+<pad name="22" x="-5" y="25" drill="0.9" diameter="1.27"/>
+<pad name="23" x="-7" y="25" drill="0.9" diameter="1.27"/>
+<pad name="24" x="-9" y="25" drill="0.9" diameter="1.27"/>
+<pad name="25" x="-11" y="25" drill="0.9" diameter="1.27"/>
+<pad name="26" x="-13" y="25" drill="0.9" diameter="1.27"/>
+<pad name="27" x="-15" y="25" drill="0.9" diameter="1.27"/>
+<pad name="28" x="-17" y="25" drill="0.9" diameter="1.27"/>
+<pad name="29" x="-19" y="25" drill="0.9" diameter="1.27"/>
+<pad name="30" x="-21" y="25" drill="0.9" diameter="1.27"/>
+<pad name="31" x="-23" y="25" drill="0.9" diameter="1.27"/>
+<pad name="32" x="-25" y="25" drill="0.9" diameter="1.27"/>
+<pad name="33" x="-25" y="19" drill="0.9" diameter="1.27"/>
+<pad name="34" x="-25" y="17" drill="0.9" diameter="1.27"/>
+<pad name="35" x="-25" y="15" drill="0.9" diameter="1.27"/>
+<pad name="36" x="-25" y="13" drill="0.9" diameter="1.27"/>
+<pad name="37" x="-25" y="11" drill="0.9" diameter="1.27"/>
+<pad name="38" x="-25" y="9" drill="0.9" diameter="1.27"/>
+<pad name="39" x="-25" y="7" drill="0.9" diameter="1.27"/>
+<pad name="40" x="-25" y="5" drill="0.9" diameter="1.27"/>
+<pad name="41" x="-25" y="3" drill="0.9" diameter="1.27"/>
+<pad name="42" x="-25" y="1" drill="0.9" diameter="1.27"/>
+<pad name="43" x="-25" y="-1" drill="0.9" diameter="1.27"/>
+<pad name="44" x="-25" y="-3" drill="0.9" diameter="1.27"/>
+<pad name="45" x="-25" y="-5" drill="0.9" diameter="1.27"/>
+<pad name="46" x="-25" y="-7" drill="0.9" diameter="1.27"/>
+<pad name="47" x="-25" y="-9" drill="0.9" diameter="1.27"/>
+<pad name="48" x="-25" y="-11" drill="0.9" diameter="1.27"/>
+<pad name="49" x="-25" y="-13" drill="0.9" diameter="1.27"/>
+<pad name="50" x="-25" y="-15" drill="0.9" diameter="1.27"/>
+<pad name="51" x="-25" y="-17" drill="0.9" diameter="1.27"/>
+<pad name="52" x="-25" y="-19" drill="0.9" diameter="1.27"/>
+<pad name="53" x="-25" y="-21" drill="0.9" diameter="1.27"/>
+<pad name="54" x="-25" y="-23" drill="0.9" diameter="1.27"/>
+<pad name="55" x="-25" y="-25" drill="0.9" diameter="1.27"/>
+<pad name="56" x="-23" y="19" drill="0.9" diameter="1.27"/>
+<pad name="57" x="-23" y="17" drill="0.9" diameter="1.27"/>
+<pad name="58" x="-23" y="15" drill="0.9" diameter="1.27"/>
+<pad name="59" x="-23" y="13" drill="0.9" diameter="1.27"/>
+<pad name="60" x="-23" y="11" drill="0.9" diameter="1.27"/>
+<pad name="61" x="-23" y="9" drill="0.9" diameter="1.27"/>
+<pad name="62" x="-23" y="7" drill="0.9" diameter="1.27"/>
+<pad name="63" x="-23" y="5" drill="0.9" diameter="1.27"/>
+<pad name="64" x="-23" y="3" drill="0.9" diameter="1.27"/>
+<pad name="65" x="-23" y="1" drill="0.9" diameter="1.27"/>
+<pad name="66" x="-23" y="-1" drill="0.9" diameter="1.27"/>
+<pad name="67" x="-23" y="-3" drill="0.9" diameter="1.27"/>
+<pad name="68" x="-23" y="-5" drill="0.9" diameter="1.27"/>
+<pad name="69" x="-23" y="-7" drill="0.9" diameter="1.27"/>
+<pad name="70" x="-23" y="-9" drill="0.9" diameter="1.27"/>
+<pad name="71" x="-23" y="-11" drill="0.9" diameter="1.27"/>
+<pad name="72" x="-23" y="-13" drill="0.9" diameter="1.27"/>
+<pad name="73" x="-23" y="-15" drill="0.9" diameter="1.27"/>
+<pad name="74" x="-23" y="-17" drill="0.9" diameter="1.27"/>
+<pad name="75" x="-23" y="-19" drill="0.9" diameter="1.27"/>
+<pad name="76" x="-23" y="-21" drill="0.9" diameter="1.27"/>
+<pad name="77" x="-23" y="-23" drill="0.9" diameter="1.27"/>
+<pad name="78" x="-23" y="-25" drill="0.9" diameter="1.27"/>
+<pad name="79" x="21" y="19" drill="0.9" diameter="1.27"/>
+<pad name="80" x="21" y="17" drill="0.9" diameter="1.27"/>
+<pad name="81" x="21" y="15" drill="0.9" diameter="1.27"/>
+<pad name="82" x="21" y="13" drill="0.9" diameter="1.27"/>
+<pad name="83" x="21" y="11" drill="0.9" diameter="1.27"/>
+<pad name="84" x="21" y="9" drill="0.9" diameter="1.27"/>
+<pad name="85" x="21" y="7" drill="0.9" diameter="1.27"/>
+<pad name="86" x="21" y="5" drill="0.9" diameter="1.27"/>
+<pad name="87" x="21" y="3" drill="0.9" diameter="1.27"/>
+<pad name="88" x="21" y="1" drill="0.9" diameter="1.27"/>
+<pad name="89" x="21" y="-1" drill="0.9" diameter="1.27"/>
+<pad name="90" x="21" y="-3" drill="0.9" diameter="1.27"/>
+<pad name="91" x="21" y="-5" drill="0.9" diameter="1.27"/>
+<pad name="92" x="21" y="-7" drill="0.9" diameter="1.27"/>
+<pad name="93" x="21" y="-9" drill="0.9" diameter="1.27"/>
+<pad name="94" x="21" y="-11" drill="0.9" diameter="1.27"/>
+<pad name="95" x="21" y="-13" drill="0.9" diameter="1.27"/>
+<pad name="96" x="21" y="-15" drill="0.9" diameter="1.27"/>
+<pad name="97" x="21" y="-17" drill="0.9" diameter="1.27"/>
+<pad name="98" x="21" y="-19" drill="0.9" diameter="1.27"/>
+<pad name="99" x="21" y="-21" drill="0.9" diameter="1.27"/>
+<pad name="100" x="21" y="-23" drill="0.9" diameter="1.27"/>
+<pad name="101" x="21" y="-25" drill="0.9" diameter="1.27"/>
+<pad name="102" x="23" y="19" drill="0.9" diameter="1.27"/>
+<pad name="103" x="23" y="17" drill="0.9" diameter="1.27"/>
+<pad name="104" x="23" y="15" drill="0.9" diameter="1.27"/>
+<pad name="105" x="23" y="13" drill="0.9" diameter="1.27"/>
+<pad name="106" x="23" y="11" drill="0.9" diameter="1.27"/>
+<pad name="107" x="23" y="9" drill="0.9" diameter="1.27"/>
+<pad name="108" x="23" y="7" drill="0.9" diameter="1.27"/>
+<pad name="109" x="23" y="5" drill="0.9" diameter="1.27"/>
+<pad name="110" x="23" y="3" drill="0.9" diameter="1.27"/>
+<pad name="111" x="23" y="1" drill="0.9" diameter="1.27"/>
+<pad name="112" x="23" y="-1" drill="0.9" diameter="1.27"/>
+<pad name="113" x="23" y="-3" drill="0.9" diameter="1.27"/>
+<pad name="114" x="23" y="-5" drill="0.9" diameter="1.27"/>
+<pad name="115" x="23" y="-7" drill="0.9" diameter="1.27"/>
+<pad name="116" x="23" y="-9" drill="0.9" diameter="1.27"/>
+<pad name="117" x="23" y="-11" drill="0.9" diameter="1.27"/>
+<pad name="118" x="23" y="-13" drill="0.9" diameter="1.27"/>
+<pad name="119" x="23" y="-15" drill="0.9" diameter="1.27"/>
+<pad name="120" x="23" y="-17" drill="0.9" diameter="1.27"/>
+<pad name="121" x="23" y="-19" drill="0.9" diameter="1.27"/>
+<pad name="122" x="23" y="-21" drill="0.9" diameter="1.27"/>
+<pad name="123" x="23" y="-23" drill="0.9" diameter="1.27"/>
+<pad name="124" x="23" y="-25" drill="0.9" diameter="1.27"/>
+<wire x1="-26" y1="28" x2="-26" y2="-26" width="0.127" layer="21"/>
+<wire x1="-26" y1="-26" x2="24" y2="-26" width="0.127" layer="21"/>
+<wire x1="24" y1="-26" x2="24" y2="22" width="0.127" layer="21"/>
+<wire x1="24" y1="22" x2="24" y2="28" width="0.127" layer="21"/>
+<wire x1="24" y1="28" x2="6" y2="28" width="0.127" layer="21"/>
+<wire x1="6" y1="28" x2="-26" y2="28" width="0.127" layer="21"/>
+<wire x1="24" y1="22" x2="18" y2="22" width="0.127" layer="21"/>
+<wire x1="13" y1="22" x2="6" y2="22" width="0.127" layer="21"/>
+<wire x1="6" y1="22" x2="6" y2="28" width="0.127" layer="21"/>
+<wire x1="7" y1="27" x2="7" y2="23" width="0.127" layer="21"/>
+<wire x1="7" y1="23" x2="13" y2="23" width="0.127" layer="21"/>
+<wire x1="13" y1="23" x2="13" y2="22" width="0.127" layer="21"/>
+<wire x1="13" y1="22" x2="18" y2="22" width="0.127" layer="21"/>
+<wire x1="18" y1="22" x2="18" y2="23" width="0.127" layer="21"/>
+<wire x1="18" y1="23" x2="23" y2="23" width="0.127" layer="21"/>
+<wire x1="23" y1="23" x2="23" y2="27" width="0.127" layer="21"/>
+<wire x1="23" y1="27" x2="7" y2="27" width="0.127" layer="21"/>
+<wire x1="-20" y1="-21" x2="-20" y2="-25" width="0.127" layer="21"/>
+<wire x1="-20" y1="-25" x2="-10" y2="-25" width="0.127" layer="21"/>
+<wire x1="-10" y1="-25" x2="-10" y2="-21" width="0.127" layer="21"/>
+<wire x1="-10" y1="-21" x2="-20" y2="-21" width="0.127" layer="21"/>
+<circle x="-15" y="-23" radius="1.4142125" width="0.127" layer="21"/>
+<wire x1="8" y1="-21" x2="8" y2="-25" width="0.127" layer="21"/>
+<wire x1="8" y1="-25" x2="18" y2="-25" width="0.127" layer="21"/>
+<wire x1="18" y1="-25" x2="18" y2="-21" width="0.127" layer="21"/>
+<wire x1="18" y1="-21" x2="8" y2="-21" width="0.127" layer="21"/>
+<circle x="13" y="-23" radius="1.4142125" width="0.127" layer="21"/>
+<wire x1="-13.97" y1="15.24" x2="-13.97" y2="-13.97" width="0.127" layer="21"/>
+<wire x1="-13.97" y1="-13.97" x2="13.97" y2="-13.97" width="0.127" layer="21"/>
+<wire x1="13.97" y1="-13.97" x2="13.97" y2="15.24" width="0.127" layer="21"/>
+<wire x1="13.97" y1="15.24" x2="-13.97" y2="15.24" width="0.127" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="CORE3S500E">
+<pin name="4" x="33.02" y="38.1" length="middle" rot="R90"/>
+<pin name="2" x="30.48" y="38.1" length="middle" rot="R90"/>
+<pin name="P$3" x="27.94" y="38.1" length="middle" rot="R90"/>
+<pin name="P$4" x="25.4" y="38.1" length="middle" rot="R90"/>
+<pin name="P$5" x="22.86" y="38.1" length="middle" rot="R90"/>
+<pin name="P$6" x="20.32" y="38.1" length="middle" rot="R90"/>
+<pin name="P$7" x="17.78" y="38.1" length="middle" rot="R90"/>
+<pin name="P$8" x="15.24" y="38.1" length="middle" rot="R90"/>
+<pin name="P$9" x="12.7" y="38.1" length="middle" rot="R90"/>
+<pin name="P$10" x="10.16" y="38.1" length="middle" rot="R90"/>
+<pin name="P$11" x="7.62" y="38.1" length="middle" rot="R90"/>
+<pin name="P$12" x="5.08" y="38.1" length="middle" rot="R90"/>
+<pin name="P$13" x="2.54" y="38.1" length="middle" rot="R90"/>
+<pin name="P$14" x="0" y="38.1" length="middle" rot="R90"/>
+<pin name="P$15" x="-2.54" y="38.1" length="middle" rot="R90"/>
+<pin name="P$16" x="-5.08" y="38.1" length="middle" rot="R90"/>
+<pin name="5" x="33.02" y="33.02" length="middle" rot="R270"/>
+<pin name="3" x="30.48" y="33.02" length="middle" rot="R270"/>
+<pin name="205" x="27.94" y="33.02" length="middle" rot="R270"/>
+<pin name="202" x="25.4" y="33.02" length="middle" rot="R270"/>
+<pin name="199" x="22.86" y="33.02" length="middle" rot="R270"/>
+<pin name="196" x="20.32" y="33.02" length="middle" rot="R270"/>
+<pin name="192" x="17.78" y="33.02" length="middle" rot="R270"/>
+<pin name="P$24" x="15.24" y="33.02" length="middle" rot="R270"/>
+<pin name="P$25" x="12.7" y="33.02" length="middle" rot="R270"/>
+<pin name="P$26" x="10.16" y="33.02" length="middle" rot="R270"/>
+<pin name="P$27" x="7.62" y="33.02" length="middle" rot="R270"/>
+<pin name="P$28" x="5.08" y="33.02" length="middle" rot="R270"/>
+<pin name="P$29" x="2.54" y="33.02" length="middle" rot="R270"/>
+<pin name="P$30" x="0" y="33.02" length="middle" rot="R270"/>
+<pin name="P$31" x="-2.54" y="33.02" length="middle" rot="R270"/>
+<pin name="P$32" x="-5.08" y="33.02" length="middle" rot="R270"/>
+<pin name="GND@1" x="-35.56" y="0" length="middle" rot="R180"/>
+<pin name="160" x="-35.56" y="-2.54" length="middle" rot="R180"/>
+<pin name="152" x="-35.56" y="-5.08" length="middle" rot="R180"/>
+<pin name="150" x="-35.56" y="-7.62" length="middle" rot="R180"/>
+<pin name="146" x="-35.56" y="-10.16" length="middle" rot="R180"/>
+<pin name="144" x="-35.56" y="-12.7" length="middle" rot="R180"/>
+<pin name="139" x="-35.56" y="-15.24" length="middle" rot="R180"/>
+<pin name="137" x="-35.56" y="-17.78" length="middle" rot="R180"/>
+<pin name="134" x="-35.56" y="-20.32" length="middle" rot="R180"/>
+<pin name="132" x="-35.56" y="-22.86" length="middle" rot="R180"/>
+<pin name="128" x="-35.56" y="-25.4" length="middle" rot="R180"/>
+<pin name="GND@3" x="-35.56" y="-27.94" length="middle" rot="R180"/>
+<pin name="126" x="-35.56" y="-30.48" length="middle" rot="R180"/>
+<pin name="93" x="-35.56" y="-55.88" length="middle" rot="R180"/>
+<pin name="122" x="-35.56" y="-33.02" length="middle" rot="R180"/>
+<pin name="119" x="-35.56" y="-35.56" length="middle" rot="R180"/>
+<pin name="115" x="-35.56" y="-38.1" length="middle" rot="R180"/>
+<pin name="112" x="-35.56" y="-40.64" length="middle" rot="R180"/>
+<pin name="108" x="-35.56" y="-43.18" length="middle" rot="R180"/>
+<pin name="106" x="-35.56" y="-45.72" length="middle" rot="R180"/>
+<pin name="100" x="-35.56" y="-48.26" length="middle" rot="R180"/>
+<pin name="98" x="-35.56" y="-50.8" length="middle" rot="R180"/>
+<pin name="96" x="-35.56" y="-53.34" length="middle" rot="R180"/>
+<pin name="90" x="-27.94" y="-55.88" length="middle"/>
+<pin name="94" x="-27.94" y="-53.34" length="middle"/>
+<pin name="97" x="-27.94" y="-50.8" length="middle"/>
+<pin name="99" x="-27.94" y="-48.26" length="middle"/>
+<pin name="102" x="-27.94" y="-45.72" length="middle"/>
+<pin name="107" x="-27.94" y="-43.18" length="middle"/>
+<pin name="109" x="-27.94" y="-40.64" length="middle"/>
+<pin name="113" x="-27.94" y="-38.1" length="middle"/>
+<pin name="116" x="-27.94" y="-35.56" length="middle"/>
+<pin name="120" x="-27.94" y="-33.02" length="middle"/>
+<pin name="123" x="-27.94" y="-30.48" length="middle"/>
+<pin name="5V@1" x="-27.94" y="-27.94" length="middle"/>
+<pin name="127" x="-27.94" y="-25.4" length="middle"/>
+<pin name="129" x="-27.94" y="-22.86" length="middle"/>
+<pin name="133" x="-27.94" y="-20.32" length="middle"/>
+<pin name="135" x="-27.94" y="-17.78" length="middle"/>
+<pin name="138" x="-27.94" y="-15.24" length="middle"/>
+<pin name="140" x="-27.94" y="-12.7" length="middle"/>
+<pin name="145" x="-27.94" y="-10.16" length="middle"/>
+<pin name="147" x="-27.94" y="-7.62" length="middle"/>
+<pin name="151" x="-27.94" y="-5.08" length="middle"/>
+<pin name="153" x="-27.94" y="-2.54" length="middle"/>
+<pin name="3,3V@1" x="-27.94" y="0" length="middle"/>
+<pin name="3,3V@2" x="25.4" y="0" length="middle" rot="R180"/>
+<pin name="9" x="25.4" y="-2.54" length="middle" rot="R180"/>
+<pin name="12" x="25.4" y="-5.08" length="middle" rot="R180"/>
+<pin name="13" x="25.4" y="-7.62" length="middle" rot="R180"/>
+<pin name="19" x="25.4" y="-10.16" length="middle" rot="R180"/>
+<pin name="23" x="25.4" y="-12.7" length="middle" rot="R180"/>
+<pin name="25" x="25.4" y="-15.24" length="middle" rot="R180"/>
+<pin name="29" x="25.4" y="-17.78" length="middle" rot="R180"/>
+<pin name="31" x="25.4" y="-20.32" length="middle" rot="R180"/>
+<pin name="34" x="25.4" y="-22.86" length="middle" rot="R180"/>
+<pin name="36" x="25.4" y="-25.4" length="middle" rot="R180"/>
+<pin name="5V@2" x="25.4" y="-27.94" length="middle" rot="R180"/>
+<pin name="40" x="25.4" y="-30.48" length="middle" rot="R180"/>
+<pin name="42" x="25.4" y="-33.02" length="middle" rot="R180"/>
+<pin name="47" x="25.4" y="-35.56" length="middle" rot="R180"/>
+<pin name="49" x="25.4" y="-38.1" length="middle" rot="R180"/>
+<pin name="55" x="25.4" y="-40.64" length="middle" rot="R180"/>
+<pin name="61" x="25.4" y="-43.18" length="middle" rot="R180"/>
+<pin name="63" x="25.4" y="-45.72" length="middle" rot="R180"/>
+<pin name="65" x="25.4" y="-48.26" length="middle" rot="R180"/>
+<pin name="74" x="25.4" y="-50.8" length="middle" rot="R180"/>
+<pin name="76" x="25.4" y="-53.34" length="middle" rot="R180"/>
+<pin name="82" x="25.4" y="-55.88" length="middle" rot="R180"/>
+<pin name="77" x="33.02" y="-55.88" length="middle"/>
+<pin name="75" x="33.02" y="-53.34" length="middle"/>
+<pin name="69" x="33.02" y="-50.8" length="middle"/>
+<pin name="64" x="33.02" y="-48.26" length="middle"/>
+<pin name="62" x="33.02" y="-45.72" length="middle"/>
+<pin name="60" x="33.02" y="-43.18" length="middle"/>
+<pin name="50" x="33.02" y="-40.64" length="middle"/>
+<pin name="48" x="33.02" y="-38.1" length="middle"/>
+<pin name="45" x="33.02" y="-35.56" length="middle"/>
+<pin name="41" x="33.02" y="-33.02" length="middle"/>
+<pin name="39" x="33.02" y="-30.48" length="middle"/>
+<pin name="GND@4" x="33.02" y="-27.94" length="middle"/>
+<pin name="35" x="33.02" y="-25.4" length="middle"/>
+<pin name="33" x="33.02" y="-22.86" length="middle"/>
+<pin name="30" x="33.02" y="-20.32" length="middle"/>
+<pin name="28" x="33.02" y="-17.78" length="middle"/>
+<pin name="24" x="33.02" y="-15.24" length="middle"/>
+<pin name="22" x="33.02" y="-12.7" length="middle"/>
+<pin name="18" x="33.02" y="-10.16" length="middle"/>
+<pin name="15" x="33.02" y="-7.62" length="middle"/>
+<pin name="11" x="33.02" y="-5.08" length="middle"/>
+<pin name="8" x="33.02" y="-2.54" length="middle"/>
+<pin name="GND@2" x="33.02" y="0" length="middle"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="CORE3S500E">
+<gates>
+<gate name="G$1" symbol="CORE3S500E" x="2.54" y="10.16"/>
+</gates>
+<devices>
+<device name="" package="CORE3S500E">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+</drawing>
+</eagle>
