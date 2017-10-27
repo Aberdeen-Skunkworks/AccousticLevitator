@@ -55,21 +55,62 @@ def pressure (x, y, z, rt, phi, nt):
 
 
 
-phi = math.pi   # Phase of the transducer
-x= 0.00486648         # Point in space x,y,z
-y= 0.486601
-z= 0.06541
+phi = 0   # Phase of the transducer
+x= 0.01         # Point in space x,y,z
+y= 0.01
+z= 0.01
 h = 0.00000000001      # delta x the change to differientate over
 
 
 r = (x, y, z)
-rt = [0.05,0,0.05]
+rt = [0,0,0]
 nt = [0,1,0]
 rs = np.subtract(r,rt)
 mag_rs = np.linalg.norm(rs)
 rs_hat = rs / mag_rs
 k = (2*math.pi)/(float(constants.lamda))  
 theta = math.acos((np.dot(rs,nt)) / (mag_rs))
+
+
+## Final Pressure derivation test
+
+dp_dr_numercal_x =  (pressure(x+h,y,z,rt,phi,nt) - pressure(x-h,y,z,rt,phi,nt)) / (2*h)
+dp_dr_numercal_y =  (pressure(x,y+h,z,rt,phi,nt) - pressure(x,y-h,z,rt,phi,nt)) / (2*h)
+dp_dr_numercal_z =  (pressure(x,y,z+h,rt,phi,nt) - pressure(x,y,z-h,rt,phi,nt)) / (2*h)
+dp_dr_numercal = [dp_dr_numercal_x, dp_dr_numercal_y, dp_dr_numercal_z]
+
+
+
+theta = math.acos((np.dot(rs,nt)) / (mag_rs))
+exponent_term =  cmath.exp( 1j * (phi + k * mag_rs) ) / mag_rs
+fraction_term =  (constants.p0*constants.A)*( (math.sin(k*constants.a*math.sin(theta))) /  (k*constants.a*math.sin(theta)) )
+d_exponential_term_dr = ((rs_hat * 1j * k * cmath.exp(1j*(phi + k * mag_rs)) ) / (mag_rs))  -  ((cmath.exp(1j*(phi + k * mag_rs)) * rs_hat) / (mag_rs**2) )
+numerator = constants.p0 * constants.A * math.sin(k*constants.a*math.sin(theta))
+denominator =  k*constants.a*math.sin(theta)
+d_denominator_dr = k*constants.a*(( ((-np.dot(rs,nt))/(mag_rs) ) / ((1 - (np.dot(rs,nt))/(mag_rs) )**0.5) ) * ( (np.dot(nt,mag_rs) - (rs_hat*np.dot(nt,rs)) ) / (mag_rs**2) ) )
+d_numerator_dr = constants.p0 * constants.A * math.cos(k*constants.a*math.sin(theta))*d_denominator_dr
+d_fraction_dr = ((d_numerator_dr*denominator) - (numerator*d_denominator_dr))/(denominator**2)
+
+
+d_p_dr = (d_fraction_dr * exponent_term) + (fraction_term * d_exponential_term_dr)
+
+
+
+print("Derivative with respect to x: numerical : analytical")
+print (dp_dr_numercal[0])
+print(d_p_dr[0])
+print()
+print("Derivative with respect to y: numerical : analytical")
+print (dp_dr_numercal[1])
+print(d_p_dr[1])
+print()
+print("Derivative with respect to z: numerical : analytical")
+print (dp_dr_numercal[2])
+print(d_p_dr[2])
+
+
+
+
 
 """
 ## Exponential term test: function f=Exponential
@@ -143,38 +184,8 @@ print(d_fraction_dr_analytical[2])
 
 
 
-## Final Pressure derivation test
-
-dp_dr_numercal_x =  (pressure(x+h,y,z,rt,phi,nt) - pressure(x-h,y,z,rt,phi,nt)) / (2*h)
-dp_dr_numercal_y =  (pressure(x,y+h,z,rt,phi,nt) - pressure(x,y-h,z,rt,phi,nt)) / (2*h)
-dp_dr_numercal_z =  (pressure(x,y,z+h,rt,phi,nt) - pressure(x,y,z-h,rt,phi,nt)) / (2*h)
-dp_dr_numercal = [dp_dr_numercal_x, dp_dr_numercal_y, dp_dr_numercal_z]
 
 
-
-theta = math.acos((np.dot(rs,nt)) / (mag_rs))
-exponent_term =  cmath.exp( 1j * (phi + k * mag_rs) ) / mag_rs
-fraction_term =  (constants.p0*constants.A)*( (math.sin(k*constants.a*math.sin(theta))) /  (k*constants.a*math.sin(theta)) )
-d_exponential_term_dr = ((rs_hat * 1j * k * cmath.exp(1j*(phi + k * mag_rs)) ) / (mag_rs))  -  ((cmath.exp(1j*(phi + k * mag_rs)) * rs_hat) / (mag_rs**2) )
-numerator = constants.p0 * constants.A * math.sin(k*constants.a*math.sin(theta))
-denominator =  k*constants.a*math.sin(theta)
-d_denominator_dr = k*constants.a*(( ((-np.dot(rs,nt))/(mag_rs) ) / ((1 - (np.dot(rs,nt))/(mag_rs) )**0.5) ) * ( (np.dot(nt,mag_rs) - (rs_hat*np.dot(nt,rs)) ) / (mag_rs**2) ) )
-d_numerator_dr = constants.p0 * constants.A * math.cos(k*constants.a*math.sin(theta))*d_denominator_dr
-d_fraction_dr = ((d_numerator_dr*denominator) - (numerator*d_denominator_dr))/(denominator**2)
-
-
-d_p_dr = (d_fraction_dr * exponent_term) + (fraction_term * d_exponential_term_dr)
-
-
-
-print("Derivative with respect to x: Difference")
-print (abs(dp_dr_numercal[0] - d_p_dr[0]))
-print()
-print("Derivative with respect to y: Difference")
-print (abs(dp_dr_numercal[1] - d_p_dr[1]))
-print()
-print("Derivative with respect to z: Difference")
-print (abs(dp_dr_numercal[2] - d_p_dr[2]))
 
 
 
