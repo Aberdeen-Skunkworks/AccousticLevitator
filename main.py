@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Sep 25 17:24:54 2017
 
-@author: Niall
-"""
 
 # -------------------------Import Libaries------------------------------------
 
