@@ -353,7 +353,7 @@ UsedLibrary="Parts.lbr"
 [Win_1]
 Type="Library Editor"
 Loc="0 0 1199 599"
-State=3
+State=0
 Number=1
 File="Parts.lbr"
 View="-12.4155 -32.2686 12.4155 29.9182"
@@ -399,7 +399,7 @@ Symbol="MA20-2"
 
 [Win_2]
 Type="Control Panel"
-Loc="1951 126 3324 840"
+Loc="2322 172 3695 886"
 State=2
 Number=0
 

@@ -6459,10 +6459,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="P+31" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="P+32" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="PTH3" package3d_urn="urn:adsk.eagle:package:38048/1"/>
-<part name="J2" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="PTH3" package3d_urn="urn:adsk.eagle:package:38048/1"/>
-<part name="GND19" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND20" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="P+33" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="P+34" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="D1" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" deviceset="LED" device="0603" package3d_urn="urn:adsk.eagle:package:39354/1"/>
 <part name="R1" library="SparkFun-Resistors" library_urn="urn:adsk.eagle:library:532" deviceset="0.22OHM" device="-0805-1/4W-1%" package3d_urn="urn:adsk.eagle:package:39651/1" value="1k"/>
@@ -6560,11 +6557,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="P+30" gate="VCC" x="111.76" y="71.12"/>
 <instance part="P+31" gate="VCC" x="30.48" y="71.12"/>
 <instance part="P+32" gate="VCC" x="71.12" y="71.12"/>
-<instance part="J1" gate="G$1" x="-81.28" y="43.18"/>
-<instance part="J2" gate="G$1" x="-88.9" y="20.32"/>
-<instance part="GND19" gate="1" x="-78.74" y="22.86" rot="R90"/>
+<instance part="J1" gate="G$1" x="-81.28" y="40.64"/>
 <instance part="GND20" gate="1" x="-71.12" y="45.72" rot="R90"/>
-<instance part="P+33" gate="VCC" x="-81.28" y="12.7" rot="R180"/>
 <instance part="P+34" gate="VCC" x="-73.66" y="35.56" rot="R180"/>
 <instance part="D1" gate="G$1" x="-68.58" y="-10.16" rot="R90"/>
 <instance part="R1" gate="G$1" x="-78.74" y="-10.16" rot="R180"/>
@@ -6795,14 +6789,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="P+15" gate="VCC" pin="VCC"/>
 </segment>
 <segment>
-<pinref part="J2" gate="G$1" pin="1"/>
-<pinref part="P+33" gate="VCC" pin="VCC"/>
-<wire x1="-81.28" y1="15.24" x2="-81.28" y2="20.32" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="J1" gate="G$1" pin="1"/>
 <pinref part="P+34" gate="VCC" pin="VCC"/>
-<wire x1="-73.66" y1="38.1" x2="-73.66" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="-73.66" y1="38.1" x2="-73.66" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="P+35" gate="VCC" pin="VCC"/>
@@ -6974,12 +6963,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="U27" gate="A" pin="NC"/>
 </segment>
 <segment>
-<pinref part="J2" gate="G$1" pin="2"/>
-<pinref part="GND19" gate="1" pin="GND"/>
-</segment>
-<segment>
 <pinref part="J1" gate="G$1" pin="2"/>
 <pinref part="GND20" gate="1" pin="GND"/>
+<wire x1="-73.66" y1="43.18" x2="-73.66" y2="45.72" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="D1" gate="G$1" pin="C"/>
