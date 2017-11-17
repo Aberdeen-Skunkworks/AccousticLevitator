@@ -36,7 +36,17 @@ rt[0,0,2] = -0.001      # y coordinate
 testangles = get_angle(rt)
 """
 
+def pressure (r, rt, phi, nt):
+    import numpy as np; import math; import cmath; import constants
+    rs = np.subtract(r,rt)
+    k = (2*math.pi)/(float(constants.lamda))   
+    mag_rs = np.linalg.norm(rs)
+    theta = math.acos((np.dot(rs,nt)) / (mag_rs))
+    exponential =  cmath.exp( 1j * (phi + k * mag_rs) ) / mag_rs
+    frac =  (constants.p0*constants.A)*( (math.sin(k*constants.a*math.sin(theta))) /  (k*constants.a*math.sin(theta)) )
 
+    pressure = (exponential*frac)
+    return pressure
 
 
 
