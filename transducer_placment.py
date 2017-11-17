@@ -69,11 +69,6 @@ def hex_grid(tspacing,xtrans,ztrans):
    
     return rt
     
-''' Test hex_grid
-rt = hex_grid(0.01,500,500)
-import matplotlib.pyplot as plt
-plt.plot(rt[:,0,0], rt[:,0,1], 'ro') '''
-
 
 def random(ntrans,half_grid_size, min_allowable_dist):
     
