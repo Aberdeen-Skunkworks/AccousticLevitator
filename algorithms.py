@@ -27,14 +27,7 @@ def get_angle(rt):
         #print(theta[transducer]/(math.pi/180)) # To test uncomment to get angle in degrees 
     
     return (theta)
-# Test using one point to check if angles are correct from x axis in anti-clockwise direction
-"""
-import numpy as np
-rt = np.zeros ((1,1,3))
-rt[0,0,0] = 1           # x coordinate
-rt[0,0,2] = -0.001      # y coordinate
-testangles = get_angle(rt)
-"""
+
 
 def pressure (r, rt, phi, nt):
     import numpy as np; import math; import cmath; import constants
@@ -75,13 +68,22 @@ def differentiate_pressure(r,rt,nt,phi):
     
     return (d_p_dr)
 
+        
+        
+#def circle_co_ords(splits)
 
+import math; import matplotlib.pyplot as plt; import numpy as np
 
-r  = (0.01, 0.01, 0.01)
-rt = (0  , 0  , 0  )
-nt = (0  , 1  , 0  )
-phi = (0)
+splits = 25
+x = np.zeros (splits)
+y = np.zeros (splits)
+for point in range(0,splits):
+    angle = ((2*math.pi) / splits+1) * (point+1)
+    x[point] = 0.01 * math.cos(point)
+    y[point] = 0.01 * math.sin(point)
 
+coordinates = [x,y]
+plt.plot(x, y, 'ro')
+    
 
-print(differentiate_pressure(r,rt,nt,phi))
-
+    

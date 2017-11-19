@@ -139,7 +139,15 @@ def direction_vectors(ntrans):
     return nt
 
 
-
+def delete_transducers(rt,trans_to_delete):
+    import numpy as np
+    trans_to_delete = sorted(trans_to_delete)
+    n_trans_to_delete = len(trans_to_delete)
+    
+    for loop in range (0, (n_trans_to_delete)):             # Deletes unwanted transducers
+        rt = np.delete(rt, trans_to_delete[loop], 0)
+        trans_to_delete = np.subtract(trans_to_delete, 1)
+    return rt    
 
 
 
