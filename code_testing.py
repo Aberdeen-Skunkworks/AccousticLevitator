@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import math
 
 
-rt = transducer_placment.hex_grid(0.011,6,7)
+rt = transducer_placment.hex_grid(0.01,6,7)
 trans_to_delete = [0,4,5,11,23,30,35,36,37,41]                   # List of unwanted transducers 
 
 trans_to_delete = sorted(trans_to_delete)
@@ -30,4 +30,5 @@ for trans in range (0, (ntrans - n_trans_to_delete)):   # Plots circles
 
 plt.xlim(-(math.sqrt(ntrans)*0.0075),(math.sqrt(ntrans)*0.0075)) 
 plt.ylim(-(math.sqrt(ntrans)*0.0075),(math.sqrt(ntrans)*0.0075)) 
+
 
