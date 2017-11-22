@@ -82,7 +82,7 @@ def circle_co_ords(splits, radius):
         coords[point,1] = radius * math.sin(angle)
         
         
-    plt.plot(coords[:,0], coords[:,1], 'ro')
+    #plt.plot(coords[:,0], coords[:,1], 'ro')
 
     return coords
 
