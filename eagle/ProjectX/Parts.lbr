@@ -456,69 +456,69 @@ The Xilinx Spartan 3E FPGA board from WaveShare.</description>
 <wire x1="-13.97" y1="-13.97" x2="13.97" y2="-13.97" width="0.127" layer="51"/>
 <wire x1="13.97" y1="-13.97" x2="13.97" y2="15.24" width="0.127" layer="51"/>
 <wire x1="13.97" y1="15.24" x2="-13.97" y2="15.24" width="0.127" layer="51"/>
-<smd name="P$1" x="-23" y="28.4" dx="2.2" dy="1" layer="1" rot="R90"/>
-<smd name="P$6" x="-23" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
+<smd name="2" x="-23" y="28.4" dx="2.2" dy="1" layer="1" rot="R90"/>
+<smd name="3" x="-23" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
 <rectangle x1="-23.625" y1="26.375" x2="-22.375" y2="27.625" layer="51"/>
 <rectangle x1="-23.625" y1="24.375" x2="-22.375" y2="25.625" layer="51"/>
-<smd name="P$7" x="-21" y="28.4" dx="2.2" dy="1" layer="1" rot="R90"/>
-<smd name="P$10" x="-21" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
+<smd name="203" x="-21" y="28.4" dx="2.2" dy="1" layer="1" rot="R90"/>
+<smd name="205" x="-21" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
 <rectangle x1="-21.625" y1="26.375" x2="-20.375" y2="27.625" layer="51"/>
 <rectangle x1="-21.625" y1="24.375" x2="-20.375" y2="25.625" layer="51"/>
-<smd name="P$13" x="-25" y="28.4" dx="2.2" dy="1" layer="1" rot="R90"/>
-<smd name="P$14" x="-25" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
+<smd name="4" x="-25" y="28.4" dx="2.2" dy="1" layer="1" rot="R90"/>
+<smd name="5" x="-25" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
 <rectangle x1="-25.625" y1="26.375" x2="-24.375" y2="27.625" layer="51"/>
 <rectangle x1="-25.625" y1="24.375" x2="-24.375" y2="25.625" layer="51"/>
-<smd name="P$2" x="-17" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
+<smd name="199" x="-17" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
 <rectangle x1="-17.625" y1="24.375" x2="-16.375" y2="25.625" layer="51"/>
-<smd name="P$3" x="-15" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
+<smd name="196" x="-15" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
 <rectangle x1="-15.625" y1="24.375" x2="-14.375" y2="25.625" layer="51"/>
-<smd name="P$4" x="-19" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
+<smd name="202" x="-19" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
 <rectangle x1="-19.625" y1="24.375" x2="-18.375" y2="25.625" layer="51"/>
-<smd name="P$5" x="-11" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
+<smd name="186" x="-11" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
 <rectangle x1="-11.625" y1="24.375" x2="-10.375" y2="25.625" layer="51"/>
-<smd name="P$17" x="-9" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
+<smd name="181" x="-9" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
 <rectangle x1="-9.625" y1="24.375" x2="-8.375" y2="25.625" layer="51"/>
-<smd name="P$20" x="-13" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
+<smd name="189" x="-13" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
 <rectangle x1="-13.625" y1="24.375" x2="-12.375" y2="25.625" layer="51"/>
-<smd name="P$21" x="-5" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
+<smd name="177" x="-5" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
 <rectangle x1="-5.625" y1="24.375" x2="-4.375" y2="25.625" layer="51"/>
-<smd name="P$26" x="-3" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
+<smd name="171" x="-3" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
 <rectangle x1="-3.625" y1="24.375" x2="-2.375" y2="25.625" layer="51"/>
-<smd name="P$27" x="-7" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
+<smd name="179" x="-7" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
 <rectangle x1="-7.625" y1="24.375" x2="-6.375" y2="25.625" layer="51"/>
-<smd name="P$32" x="-1" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
+<smd name="167" x="-1" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
 <rectangle x1="-1.625" y1="24.375" x2="-0.375" y2="25.625" layer="51"/>
-<smd name="P$37" x="1" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
+<smd name="164" x="1" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
 <rectangle x1="0.375" y1="24.375" x2="1.625" y2="25.625" layer="51"/>
 <smd name="P$38" x="5" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
 <rectangle x1="4.375" y1="24.375" x2="5.625" y2="25.625" layer="51"/>
 <smd name="P$44" x="3" y="23.6" dx="2.2" dy="1" layer="1" rot="R90"/>
 <rectangle x1="2.375" y1="24.375" x2="3.625" y2="25.625" layer="51"/>
-<smd name="P$43" x="3" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
+<smd name="163" x="3" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
 <rectangle x1="2.375" y1="26.375" x2="3.625" y2="27.625" layer="51" rot="R180"/>
-<smd name="P$46" x="1" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
+<smd name="165" x="1" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
 <rectangle x1="0.375" y1="26.375" x2="1.625" y2="27.625" layer="51" rot="R180"/>
-<smd name="P$51" x="5" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
+<smd name="161" x="5" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
 <rectangle x1="4.375" y1="26.375" x2="5.625" y2="27.625" layer="51" rot="R180"/>
-<smd name="P$52" x="-3" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
+<smd name="172" x="-3" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
 <rectangle x1="-3.625" y1="26.375" x2="-2.375" y2="27.625" layer="51" rot="R180"/>
-<smd name="P$53" x="-5" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
+<smd name="178" x="-5" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
 <rectangle x1="-5.625" y1="26.375" x2="-4.375" y2="27.625" layer="51" rot="R180"/>
-<smd name="P$54" x="-1" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
+<smd name="168" x="-1" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
 <rectangle x1="-1.625" y1="26.375" x2="-0.375" y2="27.625" layer="51" rot="R180"/>
-<smd name="P$56" x="-9" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
+<smd name="185" x="-9" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
 <rectangle x1="-9.625" y1="26.375" x2="-8.375" y2="27.625" layer="51" rot="R180"/>
-<smd name="P$57" x="-11" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
+<smd name="187" x="-11" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
 <rectangle x1="-11.625" y1="26.375" x2="-10.375" y2="27.625" layer="51" rot="R180"/>
-<smd name="P$58" x="-7" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
+<smd name="180" x="-7" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
 <rectangle x1="-7.625" y1="26.375" x2="-6.375" y2="27.625" layer="51" rot="R180"/>
-<smd name="P$59" x="-13" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
+<smd name="190" x="-13" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
 <rectangle x1="-13.625" y1="26.375" x2="-12.375" y2="27.625" layer="51" rot="R180"/>
-<smd name="P$66" x="-15" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
+<smd name="193" x="-15" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
 <rectangle x1="-15.625" y1="26.375" x2="-14.375" y2="27.625" layer="51" rot="R180"/>
-<smd name="P$67" x="-19" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
+<smd name="200" x="-19" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
 <rectangle x1="-19.625" y1="26.375" x2="-18.375" y2="27.625" layer="51" rot="R180"/>
-<smd name="P$68" x="-17" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
+<smd name="197" x="-17" y="28.4" dx="2.2" dy="1" layer="1" rot="R270"/>
 <rectangle x1="-17.625" y1="26.375" x2="-16.375" y2="27.625" layer="51" rot="R180"/>
 <smd name="P$9" x="-21.6" y="-9" dx="2.2" dy="1" layer="1" rot="R180"/>
 <rectangle x1="-23.625" y1="-9.625" x2="-22.375" y2="-8.375" layer="51" rot="R90"/>
