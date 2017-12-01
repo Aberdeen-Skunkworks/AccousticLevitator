@@ -7625,14 +7625,14 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <part name="GND76" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SUPPLY38" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VDD" device=""/>
 <part name="C36" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:26137/1"/>
-<part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="LOCK_LONGPADS" package3d_urn="urn:adsk.eagle:package:38047/1"/>
+<part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="LOCK_LONGPADS" package3d_urn="urn:adsk.eagle:package:38047/1" value="+20V"/>
 <part name="SUPPLY1" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VDD" device=""/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U$1" library="Parts" deviceset="OKI-78SR" device=""/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SUPPLY4" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VDD" device=""/>
 <part name="SUPPLY8" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="+5V" device=""/>
-<part name="J2" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_10" device="&quot;" package3d_urn="urn:adsk.eagle:package:38157/1"/>
+<part name="J2" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_10" device="&quot;" package3d_urn="urn:adsk.eagle:package:38157/1" value="Data"/>
 </parts>
 <sheets>
 <sheet>
@@ -10136,6 +10136,10 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="76.2" y1="-12.7" x2="83.82" y2="-12.7" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="-12.7" x2="83.82" y2="7.62" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="DIP1" gate="G$1" pin="152"/>
+<wire x1="264.16" y1="-40.64" x2="279.4" y2="-40.64" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="24" class="0">
 <segment>
@@ -10143,11 +10147,19 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="76.2" y1="-15.24" x2="86.36" y2="-15.24" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="-15.24" x2="86.36" y2="7.62" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="DIP1" gate="G$1" pin="160"/>
+<wire x1="264.16" y1="-38.1" x2="279.4" y2="-38.1" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="25" class="0">
 <segment>
 <pinref part="U11" gate="A" pin="IN_A"/>
 <wire x1="109.22" y1="-2.54" x2="109.22" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="DIP1" gate="G$1" pin="150"/>
+<wire x1="264.16" y1="-43.18" x2="279.4" y2="-43.18" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="27" class="0">
@@ -10199,12 +10211,20 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="15.24" y1="-35.56" x2="20.32" y2="-35.56" width="0.1524" layer="91"/>
 <wire x1="20.32" y1="-35.56" x2="20.32" y2="-50.8" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="DIP1" gate="G$1" pin="153"/>
+<wire x1="241.3" y1="-38.1" x2="226.06" y2="-38.1" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="31" class="0">
 <segment>
 <pinref part="U13" gate="A" pin="IN_A"/>
 <wire x1="15.24" y1="-38.1" x2="17.78" y2="-38.1" width="0.1524" layer="91"/>
 <wire x1="17.78" y1="-38.1" x2="17.78" y2="-50.8" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="DIP1" gate="G$1" pin="151"/>
+<wire x1="241.3" y1="-40.64" x2="226.06" y2="-40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="32" class="0">
@@ -10225,6 +10245,10 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <segment>
 <pinref part="U11" gate="A" pin="IN_B"/>
 <wire x1="106.68" y1="-2.54" x2="106.68" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="DIP1" gate="G$1" pin="146"/>
+<wire x1="264.16" y1="-45.72" x2="279.4" y2="-45.72" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="35" class="0">
@@ -10277,12 +10301,20 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="15.24" y1="-68.58" x2="22.86" y2="-68.58" width="0.1524" layer="91"/>
 <wire x1="22.86" y1="-68.58" x2="22.86" y2="-50.8" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="DIP1" gate="G$1" pin="145"/>
+<wire x1="241.3" y1="-45.72" x2="226.06" y2="-45.72" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="40" class="0">
 <segment>
 <pinref part="U26" gate="A" pin="IN_A"/>
 <wire x1="15.24" y1="-71.12" x2="25.4" y2="-71.12" width="0.1524" layer="91"/>
 <wire x1="25.4" y1="-71.12" x2="25.4" y2="-50.8" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="DIP1" gate="G$1" pin="147"/>
+<wire x1="241.3" y1="-43.18" x2="226.06" y2="-43.18" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="41" class="0">
