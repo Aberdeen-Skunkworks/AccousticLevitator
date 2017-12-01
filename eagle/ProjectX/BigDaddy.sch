@@ -7674,13 +7674,13 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <instance part="GND22" gate="1" x="76.2" y="-22.86" rot="R180"/>
 <instance part="SUPPLY11" gate="VDD" x="78.74" y="-33.02" rot="R270"/>
 <instance part="C9" gate="G$1" x="78.74" y="-27.94"/>
-<instance part="SP21" gate="G$1" x="101.6" y="-25.4" rot="MR180"/>
-<instance part="SP22" gate="G$1" x="101.6" y="-17.78"/>
-<instance part="U11" gate="A" x="121.92" y="-25.4" rot="R180"/>
-<instance part="GND25" gate="1" x="93.98" y="-12.7" rot="R180"/>
-<instance part="GND26" gate="1" x="139.7" y="-10.16" rot="R180"/>
-<instance part="SUPPLY13" gate="VDD" x="147.32" y="-20.32" rot="R270"/>
-<instance part="C11" gate="G$1" x="142.24" y="-15.24"/>
+<instance part="SP21" gate="G$1" x="109.22" y="-40.64" rot="MR90"/>
+<instance part="SP22" gate="G$1" x="101.6" y="-40.64" rot="R90"/>
+<instance part="U11" gate="A" x="109.22" y="-20.32" rot="R270"/>
+<instance part="GND25" gate="1" x="96.52" y="-48.26" rot="R270"/>
+<instance part="GND26" gate="1" x="93.98" y="-2.54" rot="R270"/>
+<instance part="SUPPLY13" gate="VDD" x="104.14" y="0"/>
+<instance part="C11" gate="G$1" x="99.06" y="0" rot="R90"/>
 <instance part="SP7" gate="G$1" x="-83.82" y="-15.24" rot="MR180"/>
 <instance part="SP8" gate="G$1" x="-83.82" y="-7.62"/>
 <instance part="U4" gate="A" x="-63.5" y="-15.24" rot="R180"/>
@@ -7737,13 +7737,13 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <instance part="GND48" gate="1" x="76.2" y="-78.74" rot="R180"/>
 <instance part="SUPPLY24" gate="VDD" x="78.74" y="-88.9" rot="R270"/>
 <instance part="C22" gate="G$1" x="78.74" y="-83.82"/>
-<instance part="SP45" gate="G$1" x="101.6" y="-81.28" rot="MR180"/>
-<instance part="SP46" gate="G$1" x="101.6" y="-73.66"/>
-<instance part="U23" gate="A" x="121.92" y="-81.28" rot="R180"/>
-<instance part="GND49" gate="1" x="93.98" y="-68.58" rot="R180"/>
-<instance part="GND50" gate="1" x="139.7" y="-66.04" rot="R180"/>
-<instance part="SUPPLY25" gate="VDD" x="147.32" y="-76.2" rot="R270"/>
-<instance part="C23" gate="G$1" x="142.24" y="-71.12"/>
+<instance part="SP45" gate="G$1" x="109.22" y="-96.52" rot="MR90"/>
+<instance part="SP46" gate="G$1" x="101.6" y="-96.52" rot="R90"/>
+<instance part="U23" gate="A" x="109.22" y="-76.2" rot="R270"/>
+<instance part="GND49" gate="1" x="96.52" y="-104.14" rot="R270"/>
+<instance part="GND50" gate="1" x="93.98" y="-58.42" rot="R270"/>
+<instance part="SUPPLY25" gate="VDD" x="104.14" y="-55.88"/>
+<instance part="C23" gate="G$1" x="99.06" y="-55.88" rot="R90"/>
 <instance part="SP47" gate="G$1" x="-83.82" y="-71.12" rot="MR180"/>
 <instance part="SP48" gate="G$1" x="-83.82" y="-63.5"/>
 <instance part="U24" gate="A" x="-63.5" y="-71.12" rot="R180"/>
@@ -7800,13 +7800,13 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <instance part="GND84" gate="1" x="76.2" y="-137.16" rot="R180"/>
 <instance part="SUPPLY42" gate="VDD" x="78.74" y="-147.32" rot="R270"/>
 <instance part="C40" gate="G$1" x="78.74" y="-142.24"/>
-<instance part="SP81" gate="G$1" x="101.6" y="-139.7" rot="MR180"/>
-<instance part="SP82" gate="G$1" x="101.6" y="-132.08"/>
-<instance part="U41" gate="A" x="121.92" y="-139.7" rot="R180"/>
-<instance part="GND85" gate="1" x="93.98" y="-127" rot="R180"/>
-<instance part="GND86" gate="1" x="139.7" y="-124.46" rot="R180"/>
-<instance part="SUPPLY43" gate="VDD" x="142.24" y="-134.62" rot="R270"/>
-<instance part="C41" gate="G$1" x="142.24" y="-129.54"/>
+<instance part="SP81" gate="G$1" x="111.76" y="-154.94" rot="MR90"/>
+<instance part="SP82" gate="G$1" x="104.14" y="-154.94" rot="R90"/>
+<instance part="U41" gate="A" x="111.76" y="-134.62" rot="R270"/>
+<instance part="GND85" gate="1" x="99.06" y="-162.56" rot="R270"/>
+<instance part="GND86" gate="1" x="96.52" y="-116.84" rot="R270"/>
+<instance part="SUPPLY43" gate="VDD" x="106.68" y="-114.3"/>
+<instance part="C41" gate="G$1" x="101.6" y="-114.3" rot="R90"/>
 <instance part="SP83" gate="G$1" x="-83.82" y="-129.54" rot="MR180"/>
 <instance part="SP84" gate="G$1" x="-83.82" y="-121.92"/>
 <instance part="U42" gate="A" x="-63.5" y="-129.54" rot="R180"/>
@@ -7863,13 +7863,13 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <instance part="GND120" gate="1" x="76.2" y="-198.12" rot="R180"/>
 <instance part="SUPPLY60" gate="VDD" x="78.74" y="-208.28" rot="R270"/>
 <instance part="C58" gate="G$1" x="78.74" y="-203.2"/>
-<instance part="SP117" gate="G$1" x="101.6" y="-200.66" rot="MR180"/>
-<instance part="SP118" gate="G$1" x="101.6" y="-193.04"/>
-<instance part="U59" gate="A" x="121.92" y="-200.66" rot="R180"/>
-<instance part="GND121" gate="1" x="93.98" y="-187.96" rot="R180"/>
-<instance part="GND122" gate="1" x="139.7" y="-185.42" rot="R180"/>
-<instance part="SUPPLY61" gate="VDD" x="147.32" y="-195.58" rot="R270"/>
-<instance part="C59" gate="G$1" x="142.24" y="-190.5"/>
+<instance part="SP117" gate="G$1" x="111.76" y="-218.44" rot="MR90"/>
+<instance part="SP118" gate="G$1" x="104.14" y="-218.44" rot="R90"/>
+<instance part="U59" gate="A" x="111.76" y="-198.12" rot="R270"/>
+<instance part="GND121" gate="1" x="99.06" y="-226.06" rot="R270"/>
+<instance part="GND122" gate="1" x="96.52" y="-180.34" rot="R270"/>
+<instance part="SUPPLY61" gate="VDD" x="106.68" y="-177.8"/>
+<instance part="C59" gate="G$1" x="101.6" y="-177.8" rot="R90"/>
 <instance part="SP119" gate="G$1" x="-83.82" y="-190.5" rot="MR180"/>
 <instance part="SP120" gate="G$1" x="-83.82" y="-182.88"/>
 <instance part="U60" gate="A" x="-63.5" y="-190.5" rot="R180"/>
@@ -7975,9 +7975,9 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-162.56" y1="-106.68" x2="139.7" y2="-106.68" width="0.762" layer="92"/>
 <wire x1="-162.56" y1="-106.68" x2="-162.56" y2="-170.18" width="0.762" layer="92"/>
 <wire x1="-162.56" y1="-170.18" x2="142.24" y2="-170.18" width="0.762" layer="92"/>
-<wire x1="-162.56" y1="-170.18" x2="-162.56" y2="-220.98" width="0.762" layer="92"/>
-<wire x1="-162.56" y1="-220.98" x2="167.64" y2="-220.98" width="0.762" layer="92"/>
-<wire x1="167.64" y1="-220.98" x2="167.64" y2="-22.86" width="0.762" layer="92"/>
+<wire x1="-162.56" y1="-170.18" x2="-162.56" y2="-233.68" width="0.762" layer="92"/>
+<wire x1="-162.56" y1="-233.68" x2="167.64" y2="-233.68" width="0.762" layer="92"/>
+<wire x1="167.64" y1="-233.68" x2="167.64" y2="-22.86" width="0.762" layer="92"/>
 <wire x1="167.64" y1="-22.86" x2="226.06" y2="-22.86" width="0.762" layer="92"/>
 <wire x1="226.06" y1="-22.86" x2="226.06" y2="-99.06" width="0.762" layer="92"/>
 <wire x1="226.06" y1="-22.86" x2="279.4" y2="-22.86" width="0.762" layer="92"/>
@@ -8083,21 +8083,21 @@ This footprint was designed to help hold the alignment of a through-hole compone
 </segment>
 <segment>
 <pinref part="SP21" gate="G$1" pin="1"/>
-<wire x1="96.52" y1="-25.4" x2="93.98" y2="-25.4" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="-25.4" x2="93.98" y2="-17.78" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-45.72" x2="109.22" y2="-48.26" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-48.26" x2="101.6" y2="-48.26" width="0.1524" layer="91"/>
 <pinref part="SP22" gate="G$1" pin="1"/>
-<wire x1="93.98" y1="-17.78" x2="93.98" y2="-15.24" width="0.1524" layer="91"/>
-<wire x1="96.52" y1="-17.78" x2="93.98" y2="-17.78" width="0.1524" layer="91"/>
-<junction x="93.98" y="-17.78"/>
+<wire x1="101.6" y1="-48.26" x2="99.06" y2="-48.26" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="-45.72" x2="101.6" y2="-48.26" width="0.1524" layer="91"/>
+<junction x="101.6" y="-48.26"/>
 <pinref part="GND25" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="U11" gate="A" pin="GND"/>
 <pinref part="GND26" gate="1" pin="GND"/>
-<wire x1="139.7" y1="-17.78" x2="139.7" y2="-12.7" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="-2.54" x2="96.52" y2="-2.54" width="0.1524" layer="91"/>
 <pinref part="C11" gate="G$1" pin="1"/>
-<wire x1="139.7" y1="-12.7" x2="142.24" y2="-12.7" width="0.1524" layer="91"/>
-<junction x="139.7" y="-12.7"/>
+<wire x1="96.52" y1="-2.54" x2="96.52" y2="0" width="0.1524" layer="91"/>
+<junction x="96.52" y="-2.54"/>
 </segment>
 <segment>
 <pinref part="SP7" gate="G$1" pin="1"/>
@@ -8245,21 +8245,21 @@ This footprint was designed to help hold the alignment of a through-hole compone
 </segment>
 <segment>
 <pinref part="SP45" gate="G$1" pin="1"/>
-<wire x1="96.52" y1="-81.28" x2="93.98" y2="-81.28" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="-81.28" x2="93.98" y2="-73.66" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-101.6" x2="109.22" y2="-104.14" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-104.14" x2="101.6" y2="-104.14" width="0.1524" layer="91"/>
 <pinref part="SP46" gate="G$1" pin="1"/>
-<wire x1="93.98" y1="-73.66" x2="93.98" y2="-71.12" width="0.1524" layer="91"/>
-<wire x1="96.52" y1="-73.66" x2="93.98" y2="-73.66" width="0.1524" layer="91"/>
-<junction x="93.98" y="-73.66"/>
+<wire x1="101.6" y1="-104.14" x2="99.06" y2="-104.14" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="-101.6" x2="101.6" y2="-104.14" width="0.1524" layer="91"/>
+<junction x="101.6" y="-104.14"/>
 <pinref part="GND49" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="U23" gate="A" pin="GND"/>
 <pinref part="GND50" gate="1" pin="GND"/>
-<wire x1="139.7" y1="-73.66" x2="139.7" y2="-68.58" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="-58.42" x2="96.52" y2="-58.42" width="0.1524" layer="91"/>
 <pinref part="C23" gate="G$1" pin="1"/>
-<wire x1="139.7" y1="-68.58" x2="142.24" y2="-68.58" width="0.1524" layer="91"/>
-<junction x="139.7" y="-68.58"/>
+<wire x1="96.52" y1="-58.42" x2="96.52" y2="-55.88" width="0.1524" layer="91"/>
+<junction x="96.52" y="-58.42"/>
 </segment>
 <segment>
 <pinref part="SP47" gate="G$1" pin="1"/>
@@ -8407,21 +8407,21 @@ This footprint was designed to help hold the alignment of a through-hole compone
 </segment>
 <segment>
 <pinref part="SP81" gate="G$1" pin="1"/>
-<wire x1="96.52" y1="-139.7" x2="93.98" y2="-139.7" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="-139.7" x2="93.98" y2="-132.08" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="-160.02" x2="111.76" y2="-162.56" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="-162.56" x2="104.14" y2="-162.56" width="0.1524" layer="91"/>
 <pinref part="SP82" gate="G$1" pin="1"/>
-<wire x1="93.98" y1="-132.08" x2="93.98" y2="-129.54" width="0.1524" layer="91"/>
-<wire x1="96.52" y1="-132.08" x2="93.98" y2="-132.08" width="0.1524" layer="91"/>
-<junction x="93.98" y="-132.08"/>
+<wire x1="104.14" y1="-162.56" x2="101.6" y2="-162.56" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="-160.02" x2="104.14" y2="-162.56" width="0.1524" layer="91"/>
+<junction x="104.14" y="-162.56"/>
 <pinref part="GND85" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="U41" gate="A" pin="GND"/>
 <pinref part="GND86" gate="1" pin="GND"/>
-<wire x1="139.7" y1="-132.08" x2="139.7" y2="-127" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="-116.84" x2="99.06" y2="-116.84" width="0.1524" layer="91"/>
 <pinref part="C41" gate="G$1" pin="1"/>
-<wire x1="139.7" y1="-127" x2="142.24" y2="-127" width="0.1524" layer="91"/>
-<junction x="139.7" y="-127"/>
+<wire x1="99.06" y1="-116.84" x2="99.06" y2="-114.3" width="0.1524" layer="91"/>
+<junction x="99.06" y="-116.84"/>
 </segment>
 <segment>
 <pinref part="SP83" gate="G$1" pin="1"/>
@@ -8569,21 +8569,21 @@ This footprint was designed to help hold the alignment of a through-hole compone
 </segment>
 <segment>
 <pinref part="SP117" gate="G$1" pin="1"/>
-<wire x1="96.52" y1="-200.66" x2="93.98" y2="-200.66" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="-200.66" x2="93.98" y2="-193.04" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="-223.52" x2="111.76" y2="-226.06" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="-226.06" x2="104.14" y2="-226.06" width="0.1524" layer="91"/>
 <pinref part="SP118" gate="G$1" pin="1"/>
-<wire x1="93.98" y1="-193.04" x2="93.98" y2="-190.5" width="0.1524" layer="91"/>
-<wire x1="96.52" y1="-193.04" x2="93.98" y2="-193.04" width="0.1524" layer="91"/>
-<junction x="93.98" y="-193.04"/>
+<wire x1="104.14" y1="-226.06" x2="101.6" y2="-226.06" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="-223.52" x2="104.14" y2="-226.06" width="0.1524" layer="91"/>
+<junction x="104.14" y="-226.06"/>
 <pinref part="GND121" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="U59" gate="A" pin="GND"/>
 <pinref part="GND122" gate="1" pin="GND"/>
-<wire x1="139.7" y1="-193.04" x2="139.7" y2="-187.96" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="-180.34" x2="99.06" y2="-180.34" width="0.1524" layer="91"/>
 <pinref part="C59" gate="G$1" pin="1"/>
-<wire x1="139.7" y1="-187.96" x2="142.24" y2="-187.96" width="0.1524" layer="91"/>
-<junction x="139.7" y="-187.96"/>
+<wire x1="99.06" y1="-180.34" x2="99.06" y2="-177.8" width="0.1524" layer="91"/>
+<junction x="99.06" y="-180.34"/>
 </segment>
 <segment>
 <pinref part="SP119" gate="G$1" pin="1"/>
@@ -8861,11 +8861,10 @@ This footprint was designed to help hold the alignment of a through-hole compone
 </segment>
 <segment>
 <pinref part="U11" gate="A" pin="VDD"/>
-<wire x1="139.7" y1="-20.32" x2="142.24" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="-2.54" x2="104.14" y2="0" width="0.1524" layer="91"/>
 <pinref part="SUPPLY13" gate="VDD" pin="VDD"/>
 <pinref part="C11" gate="G$1" pin="2"/>
-<wire x1="142.24" y1="-20.32" x2="147.32" y2="-20.32" width="0.1524" layer="91"/>
-<junction x="142.24" y="-20.32"/>
+<junction x="104.14" y="0"/>
 </segment>
 <segment>
 <pinref part="U4" gate="A" pin="VDD"/>
@@ -8925,11 +8924,10 @@ This footprint was designed to help hold the alignment of a through-hole compone
 </segment>
 <segment>
 <pinref part="U23" gate="A" pin="VDD"/>
-<wire x1="139.7" y1="-76.2" x2="142.24" y2="-76.2" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="-58.42" x2="104.14" y2="-55.88" width="0.1524" layer="91"/>
 <pinref part="SUPPLY25" gate="VDD" pin="VDD"/>
 <pinref part="C23" gate="G$1" pin="2"/>
-<wire x1="142.24" y1="-76.2" x2="147.32" y2="-76.2" width="0.1524" layer="91"/>
-<junction x="142.24" y="-76.2"/>
+<junction x="104.14" y="-55.88"/>
 </segment>
 <segment>
 <pinref part="U24" gate="A" pin="VDD"/>
@@ -8989,10 +8987,10 @@ This footprint was designed to help hold the alignment of a through-hole compone
 </segment>
 <segment>
 <pinref part="U41" gate="A" pin="VDD"/>
-<wire x1="139.7" y1="-134.62" x2="142.24" y2="-134.62" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="-116.84" x2="106.68" y2="-114.3" width="0.1524" layer="91"/>
 <pinref part="SUPPLY43" gate="VDD" pin="VDD"/>
 <pinref part="C41" gate="G$1" pin="2"/>
-<junction x="142.24" y="-134.62"/>
+<junction x="106.68" y="-114.3"/>
 </segment>
 <segment>
 <pinref part="U42" gate="A" pin="VDD"/>
@@ -9052,11 +9050,10 @@ This footprint was designed to help hold the alignment of a through-hole compone
 </segment>
 <segment>
 <pinref part="U59" gate="A" pin="VDD"/>
-<wire x1="139.7" y1="-195.58" x2="142.24" y2="-195.58" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="-180.34" x2="106.68" y2="-177.8" width="0.1524" layer="91"/>
 <pinref part="SUPPLY61" gate="VDD" pin="VDD"/>
 <pinref part="C59" gate="G$1" pin="2"/>
-<wire x1="142.24" y1="-195.58" x2="147.32" y2="-195.58" width="0.1524" layer="91"/>
-<junction x="142.24" y="-195.58"/>
+<junction x="106.68" y="-177.8"/>
 </segment>
 <segment>
 <pinref part="U60" gate="A" pin="VDD"/>
@@ -9223,15 +9220,15 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <segment>
 <pinref part="U11" gate="A" pin="*OUT_A"/>
 <pinref part="SP21" gate="G$1" pin="2"/>
-<wire x1="109.22" y1="-25.4" x2="106.68" y2="-25.4" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-33.02" x2="109.22" y2="-35.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$24" class="0">
 <segment>
 <pinref part="SP22" gate="G$1" pin="2"/>
-<wire x1="106.68" y1="-17.78" x2="106.68" y2="-22.86" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="-35.56" x2="106.68" y2="-35.56" width="0.1524" layer="91"/>
 <pinref part="U11" gate="A" pin="*OUT_B"/>
-<wire x1="106.68" y1="-22.86" x2="109.22" y2="-22.86" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="-35.56" x2="106.68" y2="-33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$7" class="0">
@@ -9358,15 +9355,15 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <segment>
 <pinref part="U23" gate="A" pin="*OUT_A"/>
 <pinref part="SP45" gate="G$1" pin="2"/>
-<wire x1="109.22" y1="-81.28" x2="106.68" y2="-81.28" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-88.9" x2="109.22" y2="-91.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$48" class="0">
 <segment>
 <pinref part="SP46" gate="G$1" pin="2"/>
-<wire x1="106.68" y1="-73.66" x2="106.68" y2="-78.74" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="-91.44" x2="106.68" y2="-91.44" width="0.1524" layer="91"/>
 <pinref part="U23" gate="A" pin="*OUT_B"/>
-<wire x1="106.68" y1="-78.74" x2="109.22" y2="-78.74" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="-91.44" x2="106.68" y2="-88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$49" class="0">
@@ -9493,15 +9490,15 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <segment>
 <pinref part="U41" gate="A" pin="*OUT_A"/>
 <pinref part="SP81" gate="G$1" pin="2"/>
-<wire x1="109.22" y1="-139.7" x2="106.68" y2="-139.7" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="-147.32" x2="111.76" y2="-149.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$84" class="0">
 <segment>
 <pinref part="SP82" gate="G$1" pin="2"/>
-<wire x1="106.68" y1="-132.08" x2="106.68" y2="-137.16" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="-149.86" x2="109.22" y2="-149.86" width="0.1524" layer="91"/>
 <pinref part="U41" gate="A" pin="*OUT_B"/>
-<wire x1="106.68" y1="-137.16" x2="109.22" y2="-137.16" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-149.86" x2="109.22" y2="-147.32" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$85" class="0">
@@ -9628,15 +9625,15 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <segment>
 <pinref part="U59" gate="A" pin="*OUT_A"/>
 <pinref part="SP117" gate="G$1" pin="2"/>
-<wire x1="109.22" y1="-200.66" x2="106.68" y2="-200.66" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="-210.82" x2="111.76" y2="-213.36" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$120" class="0">
 <segment>
 <pinref part="SP118" gate="G$1" pin="2"/>
-<wire x1="106.68" y1="-193.04" x2="106.68" y2="-198.12" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="-213.36" x2="109.22" y2="-213.36" width="0.1524" layer="91"/>
 <pinref part="U59" gate="A" pin="*OUT_B"/>
-<wire x1="106.68" y1="-198.12" x2="109.22" y2="-198.12" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-213.36" x2="109.22" y2="-210.82" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$121" class="0">
@@ -10065,6 +10062,501 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <segment>
 <pinref part="DIP1" gate="G$1" pin="164"/>
 <wire x1="223.52" y1="-10.16" x2="223.52" y2="-22.86" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="17" class="0">
+<segment>
+<pinref part="U12" gate="A" pin="IN_B"/>
+<wire x1="-106.68" y1="-12.7" x2="-99.06" y2="-12.7" width="0.1524" layer="91"/>
+<wire x1="-99.06" y1="-12.7" x2="-99.06" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="18" class="0">
+<segment>
+<pinref part="U12" gate="A" pin="IN_A"/>
+<wire x1="-106.68" y1="-15.24" x2="-96.52" y2="-15.24" width="0.1524" layer="91"/>
+<wire x1="-96.52" y1="-15.24" x2="-96.52" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="19" class="0">
+<segment>
+<pinref part="U4" gate="A" pin="IN_B"/>
+<wire x1="-45.72" y1="-12.7" x2="-38.1" y2="-12.7" width="0.1524" layer="91"/>
+<wire x1="-38.1" y1="-12.7" x2="-38.1" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="20" class="0">
+<segment>
+<pinref part="U4" gate="A" pin="IN_A"/>
+<wire x1="-45.72" y1="-15.24" x2="-35.56" y2="-15.24" width="0.1524" layer="91"/>
+<wire x1="-35.56" y1="-15.24" x2="-35.56" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="21" class="0">
+<segment>
+<pinref part="U10" gate="A" pin="IN_B"/>
+<wire x1="15.24" y1="-12.7" x2="22.86" y2="-12.7" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="-12.7" x2="22.86" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="22" class="0">
+<segment>
+<pinref part="U10" gate="A" pin="IN_A"/>
+<wire x1="15.24" y1="-15.24" x2="25.4" y2="-15.24" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="-15.24" x2="25.4" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="23" class="0">
+<segment>
+<pinref part="U7" gate="A" pin="IN_B"/>
+<wire x1="76.2" y1="-12.7" x2="83.82" y2="-12.7" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="-12.7" x2="83.82" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="24" class="0">
+<segment>
+<pinref part="U7" gate="A" pin="IN_A"/>
+<wire x1="76.2" y1="-15.24" x2="86.36" y2="-15.24" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="-15.24" x2="86.36" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="25" class="0">
+<segment>
+<pinref part="U11" gate="A" pin="IN_A"/>
+<wire x1="109.22" y1="-2.54" x2="109.22" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="27" class="0">
+<segment>
+<pinref part="U3" gate="A" pin="IN_A"/>
+<wire x1="-106.68" y1="-38.1" x2="-106.68" y2="-50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="26" class="0">
+<segment>
+<pinref part="U3" gate="A" pin="IN_B"/>
+<wire x1="-106.68" y1="-35.56" x2="-104.14" y2="-35.56" width="0.1524" layer="91"/>
+<wire x1="-104.14" y1="-35.56" x2="-104.14" y2="-50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="28" class="0">
+<segment>
+<pinref part="U5" gate="A" pin="IN_B"/>
+<wire x1="-40.64" y1="-50.8" x2="-40.64" y2="-35.56" width="0.1524" layer="91"/>
+<wire x1="-40.64" y1="-35.56" x2="-45.72" y2="-35.56" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="29" class="0">
+<segment>
+<pinref part="U5" gate="A" pin="IN_A"/>
+<wire x1="-43.18" y1="-50.8" x2="-43.18" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="-38.1" x2="-45.72" y2="-38.1" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="30" class="0">
+<segment>
+<pinref part="U13" gate="A" pin="IN_B"/>
+<wire x1="15.24" y1="-35.56" x2="20.32" y2="-35.56" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="-35.56" x2="20.32" y2="-50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="31" class="0">
+<segment>
+<pinref part="U13" gate="A" pin="IN_A"/>
+<wire x1="15.24" y1="-38.1" x2="17.78" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="-38.1" x2="17.78" y2="-50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="32" class="0">
+<segment>
+<pinref part="U9" gate="A" pin="IN_B"/>
+<wire x1="76.2" y1="-35.56" x2="81.28" y2="-35.56" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="-35.56" x2="81.28" y2="-50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="33" class="0">
+<segment>
+<pinref part="U9" gate="A" pin="IN_A"/>
+<wire x1="76.2" y1="-38.1" x2="78.74" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="-38.1" x2="78.74" y2="-50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="34" class="0">
+<segment>
+<pinref part="U11" gate="A" pin="IN_B"/>
+<wire x1="106.68" y1="-2.54" x2="106.68" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="35" class="0">
+<segment>
+<pinref part="U19" gate="A" pin="IN_B"/>
+<wire x1="-106.68" y1="-68.58" x2="-99.06" y2="-68.58" width="0.1524" layer="91"/>
+<wire x1="-99.06" y1="-68.58" x2="-99.06" y2="-50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="36" class="0">
+<segment>
+<pinref part="U19" gate="A" pin="IN_A"/>
+<wire x1="-106.68" y1="-71.12" x2="-96.52" y2="-71.12" width="0.1524" layer="91"/>
+<wire x1="-96.52" y1="-71.12" x2="-96.52" y2="-50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="37" class="0">
+<segment>
+<pinref part="U24" gate="A" pin="IN_B"/>
+<wire x1="-45.72" y1="-68.58" x2="-38.1" y2="-68.58" width="0.1524" layer="91"/>
+<wire x1="-38.1" y1="-68.58" x2="-38.1" y2="-50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="38" class="0">
+<segment>
+<pinref part="U24" gate="A" pin="IN_A"/>
+<wire x1="-45.72" y1="-71.12" x2="-35.56" y2="-71.12" width="0.1524" layer="91"/>
+<wire x1="-35.56" y1="-71.12" x2="-35.56" y2="-50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="39" class="0">
+<segment>
+<pinref part="U26" gate="A" pin="IN_B"/>
+<wire x1="15.24" y1="-68.58" x2="22.86" y2="-68.58" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="-68.58" x2="22.86" y2="-50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="40" class="0">
+<segment>
+<pinref part="U26" gate="A" pin="IN_A"/>
+<wire x1="15.24" y1="-71.12" x2="25.4" y2="-71.12" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="-71.12" x2="25.4" y2="-50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="41" class="0">
+<segment>
+<pinref part="U21" gate="A" pin="IN_B"/>
+<wire x1="76.2" y1="-68.58" x2="86.36" y2="-68.58" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="-68.58" x2="86.36" y2="-50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="42" class="0">
+<segment>
+<pinref part="U21" gate="A" pin="IN_A"/>
+<wire x1="76.2" y1="-71.12" x2="88.9" y2="-71.12" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="-71.12" x2="88.9" y2="-50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="43" class="0">
+<segment>
+<pinref part="U23" gate="A" pin="IN_A"/>
+<wire x1="109.22" y1="-58.42" x2="109.22" y2="-50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="52" class="0">
+<segment>
+<pinref part="U23" gate="A" pin="IN_B"/>
+<wire x1="106.68" y1="-50.8" x2="106.68" y2="-58.42" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="44" class="0">
+<segment>
+<pinref part="U20" gate="A" pin="IN_B"/>
+<wire x1="-106.68" y1="-91.44" x2="-101.6" y2="-91.44" width="0.1524" layer="91"/>
+<wire x1="-101.6" y1="-91.44" x2="-101.6" y2="-106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="45" class="0">
+<segment>
+<pinref part="U20" gate="A" pin="IN_A"/>
+<wire x1="-106.68" y1="-93.98" x2="-104.14" y2="-93.98" width="0.1524" layer="91"/>
+<wire x1="-104.14" y1="-93.98" x2="-104.14" y2="-106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="46" class="0">
+<segment>
+<pinref part="U25" gate="A" pin="IN_B"/>
+<wire x1="-45.72" y1="-91.44" x2="-40.64" y2="-91.44" width="0.1524" layer="91"/>
+<wire x1="-40.64" y1="-91.44" x2="-40.64" y2="-106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="47" class="0">
+<segment>
+<pinref part="U25" gate="A" pin="IN_A"/>
+<wire x1="-45.72" y1="-93.98" x2="-43.18" y2="-93.98" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="-93.98" x2="-43.18" y2="-106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="48" class="0">
+<segment>
+<pinref part="U27" gate="A" pin="IN_B"/>
+<wire x1="15.24" y1="-91.44" x2="22.86" y2="-91.44" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="-91.44" x2="22.86" y2="-106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="49" class="0">
+<segment>
+<pinref part="U27" gate="A" pin="IN_A"/>
+<wire x1="15.24" y1="-93.98" x2="20.32" y2="-93.98" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="-93.98" x2="20.32" y2="-106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="50" class="0">
+<segment>
+<pinref part="U22" gate="A" pin="IN_B"/>
+<wire x1="76.2" y1="-91.44" x2="81.28" y2="-91.44" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="-91.44" x2="81.28" y2="-106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="51" class="0">
+<segment>
+<pinref part="U22" gate="A" pin="IN_A"/>
+<wire x1="76.2" y1="-93.98" x2="78.74" y2="-93.98" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="-93.98" x2="78.74" y2="-106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="53" class="0">
+<segment>
+<pinref part="U37" gate="A" pin="IN_B"/>
+<wire x1="-106.68" y1="-127" x2="-99.06" y2="-127" width="0.1524" layer="91"/>
+<wire x1="-99.06" y1="-127" x2="-99.06" y2="-106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="54" class="0">
+<segment>
+<pinref part="U37" gate="A" pin="IN_A"/>
+<wire x1="-106.68" y1="-129.54" x2="-96.52" y2="-129.54" width="0.1524" layer="91"/>
+<wire x1="-96.52" y1="-129.54" x2="-96.52" y2="-106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="55" class="0">
+<segment>
+<pinref part="U42" gate="A" pin="IN_B"/>
+<wire x1="-45.72" y1="-127" x2="-38.1" y2="-127" width="0.1524" layer="91"/>
+<wire x1="-38.1" y1="-127" x2="-38.1" y2="-106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="56" class="0">
+<segment>
+<pinref part="U42" gate="A" pin="IN_A"/>
+<wire x1="-45.72" y1="-129.54" x2="-35.56" y2="-129.54" width="0.1524" layer="91"/>
+<wire x1="-35.56" y1="-129.54" x2="-35.56" y2="-106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="57" class="0">
+<segment>
+<pinref part="U44" gate="A" pin="IN_B"/>
+<wire x1="15.24" y1="-127" x2="22.86" y2="-127" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="-127" x2="22.86" y2="-106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="58" class="0">
+<segment>
+<pinref part="U44" gate="A" pin="IN_A"/>
+<wire x1="15.24" y1="-129.54" x2="25.4" y2="-129.54" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="-129.54" x2="25.4" y2="-106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="59" class="0">
+<segment>
+<pinref part="U39" gate="A" pin="IN_B"/>
+<wire x1="76.2" y1="-127" x2="83.82" y2="-127" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="-127" x2="83.82" y2="-106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="60" class="0">
+<segment>
+<pinref part="U39" gate="A" pin="IN_A"/>
+<wire x1="76.2" y1="-129.54" x2="86.36" y2="-129.54" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="-129.54" x2="86.36" y2="-106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="61" class="0">
+<segment>
+<pinref part="U41" gate="A" pin="IN_A"/>
+<wire x1="111.76" y1="-106.68" x2="111.76" y2="-116.84" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="70" class="0">
+<segment>
+<pinref part="U41" gate="A" pin="IN_B"/>
+<wire x1="109.22" y1="-106.68" x2="109.22" y2="-116.84" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="62" class="0">
+<segment>
+<pinref part="U38" gate="A" pin="IN_B"/>
+<wire x1="-106.68" y1="-149.86" x2="-99.06" y2="-149.86" width="0.1524" layer="91"/>
+<wire x1="-99.06" y1="-149.86" x2="-99.06" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="63" class="0">
+<segment>
+<pinref part="U38" gate="A" pin="IN_A"/>
+<wire x1="-106.68" y1="-152.4" x2="-101.6" y2="-152.4" width="0.1524" layer="91"/>
+<wire x1="-101.6" y1="-152.4" x2="-101.6" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="64" class="0">
+<segment>
+<pinref part="U43" gate="A" pin="IN_B"/>
+<wire x1="-45.72" y1="-149.86" x2="-40.64" y2="-149.86" width="0.1524" layer="91"/>
+<wire x1="-40.64" y1="-149.86" x2="-40.64" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="65" class="0">
+<segment>
+<pinref part="U43" gate="A" pin="IN_A"/>
+<wire x1="-45.72" y1="-152.4" x2="-43.18" y2="-152.4" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="-152.4" x2="-43.18" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="66" class="0">
+<segment>
+<pinref part="U45" gate="A" pin="IN_B"/>
+<wire x1="15.24" y1="-149.86" x2="20.32" y2="-149.86" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="-149.86" x2="20.32" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="67" class="0">
+<segment>
+<pinref part="U45" gate="A" pin="IN_A"/>
+<wire x1="15.24" y1="-152.4" x2="17.78" y2="-152.4" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="-152.4" x2="17.78" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="68" class="0">
+<segment>
+<pinref part="U40" gate="A" pin="IN_B"/>
+<wire x1="76.2" y1="-149.86" x2="81.28" y2="-149.86" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="-149.86" x2="81.28" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="69" class="0">
+<segment>
+<pinref part="U40" gate="A" pin="IN_A"/>
+<wire x1="76.2" y1="-152.4" x2="78.74" y2="-152.4" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="-152.4" x2="78.74" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="71" class="0">
+<segment>
+<pinref part="U55" gate="A" pin="IN_B"/>
+<wire x1="-106.68" y1="-187.96" x2="-99.06" y2="-187.96" width="0.1524" layer="91"/>
+<wire x1="-99.06" y1="-187.96" x2="-99.06" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="72" class="0">
+<segment>
+<pinref part="U55" gate="A" pin="IN_A"/>
+<wire x1="-106.68" y1="-190.5" x2="-96.52" y2="-190.5" width="0.1524" layer="91"/>
+<wire x1="-96.52" y1="-190.5" x2="-96.52" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="73" class="0">
+<segment>
+<pinref part="U60" gate="A" pin="IN_B"/>
+<wire x1="-45.72" y1="-187.96" x2="-38.1" y2="-187.96" width="0.1524" layer="91"/>
+<wire x1="-38.1" y1="-187.96" x2="-38.1" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="74" class="0">
+<segment>
+<pinref part="U60" gate="A" pin="IN_A"/>
+<wire x1="-45.72" y1="-190.5" x2="-35.56" y2="-190.5" width="0.1524" layer="91"/>
+<wire x1="-35.56" y1="-190.5" x2="-35.56" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="75" class="0">
+<segment>
+<pinref part="U62" gate="A" pin="IN_B"/>
+<wire x1="15.24" y1="-187.96" x2="22.86" y2="-187.96" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="-187.96" x2="22.86" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="76" class="0">
+<segment>
+<pinref part="U62" gate="A" pin="IN_A"/>
+<wire x1="15.24" y1="-190.5" x2="25.4" y2="-190.5" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="-190.5" x2="25.4" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="77" class="0">
+<segment>
+<pinref part="U57" gate="A" pin="IN_B"/>
+<wire x1="76.2" y1="-187.96" x2="83.82" y2="-187.96" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="-187.96" x2="83.82" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="78" class="0">
+<segment>
+<pinref part="U57" gate="A" pin="IN_A"/>
+<wire x1="76.2" y1="-190.5" x2="86.36" y2="-190.5" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="-190.5" x2="86.36" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="79" class="0">
+<segment>
+<pinref part="U59" gate="A" pin="IN_A"/>
+<wire x1="111.76" y1="-180.34" x2="111.76" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="88" class="0">
+<segment>
+<pinref part="U59" gate="A" pin="IN_B"/>
+<wire x1="109.22" y1="-180.34" x2="109.22" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="80" class="0">
+<segment>
+<pinref part="U56" gate="A" pin="IN_B"/>
+<wire x1="-106.68" y1="-210.82" x2="-101.6" y2="-210.82" width="0.1524" layer="91"/>
+<wire x1="-101.6" y1="-210.82" x2="-101.6" y2="-233.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="81" class="0">
+<segment>
+<pinref part="U56" gate="A" pin="IN_A"/>
+<wire x1="-106.68" y1="-213.36" x2="-104.14" y2="-213.36" width="0.1524" layer="91"/>
+<wire x1="-104.14" y1="-213.36" x2="-104.14" y2="-233.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="82" class="0">
+<segment>
+<pinref part="U61" gate="A" pin="IN_B"/>
+<wire x1="-45.72" y1="-210.82" x2="-38.1" y2="-210.82" width="0.1524" layer="91"/>
+<wire x1="-38.1" y1="-210.82" x2="-38.1" y2="-233.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="83" class="0">
+<segment>
+<pinref part="U61" gate="A" pin="IN_A"/>
+<wire x1="-45.72" y1="-213.36" x2="-40.64" y2="-213.36" width="0.1524" layer="91"/>
+<wire x1="-40.64" y1="-213.36" x2="-40.64" y2="-233.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="84" class="0">
+<segment>
+<pinref part="U63" gate="A" pin="IN_B"/>
+<wire x1="15.24" y1="-210.82" x2="22.86" y2="-210.82" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="-210.82" x2="22.86" y2="-233.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="85" class="0">
+<segment>
+<pinref part="U63" gate="A" pin="IN_A"/>
+<wire x1="15.24" y1="-213.36" x2="20.32" y2="-213.36" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="-213.36" x2="20.32" y2="-233.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="86" class="0">
+<segment>
+<pinref part="U58" gate="A" pin="IN_B"/>
+<wire x1="76.2" y1="-210.82" x2="81.28" y2="-210.82" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="-210.82" x2="81.28" y2="-233.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="87" class="0">
+<segment>
+<pinref part="U58" gate="A" pin="IN_A"/>
+<wire x1="76.2" y1="-213.36" x2="78.74" y2="-213.36" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="-213.36" x2="78.74" y2="-233.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

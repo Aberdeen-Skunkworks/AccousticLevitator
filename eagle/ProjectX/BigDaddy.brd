@@ -8,7 +8,7 @@
 </settings>
 <grid distance="9.84251969" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="787.401575" altunitdist="mil" altunit="mil"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
@@ -28,14 +28,14 @@
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -46,19 +46,19 @@
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
-<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
 <layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
-<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
@@ -4009,6 +4009,222 @@ design rules under a new name.</description>
 <wire x1="47.25" y1="88.75" x2="48" y2="89.5" width="0.254" layer="1"/>
 <wire x1="48" y1="89.5" x2="48" y2="90.6" width="0.254" layer="1"/>
 <wire x1="51.814475" y1="89.9908" x2="48.2408" y2="89.9908" width="0.254" layer="16"/>
+</signal>
+<signal name="17">
+<contactref element="U12" pad="4"/>
+</signal>
+<signal name="18">
+<contactref element="U12" pad="2"/>
+</signal>
+<signal name="19">
+<contactref element="U4" pad="4"/>
+</signal>
+<signal name="20">
+<contactref element="U4" pad="2"/>
+</signal>
+<signal name="21">
+<contactref element="U10" pad="4"/>
+</signal>
+<signal name="22">
+<contactref element="U10" pad="2"/>
+</signal>
+<signal name="23">
+<contactref element="U7" pad="4"/>
+</signal>
+<signal name="24">
+<contactref element="U7" pad="2"/>
+</signal>
+<signal name="25">
+<contactref element="U11" pad="2"/>
+</signal>
+<signal name="27">
+<contactref element="U3" pad="2"/>
+</signal>
+<signal name="26">
+<contactref element="U3" pad="4"/>
+</signal>
+<signal name="28">
+<contactref element="U5" pad="4"/>
+</signal>
+<signal name="29">
+<contactref element="U5" pad="2"/>
+</signal>
+<signal name="30">
+<contactref element="U13" pad="4"/>
+</signal>
+<signal name="31">
+<contactref element="U13" pad="2"/>
+</signal>
+<signal name="32">
+<contactref element="U9" pad="4"/>
+</signal>
+<signal name="33">
+<contactref element="U9" pad="2"/>
+</signal>
+<signal name="34">
+<contactref element="U11" pad="4"/>
+</signal>
+<signal name="35">
+<contactref element="U19" pad="4"/>
+</signal>
+<signal name="36">
+<contactref element="U19" pad="2"/>
+</signal>
+<signal name="37">
+<contactref element="U24" pad="4"/>
+</signal>
+<signal name="38">
+<contactref element="U24" pad="2"/>
+</signal>
+<signal name="39">
+<contactref element="U26" pad="4"/>
+</signal>
+<signal name="40">
+<contactref element="U26" pad="2"/>
+</signal>
+<signal name="41">
+<contactref element="U21" pad="4"/>
+</signal>
+<signal name="42">
+<contactref element="U21" pad="2"/>
+</signal>
+<signal name="43">
+<contactref element="U23" pad="2"/>
+</signal>
+<signal name="52">
+<contactref element="U23" pad="4"/>
+</signal>
+<signal name="44">
+<contactref element="U20" pad="4"/>
+</signal>
+<signal name="45">
+<contactref element="U20" pad="2"/>
+</signal>
+<signal name="46">
+<contactref element="U25" pad="4"/>
+</signal>
+<signal name="47">
+<contactref element="U25" pad="2"/>
+</signal>
+<signal name="48">
+<contactref element="U27" pad="4"/>
+</signal>
+<signal name="49">
+<contactref element="U27" pad="2"/>
+</signal>
+<signal name="50">
+<contactref element="U22" pad="4"/>
+</signal>
+<signal name="51">
+<contactref element="U22" pad="2"/>
+</signal>
+<signal name="53">
+<contactref element="U37" pad="4"/>
+</signal>
+<signal name="54">
+<contactref element="U37" pad="2"/>
+</signal>
+<signal name="55">
+<contactref element="U42" pad="4"/>
+</signal>
+<signal name="56">
+<contactref element="U42" pad="2"/>
+</signal>
+<signal name="57">
+<contactref element="U44" pad="4"/>
+</signal>
+<signal name="58">
+<contactref element="U44" pad="2"/>
+</signal>
+<signal name="59">
+<contactref element="U39" pad="4"/>
+</signal>
+<signal name="60">
+<contactref element="U39" pad="2"/>
+</signal>
+<signal name="61">
+<contactref element="U41" pad="2"/>
+</signal>
+<signal name="70">
+<contactref element="U41" pad="4"/>
+</signal>
+<signal name="62">
+<contactref element="U38" pad="4"/>
+</signal>
+<signal name="63">
+<contactref element="U38" pad="2"/>
+</signal>
+<signal name="64">
+<contactref element="U43" pad="4"/>
+</signal>
+<signal name="65">
+<contactref element="U43" pad="2"/>
+</signal>
+<signal name="66">
+<contactref element="U45" pad="4"/>
+</signal>
+<signal name="67">
+<contactref element="U45" pad="2"/>
+</signal>
+<signal name="68">
+<contactref element="U40" pad="4"/>
+</signal>
+<signal name="69">
+<contactref element="U40" pad="2"/>
+</signal>
+<signal name="71">
+<contactref element="U55" pad="4"/>
+</signal>
+<signal name="72">
+<contactref element="U55" pad="2"/>
+</signal>
+<signal name="73">
+<contactref element="U60" pad="4"/>
+</signal>
+<signal name="74">
+<contactref element="U60" pad="2"/>
+</signal>
+<signal name="75">
+<contactref element="U62" pad="4"/>
+</signal>
+<signal name="76">
+<contactref element="U62" pad="2"/>
+</signal>
+<signal name="77">
+<contactref element="U57" pad="4"/>
+</signal>
+<signal name="78">
+<contactref element="U57" pad="2"/>
+</signal>
+<signal name="79">
+<contactref element="U59" pad="2"/>
+</signal>
+<signal name="88">
+<contactref element="U59" pad="4"/>
+</signal>
+<signal name="80">
+<contactref element="U56" pad="4"/>
+</signal>
+<signal name="81">
+<contactref element="U56" pad="2"/>
+</signal>
+<signal name="82">
+<contactref element="U61" pad="4"/>
+</signal>
+<signal name="83">
+<contactref element="U61" pad="2"/>
+</signal>
+<signal name="84">
+<contactref element="U63" pad="4"/>
+</signal>
+<signal name="85">
+<contactref element="U63" pad="2"/>
+</signal>
+<signal name="86">
+<contactref element="U58" pad="4"/>
+</signal>
+<signal name="87">
+<contactref element="U58" pad="2"/>
 </signal>
 </signals>
 </board>
