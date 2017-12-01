@@ -7651,28 +7651,28 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <instance part="U12" gate="A" x="-124.46" y="-15.24" rot="R180"/>
 <instance part="GND27" gate="1" x="-152.4" y="-2.54" rot="R180"/>
 <instance part="GND28" gate="1" x="-106.68" y="0" rot="R180"/>
-<instance part="SUPPLY14" gate="VDD" x="-99.06" y="-10.16" rot="R270"/>
+<instance part="SUPPLY14" gate="VDD" x="-104.14" y="-10.16" rot="R270"/>
 <instance part="C12" gate="G$1" x="-104.14" y="-5.08"/>
 <instance part="SP5" gate="G$1" x="-144.78" y="-38.1" rot="MR180"/>
 <instance part="SP6" gate="G$1" x="-144.78" y="-30.48"/>
 <instance part="U3" gate="A" x="-124.46" y="-38.1" rot="R180"/>
 <instance part="GND9" gate="1" x="-152.4" y="-25.4" rot="R180"/>
 <instance part="GND10" gate="1" x="-106.68" y="-22.86" rot="R180"/>
-<instance part="SUPPLY5" gate="VDD" x="-99.06" y="-33.02" rot="R270"/>
+<instance part="SUPPLY5" gate="VDD" x="-104.14" y="-33.02" rot="R270"/>
 <instance part="C3" gate="G$1" x="-104.14" y="-27.94"/>
 <instance part="SP13" gate="G$1" x="38.1" y="-15.24" rot="MR180"/>
 <instance part="SP14" gate="G$1" x="38.1" y="-7.62"/>
 <instance part="U7" gate="A" x="58.42" y="-15.24" rot="R180"/>
 <instance part="GND17" gate="1" x="30.48" y="-2.54" rot="R180"/>
 <instance part="GND18" gate="1" x="76.2" y="0" rot="R180"/>
-<instance part="SUPPLY9" gate="VDD" x="83.82" y="-10.16" rot="R270"/>
+<instance part="SUPPLY9" gate="VDD" x="78.74" y="-10.16" rot="R270"/>
 <instance part="C7" gate="G$1" x="78.74" y="-5.08"/>
 <instance part="SP17" gate="G$1" x="38.1" y="-38.1" rot="MR180"/>
 <instance part="SP18" gate="G$1" x="38.1" y="-30.48"/>
 <instance part="U9" gate="A" x="58.42" y="-38.1" rot="R180"/>
 <instance part="GND21" gate="1" x="30.48" y="-25.4" rot="R180"/>
 <instance part="GND22" gate="1" x="76.2" y="-22.86" rot="R180"/>
-<instance part="SUPPLY11" gate="VDD" x="83.82" y="-33.02" rot="R270"/>
+<instance part="SUPPLY11" gate="VDD" x="78.74" y="-33.02" rot="R270"/>
 <instance part="C9" gate="G$1" x="78.74" y="-27.94"/>
 <instance part="SP21" gate="G$1" x="101.6" y="-25.4" rot="MR180"/>
 <instance part="SP22" gate="G$1" x="101.6" y="-17.78"/>
@@ -7686,56 +7686,56 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <instance part="U4" gate="A" x="-63.5" y="-15.24" rot="R180"/>
 <instance part="GND11" gate="1" x="-91.44" y="-2.54" rot="R180"/>
 <instance part="GND12" gate="1" x="-45.72" y="0" rot="R180"/>
-<instance part="SUPPLY6" gate="VDD" x="-38.1" y="-10.16" rot="R270"/>
+<instance part="SUPPLY6" gate="VDD" x="-43.18" y="-10.16" rot="R270"/>
 <instance part="C4" gate="G$1" x="-43.18" y="-5.08"/>
 <instance part="SP9" gate="G$1" x="-83.82" y="-38.1" rot="MR180"/>
 <instance part="SP10" gate="G$1" x="-83.82" y="-30.48"/>
 <instance part="U5" gate="A" x="-63.5" y="-38.1" rot="R180"/>
 <instance part="GND13" gate="1" x="-91.44" y="-25.4" rot="R180"/>
 <instance part="GND14" gate="1" x="-45.72" y="-22.86" rot="R180"/>
-<instance part="SUPPLY7" gate="VDD" x="-38.1" y="-33.02" rot="R270"/>
+<instance part="SUPPLY7" gate="VDD" x="-43.18" y="-33.02" rot="R270"/>
 <instance part="C5" gate="G$1" x="-43.18" y="-27.94"/>
 <instance part="SP19" gate="G$1" x="-22.86" y="-15.24" rot="MR180"/>
 <instance part="SP20" gate="G$1" x="-22.86" y="-7.62"/>
 <instance part="U10" gate="A" x="-2.54" y="-15.24" rot="R180"/>
 <instance part="GND23" gate="1" x="-30.48" y="-2.54" rot="R180"/>
 <instance part="GND24" gate="1" x="15.24" y="0" rot="R180"/>
-<instance part="SUPPLY12" gate="VDD" x="22.86" y="-10.16" rot="R270"/>
+<instance part="SUPPLY12" gate="VDD" x="17.78" y="-10.16" rot="R270"/>
 <instance part="C10" gate="G$1" x="17.78" y="-5.08"/>
 <instance part="SP25" gate="G$1" x="-22.86" y="-38.1" rot="MR180"/>
 <instance part="SP26" gate="G$1" x="-22.86" y="-30.48"/>
 <instance part="U13" gate="A" x="-2.54" y="-38.1" rot="R180"/>
 <instance part="GND29" gate="1" x="-30.48" y="-25.4" rot="R180"/>
 <instance part="GND30" gate="1" x="15.24" y="-22.86" rot="R180"/>
-<instance part="SUPPLY15" gate="VDD" x="22.86" y="-33.02" rot="R270"/>
+<instance part="SUPPLY15" gate="VDD" x="17.78" y="-33.02" rot="R270"/>
 <instance part="C13" gate="G$1" x="17.78" y="-27.94"/>
 <instance part="SP37" gate="G$1" x="-144.78" y="-71.12" rot="MR180"/>
 <instance part="SP38" gate="G$1" x="-144.78" y="-63.5"/>
 <instance part="U19" gate="A" x="-124.46" y="-71.12" rot="R180"/>
 <instance part="GND41" gate="1" x="-152.4" y="-58.42" rot="R180"/>
 <instance part="GND42" gate="1" x="-106.68" y="-55.88" rot="R180"/>
-<instance part="SUPPLY21" gate="VDD" x="-99.06" y="-66.04" rot="R270"/>
+<instance part="SUPPLY21" gate="VDD" x="-104.14" y="-66.04" rot="R270"/>
 <instance part="C19" gate="G$1" x="-104.14" y="-60.96"/>
 <instance part="SP39" gate="G$1" x="-144.78" y="-93.98" rot="MR180"/>
 <instance part="SP40" gate="G$1" x="-144.78" y="-86.36"/>
 <instance part="U20" gate="A" x="-124.46" y="-93.98" rot="R180"/>
 <instance part="GND43" gate="1" x="-152.4" y="-81.28" rot="R180"/>
 <instance part="GND44" gate="1" x="-106.68" y="-78.74" rot="R180"/>
-<instance part="SUPPLY22" gate="VDD" x="-99.06" y="-88.9" rot="R270"/>
+<instance part="SUPPLY22" gate="VDD" x="-104.14" y="-88.9" rot="R270"/>
 <instance part="C20" gate="G$1" x="-104.14" y="-83.82"/>
 <instance part="SP41" gate="G$1" x="38.1" y="-71.12" rot="MR180"/>
 <instance part="SP42" gate="G$1" x="38.1" y="-63.5"/>
 <instance part="U21" gate="A" x="58.42" y="-71.12" rot="R180"/>
 <instance part="GND45" gate="1" x="30.48" y="-58.42" rot="R180"/>
 <instance part="GND46" gate="1" x="76.2" y="-55.88" rot="R180"/>
-<instance part="SUPPLY23" gate="VDD" x="83.82" y="-66.04" rot="R270"/>
+<instance part="SUPPLY23" gate="VDD" x="78.74" y="-66.04" rot="R270"/>
 <instance part="C21" gate="G$1" x="78.74" y="-60.96"/>
 <instance part="SP43" gate="G$1" x="38.1" y="-93.98" rot="MR180"/>
 <instance part="SP44" gate="G$1" x="38.1" y="-86.36"/>
 <instance part="U22" gate="A" x="58.42" y="-93.98" rot="R180"/>
 <instance part="GND47" gate="1" x="30.48" y="-81.28" rot="R180"/>
 <instance part="GND48" gate="1" x="76.2" y="-78.74" rot="R180"/>
-<instance part="SUPPLY24" gate="VDD" x="83.82" y="-88.9" rot="R270"/>
+<instance part="SUPPLY24" gate="VDD" x="78.74" y="-88.9" rot="R270"/>
 <instance part="C22" gate="G$1" x="78.74" y="-83.82"/>
 <instance part="SP45" gate="G$1" x="101.6" y="-81.28" rot="MR180"/>
 <instance part="SP46" gate="G$1" x="101.6" y="-73.66"/>
@@ -7749,119 +7749,119 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <instance part="U24" gate="A" x="-63.5" y="-71.12" rot="R180"/>
 <instance part="GND51" gate="1" x="-91.44" y="-58.42" rot="R180"/>
 <instance part="GND52" gate="1" x="-45.72" y="-55.88" rot="R180"/>
-<instance part="SUPPLY26" gate="VDD" x="-38.1" y="-66.04" rot="R270"/>
+<instance part="SUPPLY26" gate="VDD" x="-43.18" y="-66.04" rot="R270"/>
 <instance part="C24" gate="G$1" x="-43.18" y="-60.96"/>
 <instance part="SP49" gate="G$1" x="-83.82" y="-93.98" rot="MR180"/>
 <instance part="SP50" gate="G$1" x="-83.82" y="-86.36"/>
 <instance part="U25" gate="A" x="-63.5" y="-93.98" rot="R180"/>
 <instance part="GND53" gate="1" x="-91.44" y="-81.28" rot="R180"/>
 <instance part="GND54" gate="1" x="-45.72" y="-78.74" rot="R180"/>
-<instance part="SUPPLY27" gate="VDD" x="-38.1" y="-88.9" rot="R270"/>
+<instance part="SUPPLY27" gate="VDD" x="-43.18" y="-88.9" rot="R270"/>
 <instance part="C25" gate="G$1" x="-43.18" y="-83.82"/>
 <instance part="SP51" gate="G$1" x="-22.86" y="-71.12" rot="MR180"/>
 <instance part="SP52" gate="G$1" x="-22.86" y="-63.5"/>
 <instance part="U26" gate="A" x="-2.54" y="-71.12" rot="R180"/>
 <instance part="GND55" gate="1" x="-30.48" y="-58.42" rot="R180"/>
 <instance part="GND56" gate="1" x="15.24" y="-55.88" rot="R180"/>
-<instance part="SUPPLY28" gate="VDD" x="22.86" y="-66.04" rot="R270"/>
+<instance part="SUPPLY28" gate="VDD" x="17.78" y="-66.04" rot="R270"/>
 <instance part="C26" gate="G$1" x="17.78" y="-60.96"/>
 <instance part="SP53" gate="G$1" x="-22.86" y="-93.98" rot="MR180"/>
 <instance part="SP54" gate="G$1" x="-22.86" y="-86.36"/>
 <instance part="U27" gate="A" x="-2.54" y="-93.98" rot="R180"/>
 <instance part="GND57" gate="1" x="-30.48" y="-81.28" rot="R180"/>
 <instance part="GND58" gate="1" x="15.24" y="-78.74" rot="R180"/>
-<instance part="SUPPLY29" gate="VDD" x="22.86" y="-88.9" rot="R270"/>
+<instance part="SUPPLY29" gate="VDD" x="17.78" y="-88.9" rot="R270"/>
 <instance part="C27" gate="G$1" x="17.78" y="-83.82"/>
 <instance part="SP73" gate="G$1" x="-144.78" y="-129.54" rot="MR180"/>
 <instance part="SP74" gate="G$1" x="-144.78" y="-121.92"/>
 <instance part="U37" gate="A" x="-124.46" y="-129.54" rot="R180"/>
 <instance part="GND77" gate="1" x="-152.4" y="-116.84" rot="R180"/>
 <instance part="GND78" gate="1" x="-106.68" y="-114.3" rot="R180"/>
-<instance part="SUPPLY39" gate="VDD" x="-99.06" y="-124.46" rot="R270"/>
+<instance part="SUPPLY39" gate="VDD" x="-104.14" y="-124.46" rot="R270"/>
 <instance part="C37" gate="G$1" x="-104.14" y="-119.38"/>
 <instance part="SP75" gate="G$1" x="-144.78" y="-152.4" rot="MR180"/>
 <instance part="SP76" gate="G$1" x="-144.78" y="-144.78"/>
 <instance part="U38" gate="A" x="-124.46" y="-152.4" rot="R180"/>
 <instance part="GND79" gate="1" x="-152.4" y="-139.7" rot="R180"/>
 <instance part="GND80" gate="1" x="-106.68" y="-137.16" rot="R180"/>
-<instance part="SUPPLY40" gate="VDD" x="-99.06" y="-147.32" rot="R270"/>
+<instance part="SUPPLY40" gate="VDD" x="-104.14" y="-147.32" rot="R270"/>
 <instance part="C38" gate="G$1" x="-104.14" y="-142.24"/>
 <instance part="SP77" gate="G$1" x="38.1" y="-129.54" rot="MR180"/>
 <instance part="SP78" gate="G$1" x="38.1" y="-121.92"/>
 <instance part="U39" gate="A" x="58.42" y="-129.54" rot="R180"/>
 <instance part="GND81" gate="1" x="30.48" y="-116.84" rot="R180"/>
 <instance part="GND82" gate="1" x="76.2" y="-114.3" rot="R180"/>
-<instance part="SUPPLY41" gate="VDD" x="83.82" y="-124.46" rot="R270"/>
+<instance part="SUPPLY41" gate="VDD" x="78.74" y="-124.46" rot="R270"/>
 <instance part="C39" gate="G$1" x="78.74" y="-119.38"/>
 <instance part="SP79" gate="G$1" x="38.1" y="-152.4" rot="MR180"/>
 <instance part="SP80" gate="G$1" x="38.1" y="-144.78"/>
 <instance part="U40" gate="A" x="58.42" y="-152.4" rot="R180"/>
 <instance part="GND83" gate="1" x="30.48" y="-139.7" rot="R180"/>
 <instance part="GND84" gate="1" x="76.2" y="-137.16" rot="R180"/>
-<instance part="SUPPLY42" gate="VDD" x="83.82" y="-147.32" rot="R270"/>
+<instance part="SUPPLY42" gate="VDD" x="78.74" y="-147.32" rot="R270"/>
 <instance part="C40" gate="G$1" x="78.74" y="-142.24"/>
 <instance part="SP81" gate="G$1" x="101.6" y="-139.7" rot="MR180"/>
 <instance part="SP82" gate="G$1" x="101.6" y="-132.08"/>
 <instance part="U41" gate="A" x="121.92" y="-139.7" rot="R180"/>
 <instance part="GND85" gate="1" x="93.98" y="-127" rot="R180"/>
 <instance part="GND86" gate="1" x="139.7" y="-124.46" rot="R180"/>
-<instance part="SUPPLY43" gate="VDD" x="147.32" y="-134.62" rot="R270"/>
+<instance part="SUPPLY43" gate="VDD" x="142.24" y="-134.62" rot="R270"/>
 <instance part="C41" gate="G$1" x="142.24" y="-129.54"/>
 <instance part="SP83" gate="G$1" x="-83.82" y="-129.54" rot="MR180"/>
 <instance part="SP84" gate="G$1" x="-83.82" y="-121.92"/>
 <instance part="U42" gate="A" x="-63.5" y="-129.54" rot="R180"/>
 <instance part="GND87" gate="1" x="-91.44" y="-116.84" rot="R180"/>
 <instance part="GND88" gate="1" x="-45.72" y="-114.3" rot="R180"/>
-<instance part="SUPPLY44" gate="VDD" x="-38.1" y="-124.46" rot="R270"/>
+<instance part="SUPPLY44" gate="VDD" x="-43.18" y="-124.46" rot="R270"/>
 <instance part="C42" gate="G$1" x="-43.18" y="-119.38"/>
 <instance part="SP85" gate="G$1" x="-83.82" y="-152.4" rot="MR180"/>
 <instance part="SP86" gate="G$1" x="-83.82" y="-144.78"/>
 <instance part="U43" gate="A" x="-63.5" y="-152.4" rot="R180"/>
 <instance part="GND89" gate="1" x="-91.44" y="-139.7" rot="R180"/>
 <instance part="GND90" gate="1" x="-45.72" y="-137.16" rot="R180"/>
-<instance part="SUPPLY45" gate="VDD" x="-38.1" y="-147.32" rot="R270"/>
+<instance part="SUPPLY45" gate="VDD" x="-43.18" y="-147.32" rot="R270"/>
 <instance part="C43" gate="G$1" x="-43.18" y="-142.24"/>
 <instance part="SP87" gate="G$1" x="-22.86" y="-129.54" rot="MR180"/>
 <instance part="SP88" gate="G$1" x="-22.86" y="-121.92"/>
 <instance part="U44" gate="A" x="-2.54" y="-129.54" rot="R180"/>
 <instance part="GND91" gate="1" x="-30.48" y="-116.84" rot="R180"/>
 <instance part="GND92" gate="1" x="15.24" y="-114.3" rot="R180"/>
-<instance part="SUPPLY46" gate="VDD" x="22.86" y="-124.46" rot="R270"/>
+<instance part="SUPPLY46" gate="VDD" x="17.78" y="-124.46" rot="R270"/>
 <instance part="C44" gate="G$1" x="17.78" y="-119.38"/>
 <instance part="SP89" gate="G$1" x="-22.86" y="-152.4" rot="MR180"/>
 <instance part="SP90" gate="G$1" x="-22.86" y="-144.78"/>
 <instance part="U45" gate="A" x="-2.54" y="-152.4" rot="R180"/>
 <instance part="GND93" gate="1" x="-30.48" y="-139.7" rot="R180"/>
 <instance part="GND94" gate="1" x="15.24" y="-137.16" rot="R180"/>
-<instance part="SUPPLY47" gate="VDD" x="22.86" y="-147.32" rot="R270"/>
+<instance part="SUPPLY47" gate="VDD" x="17.78" y="-147.32" rot="R270"/>
 <instance part="C45" gate="G$1" x="17.78" y="-142.24"/>
 <instance part="SP109" gate="G$1" x="-144.78" y="-190.5" rot="MR180"/>
 <instance part="SP110" gate="G$1" x="-144.78" y="-182.88"/>
 <instance part="U55" gate="A" x="-124.46" y="-190.5" rot="R180"/>
 <instance part="GND113" gate="1" x="-152.4" y="-177.8" rot="R180"/>
 <instance part="GND114" gate="1" x="-106.68" y="-175.26" rot="R180"/>
-<instance part="SUPPLY57" gate="VDD" x="-99.06" y="-185.42" rot="R270"/>
+<instance part="SUPPLY57" gate="VDD" x="-104.14" y="-185.42" rot="R270"/>
 <instance part="C55" gate="G$1" x="-104.14" y="-180.34"/>
 <instance part="SP111" gate="G$1" x="-144.78" y="-213.36" rot="MR180"/>
 <instance part="SP112" gate="G$1" x="-144.78" y="-205.74"/>
 <instance part="U56" gate="A" x="-124.46" y="-213.36" rot="R180"/>
 <instance part="GND115" gate="1" x="-152.4" y="-200.66" rot="R180"/>
 <instance part="GND116" gate="1" x="-106.68" y="-198.12" rot="R180"/>
-<instance part="SUPPLY58" gate="VDD" x="-99.06" y="-208.28" rot="R270"/>
+<instance part="SUPPLY58" gate="VDD" x="-104.14" y="-208.28" rot="R270"/>
 <instance part="C56" gate="G$1" x="-104.14" y="-203.2"/>
 <instance part="SP113" gate="G$1" x="38.1" y="-190.5" rot="MR180"/>
 <instance part="SP114" gate="G$1" x="38.1" y="-182.88"/>
 <instance part="U57" gate="A" x="58.42" y="-190.5" rot="R180"/>
 <instance part="GND117" gate="1" x="30.48" y="-177.8" rot="R180"/>
 <instance part="GND118" gate="1" x="76.2" y="-175.26" rot="R180"/>
-<instance part="SUPPLY59" gate="VDD" x="83.82" y="-185.42" rot="R270"/>
+<instance part="SUPPLY59" gate="VDD" x="78.74" y="-185.42" rot="R270"/>
 <instance part="C57" gate="G$1" x="78.74" y="-180.34"/>
 <instance part="SP115" gate="G$1" x="38.1" y="-213.36" rot="MR180"/>
 <instance part="SP116" gate="G$1" x="38.1" y="-205.74"/>
 <instance part="U58" gate="A" x="58.42" y="-213.36" rot="R180"/>
 <instance part="GND119" gate="1" x="30.48" y="-200.66" rot="R180"/>
 <instance part="GND120" gate="1" x="76.2" y="-198.12" rot="R180"/>
-<instance part="SUPPLY60" gate="VDD" x="83.82" y="-208.28" rot="R270"/>
+<instance part="SUPPLY60" gate="VDD" x="78.74" y="-208.28" rot="R270"/>
 <instance part="C58" gate="G$1" x="78.74" y="-203.2"/>
 <instance part="SP117" gate="G$1" x="101.6" y="-200.66" rot="MR180"/>
 <instance part="SP118" gate="G$1" x="101.6" y="-193.04"/>
@@ -7875,28 +7875,28 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <instance part="U60" gate="A" x="-63.5" y="-190.5" rot="R180"/>
 <instance part="GND123" gate="1" x="-91.44" y="-177.8" rot="R180"/>
 <instance part="GND124" gate="1" x="-45.72" y="-175.26" rot="R180"/>
-<instance part="SUPPLY62" gate="VDD" x="-38.1" y="-185.42" rot="R270"/>
+<instance part="SUPPLY62" gate="VDD" x="-43.18" y="-185.42" rot="R270"/>
 <instance part="C60" gate="G$1" x="-43.18" y="-180.34"/>
 <instance part="SP121" gate="G$1" x="-83.82" y="-213.36" rot="MR180"/>
 <instance part="SP122" gate="G$1" x="-83.82" y="-205.74"/>
 <instance part="U61" gate="A" x="-63.5" y="-213.36" rot="R180"/>
 <instance part="GND125" gate="1" x="-91.44" y="-200.66" rot="R180"/>
 <instance part="GND126" gate="1" x="-45.72" y="-198.12" rot="R180"/>
-<instance part="SUPPLY63" gate="VDD" x="-38.1" y="-208.28" rot="R270"/>
+<instance part="SUPPLY63" gate="VDD" x="-43.18" y="-208.28" rot="R270"/>
 <instance part="C61" gate="G$1" x="-43.18" y="-203.2"/>
 <instance part="SP123" gate="G$1" x="-22.86" y="-190.5" rot="MR180"/>
 <instance part="SP124" gate="G$1" x="-22.86" y="-182.88"/>
 <instance part="U62" gate="A" x="-2.54" y="-190.5" rot="R180"/>
 <instance part="GND127" gate="1" x="-30.48" y="-177.8" rot="R180"/>
 <instance part="GND128" gate="1" x="15.24" y="-175.26" rot="R180"/>
-<instance part="SUPPLY64" gate="VDD" x="22.86" y="-185.42" rot="R270"/>
+<instance part="SUPPLY64" gate="VDD" x="17.78" y="-185.42" rot="R270"/>
 <instance part="C62" gate="G$1" x="17.78" y="-180.34"/>
 <instance part="SP125" gate="G$1" x="-22.86" y="-213.36" rot="MR180"/>
 <instance part="SP126" gate="G$1" x="-22.86" y="-205.74"/>
 <instance part="U63" gate="A" x="-2.54" y="-213.36" rot="R180"/>
 <instance part="GND129" gate="1" x="-30.48" y="-200.66" rot="R180"/>
 <instance part="GND130" gate="1" x="15.24" y="-198.12" rot="R180"/>
-<instance part="SUPPLY65" gate="VDD" x="22.86" y="-208.28" rot="R270"/>
+<instance part="SUPPLY65" gate="VDD" x="17.78" y="-208.28" rot="R270"/>
 <instance part="C63" gate="G$1" x="17.78" y="-203.2"/>
 <instance part="SP55" gate="G$1" x="-142.24" y="45.72" rot="MR180"/>
 <instance part="SP56" gate="G$1" x="-142.24" y="53.34"/>
@@ -7917,42 +7917,42 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <instance part="U30" gate="A" x="60.96" y="45.72" rot="R180"/>
 <instance part="GND63" gate="1" x="33.02" y="58.42" rot="R180"/>
 <instance part="GND64" gate="1" x="78.74" y="60.96" rot="R180"/>
-<instance part="SUPPLY32" gate="VDD" x="86.36" y="50.8" rot="R270"/>
+<instance part="SUPPLY32" gate="VDD" x="81.28" y="50.8" rot="R270"/>
 <instance part="C30" gate="G$1" x="81.28" y="55.88"/>
 <instance part="SP61" gate="G$1" x="40.64" y="22.86" rot="MR180"/>
 <instance part="SP62" gate="G$1" x="40.64" y="30.48"/>
 <instance part="U31" gate="A" x="60.96" y="22.86" rot="R180"/>
 <instance part="GND65" gate="1" x="33.02" y="35.56" rot="R180"/>
 <instance part="GND66" gate="1" x="78.74" y="38.1" rot="R180"/>
-<instance part="SUPPLY33" gate="VDD" x="86.36" y="27.94" rot="R270"/>
+<instance part="SUPPLY33" gate="VDD" x="81.28" y="27.94" rot="R270"/>
 <instance part="C31" gate="G$1" x="81.28" y="33.02"/>
-<instance part="SP63" gate="G$1" x="104.14" y="35.56" rot="MR180"/>
-<instance part="SP64" gate="G$1" x="104.14" y="43.18"/>
-<instance part="U32" gate="A" x="124.46" y="35.56" rot="R180"/>
-<instance part="GND67" gate="1" x="96.52" y="48.26" rot="R180"/>
-<instance part="GND68" gate="1" x="142.24" y="50.8" rot="R180"/>
-<instance part="SUPPLY34" gate="VDD" x="149.86" y="40.64" rot="R270"/>
-<instance part="C32" gate="G$1" x="144.78" y="45.72"/>
+<instance part="SP63" gate="G$1" x="109.22" y="25.4" rot="MR90"/>
+<instance part="SP64" gate="G$1" x="101.6" y="25.4" rot="R90"/>
+<instance part="U32" gate="A" x="109.22" y="45.72" rot="R270"/>
+<instance part="GND67" gate="1" x="96.52" y="17.78" rot="R270"/>
+<instance part="GND68" gate="1" x="93.98" y="63.5" rot="R270"/>
+<instance part="SUPPLY34" gate="VDD" x="104.14" y="66.04"/>
+<instance part="C32" gate="G$1" x="99.06" y="66.04" rot="R90"/>
 <instance part="SP67" gate="G$1" x="-81.28" y="22.86" rot="MR180"/>
 <instance part="SP68" gate="G$1" x="-81.28" y="30.48"/>
 <instance part="U34" gate="A" x="-60.96" y="22.86" rot="R180"/>
 <instance part="GND71" gate="1" x="-88.9" y="35.56" rot="R180"/>
 <instance part="GND72" gate="1" x="-43.18" y="38.1" rot="R180"/>
-<instance part="SUPPLY36" gate="VDD" x="-35.56" y="27.94" rot="R270"/>
+<instance part="SUPPLY36" gate="VDD" x="-40.64" y="27.94" rot="R270"/>
 <instance part="C34" gate="G$1" x="-40.64" y="33.02"/>
 <instance part="SP69" gate="G$1" x="-20.32" y="45.72" rot="MR180"/>
 <instance part="SP70" gate="G$1" x="-20.32" y="53.34"/>
 <instance part="U35" gate="A" x="0" y="45.72" rot="R180"/>
 <instance part="GND73" gate="1" x="-27.94" y="58.42" rot="R180"/>
 <instance part="GND74" gate="1" x="17.78" y="60.96" rot="R180"/>
-<instance part="SUPPLY37" gate="VDD" x="25.4" y="50.8" rot="R270"/>
+<instance part="SUPPLY37" gate="VDD" x="20.32" y="50.8" rot="R270"/>
 <instance part="C35" gate="G$1" x="20.32" y="55.88"/>
 <instance part="SP71" gate="G$1" x="-20.32" y="22.86" rot="MR180"/>
 <instance part="SP72" gate="G$1" x="-20.32" y="30.48"/>
 <instance part="U36" gate="A" x="0" y="22.86" rot="R180"/>
 <instance part="GND75" gate="1" x="-27.94" y="35.56" rot="R180"/>
 <instance part="GND76" gate="1" x="17.78" y="38.1" rot="R180"/>
-<instance part="SUPPLY38" gate="VDD" x="25.4" y="27.94" rot="R270"/>
+<instance part="SUPPLY38" gate="VDD" x="20.32" y="27.94" rot="R270"/>
 <instance part="C36" gate="G$1" x="20.32" y="33.02"/>
 <instance part="J1" gate="G$1" x="345.44" y="-121.92" rot="R90"/>
 <instance part="SUPPLY1" gate="VDD" x="345.44" y="-111.76"/>
@@ -7982,8 +7982,8 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="226.06" y1="-22.86" x2="226.06" y2="-99.06" width="0.762" layer="92"/>
 <wire x1="226.06" y1="-22.86" x2="279.4" y2="-22.86" width="0.762" layer="92"/>
 <wire x1="279.4" y1="-22.86" x2="279.4" y2="-99.06" width="0.762" layer="92"/>
-<wire x1="167.64" y1="-22.86" x2="167.64" y2="15.24" width="0.762" layer="92"/>
-<wire x1="167.64" y1="15.24" x2="190.5" y2="15.24" width="0.762" layer="92"/>
+<wire x1="167.64" y1="-22.86" x2="167.64" y2="33.02" width="0.762" layer="92"/>
+<wire x1="167.64" y1="33.02" x2="228.6" y2="33.02" width="0.762" layer="92"/>
 </segment>
 </bus>
 </busses>
@@ -8731,21 +8731,21 @@ This footprint was designed to help hold the alignment of a through-hole compone
 </segment>
 <segment>
 <pinref part="SP63" gate="G$1" pin="1"/>
-<wire x1="99.06" y1="35.56" x2="96.52" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="96.52" y1="35.56" x2="96.52" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="20.32" x2="109.22" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="17.78" x2="101.6" y2="17.78" width="0.1524" layer="91"/>
 <pinref part="SP64" gate="G$1" pin="1"/>
-<wire x1="96.52" y1="43.18" x2="96.52" y2="45.72" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="43.18" x2="96.52" y2="43.18" width="0.1524" layer="91"/>
-<junction x="96.52" y="43.18"/>
+<wire x1="101.6" y1="17.78" x2="99.06" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="20.32" x2="101.6" y2="17.78" width="0.1524" layer="91"/>
+<junction x="101.6" y="17.78"/>
 <pinref part="GND67" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="U32" gate="A" pin="GND"/>
 <pinref part="GND68" gate="1" pin="GND"/>
-<wire x1="142.24" y1="43.18" x2="142.24" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="63.5" x2="96.52" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="C32" gate="G$1" pin="1"/>
-<wire x1="142.24" y1="48.26" x2="144.78" y2="48.26" width="0.1524" layer="91"/>
-<junction x="142.24" y="48.26"/>
+<wire x1="96.52" y1="63.5" x2="96.52" y2="66.04" width="0.1524" layer="91"/>
+<junction x="96.52" y="63.5"/>
 </segment>
 <segment>
 <pinref part="SP67" gate="G$1" pin="1"/>
@@ -8836,7 +8836,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-106.68" y1="-10.16" x2="-104.14" y2="-10.16" width="0.1524" layer="91"/>
 <pinref part="SUPPLY14" gate="VDD" pin="VDD"/>
 <pinref part="C12" gate="G$1" pin="2"/>
-<wire x1="-104.14" y1="-10.16" x2="-99.06" y2="-10.16" width="0.1524" layer="91"/>
 <junction x="-104.14" y="-10.16"/>
 </segment>
 <segment>
@@ -8844,7 +8843,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-106.68" y1="-33.02" x2="-104.14" y2="-33.02" width="0.1524" layer="91"/>
 <pinref part="SUPPLY5" gate="VDD" pin="VDD"/>
 <pinref part="C3" gate="G$1" pin="2"/>
-<wire x1="-104.14" y1="-33.02" x2="-99.06" y2="-33.02" width="0.1524" layer="91"/>
 <junction x="-104.14" y="-33.02"/>
 </segment>
 <segment>
@@ -8852,16 +8850,14 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="76.2" y1="-10.16" x2="78.74" y2="-10.16" width="0.1524" layer="91"/>
 <pinref part="SUPPLY9" gate="VDD" pin="VDD"/>
 <pinref part="C7" gate="G$1" pin="2"/>
-<wire x1="78.74" y1="-10.16" x2="83.82" y2="-10.16" width="0.1524" layer="91"/>
 <junction x="78.74" y="-10.16"/>
 </segment>
 <segment>
 <pinref part="U9" gate="A" pin="VDD"/>
-<wire x1="76.2" y1="-33.02" x2="78.74" y2="-33.02" width="0.1524" layer="91"/>
 <pinref part="SUPPLY11" gate="VDD" pin="VDD"/>
 <pinref part="C9" gate="G$1" pin="2"/>
-<wire x1="78.74" y1="-33.02" x2="83.82" y2="-33.02" width="0.1524" layer="91"/>
 <junction x="78.74" y="-33.02"/>
+<wire x1="78.74" y1="-33.02" x2="76.2" y2="-33.02" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U11" gate="A" pin="VDD"/>
@@ -8876,7 +8872,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-45.72" y1="-10.16" x2="-43.18" y2="-10.16" width="0.1524" layer="91"/>
 <pinref part="SUPPLY6" gate="VDD" pin="VDD"/>
 <pinref part="C4" gate="G$1" pin="2"/>
-<wire x1="-43.18" y1="-10.16" x2="-38.1" y2="-10.16" width="0.1524" layer="91"/>
 <junction x="-43.18" y="-10.16"/>
 </segment>
 <segment>
@@ -8884,7 +8879,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-45.72" y1="-33.02" x2="-43.18" y2="-33.02" width="0.1524" layer="91"/>
 <pinref part="SUPPLY7" gate="VDD" pin="VDD"/>
 <pinref part="C5" gate="G$1" pin="2"/>
-<wire x1="-43.18" y1="-33.02" x2="-38.1" y2="-33.02" width="0.1524" layer="91"/>
 <junction x="-43.18" y="-33.02"/>
 </segment>
 <segment>
@@ -8892,7 +8886,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="15.24" y1="-10.16" x2="17.78" y2="-10.16" width="0.1524" layer="91"/>
 <pinref part="SUPPLY12" gate="VDD" pin="VDD"/>
 <pinref part="C10" gate="G$1" pin="2"/>
-<wire x1="17.78" y1="-10.16" x2="22.86" y2="-10.16" width="0.1524" layer="91"/>
 <junction x="17.78" y="-10.16"/>
 </segment>
 <segment>
@@ -8900,7 +8893,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="15.24" y1="-33.02" x2="17.78" y2="-33.02" width="0.1524" layer="91"/>
 <pinref part="SUPPLY15" gate="VDD" pin="VDD"/>
 <pinref part="C13" gate="G$1" pin="2"/>
-<wire x1="17.78" y1="-33.02" x2="22.86" y2="-33.02" width="0.1524" layer="91"/>
 <junction x="17.78" y="-33.02"/>
 </segment>
 <segment>
@@ -8908,7 +8900,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-106.68" y1="-66.04" x2="-104.14" y2="-66.04" width="0.1524" layer="91"/>
 <pinref part="SUPPLY21" gate="VDD" pin="VDD"/>
 <pinref part="C19" gate="G$1" pin="2"/>
-<wire x1="-104.14" y1="-66.04" x2="-99.06" y2="-66.04" width="0.1524" layer="91"/>
 <junction x="-104.14" y="-66.04"/>
 </segment>
 <segment>
@@ -8916,7 +8907,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-106.68" y1="-88.9" x2="-104.14" y2="-88.9" width="0.1524" layer="91"/>
 <pinref part="SUPPLY22" gate="VDD" pin="VDD"/>
 <pinref part="C20" gate="G$1" pin="2"/>
-<wire x1="-104.14" y1="-88.9" x2="-99.06" y2="-88.9" width="0.1524" layer="91"/>
 <junction x="-104.14" y="-88.9"/>
 </segment>
 <segment>
@@ -8924,7 +8914,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="76.2" y1="-66.04" x2="78.74" y2="-66.04" width="0.1524" layer="91"/>
 <pinref part="SUPPLY23" gate="VDD" pin="VDD"/>
 <pinref part="C21" gate="G$1" pin="2"/>
-<wire x1="78.74" y1="-66.04" x2="83.82" y2="-66.04" width="0.1524" layer="91"/>
 <junction x="78.74" y="-66.04"/>
 </segment>
 <segment>
@@ -8932,7 +8921,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="76.2" y1="-88.9" x2="78.74" y2="-88.9" width="0.1524" layer="91"/>
 <pinref part="SUPPLY24" gate="VDD" pin="VDD"/>
 <pinref part="C22" gate="G$1" pin="2"/>
-<wire x1="78.74" y1="-88.9" x2="83.82" y2="-88.9" width="0.1524" layer="91"/>
 <junction x="78.74" y="-88.9"/>
 </segment>
 <segment>
@@ -8948,7 +8936,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-45.72" y1="-66.04" x2="-43.18" y2="-66.04" width="0.1524" layer="91"/>
 <pinref part="SUPPLY26" gate="VDD" pin="VDD"/>
 <pinref part="C24" gate="G$1" pin="2"/>
-<wire x1="-43.18" y1="-66.04" x2="-38.1" y2="-66.04" width="0.1524" layer="91"/>
 <junction x="-43.18" y="-66.04"/>
 </segment>
 <segment>
@@ -8956,7 +8943,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-45.72" y1="-88.9" x2="-43.18" y2="-88.9" width="0.1524" layer="91"/>
 <pinref part="SUPPLY27" gate="VDD" pin="VDD"/>
 <pinref part="C25" gate="G$1" pin="2"/>
-<wire x1="-43.18" y1="-88.9" x2="-38.1" y2="-88.9" width="0.1524" layer="91"/>
 <junction x="-43.18" y="-88.9"/>
 </segment>
 <segment>
@@ -8964,7 +8950,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="15.24" y1="-66.04" x2="17.78" y2="-66.04" width="0.1524" layer="91"/>
 <pinref part="SUPPLY28" gate="VDD" pin="VDD"/>
 <pinref part="C26" gate="G$1" pin="2"/>
-<wire x1="17.78" y1="-66.04" x2="22.86" y2="-66.04" width="0.1524" layer="91"/>
 <junction x="17.78" y="-66.04"/>
 </segment>
 <segment>
@@ -8972,7 +8957,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="15.24" y1="-88.9" x2="17.78" y2="-88.9" width="0.1524" layer="91"/>
 <pinref part="SUPPLY29" gate="VDD" pin="VDD"/>
 <pinref part="C27" gate="G$1" pin="2"/>
-<wire x1="17.78" y1="-88.9" x2="22.86" y2="-88.9" width="0.1524" layer="91"/>
 <junction x="17.78" y="-88.9"/>
 </segment>
 <segment>
@@ -8980,7 +8964,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-106.68" y1="-124.46" x2="-104.14" y2="-124.46" width="0.1524" layer="91"/>
 <pinref part="SUPPLY39" gate="VDD" pin="VDD"/>
 <pinref part="C37" gate="G$1" pin="2"/>
-<wire x1="-104.14" y1="-124.46" x2="-99.06" y2="-124.46" width="0.1524" layer="91"/>
 <junction x="-104.14" y="-124.46"/>
 </segment>
 <segment>
@@ -8988,7 +8971,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-106.68" y1="-147.32" x2="-104.14" y2="-147.32" width="0.1524" layer="91"/>
 <pinref part="SUPPLY40" gate="VDD" pin="VDD"/>
 <pinref part="C38" gate="G$1" pin="2"/>
-<wire x1="-104.14" y1="-147.32" x2="-99.06" y2="-147.32" width="0.1524" layer="91"/>
 <junction x="-104.14" y="-147.32"/>
 </segment>
 <segment>
@@ -8996,7 +8978,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="76.2" y1="-124.46" x2="78.74" y2="-124.46" width="0.1524" layer="91"/>
 <pinref part="SUPPLY41" gate="VDD" pin="VDD"/>
 <pinref part="C39" gate="G$1" pin="2"/>
-<wire x1="78.74" y1="-124.46" x2="83.82" y2="-124.46" width="0.1524" layer="91"/>
 <junction x="78.74" y="-124.46"/>
 </segment>
 <segment>
@@ -9004,7 +8985,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="76.2" y1="-147.32" x2="78.74" y2="-147.32" width="0.1524" layer="91"/>
 <pinref part="SUPPLY42" gate="VDD" pin="VDD"/>
 <pinref part="C40" gate="G$1" pin="2"/>
-<wire x1="78.74" y1="-147.32" x2="83.82" y2="-147.32" width="0.1524" layer="91"/>
 <junction x="78.74" y="-147.32"/>
 </segment>
 <segment>
@@ -9012,7 +8992,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="139.7" y1="-134.62" x2="142.24" y2="-134.62" width="0.1524" layer="91"/>
 <pinref part="SUPPLY43" gate="VDD" pin="VDD"/>
 <pinref part="C41" gate="G$1" pin="2"/>
-<wire x1="142.24" y1="-134.62" x2="147.32" y2="-134.62" width="0.1524" layer="91"/>
 <junction x="142.24" y="-134.62"/>
 </segment>
 <segment>
@@ -9020,7 +8999,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-45.72" y1="-124.46" x2="-43.18" y2="-124.46" width="0.1524" layer="91"/>
 <pinref part="SUPPLY44" gate="VDD" pin="VDD"/>
 <pinref part="C42" gate="G$1" pin="2"/>
-<wire x1="-43.18" y1="-124.46" x2="-38.1" y2="-124.46" width="0.1524" layer="91"/>
 <junction x="-43.18" y="-124.46"/>
 </segment>
 <segment>
@@ -9028,7 +9006,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-45.72" y1="-147.32" x2="-43.18" y2="-147.32" width="0.1524" layer="91"/>
 <pinref part="SUPPLY45" gate="VDD" pin="VDD"/>
 <pinref part="C43" gate="G$1" pin="2"/>
-<wire x1="-43.18" y1="-147.32" x2="-38.1" y2="-147.32" width="0.1524" layer="91"/>
 <junction x="-43.18" y="-147.32"/>
 </segment>
 <segment>
@@ -9036,7 +9013,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="15.24" y1="-124.46" x2="17.78" y2="-124.46" width="0.1524" layer="91"/>
 <pinref part="SUPPLY46" gate="VDD" pin="VDD"/>
 <pinref part="C44" gate="G$1" pin="2"/>
-<wire x1="17.78" y1="-124.46" x2="22.86" y2="-124.46" width="0.1524" layer="91"/>
 <junction x="17.78" y="-124.46"/>
 </segment>
 <segment>
@@ -9044,7 +9020,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="15.24" y1="-147.32" x2="17.78" y2="-147.32" width="0.1524" layer="91"/>
 <pinref part="SUPPLY47" gate="VDD" pin="VDD"/>
 <pinref part="C45" gate="G$1" pin="2"/>
-<wire x1="17.78" y1="-147.32" x2="22.86" y2="-147.32" width="0.1524" layer="91"/>
 <junction x="17.78" y="-147.32"/>
 </segment>
 <segment>
@@ -9052,7 +9027,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-106.68" y1="-185.42" x2="-104.14" y2="-185.42" width="0.1524" layer="91"/>
 <pinref part="SUPPLY57" gate="VDD" pin="VDD"/>
 <pinref part="C55" gate="G$1" pin="2"/>
-<wire x1="-104.14" y1="-185.42" x2="-99.06" y2="-185.42" width="0.1524" layer="91"/>
 <junction x="-104.14" y="-185.42"/>
 </segment>
 <segment>
@@ -9060,7 +9034,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-106.68" y1="-208.28" x2="-104.14" y2="-208.28" width="0.1524" layer="91"/>
 <pinref part="SUPPLY58" gate="VDD" pin="VDD"/>
 <pinref part="C56" gate="G$1" pin="2"/>
-<wire x1="-104.14" y1="-208.28" x2="-99.06" y2="-208.28" width="0.1524" layer="91"/>
 <junction x="-104.14" y="-208.28"/>
 </segment>
 <segment>
@@ -9068,7 +9041,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="76.2" y1="-185.42" x2="78.74" y2="-185.42" width="0.1524" layer="91"/>
 <pinref part="SUPPLY59" gate="VDD" pin="VDD"/>
 <pinref part="C57" gate="G$1" pin="2"/>
-<wire x1="78.74" y1="-185.42" x2="83.82" y2="-185.42" width="0.1524" layer="91"/>
 <junction x="78.74" y="-185.42"/>
 </segment>
 <segment>
@@ -9076,7 +9048,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="76.2" y1="-208.28" x2="78.74" y2="-208.28" width="0.1524" layer="91"/>
 <pinref part="SUPPLY60" gate="VDD" pin="VDD"/>
 <pinref part="C58" gate="G$1" pin="2"/>
-<wire x1="78.74" y1="-208.28" x2="83.82" y2="-208.28" width="0.1524" layer="91"/>
 <junction x="78.74" y="-208.28"/>
 </segment>
 <segment>
@@ -9092,7 +9063,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-45.72" y1="-185.42" x2="-43.18" y2="-185.42" width="0.1524" layer="91"/>
 <pinref part="SUPPLY62" gate="VDD" pin="VDD"/>
 <pinref part="C60" gate="G$1" pin="2"/>
-<wire x1="-43.18" y1="-185.42" x2="-38.1" y2="-185.42" width="0.1524" layer="91"/>
 <junction x="-43.18" y="-185.42"/>
 </segment>
 <segment>
@@ -9100,7 +9070,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-45.72" y1="-208.28" x2="-43.18" y2="-208.28" width="0.1524" layer="91"/>
 <pinref part="SUPPLY63" gate="VDD" pin="VDD"/>
 <pinref part="C61" gate="G$1" pin="2"/>
-<wire x1="-43.18" y1="-208.28" x2="-38.1" y2="-208.28" width="0.1524" layer="91"/>
 <junction x="-43.18" y="-208.28"/>
 </segment>
 <segment>
@@ -9108,7 +9077,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="15.24" y1="-185.42" x2="17.78" y2="-185.42" width="0.1524" layer="91"/>
 <pinref part="SUPPLY64" gate="VDD" pin="VDD"/>
 <pinref part="C62" gate="G$1" pin="2"/>
-<wire x1="17.78" y1="-185.42" x2="22.86" y2="-185.42" width="0.1524" layer="91"/>
 <junction x="17.78" y="-185.42"/>
 </segment>
 <segment>
@@ -9116,7 +9084,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="15.24" y1="-208.28" x2="17.78" y2="-208.28" width="0.1524" layer="91"/>
 <pinref part="SUPPLY65" gate="VDD" pin="VDD"/>
 <pinref part="C63" gate="G$1" pin="2"/>
-<wire x1="17.78" y1="-208.28" x2="22.86" y2="-208.28" width="0.1524" layer="91"/>
 <junction x="17.78" y="-208.28"/>
 </segment>
 <segment>
@@ -9139,7 +9106,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="78.74" y1="50.8" x2="81.28" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="SUPPLY32" gate="VDD" pin="VDD"/>
 <pinref part="C30" gate="G$1" pin="2"/>
-<wire x1="81.28" y1="50.8" x2="86.36" y2="50.8" width="0.1524" layer="91"/>
 <junction x="81.28" y="50.8"/>
 </segment>
 <segment>
@@ -9147,23 +9113,20 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="78.74" y1="27.94" x2="81.28" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="SUPPLY33" gate="VDD" pin="VDD"/>
 <pinref part="C31" gate="G$1" pin="2"/>
-<wire x1="81.28" y1="27.94" x2="86.36" y2="27.94" width="0.1524" layer="91"/>
 <junction x="81.28" y="27.94"/>
 </segment>
 <segment>
 <pinref part="U32" gate="A" pin="VDD"/>
-<wire x1="142.24" y1="40.64" x2="144.78" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="63.5" x2="104.14" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="SUPPLY34" gate="VDD" pin="VDD"/>
 <pinref part="C32" gate="G$1" pin="2"/>
-<wire x1="144.78" y1="40.64" x2="149.86" y2="40.64" width="0.1524" layer="91"/>
-<junction x="144.78" y="40.64"/>
+<junction x="104.14" y="66.04"/>
 </segment>
 <segment>
 <pinref part="U34" gate="A" pin="VDD"/>
 <wire x1="-43.18" y1="27.94" x2="-40.64" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="SUPPLY36" gate="VDD" pin="VDD"/>
 <pinref part="C34" gate="G$1" pin="2"/>
-<wire x1="-40.64" y1="27.94" x2="-35.56" y2="27.94" width="0.1524" layer="91"/>
 <junction x="-40.64" y="27.94"/>
 </segment>
 <segment>
@@ -9171,7 +9134,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="17.78" y1="50.8" x2="20.32" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="SUPPLY37" gate="VDD" pin="VDD"/>
 <pinref part="C35" gate="G$1" pin="2"/>
-<wire x1="20.32" y1="50.8" x2="25.4" y2="50.8" width="0.1524" layer="91"/>
 <junction x="20.32" y="50.8"/>
 </segment>
 <segment>
@@ -9179,7 +9141,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="17.78" y1="27.94" x2="20.32" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="SUPPLY38" gate="VDD" pin="VDD"/>
 <pinref part="C36" gate="G$1" pin="2"/>
-<wire x1="20.32" y1="27.94" x2="25.4" y2="27.94" width="0.1524" layer="91"/>
 <junction x="20.32" y="27.94"/>
 </segment>
 <segment>
@@ -9802,15 +9763,15 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <segment>
 <pinref part="U32" gate="A" pin="*OUT_A"/>
 <pinref part="SP63" gate="G$1" pin="2"/>
-<wire x1="111.76" y1="35.56" x2="109.22" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="33.02" x2="109.22" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$66" class="0">
 <segment>
 <pinref part="SP64" gate="G$1" pin="2"/>
-<wire x1="109.22" y1="43.18" x2="109.22" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="30.48" x2="106.68" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="U32" gate="A" pin="*OUT_B"/>
-<wire x1="109.22" y1="38.1" x2="111.76" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="30.48" x2="106.68" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$69" class="0">
@@ -9936,7 +9897,7 @@ This footprint was designed to help hold the alignment of a through-hole compone
 </segment>
 <segment>
 <pinref part="DIP1" gate="G$1" pin="2"/>
-<wire x1="190.5" y1="10.16" x2="190.5" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="190.5" y1="10.16" x2="190.5" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="2" class="0">
@@ -9947,10 +9908,64 @@ This footprint was designed to help hold the alignment of a through-hole compone
 </segment>
 <segment>
 <pinref part="DIP1" gate="G$1" pin="4"/>
-<wire x1="187.96" y1="10.16" x2="187.96" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="10.16" x2="187.96" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="3" class="0">
+<segment>
+<pinref part="DIP1" gate="G$1" pin="165"/>
+<wire x1="220.98" y1="10.16" x2="220.98" y2="33.02" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U35" gate="A" pin="IN_B"/>
+<wire x1="27.94" y1="78.74" x2="27.94" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="48.26" x2="17.78" y2="48.26" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="4" class="0">
+<segment>
+<pinref part="DIP1" gate="G$1" pin="168"/>
+<wire x1="218.44" y1="10.16" x2="218.44" y2="33.02" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U35" gate="A" pin="IN_A"/>
+<wire x1="30.48" y1="78.74" x2="30.48" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="45.72" x2="17.78" y2="45.72" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="5" class="0">
+<segment>
+<pinref part="DIP1" gate="G$1" pin="163"/>
+<wire x1="223.52" y1="33.02" x2="223.52" y2="10.16" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U30" gate="A" pin="IN_B"/>
+<wire x1="86.36" y1="78.74" x2="86.36" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="48.26" x2="78.74" y2="48.26" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="6" class="0">
+<segment>
+<pinref part="DIP1" gate="G$1" pin="161"/>
+<wire x1="226.06" y1="33.02" x2="226.06" y2="10.16" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U30" gate="A" pin="IN_A"/>
+<wire x1="88.9" y1="78.74" x2="88.9" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="45.72" x2="78.74" y2="45.72" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="7" class="0">
+<segment>
+<pinref part="U32" gate="A" pin="IN_A"/>
+<wire x1="109.22" y1="63.5" x2="109.22" y2="78.74" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="DIP1" gate="G$1" pin="162"/>
+<wire x1="226.06" y1="-22.86" x2="226.06" y2="-10.16" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="8" class="0">
 <segment>
 <wire x1="-83.82" y1="78.74" x2="-83.82" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="-83.82" y1="43.18" x2="-96.52" y2="43.18" width="0.1524" layer="91"/>
@@ -9959,11 +9974,11 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-96.52" y1="25.4" x2="-104.14" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="DIP1" gate="G$1" pin="3"/>
-<wire x1="190.5" y1="-10.16" x2="190.5" y2="-22.86" width="0.1524" layer="91"/>
+<pinref part="DIP1" gate="G$1" pin="196"/>
+<wire x1="200.66" y1="-22.86" x2="200.66" y2="-10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="4" class="0">
+<net name="9" class="0">
 <segment>
 <wire x1="-81.28" y1="78.74" x2="-81.28" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="-81.28" y1="40.64" x2="-93.98" y2="40.64" width="0.1524" layer="91"/>
@@ -9972,8 +9987,84 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-93.98" y1="22.86" x2="-104.14" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="DIP1" gate="G$1" pin="5"/>
-<wire x1="187.96" y1="-10.16" x2="187.96" y2="-22.86" width="0.1524" layer="91"/>
+<pinref part="DIP1" gate="G$1" pin="199"/>
+<wire x1="198.12" y1="-22.86" x2="198.12" y2="-10.16" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="10" class="0">
+<segment>
+<pinref part="U34" gate="A" pin="IN_B"/>
+<wire x1="-43.18" y1="25.4" x2="-35.56" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="-35.56" y1="25.4" x2="-35.56" y2="78.74" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="DIP1" gate="G$1" pin="189"/>
+<wire x1="205.74" y1="-10.16" x2="205.74" y2="-22.86" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="11" class="0">
+<segment>
+<pinref part="U34" gate="A" pin="IN_A"/>
+<wire x1="-43.18" y1="22.86" x2="-33.02" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="-33.02" y1="22.86" x2="-33.02" y2="78.74" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="DIP1" gate="G$1" pin="186"/>
+<wire x1="208.28" y1="-10.16" x2="208.28" y2="-22.86" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="12" class="0">
+<segment>
+<pinref part="U36" gate="A" pin="IN_B"/>
+<wire x1="17.78" y1="25.4" x2="25.4" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="25.4" x2="25.4" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="DIP1" gate="G$1" pin="177"/>
+<wire x1="215.9" y1="-22.86" x2="215.9" y2="-10.16" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="13" class="0">
+<segment>
+<pinref part="U36" gate="A" pin="IN_A"/>
+<wire x1="17.78" y1="22.86" x2="22.86" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="22.86" x2="22.86" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="DIP1" gate="G$1" pin="179"/>
+<wire x1="213.36" y1="-22.86" x2="213.36" y2="-10.16" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="14" class="0">
+<segment>
+<pinref part="U31" gate="A" pin="IN_B"/>
+<wire x1="78.74" y1="25.4" x2="83.82" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="25.4" x2="83.82" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="DIP1" gate="G$1" pin="171"/>
+<wire x1="218.44" y1="-10.16" x2="218.44" y2="-22.86" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="15" class="0">
+<segment>
+<pinref part="U31" gate="A" pin="IN_A"/>
+<wire x1="78.74" y1="22.86" x2="81.28" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="22.86" x2="81.28" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="DIP1" gate="G$1" pin="167"/>
+<wire x1="220.98" y1="-10.16" x2="220.98" y2="-22.86" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="16" class="0">
+<segment>
+<pinref part="U32" gate="A" pin="IN_B"/>
+<wire x1="106.68" y1="78.74" x2="106.68" y2="63.5" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="DIP1" gate="G$1" pin="164"/>
+<wire x1="223.52" y1="-10.16" x2="223.52" y2="-22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
