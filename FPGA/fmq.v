@@ -1,4 +1,4 @@
-module fmq #(parameter OUTPUTS = 16)(input clk, input rst, output [OUTPUTS-1:0] tx, output UART_TX, input UART_RX);
+module fmq #(parameter OUTPUTS = 4)(input clk, input rst, output [OUTPUTS-1:0] tx, output UART_TX, input UART_RX, output [4:0] led);
 parameter CLOCK=50000000;
 parameter FREQ = 40000;
 parameter OFFSET_WIDTH = 11;
@@ -34,12 +34,21 @@ uart #(DATA_WIDTH)
 		.rxd(UART_RX), .txd(UART_TX), .tx_busy(), .rx_busy(), .rx_overrun_error(), .rx_frame_error(), 
 		.prescale(UART_SCALE));
 
+/*First LED just notes the reset events!*/
+assign led[0] = ~reload;
+/*The second LED flashes to indicate the system is working, even under reset*/
+reg [32:0] LEDcounter;
+assign led[1] = LEDcounter[25];
+assign led[2] = LEDcounter[26];
+assign led[3] = LEDcounter[27];
+
 //The reset logic for the device
 integer i;
 reg [23:0] cmdbuffer;
 always@(posedge clk or negedge rst)
 begin
 	if (!rst) begin
+		LEDcounter <= 32'd0;
       tx_data <= 0;
       tx_valid <= 0;
       rx_ready <= 0;
@@ -48,6 +57,7 @@ begin
 		cmdbuffer <= 24'd0;
 	end else begin 
 		reload <= 1'b1; //Bring the reload line high
+		LEDcounter <= LEDcounter + 1;
       if (tx_valid) begin
 			// attempting to transmit a byte
          // so can't receive one at the moment
@@ -99,6 +109,9 @@ begin
 	end
 end
 
+
+
 endmodule
+
 
 

@@ -68,6 +68,6 @@ ctl = Controller()
 print "Connected to controller with", ctl.getOutputs(), "outputs."
 
 for i in range(ctl.getOutputs()):
-    ctl.setOffset(i, i*10)
+    ctl.setOffset(i, i*100)
 ctl.loadOffsets()
 #ctl.benchmark()
