@@ -77,10 +77,12 @@ import math; import matplotlib.pyplot as plt; import numpy as np
 splits = 25
 x = np.zeros (splits)
 y = np.zeros (splits)
+coordinates = np.zeros((splits),(splits))
 for point in range(0,splits):
     angle = ((2*math.pi) / splits+1) * (point+1)
     x[point] = 0.01 * math.cos(point)
     y[point] = 0.01 * math.sin(point)
+    coordinates
 
 coordinates = [x,y]
 plt.plot(x, y, 'ro')
