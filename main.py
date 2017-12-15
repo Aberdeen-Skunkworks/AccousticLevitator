@@ -9,7 +9,7 @@ import transducer_placment; from vti_writer import vti_writer; import phase_algo
 # -------------------------Variables to set------------------------------------
 
 trans_to_delete = [0,4,5,11,23,30,35,36,37,41]  # List of unwanted transducers leave blank to keep all
-rt = transducer_placment.hex_grid(0.011,6,7)    # spcing , x nummber, y number of transducers
+rt = transducer_placment.hex_grid(0.01,6,7)    # spcing , x nummber, y number of transducers
 rt = transducer_placment.delete_transducers(rt,trans_to_delete)
 
 ntrans = len (rt)   # Total number of transducers in grid
@@ -84,6 +84,5 @@ ux = -diff_u[0]; uy = -diff_u[1]; uz = -diff_u[2]
 # -------------------Creating output images and vtk file----------------------
 
 vti_writer (npoints,realcombined,ux,uy,uz)
-
 
 print("Calculations compleated successfuly")
