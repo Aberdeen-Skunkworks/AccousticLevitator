@@ -88,4 +88,3 @@ coordinates = [x,y]
 plt.plot(x, y, 'ro')
     
 
-    
