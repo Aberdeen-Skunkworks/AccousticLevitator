@@ -6,7 +6,7 @@ from mpl_toolkits.mplot3d import Axes3D
 pos = np.zeros(3); vel = np.zeros(3); mass = np.zeros(1); time = np.zeros(1); force = np.zeros(3);
 
 inital_pos = [0,0,0]
-inital_vel = [10,15,0]
+inital_vel = [3,15,16]
 gravity    = [0, -9.81, 0] # m/s^2
 
 

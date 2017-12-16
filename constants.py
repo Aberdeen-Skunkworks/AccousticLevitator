@@ -4,7 +4,7 @@ import math
 
 
 gsize = 0.035         # Half the length of grid box (m)
-deltaxyz = 0.002     # Distance between points in grid (m)
+deltaxyz = 0.001     # Distance between points in grid (m)
 
 x = -gsize           # Initial values of x,y and z in (m) Grid volume
 y = 0.00
@@ -12,7 +12,7 @@ z = -gsize
 npoints = int(1 + ((2 * gsize) / deltaxyz)) # Number of points on x y and z axis, plus 1 to index properly
 
 
-phaseresolution = 650        # Phase resolution x as in ( 2*pi )/( x ) number of divisions of the phases
+phaseresolution = 1250        # Phase resolution x as in ( 2*pi )/( x ) number of divisions of the phases
 p0 = 0.17                   # Amplitude constant
 A = 17                      # Peak to peak amplitude
 a = 0.0045                  # Piston radius

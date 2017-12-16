@@ -5,7 +5,7 @@ def phase_discretize(phase):
     
     import numpy as np; import math; import constants
     
-    cutoffs = np.linspace(0,(2*math.pi),constants.phaseresolution) # Calculates phase cutoffs from 0 to 2pi taking into account the resolution (infinite resolution would be continious)
+    cutoffs = np.linspace((2*math.pi)/constants.phaseresolution,(2*math.pi),constants.phaseresolution) # Calculates phase cutoffs from 0 to 2pi taking into account the resolution (infinite resolution would be continious)
 
     def find_nearest(cutoffs, phase):  # Finds the value of cutoff that is closest to the "real phase"
         idx = (np.abs(cutoffs-phase)).argmin()
@@ -60,7 +60,7 @@ def add_twin_signature(rt, phi):
     ntrans = len(rt)
     
     for transducer in range(0, ntrans):
-        if 0 < transducer_angles[transducer] < math.pi: # all possitive y value transducers have pi added to their phase signature to create twin trap
+        if 0 < transducer_angles[transducer] < math.pi: # all possitive z value transducers have pi added to their phase signature to create twin trap
             phi[transducer] = phi[transducer] + math.pi
             
     

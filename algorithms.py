@@ -101,8 +101,8 @@ def read_from_excel():
     y = np.zeros(88)
     coordinates = np.zeros((88,2))
     for i in range(0,88):
-        x[i]=sheet_1.cell(row=i+9, column=6).value
-        y[i]=sheet_1.cell(row=i+9, column=7).value
+        x[i]=sheet_1.cell(row=i+9, column=8).value
+        y[i]=sheet_1.cell(row=i+9, column=9).value
      
     coordinates = [x,y]
     return coordinates
@@ -116,9 +116,9 @@ plt.show()"""
 
 ## Testing to see deleted transducers visulised ##
 # -------------------------Import Libaries------------------------------------
-import numpy as np; import transducer_placment; import matplotlib.pyplot as plt;
+import numpy as np; import transducer_placment; import matplotlib.pyplot as plt; import phase_algorithms; import math;
 
-trans_to_delete = [4,5,6,13,14,15,16,17,22,23,24,25,26,31,32,33,34,35,40,41,42,43,44,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87]  # List of unwanted transducers leave blank to keep all
+trans_to_delete = []  # List of unwanted transducers leave blank to keep all
 rt = transducer_placment.big_daddy()    # spcing , x nummber, y number of transducers
 rt = transducer_placment.delete_transducers(rt,trans_to_delete)
 
@@ -131,4 +131,20 @@ for transducer in range (0,ntrans): # Writing the coordinates to output rt
 
 plt.plot(x, y,'ro')
 plt.show()
- 
+
+phase_index = np.zeros((ntrans),dtype=int)
+phi_focus = phase_algorithms.phase_find(rt,-0.005,0.03,0.005)
+for transducer in range(0,ntrans):
+    phase_index[transducer] = int(phi_focus[transducer]/((2*math.pi)/1250))
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
