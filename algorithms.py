@@ -131,3 +131,4 @@ for transducer in range (0,ntrans): # Writing the coordinates to output rt
 
 plt.plot(x, y,'ro')
 plt.show()
+ 

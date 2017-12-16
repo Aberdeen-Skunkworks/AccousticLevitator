@@ -8,7 +8,7 @@ import transducer_placment; from vti_writer import vti_writer; import phase_algo
 
 # -------------------------Variables to set------------------------------------
 
-trans_to_delete = []  # List of unwanted transducers leave blank to keep all
+trans_to_delete = []  # List of unwanted transducers leave blank to keep all 
 rt = transducer_placment.big_daddy()    # spcing , x nummber, y number of transducers
 rt = transducer_placment.delete_transducers(rt,trans_to_delete)
 
