@@ -81,10 +81,53 @@ def circle_co_ords(splits):
         y[point] = 0.01 * math.sin(angle)
     coordinates = [x,y]
     return coordinates
-
-
+"""
 import matplotlib.pyplot as plt;
 test = circle_co_ords(50)
 plt.plot(test[0], test[1], 'ro')
-plt.show()
+plt.show() """
 
+
+
+def read_from_excel():
+    #import required libraries
+    from openpyxl import load_workbook
+    import numpy as np
+     
+    #read  from excel file
+    wb = load_workbook('locations.xlsx')
+    sheet_1 = wb.get_sheet_by_name('Sheet1')
+    x = np.zeros(88)
+    y = np.zeros(88)
+    coordinates = np.zeros((88,2))
+    for i in range(0,88):
+        x[i]=sheet_1.cell(row=i+9, column=6).value
+        y[i]=sheet_1.cell(row=i+9, column=7).value
+     
+    coordinates = [x,y]
+    return coordinates
+"""
+import matplotlib.pyplot as plt;
+test = read_from_excel()
+plt.plot(test[0], test[1], 'ro')
+plt.show()"""
+
+
+
+## Testing to see deleted transducers visulised ##
+# -------------------------Import Libaries------------------------------------
+import numpy as np; import transducer_placment; import matplotlib.pyplot as plt;
+
+trans_to_delete = [4,5,6,13,14,15,16,17,22,23,24,25,26,31,32,33,34,35,40,41,42,43,44,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87]  # List of unwanted transducers leave blank to keep all
+rt = transducer_placment.big_daddy()    # spcing , x nummber, y number of transducers
+rt = transducer_placment.delete_transducers(rt,trans_to_delete)
+
+ntrans = len(rt)
+x = np.zeros(ntrans)
+y = np.zeros(ntrans)
+for transducer in range (0,ntrans): # Writing the coordinates to output rt
+    x[transducer]= rt[transducer,0,0]
+    y[transducer]= rt[transducer,0,2] 
+
+plt.plot(x, y,'ro')
+plt.show()

@@ -151,3 +151,21 @@ def delete_transducers(rt,trans_to_delete):
 
 
 
+def big_daddy():
+    
+    import algorithms; import numpy as np
+    coordinates = algorithms.read_from_excel()
+    ntrans = len(coordinates[0])
+    rt = np.zeros((ntrans,1,3))
+    
+    for transducer in range (0,ntrans): # Writing the coordinates to output rt
+    
+        rt[transducer,0,0] = coordinates[0][transducer]
+        rt[transducer,0,2] = coordinates[1][transducer]
+
+    return rt
+    
+    
+    
+    
+

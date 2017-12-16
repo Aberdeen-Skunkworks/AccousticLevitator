@@ -8,8 +8,8 @@ import transducer_placment; from vti_writer import vti_writer; import phase_algo
 
 # -------------------------Variables to set------------------------------------
 
-trans_to_delete = [0,4,5,11,23,30,35,36,37,41]  # List of unwanted transducers leave blank to keep all
-rt = transducer_placment.hex_grid(0.01,6,7)    # spcing , x nummber, y number of transducers
+trans_to_delete = []  # List of unwanted transducers leave blank to keep all
+rt = transducer_placment.big_daddy()    # spcing , x nummber, y number of transducers
 rt = transducer_placment.delete_transducers(rt,trans_to_delete)
 
 ntrans = len (rt)   # Total number of transducers in grid
