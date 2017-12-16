@@ -70,21 +70,21 @@ def differentiate_pressure(r,rt,nt,phi):
 
         
         
-#def circle_co_ords(splits)
+def circle_co_ords(splits):
+    import math; import numpy as np
+    x = np.zeros (splits)
+    y = np.zeros (splits)
+    coordinates = np.zeros((splits,2))
+    for point in range(0,splits):
+        angle = ((2*math.pi) / splits) * (point+1)
+        x[point] = 0.01 * math.cos(angle)
+        y[point] = 0.01 * math.sin(angle)
+    coordinates = [x,y]
+    return coordinates
 
-import math; import matplotlib.pyplot as plt; import numpy as np
 
-splits = 25
-x = np.zeros (splits)
-y = np.zeros (splits)
-coordinates = np.zeros((splits),(splits))
-for point in range(0,splits):
-    angle = ((2*math.pi) / splits+1) * (point+1)
-    x[point] = 0.01 * math.cos(point)
-    y[point] = 0.01 * math.sin(point)
-    coordinates
-
-coordinates = [x,y]
-plt.plot(x, y, 'ro')
-    
+import matplotlib.pyplot as plt;
+test = circle_co_ords(50)
+plt.plot(test[0], test[1], 'ro')
+plt.show()
 
