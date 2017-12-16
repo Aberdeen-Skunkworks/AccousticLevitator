@@ -2059,7 +2059,7 @@ design rules under a new name.</description>
 <element name="C4" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="32.5" y="75" smashed="yes" rot="R270">
 <attribute name="VALUE" x="29.96" y="76.27" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="29" library="Parts" package="MA40" value="MA40S4S" x="40" y="65" rot="MR270"/>
+<element name="T29" library="Parts" package="MA40" value="MA40S4S" x="40" y="65" rot="MR270"/>
 <element name="T28" library="Parts" package="MA40" value="MA40S4S" x="30" y="65" rot="MR270"/>
 <element name="U5" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="36" y="65" rot="R270">
 <attribute name="MPN" value="TC4427AEOA" x="36" y="65" size="1.778" layer="27" rot="R270" display="off"/>
@@ -2561,7 +2561,7 @@ design rules under a new name.</description>
 <contactref element="T19" pad="-"/>
 <contactref element="U4" pad="3"/>
 <contactref element="C4" pad="1"/>
-<contactref element="29" pad="-"/>
+<contactref element="T29" pad="-"/>
 <contactref element="T28" pad="-"/>
 <contactref element="U5" pad="3"/>
 <contactref element="C5" pad="1"/>
@@ -3354,7 +3354,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$9">
 <contactref element="U5" pad="7"/>
-<contactref element="29" pad="+"/>
+<contactref element="T29" pad="+"/>
 <wire x1="38.4144" y1="64.0856" x2="40" y2="62.5" width="0.508" layer="1"/>
 <wire x1="36.635" y1="62.6378" x2="36.635" y2="64.0856" width="0.508" layer="1"/>
 <wire x1="36.635" y1="64.0856" x2="38.4144" y2="64.0856" width="0.508" layer="1"/>

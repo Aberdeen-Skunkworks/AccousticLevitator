@@ -7314,7 +7314,7 @@ CONN_11
 <part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SUPPLY6" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VDD" device=""/>
 <part name="C4" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF"/>
-<part name="29" library="Parts" deviceset="MA40S4S" device=""/>
+<part name="T29" library="Parts" deviceset="MA40S4S" device=""/>
 <part name="T28" library="Parts" deviceset="MA40S4S" device=""/>
 <part name="U5" library="Parts" deviceset="TC4427AEOA" device=""/>
 <part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -7644,7 +7644,7 @@ CONN_11
 <instance part="GND12" gate="1" x="-45.72" y="0" rot="R180"/>
 <instance part="SUPPLY6" gate="VDD" x="-43.18" y="-10.16" rot="R270"/>
 <instance part="C4" gate="G$1" x="-43.18" y="-5.08"/>
-<instance part="29" gate="G$1" x="-83.82" y="-38.1" rot="MR180"/>
+<instance part="T29" gate="G$1" x="-83.82" y="-38.1" rot="MR180"/>
 <instance part="T28" gate="G$1" x="-83.82" y="-30.48"/>
 <instance part="U5" gate="A" x="-63.5" y="-38.1" rot="R180"/>
 <instance part="GND13" gate="1" x="-91.44" y="-25.4" rot="R180"/>
@@ -8075,7 +8075,7 @@ CONN_11
 <junction x="-45.72" y="-2.54"/>
 </segment>
 <segment>
-<pinref part="29" gate="G$1" pin="1"/>
+<pinref part="T29" gate="G$1" pin="1"/>
 <wire x1="-88.9" y1="-38.1" x2="-91.44" y2="-38.1" width="0.1524" layer="91"/>
 <wire x1="-91.44" y1="-38.1" x2="-91.44" y2="-30.48" width="0.1524" layer="91"/>
 <pinref part="T28" gate="G$1" pin="1"/>
@@ -9211,7 +9211,7 @@ CONN_11
 <net name="N$9" class="0">
 <segment>
 <pinref part="U5" gate="A" pin="*OUT_A"/>
-<pinref part="29" gate="G$1" pin="2"/>
+<pinref part="T29" gate="G$1" pin="2"/>
 <wire x1="-76.2" y1="-38.1" x2="-78.74" y2="-38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
