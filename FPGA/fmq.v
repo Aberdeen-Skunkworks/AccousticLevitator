@@ -1,4 +1,4 @@
-module fmq #(parameter OUTPUTS = 4)(input clk, input rst, output [OUTPUTS-1:0] tx, output UART_TX, input UART_RX, output [4:0] led);
+module fmq #(parameter OUTPUTS = 88)(input clk, input rst, output [OUTPUTS-1:0] tx, output UART_TX, input UART_RX, output [4:0] led);
 parameter CLOCK=50000000;
 parameter FREQ = 40000;
 parameter OFFSET_WIDTH = 11;
