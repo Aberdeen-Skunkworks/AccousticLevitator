@@ -1,5 +1,5 @@
 module clock#(parameter OFFSET_WIDTH=11)(input clk, input rst, input [OFFSET_WIDTH-1:0] offset, input [OFFSET_WIDTH-2:0] divide, output out);
-//50Mhz clock, means 1250 ticks per oscillation, or 650 per transition
+//50Mhz clock, means 1250 ticks per oscillation, or 625 per transition
 //Offset is OFFSET_WIDTH-1 bits of counter and 1 bit of sign
 //The clock divider
 reg[OFFSET_WIDTH-2:0] cnt;
