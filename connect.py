@@ -44,7 +44,7 @@ class Controller():
         offset = offset % 1250
         if offset > 624:
             sign = 1
-            offset = offset - 624
+            offset = offset - 625
         low_offset =  offset & 0b01111111
         high_offset = ((offset >> 7) & 0b00000111) + (sign << 3)
 
@@ -52,7 +52,6 @@ class Controller():
         b2 = ((clock & 0b00000111)<<4)  | high_offset
         b3 = low_offset
         cmd = bytearray([b1, b2, b3])
-        
         self.sendCmd(cmd)
 
     def benchmark(self):
@@ -72,9 +71,22 @@ ctl = Controller()
 print ("Connected to controller with", ctl.getOutputs(), "outputs.")
 
 
+
+def read_from_excel_phase():
+    #import required libraries
+    from openpyxl import load_workbook; import numpy as np
+    #read  from excel file
+    wb = load_workbook('phase.xlsx')
+    sheet_1 = wb.get_sheet_by_name('phase')
+    phase = np.zeros(88)
+    for i in range(0,88):
+        phase[i]=sheet_1.cell(row=i+1, column=14).value
+    return phase
+
+
 ## Testing to see deleted transducers visulised ##
 # -------------------------Import Libaries------------------------------------
-import numpy as np; import transducer_placment; import phase_algorithms; import math;
+import numpy as np; import transducer_placment; import math; import phase_algorithms
 
 trans_to_delete = []  # List of unwanted transducers leave blank to keep all
 rt = transducer_placment.big_daddy()    # spcing , x nummber, y number of transducers
@@ -85,15 +97,26 @@ x = np.zeros(ntrans)
 y = np.zeros(ntrans)
 for transducer in range (0,ntrans): # Writing the coordinates to output rt
     x[transducer]= rt[transducer,0,0]
-    y[transducer]= rt[transducer,0,2] 
-
+    y[transducer]= rt[transducer,0,2]
+"""
 phase_index = np.zeros((ntrans),dtype=int)
-phi_focus = phase_algorithms.phase_find(rt,-0.005,0.03,0.005)
+phi_focus = read_from_excel_phase()
 for transducer in range(0,ntrans):
-    phase_index[transducer] = int(phi_focus[transducer]/((2*math.pi)/1250))
+    phase_index[transducer] = int(2500-1250*phi_focus[transducer]/(2*math.pi))
+"""
+    
+outputs = ctl.getOutputs()
+t=0
+while True:
+    phase_index = np.zeros((ntrans),dtype=int)
+    t=t+1
+    phi_focus = phase_algorithms.phase_find(rt,0,0.05+0.03*math.sin(t*math.pi/100),0)
+    for transducer in range(0,ntrans):
+        phase_index[transducer] = 2500-int(phi_focus[transducer]/((2*math.pi)/1250))
+    for i in range(outputs):
+        ctl.setOffset(i,phase_index[i])
+    ctl.loadOffsets()
+    for i in range(outputs):
+        ctl.setOffset(i,0)
+    ctl.loadOffsets()
 
-
-for i in range(ctl.getOutputs()):
-    ctl.setOffset(i,phase_index[i])
-ctl.loadOffsets()
-#ctl.benchmark()

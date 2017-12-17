@@ -45,10 +45,9 @@ def phase_find(rt, x, y, z):
         dmag = np.linalg.norm(d)     # Distance between transducer and point in space
         
         phi[transducer] = (( 1 - ((dmag/lamda) % 1)) * 2 * math.pi )
-        phase_with_resoluton[transducer] = phase_discretize(phi[transducer])
+        #phase_with_resoluton[transducer] = phase_discretize(phi[transducer])
 
-    return phase_with_resoluton
-
+    return phi
 
 
 
