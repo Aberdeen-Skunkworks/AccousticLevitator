@@ -3,8 +3,12 @@
 class Controller():
     def __init__(self):
         import serial
-        self.com = serial.Serial(port="/dev/ttyUSB0", baudrate=460800, timeout=0.5)
-
+        import os
+        if os.name == "nt":
+            self.com = serial.Serial(port="COM3", baudrate=460800, timeout=0.5)
+        else:
+            self.com = serial.Serial(port="/dev/ttyUSB0", baudrate=460800, timeout=0.5)
+            
     def getOutputs(self):
         self.com.write(bytearray([0b11000000,0,0]))
         ack = bytearray(self.com.read(1))[0]
@@ -61,11 +65,11 @@ class Controller():
                 ctl.setOffset(i, 0)
             ctl.loadOffsets()
         end = timeit.default_timer()
-        print "Benchmark - Pattern update at ", NTests/float(end-start), "Hz"
+        print( "Benchmark - Pattern update at ", NTests/float(end-start), "Hz")
         
-        
+ctl = None
 ctl = Controller()
-print "Connected to controller with", ctl.getOutputs(), "outputs."
+print ("Connected to controller with", ctl.getOutputs(), "outputs.")
 
 for i in range(ctl.getOutputs()):
     ctl.setOffset(i, i*100)
