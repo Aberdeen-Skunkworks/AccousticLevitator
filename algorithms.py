@@ -128,13 +128,13 @@ for transducer in range (0,ntrans): # Writing the coordinates to output rt
     x[transducer]= rt[transducer,0,0]
     y[transducer]= rt[transducer,0,2] 
 
-#plt.plot(x, y,'ro')
-#plt.show()
+plt.plot(x, y,'ro')
+plt.show()
 
 phase_index = np.zeros((ntrans),dtype=int)
 phi_focus = phase_algorithms.phase_find(rt,0,0.05,0)
 for transducer in range(0,ntrans):
-    phase_index[transducer] = int(phi_focus[transducer]/((2*math.pi)/1250))
+    phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))
     
 
 

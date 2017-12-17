@@ -31,7 +31,6 @@ def phase_find(rt, x, y, z):
     r = (x,y,z)                                 # r is the position of desired minimum
     ntrans = len (rt)                           # Number of transducers to find phase for
     phi = np.zeros((ntrans))                    # Phase of all the transducers
-    phase_with_resoluton = np.zeros((ntrans))   # Phase of all the transducers adjusted so they belong to a step of the phase resolution
     lamda = constants.lamda                     # Wavelegnth of sound from constants file
     
     # -----------------Loop to calculate pressure field----------------------------
