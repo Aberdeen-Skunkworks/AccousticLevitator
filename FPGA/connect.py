@@ -33,28 +33,45 @@ class Controller():
     def loadOffsets(self):
         self.sendCmd(bytearray([0b10100000, 0, 0]))
 
-    def setOffset(self, clock, offset):
+    def setOffset(self, clock, offset, enable=True):
         # #The structure of the command
         #   23  22  21  20  19  18  17  16  15  14  13  12  11  10  9   8   7   6   5   4   3   2   1   0
-        # | 1 | 0 | 0 | X | X | X | X | X | 0 | X | X | X | Z | Y | Y | Y | 0 | Y | Y | Y | Y | Y | Y | Y |
-        #  X = 8 bit clock select
+        # | 1 | 0 | 0 | X | X | X | X | X | 0 | X | X | C | Z | Y | Y | Y | 0 | Y | Y | Y | Y | Y | Y | Y |
+        #  X = 7 bit clock select
         #  Y = 10 bit half-phase offset
         #  Z = phase of first oscillation
+        #  C = Output enable bit
+        if clock > 0b01111111:
+            raise Exception("Clock selected is too large!")
+        
         sign = 0
         offset = offset % 1250
         if offset > 624:
             sign = 1
             offset = offset - 624
+
+        # Place the first 7 bits of the offset into the low_offset byte
         low_offset =  offset & 0b01111111
+        # Place the remaining 3 bits of the offset, plus the sign bit, into the high offset
         high_offset = ((offset >> 7) & 0b00000111) + (sign << 3)
 
-        b1 = 0b10000000 | (clock>>3)
-        b2 = ((clock & 0b00000111)<<4)  | high_offset
+        #The command byte has the command bit set, plus 5 bits of the clock select
+        b1 = 0b10000000 | (clock>>2)
+        #The next bit has the output enable bit set high, plus the last two bits of the clock select, and the high offset bits
+        enable_bit = 0b00010000
+        if not enable:
+            enable_bit = 0b00000000
+        
+        b2 = enable_bit | ((clock & 0b00000011)<<5)  | high_offset
+        #The last byte contains the low offset bits
         b3 = low_offset
         cmd = bytearray([b1, b2, b3])
         
         self.sendCmd(cmd)
 
+    def disableOutput(self, clock):
+        self.setOffset(clock, 0, enable=False)
+        
     def benchmark(self):
         import timeit
         start = timeit.default_timer()
@@ -71,29 +88,14 @@ ctl = None
 ctl = Controller()
 print ("Connected to controller with", ctl.getOutputs(), "outputs.")
 
-
-## Testing to see deleted transducers visulised ##
-# -------------------------Import Libaries------------------------------------
-import numpy as np; import transducer_placment; import phase_algorithms; import math;
-
-trans_to_delete = []  # List of unwanted transducers leave blank to keep all
-rt = transducer_placment.big_daddy()    # spcing , x nummber, y number of transducers
-rt = transducer_placment.delete_transducers(rt,trans_to_delete)
-
-ntrans = len(rt)
-x = np.zeros(ntrans)
-y = np.zeros(ntrans)
-for transducer in range (0,ntrans): # Writing the coordinates to output rt
-    x[transducer]= rt[transducer,0,0]
-    y[transducer]= rt[transducer,0,2] 
-
-phase_index = np.zeros((ntrans),dtype=int)
-phi_focus = phase_algorithms.phase_find(rt,-0.005,0.03,0.005)
-for transducer in range(0,ntrans):
-    phase_index[transducer] = int(phi_focus[transducer]/((2*math.pi)/1250))
-
+for i in range(ctl.getOutputs()):
+    ctl.disableOutput(i)
 
 for i in range(ctl.getOutputs()):
-    ctl.setOffset(i,phase_index[i])
-ctl.loadOffsets()
-#ctl.benchmark()
+    ctl.disableOutput(max(0,i-1))
+    ctl.setOffset(i,0)
+    ctl.loadOffsets()
+    try:
+        input("Press enter: triggering "+str(i)+" right now")
+    except SyntaxError:
+        pass

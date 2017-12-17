@@ -1,8 +1,8 @@
 module fmq #(parameter OUTPUTS = 88)(input clk, input rst, output [OUTPUTS-1:0] tx, output UART_TX, input UART_RX, output [4:0] led);
 parameter CLOCK=50000000;
 parameter FREQ = 40000;
-parameter OFFSET_WIDTH = 11;
-parameter [OFFSET_WIDTH-2:0] DIVIDE = CLOCK / FREQ / 2 - 1;
+parameter OFFSET_WIDTH = 12;
+parameter [OFFSET_WIDTH-3:0] DIVIDE = CLOCK / FREQ / 2 - 1;
 parameter DATA_WIDTH = 8;
 parameter BAUD = 460800;//115200;
 parameter [15:0] UART_SCALE = CLOCK/(BAUD*8);
@@ -88,8 +88,8 @@ begin
 			case(cmdbuffer[22:21])
 			2'b00 : begin
 				for (i = 0; i < OUTPUTS; i = i+1)
-					if (i == {cmdbuffer[20:16],cmdbuffer[14:12]})
-						offsets[OFFSET_WIDTH*i +: OFFSET_WIDTH] <= {cmdbuffer[11:8], cmdbuffer[6:0]};
+					if (i == {cmdbuffer[20:16],cmdbuffer[14:13]})
+						offsets[OFFSET_WIDTH*i +: OFFSET_WIDTH] <= {cmdbuffer[12:8], cmdbuffer[6:0]};
 			end
 			2'b01 : begin
 				reload <= 1'b0; //Bring the reload line low
