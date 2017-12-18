@@ -1,5 +1,5 @@
 
-def phase_discretize(phase):
+def phase_discretize(phase): ### Not needed anymore
     
     # Function to take in a phase and output the closest value with phase resolution taken into account
     
@@ -44,7 +44,6 @@ def phase_find(rt, x, y, z):
         dmag = np.linalg.norm(d)     # Distance between transducer and point in space
         
         phi[transducer] = (( 1 - ((dmag/lamda) % 1)) * 2 * math.pi )
-        #phase_with_resoluton[transducer] = phase_discretize(phi[transducer])
 
     return phi
 

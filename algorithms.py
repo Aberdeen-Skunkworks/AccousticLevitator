@@ -88,11 +88,10 @@ plt.plot(test[0], test[1], 'ro')
 plt.show() """
 
 
-def read_from_excel():
+def read_from_excel(): # Reads the transducer locations from excel locations.xlsx
     #import required libraries
     from openpyxl import load_workbook
     import numpy as np
-     
     #read  from excel file
     wb = load_workbook('locations.xlsx')
     sheet_1 = wb.get_sheet_by_name('Sheet1')
@@ -112,7 +111,7 @@ plt.plot(test[0], test[1], 'ro')
 plt.show()"""
 
 
-def read_from_excel_phases():
+def read_from_excel_phases(): # Reads the phases from phase.xlsx
     #import required libraries
     from openpyxl import load_workbook; import numpy as np
     #read  from excel file
@@ -123,69 +122,3 @@ def read_from_excel_phases():
         phases[i]=sheet_1.cell(row=i+1, column=14).value
     return phases
 
-      
-        
-## Testing to see deleted transducers visulised ##
-# -------------------------Import Libaries------------------------------------
-import numpy as np; import transducer_placment; import matplotlib.pyplot as plt; import phase_algorithms; import math;
-
-trans_to_delete = []  # List of unwanted transducers leave blank to keep all
-rt = transducer_placment.big_daddy()    # spcing , x nummber, y number of transducers
-rt = transducer_placment.delete_transducers(rt,trans_to_delete)
-
-ntrans = len(rt)
-x = np.zeros(ntrans)
-y = np.zeros(ntrans)
-for transducer in range (0,ntrans): # Writing the coordinates to output rt
-    x[transducer]= rt[transducer,0,0]
-    y[transducer]= rt[transducer,0,2] 
-
-#plt.plot(x, y,'ro')
-#plt.show()
-
-
-
-## Haptic feedback ##
-phase_index = np.zeros((ntrans),dtype=int)
-phi_focus = phase_algorithms.phase_find(rt,0,0.07,0)
-for transducer in range(0,ntrans):
-    phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))
-    
-from connect import Controller 
-with Controller() as ctl:
-    
-    while True:
-        
-        for i in range(ctl.outputs):
-            ctl.setOffset(i,phase_index[i])
-        ctl.loadOffsets()
-
-        for i in range(ctl.outputs):
-            ctl.disableOutput(i)
-
-
-
-"""
-    
-    
-phase_index = np.zeros((ntrans),dtype=int)
-phi_focus = read_from_excel_phases()
-for transducer in range(0,ntrans):
-    phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))    
-
-
-from connect import Controller 
-with Controller() as ctl:
-    
-    while True:
-        
-        for i in range(ctl.outputs):
-            ctl.setOffset(i,phase_index[i])
-        ctl.loadOffsets()
-
-        for i in range(ctl.outputs):
-            ctl.disableOutput(i)
-    
-    
-"""
-    
