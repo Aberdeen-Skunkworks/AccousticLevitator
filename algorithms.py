@@ -69,7 +69,7 @@ def differentiate_pressure(r,rt,nt,phi):
     return (d_p_dr)
 
         
-        
+
 def circle_co_ords(splits):
     import math; import numpy as np
     x = np.zeros (splits)
@@ -86,7 +86,6 @@ import matplotlib.pyplot as plt;
 test = circle_co_ords(50)
 plt.plot(test[0], test[1], 'ro')
 plt.show() """
-
 
 
 def read_from_excel():
@@ -113,6 +112,19 @@ plt.plot(test[0], test[1], 'ro')
 plt.show()"""
 
 
+def read_from_excel_phases():
+    #import required libraries
+    from openpyxl import load_workbook; import numpy as np
+    #read  from excel file
+    wb = load_workbook('phase.xlsx')
+    sheet_1 = wb.get_sheet_by_name('phase')
+    phases = np.zeros((88))
+    for i in range(0,88):
+        phases[i]=sheet_1.cell(row=i+1, column=14).value
+    return phases
+
+      
+        
 ## Testing to see deleted transducers visulised ##
 # -------------------------Import Libaries------------------------------------
 import numpy as np; import transducer_placment; import matplotlib.pyplot as plt; import phase_algorithms; import math;
@@ -128,34 +140,52 @@ for transducer in range (0,ntrans): # Writing the coordinates to output rt
     x[transducer]= rt[transducer,0,0]
     y[transducer]= rt[transducer,0,2] 
 
-plt.plot(x, y,'ro')
-plt.show()
+#plt.plot(x, y,'ro')
+#plt.show()
 
+
+
+## Haptic feedback ##
 phase_index = np.zeros((ntrans),dtype=int)
-phi_focus = phase_algorithms.phase_find(rt,0,0.05,0)
+phi_focus = phase_algorithms.phase_find(rt,0,0.07,0)
 for transducer in range(0,ntrans):
     phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))
     
 from connect import Controller 
 with Controller() as ctl:
-    print ("Connected to controller with", ctl.getOutputs(), "outputs.")
-
-    for i in range(ctl.getOutputs()):
-        ctl.disableOutput(i)
-
-    for i in range(ctl.getOutputs()):
-        ctl.disableOutput(max(0,i-1))
-        ctl.setOffset(i,0)
+    
+    while True:
+        
+        for i in range(ctl.outputs):
+            ctl.setOffset(i,phase_index[i])
         ctl.loadOffsets()
-        try:
-            input("Press enter: triggering "+str(i)+" right now")
-        except SyntaxError:
-            pass    
+
+        for i in range(ctl.outputs):
+            ctl.disableOutput(i)
+
+
+
+"""
     
     
+phase_index = np.zeros((ntrans),dtype=int)
+phi_focus = read_from_excel_phases()
+for transducer in range(0,ntrans):
+    phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))    
+
+
+from connect import Controller 
+with Controller() as ctl:
+    
+    while True:
+        
+        for i in range(ctl.outputs):
+            ctl.setOffset(i,phase_index[i])
+        ctl.loadOffsets()
+
+        for i in range(ctl.outputs):
+            ctl.disableOutput(i)
     
     
-    
-    
-    
+"""
     

@@ -11,15 +11,26 @@ class Controller():
             self.com = serial.Serial(port="COM4", baudrate=460800, timeout=0.5)
         else:
             self.com = serial.Serial(port="/dev/ttyUSB0", baudrate=460800, timeout=0.5)
+
+        self.outputs = 0
+        try:
+            self.outputs = self.getOutputs()
+        except Exception as e:
+            print("Failed to open communications!")
+            
         return self
 
     def __exit__(self, exc_type, exc_value, traceback):
+        for i in range(self.outputs):
+            self.disableOutput(i)
         self.com.close()        
             
     def getOutputs(self):
         self.com.write(bytearray([0b11000000,0,0]))
-        ack = bytearray(self.com.read(1))[0]
-        return ack        
+        ack = bytearray(self.com.read(1))
+        if (len(ack) != 1):
+            raise Exception("Failed to read output count")
+        return ack[0]
     
     def sendCmd(self, bytestream):
         #Serial communication is carried out using 8 bit/byte
