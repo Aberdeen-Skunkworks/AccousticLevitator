@@ -2,12 +2,19 @@
 
 class Controller():
     def __init__(self):
+        pass
+            
+    def __enter__(self):
         import serial
         import os
         if os.name == "nt":
-            self.com = serial.Serial(port="COM3", baudrate=460800, timeout=0.5)
+            self.com = serial.Serial(port="COM4", baudrate=460800, timeout=0.5)
         else:
             self.com = serial.Serial(port="/dev/ttyUSB0", baudrate=460800, timeout=0.5)
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.com.close()        
             
     def getOutputs(self):
         self.com.write(bytearray([0b11000000,0,0]))
@@ -84,18 +91,3 @@ class Controller():
         end = timeit.default_timer()
         print( "Benchmark - Pattern update at ", NTests/float(end-start), "Hz")
         
-ctl = None
-ctl = Controller()
-print ("Connected to controller with", ctl.getOutputs(), "outputs.")
-
-for i in range(ctl.getOutputs()):
-    ctl.disableOutput(i)
-
-for i in range(ctl.getOutputs()):
-    ctl.disableOutput(max(0,i-1))
-    ctl.setOffset(i,0)
-    ctl.loadOffsets()
-    try:
-        input("Press enter: triggering "+str(i)+" right now")
-    except SyntaxError:
-        pass

@@ -101,8 +101,8 @@ def read_from_excel():
     y = np.zeros(88)
     coordinates = np.zeros((88,2))
     for i in range(0,88):
-        x[i]=sheet_1.cell(row=i+9, column=8).value
-        y[i]=sheet_1.cell(row=i+9, column=9).value
+        x[i]=sheet_1.cell(row=i+9, column=10).value
+        y[i]=sheet_1.cell(row=i+9, column=11).value
      
     coordinates = [x,y]
     return coordinates
@@ -136,8 +136,21 @@ phi_focus = phase_algorithms.phase_find(rt,0,0.05,0)
 for transducer in range(0,ntrans):
     phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))
     
+from connect import Controller 
+with Controller() as ctl:
+    print ("Connected to controller with", ctl.getOutputs(), "outputs.")
 
+    for i in range(ctl.getOutputs()):
+        ctl.disableOutput(i)
 
+    for i in range(ctl.getOutputs()):
+        ctl.disableOutput(max(0,i-1))
+        ctl.setOffset(i,0)
+        ctl.loadOffsets()
+        try:
+            input("Press enter: triggering "+str(i)+" right now")
+        except SyntaxError:
+            pass    
     
     
     
