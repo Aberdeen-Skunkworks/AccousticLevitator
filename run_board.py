@@ -19,7 +19,7 @@ choose = input("Please choose haptic as (h) or pattern as (p): ")
 ## --------------------------- Haptic feedback --------------------------- ##
     
 if choose == ("h"):
-    print ("Haptic mode selected")
+    print ("Pattern mode selected")
     phase_index = np.zeros((ntrans),dtype=int)
     phi_focus = phase_algorithms.phase_find(rt,0,0.07,0)
     for transducer in range(0,ntrans):
@@ -39,7 +39,7 @@ if choose == ("h"):
 # -------------------------------------------------------------------------- #
     
 
-        
+
 ## -------------------------- Focused traps ------------------------------- ##  
 
 elif choose == ("p"):
@@ -61,4 +61,4 @@ elif choose == ("p"):
 # -------------------------------------------------------------------------- #
 
 else:
-    print("Neither choice was given")
+    print("Come on, pick one of the correct letters!")
