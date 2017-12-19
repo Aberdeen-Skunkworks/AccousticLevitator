@@ -19,7 +19,7 @@ choose = input("Please choose haptic as (h) or pattern as (p): ")
 ## --------------------------- Haptic feedback --------------------------- ##
     
 if choose == ("h"):
-    print ("Pattern mode selected")
+    print ("Haptic mode selected")
     phase_index = np.zeros((ntrans),dtype=int)
     phi_focus = phase_algorithms.phase_find(rt,0,0.07,0)
     for transducer in range(0,ntrans):
