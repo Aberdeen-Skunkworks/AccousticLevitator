@@ -49,7 +49,7 @@ def phase_find(rt, x, y, z):
 
 
 
-def add_twin_signature(rt, phi):
+def add_twin_signature(rt, phi): # Array needs to be centerd around the origin for this to work
 
     import algorithms; import math
     
@@ -65,7 +65,7 @@ def add_twin_signature(rt, phi):
 
 
 
-def add_vortex_signature(rt, phi):
+def add_vortex_signature(rt, phi): # Array needs to be centerd around the origin for this to work
 
     import algorithms;
     
