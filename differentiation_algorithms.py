@@ -53,23 +53,48 @@ def pressure (x, y, z, rt, phi, nt):
     pressure = (exponential*frac)
     return pressure
 
+def pressure_derivative (x, y, z, rt, phi, nt):
+    r = (x, y, z)
+    mag_nt = np.linalg.norm(nt)
+    nt = np.divide(nt, mag_nt)  # normalising the vector to the unit direction vector
+    
+    rs = np.subtract(r,rt)
+    mag_rs = np.linalg.norm(rs)
+    rs_hat = rs / mag_rs
+    k = (2*math.pi)/(float(constants.lamda))  
+    theta = math.acos((np.dot(rs,nt)) / (mag_rs))
+    
+    theta = math.acos((np.dot(rs,nt)) / (mag_rs))
+    exponent_term =  cmath.exp( 1j * (phi + k * mag_rs) ) / mag_rs
+    fraction_term =  (constants.p0*constants.A)*( (math.sin(k*constants.a*math.sin(theta))) /  (k*constants.a*math.sin(theta)) )
+    d_exponential_term_dr = ((rs_hat * 1j * k * cmath.exp(1j*(phi + k * mag_rs)) ) / (mag_rs))  -  ((cmath.exp(1j*(phi + k * mag_rs)) * rs_hat) / (mag_rs**2) )
+    numerator = constants.p0 * constants.A * math.sin(k*constants.a*math.sin(theta))
+    denominator =  k*constants.a*math.sin(theta)
+    d_denominator_dr = k*constants.a*(( ((-np.dot(rs,nt))/(mag_rs) ) / ((1 - (np.dot(rs,nt))/(mag_rs) )**0.5) ) * ( (np.dot(nt,mag_rs) - (rs_hat*np.dot(nt,rs)) ) / (mag_rs**2) ) )
+    d_numerator_dr = constants.p0 * constants.A * math.cos(k*constants.a*math.sin(theta))*d_denominator_dr
+    d_fraction_dr = ((d_numerator_dr*denominator) - (numerator*d_denominator_dr))/(denominator**2)
+    
+    d_p_dr = (d_fraction_dr * exponent_term) + (fraction_term * d_exponential_term_dr)
 
+    return d_p_dr
 
 phi = 0   # Phase of the transducer
-x= 0.01         # Point in space x,y,z
-y= 0.01
-z= 0.01
-h = 0.00000000001      # delta x the change to differientate over
-
-
-r = (x, y, z)
+x= 1.5       # Point in space x,y,z
+y= 0.4
+z= 0.4
 rt = [0,0,0]
 nt = [0,1,0]
-rs = np.subtract(r,rt)
-mag_rs = np.linalg.norm(rs)
-rs_hat = rs / mag_rs
-k = (2*math.pi)/(float(constants.lamda))  
-theta = math.acos((np.dot(rs,nt)) / (mag_rs))
+
+Test = pressure_derivative (x, y, z, rt, phi, nt)
+print(Test)
+
+"""
+
+phi = 0   # Phase of the transducer
+x= 0.5       # Point in space x,y,z
+y= 0.4
+z= 0.4
+h = 0.000000000001      # delta x the change to differientate over
 
 
 ## Final Pressure derivation test
@@ -78,23 +103,6 @@ dp_dr_numercal_x =  (pressure(x+h,y,z,rt,phi,nt) - pressure(x-h,y,z,rt,phi,nt)) 
 dp_dr_numercal_y =  (pressure(x,y+h,z,rt,phi,nt) - pressure(x,y-h,z,rt,phi,nt)) / (2*h)
 dp_dr_numercal_z =  (pressure(x,y,z+h,rt,phi,nt) - pressure(x,y,z-h,rt,phi,nt)) / (2*h)
 dp_dr_numercal = [dp_dr_numercal_x, dp_dr_numercal_y, dp_dr_numercal_z]
-
-
-
-theta = math.acos((np.dot(rs,nt)) / (mag_rs))
-exponent_term =  cmath.exp( 1j * (phi + k * mag_rs) ) / mag_rs
-fraction_term =  (constants.p0*constants.A)*( (math.sin(k*constants.a*math.sin(theta))) /  (k*constants.a*math.sin(theta)) )
-d_exponential_term_dr = ((rs_hat * 1j * k * cmath.exp(1j*(phi + k * mag_rs)) ) / (mag_rs))  -  ((cmath.exp(1j*(phi + k * mag_rs)) * rs_hat) / (mag_rs**2) )
-numerator = constants.p0 * constants.A * math.sin(k*constants.a*math.sin(theta))
-denominator =  k*constants.a*math.sin(theta)
-d_denominator_dr = k*constants.a*(( ((-np.dot(rs,nt))/(mag_rs) ) / ((1 - (np.dot(rs,nt))/(mag_rs) )**0.5) ) * ( (np.dot(nt,mag_rs) - (rs_hat*np.dot(nt,rs)) ) / (mag_rs**2) ) )
-d_numerator_dr = constants.p0 * constants.A * math.cos(k*constants.a*math.sin(theta))*d_denominator_dr
-d_fraction_dr = ((d_numerator_dr*denominator) - (numerator*d_denominator_dr))/(denominator**2)
-
-
-d_p_dr = (d_fraction_dr * exponent_term) + (fraction_term * d_exponential_term_dr)
-
-
 
 print("Derivative with respect to x: numerical : analytical")
 print (dp_dr_numercal[0])
@@ -108,7 +116,7 @@ print("Derivative with respect to z: numerical : analytical")
 print (dp_dr_numercal[2])
 print(d_p_dr[2])
 
-
+"""
 
 
 
