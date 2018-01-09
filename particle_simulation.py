@@ -3,22 +3,26 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-pos = np.zeros(3); vel = np.zeros(3); mass = np.zeros(1); time = np.zeros(1); force = np.zeros(3);
 
-inital_pos = [0,0,0]
-inital_vel = [3,15,16]
-gravity    = [0, -9.81, 0] # m/s^2
+inital_pos = [0,0,0]        # m
+inital_vel = [0,15,15]      # m/s
+gravity    = [0, -9.81, 0]  # m/s^2
+mass       = 1              # kg
+
+dt = 0.0001   # Time step s
+end_time = 3  # End time s
 
 
-dt = 0.0001        # Time step seconds
-end_time = 3  # End time seconds
 
 number_of_time_steps = int( end_time / dt )
 
-mass[0] = 1
-pos[0] = inital_pos[0]; pos[1] = inital_pos[1]; pos[2] = inital_pos[2]
-vel[0] = inital_vel[0]; vel[1] = inital_vel[1]; vel[2] = inital_vel[2]
-force[0] = gravity[0]*mass[0]; force[1] = gravity[1]*mass[0]; force[2] = gravity[2]*mass[0]
+mass = np.copy(mass)
+pos = np.copy(inital_pos)
+vel = np.copy(inital_vel)
+force = np.multiply( np.copy(gravity), mass)
+time = np.zeros(1)
+
+
 pos_over_time = np.zeros((number_of_time_steps,3))
 x = np.zeros(number_of_time_steps); y = np.zeros(number_of_time_steps); z = np.zeros(number_of_time_steps)
 

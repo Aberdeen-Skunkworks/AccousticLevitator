@@ -31,6 +31,9 @@ def get_angle(rt):
 
 def pressure (r, rt, phi, nt):
     import numpy as np; import math; import cmath; import constants
+    mag_nt = np.linalg.norm(nt)
+    nt = np.divide(nt, mag_nt)  # normalising the vector to the unit direction vector
+    
     rs = np.subtract(r,rt)
     k = (2*math.pi)/(float(constants.lamda))   
     mag_rs = np.linalg.norm(rs)
@@ -43,10 +46,13 @@ def pressure (r, rt, phi, nt):
 
 
 
-def differentiate_pressure(r,rt,nt,phi):
+def differentiate_pressure(r, rt, phi, nt):
     # Differentiation of pressure with respect to (x,y,z) done analytically
     import math; import cmath; import numpy as np; import constants
-
+    
+    mag_nt = np.linalg.norm(nt)
+    nt = np.divide(nt, mag_nt)  # normalising the vector to the unit direction vector
+    
     rs = np.subtract(r,rt)
     mag_rs = np.linalg.norm(rs)
     rs_hat = rs / mag_rs
@@ -68,7 +74,154 @@ def differentiate_pressure(r,rt,nt,phi):
     
     return (d_p_dr)
 
+
+def acoustic_potential (r, rt, nt, phi):
+    
+    # Takes in any number of transducer positions and phases and a postion in space
+    # will output the acoustic potential U at that location
+    
+    import numpy as np; import constants; import algorithms
+    ntrans = len(rt)
+    pressure = np.zeros((ntrans), dtype=complex)
+    differentiate_pressure_x = np.zeros((ntrans), dtype=complex)
+    differentiate_pressure_y = np.zeros((ntrans), dtype=complex)
+    differentiate_pressure_z = np.zeros((ntrans), dtype=complex)
+    
+    for transducer in range (0, ntrans):
+        nt_trans = [ nt[transducer,0,0], nt[transducer,0,1], nt[transducer,0,2]]
+        rt_trans = [ rt[transducer,0,0], rt[transducer,0,1], rt[transducer,0,2] ]
+        phi_trans = phi[transducer]
         
+        pressure[transducer] = algorithms.pressure(r, rt_trans , phi_trans, nt_trans)
+        differentiate_pressure = algorithms.differentiate_pressure(r, rt_trans , phi_trans, nt_trans)
+        differentiate_pressure_x[transducer] = differentiate_pressure[0]
+        differentiate_pressure_y[transducer] = differentiate_pressure[1]
+        differentiate_pressure_z[transducer] = differentiate_pressure[2]
+    
+    total_pressure = np.sum(pressure)
+    total_diff_pressure_x = np.sum(differentiate_pressure_x)
+    total_diff_pressure_y = np.sum(differentiate_pressure_y)
+    total_diff_pressure_z = np.sum(differentiate_pressure_z)
+
+    p_abs   = np.absolute(total_pressure)  
+    px_abs  = np.absolute(total_diff_pressure_x)  
+    py_abs  = np.absolute(total_diff_pressure_y)  
+    pz_abs  = np.absolute(total_diff_pressure_z)  
+
+    
+    u = (2*constants.k1*p_abs**2) - (2*constants.k2*(px_abs**2 + py_abs**2 + pz_abs**2))
+    u = u - (constants.p_mass*constants.gravity*(r[1])) 
+    # including potential energy (mass*g*height) it is taken away even though gravity is negitive so that when the negitive gradient is takn then the force will be downwards
+    return u
+
+import transducer_placment; import numpy as np; import constants; import vtk; import phase_algorithms
+    
+
+r = [0, 0.04, 0]
+rt = transducer_placment.array_grid(0.01,6,6)
+ntrans = len (rt)
+nt = transducer_placment.direction_vectors(ntrans)
+#phi = np.zeros(ntrans)
+phi_focus = phase_algorithms.phase_find(rt,0,0.03,0) # phi is the initial phase of each transducer to focus on a point
+phi = phase_algorithms.add_twin_signature(rt,phi_focus)
+
+test = acoustic_potential (r, rt, nt, phi)
+
+u = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=float)
+
+x = constants.x; y = constants.y; z = constants.z
+gsize = constants.gsize
+for xloop in range (0,constants.npoints):
+    for yloop in range (0,constants.npoints):
+        for zloop in range (0,constants.npoints):
+            
+            r = [ x  , y , z ]          # Point in space for each itteriation
+            u[xloop,yloop,zloop] = acoustic_potential(r, rt, nt, phi)
+                                    
+            z = z + constants.deltaxyz    # Adding delta to x,y and z
+        y = y + constants.deltaxyz
+        z = -gsize               # Resetting the value of z to start value for next loop
+    x = x + constants.deltaxyz
+    y = 0                       # Resetting the value of y to start value for next loop
+    z = -gsize                   # Resetting the value of z to start value for next loop
+x = -gsize # Initial values of x,y and z in (m) Grid volume
+y = 0.00
+z = -gsize
+
+
+
+diff_u = np.gradient(u,constants.deltaxyz)
+ux = diff_u[0]; uy = diff_u[1]; uz = diff_u[2]
+
+# -----------------Calculating force on particle ---------------
+
+fx = -ux; fy = - uy; fz = -uz
+
+
+# creating vti image file with combined pressure magnitude data
+filename2 = "gorkov.vti"
+
+imageData = vtk.vtkImageData()
+imageData.SetDimensions(constants.npoints, constants.npoints, constants.npoints )
+imageData.SetOrigin( (-constants.npoints+1)/2, 0, (-constants.npoints+1)/2 )
+if vtk.VTK_MAJOR_VERSION <= 5:
+    imageData.SetNumberOfScalarComponents(1)
+    imageData.SetScalarTypeToDouble()
+else:
+    imageData.AllocateScalars(vtk.VTK_DOUBLE, 1)
+
+dims = imageData.GetDimensions()
+
+# Fill every entry of the image data
+for z in range(dims[2]):
+    for y in range(dims[1]):
+        for x in range(dims[0]):
+            imageData.SetScalarComponentFromDouble(x, y, z, 0, u[x,y,z])
+
+writer = vtk.vtkXMLImageDataWriter()
+writer.SetFileName(filename2)
+if vtk.VTK_MAJOR_VERSION <= 5:
+    writer.SetInputConnection(imageData.GetProducerPort())
+else:
+    writer.SetInputData(imageData)
+writer.Write()
+    
+    
+# creating vti image file with negitive gorkov potentials 
+filename3 = "Force.vti"
+
+imageDataForce = vtk.vtkImageData()
+imageDataForce.SetDimensions(constants.npoints, constants.npoints, constants.npoints)
+imageDataForce.SetOrigin( (-constants.npoints+1)/2, 0, (-constants.npoints+1)/2 )
+if vtk.VTK_MAJOR_VERSION <= 5:
+    imageDataForce.SetNumberOfScalarComponents(3)
+    imageDataForce.SetScalarTypeToDouble()
+else:
+    imageDataForce.AllocateScalars(vtk.VTK_DOUBLE, 3)
+
+dims = imageDataForce.GetDimensions()
+
+# Fill every entry of the image data
+for z in range(dims[2]):
+    for y in range(dims[1]):
+        for x in range(dims[0]):
+            imageDataForce.SetScalarComponentFromDouble(x, y, z, 0, fx[x,y,z])
+            imageDataForce.SetScalarComponentFromDouble(x, y, z, 1, fy[x,y,z])
+            imageDataForce.SetScalarComponentFromDouble(x, y, z, 2, fz[x,y,z])
+
+writer = vtk.vtkXMLImageDataWriter()
+writer.SetFileName(filename3)
+if vtk.VTK_MAJOR_VERSION <= 5:
+    writer.SetInputConnection(imageDataForce.GetProducerPort())
+else:
+    writer.SetInputData(imageDataForce)
+writer.Write()
+
+    
+    
+
+
+
 
 def circle_co_ords(splits):
     import math; import numpy as np
@@ -119,6 +272,8 @@ def read_from_excel_phases(): # Reads the phases from phase.xlsx
     sheet_1 = wb.get_sheet_by_name('phase')
     phases = np.zeros((88))
     for i in range(0,88):
-        phases[i]=sheet_1.cell(row=i+1, column=14).value
+        phases[i]=sheet_1.cell(row=i+1, column=14).value        
     return phases
+
+
 
