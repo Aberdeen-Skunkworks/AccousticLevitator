@@ -114,6 +114,7 @@ def acoustic_potential (r, rt, nt, phi):
     # including potential energy (mass*g*height) it is taken away even though gravity is negitive so that when the negitive gradient is takn then the force will be downwards
     return u , p_abs
 
+"""
 import transducer_placment; import numpy as np; import constants; import vti_writer; import phase_algorithms
     
 
@@ -167,7 +168,7 @@ print("Calculations compleated successfuly")
 
 
 
-
+"""
 
 
 def circle_co_ords(splits):
