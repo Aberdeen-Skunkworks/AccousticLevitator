@@ -1,7 +1,7 @@
 
 # Write data to vti files to be viewed in Paraview
 
-def vti_writer (npoints,realcombined,ux,uy,uz,u):
+def vti_writer (npoints,realcombined,fx,fy,fz,u):
     
     import vtk; 
     
@@ -86,9 +86,9 @@ def vti_writer (npoints,realcombined,ux,uy,uz,u):
     for z in range(dims[2]):
         for y in range(dims[1]):
             for x in range(dims[0]):
-                imageDataForce.SetScalarComponentFromDouble(x, y, z, 0, ux[x,y,z])
-                imageDataForce.SetScalarComponentFromDouble(x, y, z, 1, uy[x,y,z])
-                imageDataForce.SetScalarComponentFromDouble(x, y, z, 2, uz[x,y,z])
+                imageDataForce.SetScalarComponentFromDouble(x, y, z, 0, fx[x,y,z])
+                imageDataForce.SetScalarComponentFromDouble(x, y, z, 1, fy[x,y,z])
+                imageDataForce.SetScalarComponentFromDouble(x, y, z, 2, fz[x,y,z])
     
     writer = vtk.vtkXMLImageDataWriter()
     writer.SetFileName(filename3)

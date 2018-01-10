@@ -112,9 +112,9 @@ def acoustic_potential (r, rt, nt, phi):
     u = (2*constants.k1*p_abs**2) - (2*constants.k2*(px_abs**2 + py_abs**2 + pz_abs**2))
     u = u - (constants.p_mass*constants.gravity*(r[1])) 
     # including potential energy (mass*g*height) it is taken away even though gravity is negitive so that when the negitive gradient is takn then the force will be downwards
-    return u
+    return u , p_abs
 
-import transducer_placment; import numpy as np; import constants; import vtk; import phase_algorithms
+import transducer_placment; import numpy as np; import constants; import vti_writer; import phase_algorithms
     
 
 r = [0, 0.04, 0]
@@ -122,12 +122,13 @@ rt = transducer_placment.array_grid(0.01,6,6)
 ntrans = len (rt)
 nt = transducer_placment.direction_vectors(ntrans)
 #phi = np.zeros(ntrans)
-phi_focus = phase_algorithms.phase_find(rt,0,0.03,0) # phi is the initial phase of each transducer to focus on a point
+phi_focus = phase_algorithms.phase_find(rt,0,0.04,0) # phi is the initial phase of each transducer to focus on a point
 phi = phase_algorithms.add_twin_signature(rt,phi_focus)
 
 test = acoustic_potential (r, rt, nt, phi)
 
 u = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=float)
+p_abs = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=float)
 
 x = constants.x; y = constants.y; z = constants.z
 gsize = constants.gsize
@@ -136,8 +137,10 @@ for xloop in range (0,constants.npoints):
         for zloop in range (0,constants.npoints):
             
             r = [ x  , y , z ]          # Point in space for each itteriation
-            u[xloop,yloop,zloop] = acoustic_potential(r, rt, nt, phi)
-                                    
+            u_and_p = acoustic_potential(r, rt, nt, phi)
+            u[xloop,yloop,zloop] = u_and_p[0]
+            p_abs[xloop,yloop,zloop] = u_and_p[1]            
+                        
             z = z + constants.deltaxyz    # Adding delta to x,y and z
         y = y + constants.deltaxyz
         z = -gsize               # Resetting the value of z to start value for next loop
@@ -158,67 +161,11 @@ ux = diff_u[0]; uy = diff_u[1]; uz = diff_u[2]
 fx = -ux; fy = - uy; fz = -uz
 
 
-# creating vti image file with combined pressure magnitude data
-filename2 = "gorkov.vti"
+vti_writer.vti_writer (constants.npoints,p_abs,fx,fy,fz,u)
 
-imageData = vtk.vtkImageData()
-imageData.SetDimensions(constants.npoints, constants.npoints, constants.npoints )
-imageData.SetOrigin( (-constants.npoints+1)/2, 0, (-constants.npoints+1)/2 )
-if vtk.VTK_MAJOR_VERSION <= 5:
-    imageData.SetNumberOfScalarComponents(1)
-    imageData.SetScalarTypeToDouble()
-else:
-    imageData.AllocateScalars(vtk.VTK_DOUBLE, 1)
+print("Calculations compleated successfuly")
 
-dims = imageData.GetDimensions()
 
-# Fill every entry of the image data
-for z in range(dims[2]):
-    for y in range(dims[1]):
-        for x in range(dims[0]):
-            imageData.SetScalarComponentFromDouble(x, y, z, 0, u[x,y,z])
-
-writer = vtk.vtkXMLImageDataWriter()
-writer.SetFileName(filename2)
-if vtk.VTK_MAJOR_VERSION <= 5:
-    writer.SetInputConnection(imageData.GetProducerPort())
-else:
-    writer.SetInputData(imageData)
-writer.Write()
-    
-    
-# creating vti image file with negitive gorkov potentials 
-filename3 = "Force.vti"
-
-imageDataForce = vtk.vtkImageData()
-imageDataForce.SetDimensions(constants.npoints, constants.npoints, constants.npoints)
-imageDataForce.SetOrigin( (-constants.npoints+1)/2, 0, (-constants.npoints+1)/2 )
-if vtk.VTK_MAJOR_VERSION <= 5:
-    imageDataForce.SetNumberOfScalarComponents(3)
-    imageDataForce.SetScalarTypeToDouble()
-else:
-    imageDataForce.AllocateScalars(vtk.VTK_DOUBLE, 3)
-
-dims = imageDataForce.GetDimensions()
-
-# Fill every entry of the image data
-for z in range(dims[2]):
-    for y in range(dims[1]):
-        for x in range(dims[0]):
-            imageDataForce.SetScalarComponentFromDouble(x, y, z, 0, fx[x,y,z])
-            imageDataForce.SetScalarComponentFromDouble(x, y, z, 1, fy[x,y,z])
-            imageDataForce.SetScalarComponentFromDouble(x, y, z, 2, fz[x,y,z])
-
-writer = vtk.vtkXMLImageDataWriter()
-writer.SetFileName(filename3)
-if vtk.VTK_MAJOR_VERSION <= 5:
-    writer.SetInputConnection(imageDataForce.GetProducerPort())
-else:
-    writer.SetInputData(imageDataForce)
-writer.Write()
-
-    
-    
 
 
 
