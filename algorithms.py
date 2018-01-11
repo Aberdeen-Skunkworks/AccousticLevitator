@@ -33,15 +33,19 @@ def pressure (r, rt, phi, nt):
     import numpy as np; import math; import cmath; import constants
     mag_nt = np.linalg.norm(nt)
     nt = np.divide(nt, mag_nt)  # normalising the vector to the unit direction vector
-    
+
     rs = np.subtract(r,rt)
     k = (2*math.pi)/(float(constants.lamda))   
     mag_rs = np.linalg.norm(rs)
-    theta = math.acos((np.dot(rs,nt)) / (mag_rs))
-    exponential =  cmath.exp( 1j * (phi + k * mag_rs) ) / mag_rs
-    frac =  (constants.p0*constants.A)*( (math.sin(k*constants.a*math.sin(theta))) /  (k*constants.a*math.sin(theta)) )
-
-    pressure = (exponential*frac)
+    if mag_rs < 0.001: # Setting calculated dp/dr on top of transducer to zero.
+        pressure = 0+0j
+    else:
+        theta = math.acos((np.dot(rs,nt)) / (mag_rs))
+        exponential =  cmath.exp( 1j * (phi + k * mag_rs) ) / mag_rs
+        if theta < 0.001: # zero angle causes divistion by zero error -> directionality function aproaches 0
+            theta = 0.001
+        frac =  (constants.p0*constants.A)*( (math.sin(k*constants.a*math.sin(theta))) /  (k*constants.a*math.sin(theta)) )
+        pressure = (exponential*frac)
     return pressure
 
 
@@ -55,27 +59,29 @@ def differentiate_pressure(r, rt, phi, nt):
     
     rs = np.subtract(r,rt)
     mag_rs = np.linalg.norm(rs)
-    rs_hat = rs / mag_rs
-    k = (2*math.pi)/(float(constants.lamda))  
-    
-    theta = math.acos((np.dot(rs,nt)) / (mag_rs))
-    exponent_term =  cmath.exp( 1j * (phi + k * mag_rs) ) / mag_rs
-    fraction_term =  (constants.p0*constants.A)*( (math.sin(k*constants.a*math.sin(theta))) /  (k*constants.a*math.sin(theta)) )
-    
-    d_exponential_term_dr = ((rs_hat * 1j * k * cmath.exp(1j*(phi + k * mag_rs)) ) / (mag_rs))  -  ((cmath.exp(1j*(phi + k * mag_rs)) * rs_hat) / (mag_rs**2) )
-    
-    numerator = constants.p0 * constants.A * math.sin(k*constants.a*math.sin(theta))
-    denominator =  k*constants.a*math.sin(theta)
-    d_denominator_dr = k*constants.a*(( ((-np.dot(rs,nt))/(mag_rs) ) / ((1 - (np.dot(rs,nt))/(mag_rs) )**0.5) ) * ( (np.dot(nt,mag_rs) - (rs_hat*np.dot(nt,rs)) ) / (mag_rs**2) ) )
-    d_numerator_dr = constants.p0 * constants.A * math.cos(k*constants.a*math.sin(theta))*d_denominator_dr
-    d_fraction_dr = ((d_numerator_dr*denominator) - (numerator*d_denominator_dr))/(denominator**2)
-    
-    d_p_dr = (d_fraction_dr * exponent_term) + (fraction_term * d_exponential_term_dr)
-    
+    if mag_rs < 0.001: # Setting calculated dp/dr on top of transducer to zero.
+        d_p_dr = [ 0, 0, 0] 
+    else:
+        rs_hat = rs / mag_rs
+        k = (2*math.pi)/(float(constants.lamda))  
+        theta = math.acos((np.dot(rs,nt)) / (mag_rs))
+        exponent_term =  cmath.exp( 1j * (phi + k * mag_rs) ) / mag_rs
+        if theta < 0.0001: # zero angle causes divistion by zero error -> directionality function aproaches 0
+            d_p_dr = [ 0, 0, 0]
+        else:
+            fraction_term =  (constants.p0*constants.A)*( (math.sin(k*constants.a*math.sin(theta))) /  (k*constants.a*math.sin(theta)) )
+            d_exponential_term_dr = ((rs_hat * 1j * k * cmath.exp(1j*(phi + k * mag_rs)) ) / (mag_rs))  -  ((cmath.exp(1j*(phi + k * mag_rs)) * rs_hat) / (mag_rs**2) )
+            numerator = constants.p0 * constants.A * math.sin(k*constants.a*math.sin(theta))
+            denominator =  k*constants.a*math.sin(theta)
+            d_denominator_dr = k*constants.a*(( ((-np.dot(rs,nt))/(mag_rs) ) / ((1 - (np.dot(rs,nt))/(mag_rs) )**0.5) ) * ( (np.dot(nt,mag_rs) - (rs_hat*np.dot(nt,rs)) ) / (mag_rs**2) ) )
+            d_numerator_dr = constants.p0 * constants.A * math.cos(k*constants.a*math.sin(theta))*d_denominator_dr
+            d_fraction_dr = ((d_numerator_dr*denominator) - (numerator*d_denominator_dr))/(denominator**2)
+                
+            d_p_dr = (d_fraction_dr * exponent_term) + (fraction_term * d_exponential_term_dr)
     return (d_p_dr)
 
 
-def acoustic_potential (r, rt, nt, phi):
+def acoustic_potential (r, rt, phi, nt):
     
     # Takes in any number of transducer positions and phases and a postion in space
     # will output the acoustic potential U at that location
@@ -88,7 +94,7 @@ def acoustic_potential (r, rt, nt, phi):
     differentiate_pressure_z = np.zeros((ntrans), dtype=complex)
     
     for transducer in range (0, ntrans):
-        nt_trans = [ nt[transducer,0,0], nt[transducer,0,1], nt[transducer,0,2]]
+        nt_trans = [ nt[transducer,0,0], nt[transducer,0,1], nt[transducer,0,2] ]
         rt_trans = [ rt[transducer,0,0], rt[transducer,0,1], rt[transducer,0,2] ]
         phi_trans = phi[transducer]
         
@@ -110,11 +116,21 @@ def acoustic_potential (r, rt, nt, phi):
 
     
     u = (2*constants.k1*p_abs**2) - (2*constants.k2*(px_abs**2 + py_abs**2 + pz_abs**2))
-    u = u - (constants.p_mass*constants.gravity*(r[1])) 
-    # including potential energy (mass*g*height) it is taken away even though gravity is negitive so that when the negitive gradient is takn then the force will be downwards
+
     return u , p_abs
 
-"""
+
+def differentiate_acoustic_potential(h,r,rt,phi,nt):
+    x = r[0]; y = r[1]; z = r[2]
+    
+    du_dr_numercal_x = (acoustic_potential( [x+h, y, z], rt,phi,nt ) - acoustic_potential( [x-h, y, z], rt,phi,nt)) / (2*h)
+    du_dr_numercal_y = (acoustic_potential( [x, y+h, z], rt,phi,nt ) - acoustic_potential( [x, y-h, z], rt,phi,nt)) / (2*h)
+    du_dr_numercal_z = (acoustic_potential( [x, y, z+h], rt,phi,nt ) - acoustic_potential( [x, y, z-h], rt,phi,nt)) / (2*h)
+    du_dr_numercal   = [du_dr_numercal_x, du_dr_numercal_y, du_dr_numercal_z]
+
+    return du_dr_numercal
+
+
 import transducer_placment; import numpy as np; import constants; import vti_writer; import phase_algorithms
     
 
@@ -126,7 +142,7 @@ nt = transducer_placment.direction_vectors(ntrans)
 phi_focus = phase_algorithms.phase_find(rt,0,0.04,0) # phi is the initial phase of each transducer to focus on a point
 phi = phase_algorithms.add_twin_signature(rt,phi_focus)
 
-test = acoustic_potential (r, rt, nt, phi)
+
 
 u = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=float)
 p_abs = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=float)
@@ -138,7 +154,7 @@ for xloop in range (0,constants.npoints):
         for zloop in range (0,constants.npoints):
             
             r = [ x  , y , z ]          # Point in space for each itteriation
-            u_and_p = acoustic_potential(r, rt, nt, phi)
+            u_and_p = acoustic_potential(r, rt, phi, nt)
             u[xloop,yloop,zloop] = u_and_p[0]
             p_abs[xloop,yloop,zloop] = u_and_p[1]            
                         
@@ -153,7 +169,6 @@ y = 0.00
 z = -gsize
 
 
-
 diff_u = np.gradient(u,constants.deltaxyz)
 ux = diff_u[0]; uy = diff_u[1]; uz = diff_u[2]
 
@@ -161,14 +176,11 @@ ux = diff_u[0]; uy = diff_u[1]; uz = diff_u[2]
 
 fx = -ux; fy = - uy; fz = -uz
 
-
 vti_writer.vti_writer (constants.npoints,p_abs,fx,fy,fz,u)
 
 print("Calculations compleated successfuly")
 
 
-
-"""
 
 
 def circle_co_ords(splits, diameter): 
