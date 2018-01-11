@@ -171,23 +171,24 @@ print("Calculations compleated successfuly")
 """
 
 
-def circle_co_ords(splits):
+def circle_co_ords(splits, diameter): 
+    """Take in number of points and circle diamiter and output coordinates of points in a circle centered at the origin"""
     import math; import numpy as np
     x = np.zeros (splits)
     y = np.zeros (splits)
     coordinates = np.zeros((splits,2))
     for point in range(0,splits):
         angle = ((2*math.pi) / splits) * (point+1)
-        x[point] = 0.01 * math.cos(angle)
-        y[point] = 0.01 * math.sin(angle)
+        x[point] = diameter * math.cos(angle)
+        y[point] = diameter * math.sin(angle)
     coordinates = [x,y]
     return coordinates
 """
 import matplotlib.pyplot as plt;
-test = circle_co_ords(50)
+test = circle_co_ords(50, 0.05)
 plt.plot(test[0], test[1], 'ro')
-plt.show() """
-
+plt.show()
+"""
 
 def read_from_excel(): # Reads the transducer locations from excel locations.xlsx
     #import required libraries
