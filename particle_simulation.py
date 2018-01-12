@@ -2,13 +2,13 @@ import matplotlib as mpl; import numpy as np; import matplotlib.pyplot as plt; f
 import math; import algorithms; import transducer_placment; import phase_algorithms
  
  
-inital_pos = [0.0001,0.018,-0.0001]        # m
+inital_pos = [0,0.021,-0]        # m
 inital_vel = [0,0,0]        # m/s
 gravity    = [0, -9.81, 0]  # m/s^2
-diamiter   = 0.004          # m    
+diamiter   = 0.005          # m    
 density    = 29             # kg/m^3
 dt         = 0.0001         # Time step s
-end_time   = 0.3             # End time s
+end_time   = 0.2             # End time s
 
 vol_sph = (1/6) * math.pi * diamiter**3      # m^3
 mass    = vol_sph * density               # kg
@@ -17,7 +17,7 @@ mass    = vol_sph * density               # kg
 rt = transducer_placment.array_grid(0.01,6,6)
 ntrans = len (rt)
 nt = transducer_placment.direction_vectors(ntrans)
-phi_focus = phase_algorithms.phase_find(rt,0,0.015,0) # phi is the initial phase of each transducer to focus on a point
+phi_focus = phase_algorithms.phase_find(rt,0,0.02,0) # phi is the initial phase of each transducer to focus on a point
 phi = phase_algorithms.add_twin_signature(rt,phi_focus)
 
 

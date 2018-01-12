@@ -204,7 +204,7 @@ def circle_co_ords(splits, diameter):
     return coordinates
 """
 import matplotlib.pyplot as plt;
-test = circle_co_ords(50, 0.05)
+test = circle_co_ords(50, 0.01)
 plt.plot(test[0], test[1], 'ro')
 plt.show()
 """

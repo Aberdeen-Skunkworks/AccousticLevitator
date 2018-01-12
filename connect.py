@@ -8,7 +8,7 @@ class Controller():
         import serial
         import os
         if os.name == "nt":
-            self.com = serial.Serial(port="COM4", baudrate=460800, timeout=0.5)
+            self.com = serial.Serial(port="COM3", baudrate=460800, timeout=0.5)
         else:
             self.com = serial.Serial(port="/dev/ttyUSB0", baudrate=460800, timeout=0.5)
 
@@ -21,8 +21,8 @@ class Controller():
         return self
 
     def __exit__(self, exc_type, exc_value, traceback):
-        for i in range(self.outputs):
-            self.disableOutput(i)
+        #for i in range(self.outputs):
+        #    self.disableOutput(i)
         self.com.close()        
             
     def getOutputs(self):
@@ -46,6 +46,7 @@ class Controller():
         #   23  22  21  20  19  18  17  16  15  14  13  12  11  10  9   8   7   6   5   4   3   2   1   0
         # | 1 | X | X | X | X | X | X | X | 0 | X | X | X | X | X | X | X | 0 | X | X | X | X | X | X | X |
         # 
+
         self.com.write(bytestream)
         
     def loadOffsets(self):
