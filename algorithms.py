@@ -42,8 +42,8 @@ def pressure (r, rt, phi, nt):
     else:
         theta = math.acos((np.dot(rs,nt)) / (mag_rs))
         exponential =  cmath.exp( 1j * (phi + k * mag_rs) ) / mag_rs
-        if theta < 0.001: # zero angle causes divistion by zero error -> directionality function aproaches 0
-            theta = 0.001
+        if theta < 0.0000001: # zero angle causes divistion by zero error -> directionality function aproaches 0
+            theta = 0.0000001
         frac =  (constants.p0*constants.A)*( (math.sin(k*constants.a*math.sin(theta))) /  (k*constants.a*math.sin(theta)) )
         pressure = (exponential*frac)
     return pressure
@@ -67,7 +67,9 @@ def differentiate_pressure(r, rt, phi, nt):
         theta = math.acos((np.dot(rs,nt)) / (mag_rs))
         exponent_term =  cmath.exp( 1j * (phi + k * mag_rs) ) / mag_rs
         if theta < 0.0001: # zero angle causes divistion by zero error -> directionality function aproaches 0
-            d_p_dr = [ 0, 0, 0]
+            fraction_term =  (constants.p0*constants.A)
+            d_exponential_term_dr = ((rs_hat * 1j * k * cmath.exp(1j*(phi + k * mag_rs)) ) / (mag_rs))  -  ((cmath.exp(1j*(phi + k * mag_rs)) * rs_hat) / (mag_rs**2) )
+            d_p_dr = (fraction_term * d_exponential_term_dr)
         else:
             fraction_term =  (constants.p0*constants.A)*( (math.sin(k*constants.a*math.sin(theta))) /  (k*constants.a*math.sin(theta)) )
             d_exponential_term_dr = ((rs_hat * 1j * k * cmath.exp(1j*(phi + k * mag_rs)) ) / (mag_rs))  -  ((cmath.exp(1j*(phi + k * mag_rs)) * rs_hat) / (mag_rs**2) )
