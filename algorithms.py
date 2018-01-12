@@ -117,7 +117,7 @@ def acoustic_potential (r, rt, phi, nt):
     
     u = (2*constants.k1*p_abs**2) - (2*constants.k2*(px_abs**2 + py_abs**2 + pz_abs**2))
 
-    return u , p_abs
+    return u
 
 
 def differentiate_acoustic_potential(h,r,rt,phi,nt):
@@ -130,11 +130,11 @@ def differentiate_acoustic_potential(h,r,rt,phi,nt):
 
     return du_dr_numercal
 
-
+"""
 import transducer_placment; import numpy as np; import constants; import vti_writer; import phase_algorithms
     
 
-r = [0, 0.04, 0]
+r = [0.01, 0.04, 0.0001]
 rt = transducer_placment.array_grid(0.01,6,6)
 ntrans = len (rt)
 nt = transducer_placment.direction_vectors(ntrans)
@@ -142,8 +142,15 @@ nt = transducer_placment.direction_vectors(ntrans)
 phi_focus = phase_algorithms.phase_find(rt,0,0.04,0) # phi is the initial phase of each transducer to focus on a point
 phi = phase_algorithms.add_twin_signature(rt,phi_focus)
 
+h = 0.000001
+
+test = differentiate_acoustic_potential(h,r,rt,phi,nt)
+
+"""
 
 
+"""
+################# Wont work now without adding p_abs to the acoustic_potential function
 u = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=float)
 p_abs = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=float)
 
@@ -180,7 +187,7 @@ vti_writer.vti_writer (constants.npoints,p_abs,fx,fy,fz,u)
 
 print("Calculations compleated successfuly")
 
-
+"""
 
 
 def circle_co_ords(splits, diameter): 
