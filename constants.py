@@ -12,7 +12,7 @@ z = -gsize
 npoints = int(1 + ((2 * gsize) / deltaxyz)) # Number of points on x y and z axis, plus 1 to index properly
 
 
-phaseresolution = 1250        # Phase resolution x as in ( 2*pi )/( x ) number of divisions of the phases
+phaseresolution = 1250      # Phase resolution x as in ( 2*pi )/( x ) number of divisions of the phases
 p0 = 0.17                   # Amplitude constant
 A = 17                      # Peak to peak amplitude
 a = 0.0045                  # Piston radius
@@ -22,10 +22,10 @@ rhoo = 1.18                 # Density of air kg/m^3
 rhos = 29                   # Density of particle kg/m^3    13.7 Calculated by hand
 co = 346                    # Speed of sound in Air m/s
 cs = 900                    # Speed of sound in particle material m/s
-particle_diamiter = 0.005   # Particle diamiter in m
+particle_diamiter = 0.004   # Particle diamiter in m
 
 
-v = (math.pi*particle_diamiter**3)/6          # Particle Volume 
+v = (1/6) * math.pi * particle_diamiter**3          # Particle Volume 
 p_mass = rhos * v           # particle mass in kg
 gravity = -9.81             # m/s^2 negitive as gravity is down \|/
 
