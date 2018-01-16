@@ -1,3 +1,7 @@
+##############################################################################
+#----------------------------------DEMO--------------------------------------#
+##############################################################################
+
 
 ## ----------------- Writing transducer locations to rt ------------------ ##
 
@@ -21,7 +25,7 @@ choose = input("Please choose haptic as (h) or pattern as (p) or moving as (m): 
 if choose == ("h"):
     print ("Haptic mode selected")
     phase_index = np.zeros((ntrans),dtype=int)
-    phi_focus = phase_algorithms.phase_find(rt,0,0.1,0)
+    phi_focus = phase_algorithms.phase_find(rt,0,0.08,0)
     for transducer in range(0,ntrans):
         phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))
         
@@ -54,6 +58,7 @@ elif choose == ("p"):
     
     from connect import Controller 
     with Controller() as ctl:
+        print("You have 25 seconds to trap the particle until fuzzing stops")
         a = 1
         while a==1: 
             
@@ -98,7 +103,7 @@ elif choose == ("m"):
     from connect import Controller  
     with Controller() as ctl:
 
-        print("You have 25 seconds to trap the particle")
+        print("You have 25 seconds to trap the particle until fuzzing stops")
         a = 1
         print(circle_co_ords[0][0],circle_co_ords[1][0])
         while a==1: 

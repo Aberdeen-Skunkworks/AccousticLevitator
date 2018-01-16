@@ -1,19 +1,18 @@
 
 
 # Code testing and visulisation
+"""
 
-
-''' Test hex_grid 
+#Test hex_grid 
 import transducer_placment 
 import numpy as np
 import matplotlib.pyplot as plt
 import math
 
 
-rt = transducer_placment.hex_grid(0.01,6,7)
-trans_to_delete = [0,4,5,11,23,30,35,36,37,41]                   # List of unwanted transducers 
-
-trans_to_delete = sorted(trans_to_delete)
+trans_to_delete = []  # List of unwanted transducers leave blank to keep all
+rt = transducer_placment.big_daddy()
+rt = transducer_placment.delete_transducers(rt,trans_to_delete)
 ntrans = len (rt)
 n_trans_to_delete = len(trans_to_delete)
 
@@ -29,10 +28,10 @@ for trans in range (0, (ntrans - n_trans_to_delete)):   # Plots circles
     ax.add_artist(circle)
 
 plt.xlim(-(math.sqrt(ntrans)*0.0075),(math.sqrt(ntrans)*0.0075)) 
-plt.ylim(-(math.sqrt(ntrans)*0.0075),(math.sqrt(ntrans)*0.0075)) '''
+plt.ylim(-(math.sqrt(ntrans)*0.0075),(math.sqrt(ntrans)*0.0075))
 
-
-
+"""
+"""
 ### ANIMATION moving images of a circular trap exported into paraview ###
 
 # -------------------------Import Libaries------------------------------------
@@ -122,3 +121,5 @@ for itteration in range (0, 32):
         
 
 print("Calculations compleated successfuly")
+
+"""
