@@ -8,7 +8,7 @@ class Controller():
         import serial
         import os
         if os.name == "nt":
-            self.com = serial.Serial(port="COM3", baudrate=460800, timeout=0.5)
+            self.com = serial.Serial(port="COM4", baudrate=460800, timeout=0.5)
         else:
             self.com = serial.Serial(port="/dev/ttyUSB0", baudrate=460800, timeout=0.5)
 

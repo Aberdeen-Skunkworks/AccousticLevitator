@@ -25,7 +25,7 @@ choose = input("Please choose haptic as (h) or pattern as (p) or moving as (m): 
 if choose == ("h"):
     print ("Haptic mode selected")
     phase_index = np.zeros((ntrans),dtype=int)
-    phi_focus = phase_algorithms.phase_find(rt,0,0.08,0)
+    phi_focus = phase_algorithms.phase_find(rt,0,0.12,0)
     for transducer in range(0,ntrans):
         phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))
         
@@ -48,7 +48,7 @@ if choose == ("h"):
 
 elif choose == ("p"):
     print ("Pattern mode selected")
-    phi_focus = phase_algorithms.phase_find(rt,0,0.018,0) # phi is the initial phase of each transducer to focus on a point
+    phi_focus = phase_algorithms.phase_find(rt,0,0.02,0) # phi is the initial phase of each transducer to focus on a point
     phi = phase_algorithms.add_twin_signature(rt,phi_focus)
     phase_index = np.zeros((ntrans),dtype=int)
     #phi_focus = algorithms.read_from_excel_phases() # Takes phases from an excel spreadsheet of phases from 0 to 2pi, any over 2pi just loops
@@ -58,11 +58,11 @@ elif choose == ("p"):
     
     from connect import Controller 
     with Controller() as ctl:
-        print("You have 25 seconds to trap the particle until fuzzing stops")
+        print("You have 35 seconds to trap the particle until fuzzing stops")
         a = 1
         while a==1: 
             
-            for fuzz in range(5000):
+            for fuzz in range(7000):
                 for i in range(ctl.outputs):
                     ctl.setOffset(i,phase_index[i])
                 ctl.loadOffsets()
