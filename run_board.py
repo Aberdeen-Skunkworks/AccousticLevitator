@@ -190,9 +190,9 @@ elif choose == ("m2"):
             for transducer in range(0,ntrans):
                 phase_index[transducer] = int(2500-phi[transducer]/((2*math.pi)/1250)) 
             print(" ")
-            print("Moved")
+            print("Moved!")
             print("Phase index is ", phase_index)
-            print("x = " "%.3f" % x, "y = " "%.3f" % y, "z = " "%.3f" % z) #tester
+            print("New Position: ","x = " "%.3f" % x, "y = " "%.3f" % y, "z = " "%.3f" % z) #tester
             
             #from connect import Controller
             #with Controller() as ctl:
@@ -222,38 +222,38 @@ elif choose == ("m2"):
         def forward_click(self):
             global x               
             x += 0.001
-            print('x changed to = ', "%.3f" % x)
             self.calculate_and_move_trap()
+            print('x changed to = ', "%.3f" % x)
         
         def backward_click(self):
             global x 
             x -= 0.001
-            print('x changed to = ', "%.3f" % x)
             self.calculate_and_move_trap()
+            print('x changed to = ', "%.3f" % x)
             
         def left_click(self):
             global z 
             z += 0.001
-            print('z changed to = ', "%.3f" % z)
             self.calculate_and_move_trap()
+            print('z changed to = ', "%.3f" % z)
             
         def right_click(self):
             global z 
             z -= 0.001
-            print('z changed to = ', "%.3f" % z)
             self.calculate_and_move_trap()
+            print('z changed to = ', "%.3f" % z)
             
         def up_click(self):
             global y 
             y += 0.001
-            print('y changed to = ', "%.3f" % y)
             self.calculate_and_move_trap()
+            print('y changed to = ', "%.3f" % y)
             
         def down_click(self):
             global y 
             y -= 0.001
-            print('y changed to = ', "%.3f" % y)
             self.calculate_and_move_trap()
+            print('y changed to = ', "%.3f" % y)
             
         def fuzz_click(self):
             print('Fuzzing for 30 seconds')
