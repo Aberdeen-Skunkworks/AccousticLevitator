@@ -45,7 +45,6 @@ def window2(): ### Trial 2
     sys.exit(app.exec_())
 
 
-
     
 class Window(QtWidgets.QWidget):
         x = 0    
@@ -118,22 +117,16 @@ class Window(QtWidgets.QWidget):
             self.y -= 1
             print('y = ', self.y)
 
+
+# test
+ 
+""" 
 app = QtWidgets.QApplication(sys.argv)
 app.aboutToQuit.connect(app.deleteLater)
 a_window = Window()
 sys.exit(app.exec_())
 
-
-
-
-
-
-
-
-
-
-
-
+"""
 
 
 
