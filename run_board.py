@@ -13,7 +13,7 @@ ntrans = len(rt);
 # -------------------------------------------------------------------------- #p
 
 
-choose = input("Please choose haptic as (h) or pattern as (p) or moving as (m) or GUI controled movment as (m2): ")
+choose = input("Please choose haptic as (h) or pattern as (p) or moving as (m) or GUI controled movment as (GUI): ")
 
 
 ## --------------------------- Haptic feedback --------------------------- ##
@@ -122,7 +122,7 @@ elif choose == ("m"):
     
 ## ------------------------- Moving traps GUI ----------------------------- ##
 
-elif choose == ("m2"):
+elif choose == ("GUI"):
     print ("GUI mode selected")
     
     # Initial position in m
@@ -140,6 +140,8 @@ elif choose == ("m2"):
             self.init_ui()
         
         def init_ui(self):
+            
+            
             self.forward = QtWidgets.QPushButton('Forward')
             self.backward = QtWidgets.QPushButton('Backwards')
             self.right = QtWidgets.QPushButton('Right')
@@ -147,8 +149,22 @@ elif choose == ("m2"):
             self.up = QtWidgets.QPushButton('Up')
             self.down = QtWidgets.QPushButton('Down')
             self.fuzz = QtWidgets.QPushButton('FUZZ')
+            self.reset = QtWidgets.QPushButton('Reset to [0, 0.02, 0]')
             
+            self.label1 = QtWidgets.QLabel('Movement Controls')
+            self.label2 = QtWidgets.QLabel('Extra Controls')
     
+    
+            h_box_label = QtWidgets.QHBoxLayout()
+            h_box_label.addStretch()
+            h_box_label.addWidget(self.label1)
+            h_box_label.addStretch() 
+            
+            h_box_labe2 = QtWidgets.QHBoxLayout()
+            h_box_labe2.addStretch()
+            h_box_labe2.addWidget(self.label2)
+            h_box_labe2.addStretch() 
+            
             h_box = QtWidgets.QHBoxLayout()
             h_box.addWidget(self.down)
             h_box.addWidget(self.forward)
@@ -161,10 +177,13 @@ elif choose == ("m2"):
             
             h_box3 = QtWidgets.QHBoxLayout()
             h_box3.addWidget(self.fuzz)
+            h_box3.addWidget(self.reset)
         
             v_box = QtWidgets.QVBoxLayout()
+            v_box.addLayout(h_box_label)
             v_box.addLayout(h_box)
             v_box.addLayout(h_box2)
+            v_box.addLayout(h_box_labe2)
             v_box.addLayout(h_box3)
             
             self.setLayout(v_box)
@@ -177,6 +196,7 @@ elif choose == ("m2"):
             self.up.clicked.connect(self.up_click)
             self.down.clicked.connect(self.down_click)
             self.fuzz.clicked.connect(self.fuzz_click)
+            self.reset.clicked.connect(self.reset_click)
             
             self.show()
     
@@ -256,13 +276,19 @@ elif choose == ("m2"):
             print('y changed to = ', "%.3f" % y)
             
         def fuzz_click(self):
+            print(' ')
             print('Fuzzing for 30 seconds')
             for x in range(2000): # 1000 roughly takes 14 seconds ish
                 self.calculate_and_move_trap_no_print()
-                
+            print(' ')
             print('Finished Fuzzing')
             
-
+        def reset_click(self):
+            global x,y,z
+            x = 0; y = 0.02; z = 0;
+            print(' ')
+            print('Reset to [0, 0.02, 0]')
+    
     app = QtWidgets.QApplication(sys.argv)
     app.aboutToQuit.connect(app.deleteLater)
     a_window = Window_update_trap()
