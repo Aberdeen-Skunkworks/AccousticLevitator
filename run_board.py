@@ -9,6 +9,7 @@ trans_to_delete = []  # List of unwanted transducers leave blank to keep all
 rt = transducer_placment.big_daddy()
 rt = transducer_placment.delete_transducers(rt,trans_to_delete)
 ntrans = len(rt);
+global phase_index
 
 # -------------------------------------------------------------------------- #p
 
@@ -130,6 +131,9 @@ elif choose == ("GUI"):
     x = 0    
     y = 0.02
     z = 0
+    rt = transducer_placment.big_daddy()
+    ntrans = len(rt);
+    phase_index = np.zeros((ntrans),dtype=int)
     
     class Window_update_trap(QtWidgets.QWidget):
     
@@ -202,42 +206,33 @@ elif choose == ("GUI"):
     
         def calculate_and_move_trap(self):
             import math; import phase_algorithms; import numpy as np; import transducer_placment
-            rt = transducer_placment.big_daddy()
-            ntrans = len(rt);
-            phase_index = np.zeros((ntrans),dtype=int)
+            global phase_index
+
             phi_focus = phase_algorithms.phase_find(rt,x,y,z)
-            phi = phase_algorithms.add_twin_signature(rt,phi_focus)
+            #phi = phase_algorithms.add_twin_signature(rt,phi_focus)
             for transducer in range(0,ntrans):
-                phase_index[transducer] = int(2500-phi[transducer]/((2*math.pi)/1250)) 
+                phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250)) 
             print(" ")
             print("Moved!")
             print("Phase index is ", phase_index)
             print("New Position: ","x = " "%.3f" % x, "y = " "%.3f" % y, "z = " "%.3f" % z) #tester
             
-            #from connect import Controller
-            #with Controller() as ctl:
+            from connect import Controller
+            with Controller() as ctl:
     
-             #   for i in range(ctl.outputs):
-             #       ctl.setOffset(i,phase_index[i])
-             #   ctl.loadOffsets()
+                for i in range(ctl.outputs):
+                    ctl.setOffset(i,phase_index[i])
+                ctl.loadOffsets()
              
              
         def calculate_and_move_trap_no_print(self):
-            import math; import phase_algorithms; import numpy as np; import transducer_placment
-            rt = transducer_placment.big_daddy()
-            ntrans = len(rt);
-            phase_index = np.zeros((ntrans),dtype=int)
-            phi_focus = phase_algorithms.phase_find(rt,x,y,z)
-            phi = phase_algorithms.add_twin_signature(rt,phi_focus)
-            for transducer in range(0,ntrans):
-                phase_index[transducer] = int(2500-phi[transducer]/((2*math.pi)/1250)) 
             
-            #from connect import Controller
-            #with Controller() as ctl:
+            from connect import Controller
+            with Controller() as ctl:
     
-             #   for i in range(ctl.outputs):
-             #       ctl.setOffset(i,phase_index[i])
-             #   ctl.loadOffsets()
+                for i in range(ctl.outputs):
+                    ctl.setOffset(i,phase_index[i])
+                ctl.loadOffsets()
     
         def forward_click(self):
             global x               
@@ -278,7 +273,7 @@ elif choose == ("GUI"):
         def fuzz_click(self):
             print(' ')
             print('Fuzzing for 30 seconds')
-            for x in range(2000): # 1000 roughly takes 14 seconds ish
+            for x in range(300): # 1000 roughly takes 14 seconds ish
                 self.calculate_and_move_trap_no_print()
             print(' ')
             print('Finished Fuzzing')

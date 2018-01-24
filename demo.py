@@ -48,7 +48,7 @@ if choose == ("h"):
 
 elif choose == ("p"):
     print ("Pattern mode selected")
-    phi_focus = phase_algorithms.phase_find(rt,0,0.02,0) # phi is the initial phase of each transducer to focus on a point
+    phi_focus = phase_algorithms.phase_find(rt,0,0.018,0) # phi is the initial phase of each transducer to focus on a point
     phi = phase_algorithms.add_twin_signature(rt,phi_focus)
     phase_index = np.zeros((ntrans),dtype=int)
     #phi_focus = algorithms.read_from_excel_phases() # Takes phases from an excel spreadsheet of phases from 0 to 2pi, any over 2pi just loops
