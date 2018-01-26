@@ -2,8 +2,12 @@
 NET "clk" LOC = "P184" ;
 NET "RST" LOC = "P101" ;
 
-NET "UART_TX" LOC = "p178" ; 
-NET "UART_RX" LOC = "p172" ; 
+#For the serial board
+#NET "UART_TX" LOC = "p178" ; 
+#NET "UART_RX" LOC = "p172" ; 
+#For the "dumb" Lolin32 board
+NET "UART_TX" LOC = "p203" ; 
+NET "UART_RX" LOC = "p200" ; 
 
 NET "led[0]" LOC =" P68";
 NET "led[1]" LOC = "P78" ;
