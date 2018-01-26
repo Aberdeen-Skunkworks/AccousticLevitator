@@ -22,7 +22,7 @@ choose = input("Please choose haptic as (h) or pattern as (p) or moving as (m) o
 if choose == ("h"):
     print ("Haptic mode selected")
     phase_index = np.zeros((ntrans),dtype=int)
-    phi_focus = phase_algorithms.phase_find(rt,0,0.1,0)
+    phi_focus = phase_algorithms.phase_find(rt,0,0.08,0)
     for transducer in range(0,ntrans):
         phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))
         
@@ -273,7 +273,7 @@ elif choose == ("GUI"):
         def fuzz_click(self):
             print(' ')
             print('Fuzzing for 30 seconds')
-            for x in range(300): # 1000 roughly takes 14 seconds ish
+            for x in range(300): # 150 roughly takes 14 seconds ish
                 self.calculate_and_move_trap_no_print()
             print(' ')
             print('Finished Fuzzing')
