@@ -2,13 +2,13 @@ import matplotlib as mpl; import numpy as np; import matplotlib.pyplot as plt; f
 import math; import algorithms; import transducer_placment; import phase_algorithms; import constants;
  
  
-inital_pos = [0.01,0.0185,0.01]             # m
+inital_pos = [0.01,0.0185,0.004]             # m
 inital_vel = [0,0,0]                        # m/s
 gravity    = [0, -9.81, 0]                  # m/s^2
 diamiter   = constants.particle_diamiter    # m    
 density    = constants.rhos                 # kg/m^3
-dt         = 0.0001                          # Time step s
-end_time   = 0.1                            # End time s
+dt         = 0.001                          # Time step s
+end_time   = 1                           # End time s
 
 vol_sph =   constants.v                     # m^3
 mass    = vol_sph * density                 # kg
@@ -48,46 +48,35 @@ for time_step in range(0, number_of_time_steps):
     #    break
 """
 
-##### Verlet Algorithm
+force = np.add( force_g, np.multiply(-1, algorithms.differentiate_acoustic_potential(dt,pos,rt,phi,nt)))
+acceleration = np.divide(force,mass)
+
+##### Verlet Algorithm Velocity
 for time_step in range(0, number_of_time_steps):
     pos_over_time[time_step][0] = pos[0]; pos_over_time[time_step][1] = pos[1]; pos_over_time[time_step][2] = pos[2] 
     
-    force = np.add( force_g, np.multiply(-1, algorithms.differentiate_acoustic_potential(dt,pos,rt,phi,nt)))
-    acceleration = np.divide(force,mass)
-    
     pos = np.add( pos, np.multiply(dt, vel), (acceleration*( (dt**2) / 2 ) ) )
+        
+    force = np.add( force_g, np.multiply(-1, algorithms.differentiate_acoustic_potential(dt,pos,rt,phi,nt)))
     
-    force_next = np.add( force_g, np.multiply(-1, algorithms.differentiate_acoustic_potential(dt,pos,rt,phi,nt)))
     acceleration_next = np.divide(force,mass)
     
     vel = np.add(vel, np.multiply( ( dt / 2 ) , np.add( acceleration, acceleration_next ) )   )
     
+    acceleration = acceleration_next
+    
     time = np.add(time, dt)
-    #total_energy[time_step] = algorithms.acoustic_potential(pos, rt, phi, nt) + (0.5 * mass * np.linalg.norm(vel)**2) + (mass * 9.81 * pos[1])
+    
+    total_energy[time_step] = algorithms.acoustic_potential(pos, rt, phi, nt) + (0.5 * mass * np.linalg.norm(vel)**2) + (mass * 9.81 * pos[1])
     if pos[1]<0:
         break
 
-"""
-##### Leapfrog Verlet Algorithm (In progress)
-for time_step in range(0, number_of_time_steps):
-    pos_over_time[time_step][0] = pos[0]; pos_over_time[time_step][1] = pos[1]; pos_over_time[time_step][2] = pos[2] 
-    
-    
-    
-    pos = np.add( pos, np.multiply(dt, vel))
-    
-    force = np.add( force_g, np.multiply(-1, algorithms.differentiate_acoustic_potential(dt,pos,rt,phi,nt)))
-    acceleration = np.divide(force,mass)
-    
-    vel = np.add(vel, np.multiply( ( dt / 2 ) , np.add( acceleration, acceleration_next ) )   )
-    
-    time = np.add(time, dt)
-    #total_energy[time_step] = algorithms.acoustic_potential(pos, rt, phi, nt) + (0.5 * mass * np.linalg.norm(vel)**2) + (mass * 9.81 * pos[1])
-    if pos[1]<0:
-        break
-"""
+
 fig = plt.figure()
 ax = fig.gca(projection='3d')
+
+###### turn to mm 
+pos_over_time = np.multiply(1000, pos_over_time)
 
 for time_step in range(0, number_of_time_steps):
     x[time_step] = pos_over_time[time_step][0]
@@ -109,6 +98,6 @@ ax.legend()
 
 plt.show()
 
-# Energy Plot
+#Energy Plot
 #plt.plot(np.linspace(0,1000,1000), total_energy, 'ro')
 #plt.show()

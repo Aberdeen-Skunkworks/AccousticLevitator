@@ -1,22 +1,32 @@
 #!/usr/bin/python
 
 class Controller():
-    def __init__(self):
+    def __init__(self, ports = []):
+        self.ports = ports
         pass
             
     def __enter__(self):
         import serial
         import os
-        if os.name == "nt":
-            self.com = serial.Serial(port="COM6", baudrate=460800, timeout=0.5)
-        else:
-            self.com = serial.Serial(port="/dev/ttyUSB0", baudrate=460800, timeout=0.5)
+
+        if len(self.ports) == 0:
+            if os.name == "nt":
+                self.ports = ["COM"+str(i) for i in range(1, 9)]
+            else:
+                self.ports = ["/dev/ttyUSB"+str(i) for i in range(1, 9)]
 
         self.outputs = 0
-        try:
-            self.outputs = self.getOutputs()
-        except Exception as e:
-            print("Failed to open communications!")
+        for port in self.ports:
+            try:
+                print("Trying to connect to board on "+port)
+                self.com = serial.Serial(port=port, baudrate=460800, timeout=0.5)
+                self.outputs = self.getOutputs()
+                print("Connected successfully to board with "+str(self.outputs)+" outputs")
+                break
+            except Exception as e:
+                self.com = None
+        if (self.com == None):
+            raise Exception("Failed to open communications!")
             
         return self
 
