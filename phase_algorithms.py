@@ -51,17 +51,16 @@ def phase_find(rt, x, y, z):
 
 def add_twin_signature(rt, phase): # Array needs to be centerd around the origin for this to work
 
-    import algorithms; import math
+    import algorithms; import math; import numpy as np
     
     transducer_angles = algorithms.get_angle(rt)
     ntrans = len(rt)
-    phi_2 = phase
+    phi_2 = np.zeros((ntrans))
     
     for transducer in range(0, ntrans):
         if 0 < transducer_angles[transducer] < math.pi: # all possitive z value transducers have pi added to their phase signature to create twin trap
-            phi_2[transducer] = phi_2[transducer] + math.pi
+            phi_2[transducer] = phase[transducer] + math.pi
             
-    
     return phi_2
 
 
