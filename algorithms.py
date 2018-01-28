@@ -118,7 +118,7 @@ def acoustic_potential (r, rt, phi, nt):
     
     u = (2*constants.k1*p_abs**2) - (2*constants.k2*(px_abs**2 + py_abs**2 + pz_abs**2))
 
-    return u
+    return u, p_abs
 
 
 def differentiate_acoustic_potential(h,r,rt,phi,nt):
@@ -131,84 +131,6 @@ def differentiate_acoustic_potential(h,r,rt,phi,nt):
 
     return du_dr_numercal
 
-"""
-import transducer_placment; import numpy as np; import constants; import vti_writer; import phase_algorithms
-    
-
-r = [0.01, 0.04, 0.0001]
-rt = transducer_placment.array_grid(0.01,6,6)
-ntrans = len (rt)
-nt = transducer_placment.direction_vectors(ntrans)
-#phi = np.zeros(ntrans)
-phi_focus = phase_algorithms.phase_find(rt,0,0.04,0) # phi is the initial phase of each transducer to focus on a point
-phi = phase_algorithms.add_twin_signature(rt,phi_focus)
-
-h = 0.000001
-
-test = differentiate_acoustic_potential(h,r,rt,phi,nt)
-
-"""
-
-
-"""
-################# Wont work now without adding p_abs to the acoustic_potential function
-u = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=float)
-p_abs = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=float)
-
-x = constants.x; y = constants.y; z = constants.z
-gsize = constants.gsize
-for xloop in range (0,constants.npoints):
-    for yloop in range (0,constants.npoints):
-        for zloop in range (0,constants.npoints):
-            
-            r = [ x  , y , z ]          # Point in space for each itteriation
-            u_and_p = acoustic_potential(r, rt, phi, nt)
-            u[xloop,yloop,zloop] = u_and_p[0]
-            p_abs[xloop,yloop,zloop] = u_and_p[1]            
-                        
-            z = z + constants.deltaxyz    # Adding delta to x,y and z
-        y = y + constants.deltaxyz
-        z = -gsize               # Resetting the value of z to start value for next loop
-    x = x + constants.deltaxyz
-    y = 0                       # Resetting the value of y to start value for next loop
-    z = -gsize                   # Resetting the value of z to start value for next loop
-x = -gsize # Initial values of x,y and z in (m) Grid volume
-y = 0.00
-z = -gsize
-
-
-diff_u = np.gradient(u,constants.deltaxyz)
-ux = diff_u[0]; uy = diff_u[1]; uz = diff_u[2]
-
-# -----------------Calculating force on particle ---------------
-
-fx = -ux; fy = - uy; fz = -uz
-
-vti_writer.vti_writer (constants.npoints,p_abs,fx,fy,fz,u)
-
-print("Calculations compleated successfuly")
-
-"""
-
-
-def circle_co_ords(splits, diameter): 
-    """Take in number of points and circle diamiter and output coordinates of points in a circle centered at the origin"""
-    import math; import numpy as np
-    x = np.zeros (splits)
-    y = np.zeros (splits)
-    coordinates = np.zeros((splits,2))
-    for point in range(0,splits):
-        angle = ((2*math.pi) / splits) * (point+1)
-        x[point] = diameter * math.cos(angle)
-        y[point] = diameter * math.sin(angle)
-    coordinates = [x,y]
-    return coordinates
-"""
-import matplotlib.pyplot as plt;
-test = circle_co_ords(50, 0.01)
-plt.plot(test[0], test[1], 'ro')
-plt.show()
-"""
 
 def read_from_excel(): # Reads the transducer locations from excel locations.xlsx
     #import required libraries
@@ -229,6 +151,27 @@ def read_from_excel(): # Reads the transducer locations from excel locations.xls
 """
 import matplotlib.pyplot as plt;
 test = read_from_excel()
+plt.plot(test[0], test[1], 'ro')
+plt.show()
+"""
+
+
+
+def circle_co_ords(splits, diameter): 
+    """Take in number of points and circle diamiter and output coordinates of points in a circle centered at the origin"""
+    import math; import numpy as np
+    x = np.zeros (splits)
+    y = np.zeros (splits)
+    coordinates = np.zeros((splits,2))
+    for point in range(0,splits):
+        angle = ((2*math.pi) / splits) * (point+1)
+        x[point] = diameter * math.cos(angle)
+        y[point] = diameter * math.sin(angle)
+    coordinates = [x,y]
+    return coordinates
+"""
+import matplotlib.pyplot as plt;
+test = circle_co_ords(50, 0.01)
 plt.plot(test[0], test[1], 'ro')
 plt.show()
 """
