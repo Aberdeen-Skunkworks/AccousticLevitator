@@ -25,8 +25,7 @@ def get_angle(rt):
             theta[transducer] = math.pi*2 - theta[transducer]
             
         #print(theta[transducer]/(math.pi/180)) # To test uncomment to get angle in degrees 
-    
-    return (theta)
+    return theta
 
 
 def pressure (r, rt, phi, nt):
@@ -80,7 +79,7 @@ def differentiate_pressure(r, rt, phi, nt):
             d_fraction_dr = ((d_numerator_dr*denominator) - (numerator*d_denominator_dr))/(denominator**2)
                 
             d_p_dr = (d_fraction_dr * exponent_term) + (fraction_term * d_exponential_term_dr)
-    return (d_p_dr)
+    return d_p_dr
 
 
 def acoustic_potential (r, rt, phi, nt):

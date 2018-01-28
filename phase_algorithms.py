@@ -49,19 +49,20 @@ def phase_find(rt, x, y, z):
 
 
 
-def add_twin_signature(rt, phi): # Array needs to be centerd around the origin for this to work
+def add_twin_signature(rt, phase): # Array needs to be centerd around the origin for this to work
 
     import algorithms; import math
     
     transducer_angles = algorithms.get_angle(rt)
     ntrans = len(rt)
+    phi_2 = phase
     
     for transducer in range(0, ntrans):
         if 0 < transducer_angles[transducer] < math.pi: # all possitive z value transducers have pi added to their phase signature to create twin trap
-            phi[transducer] = phi[transducer] + math.pi
+            phi_2[transducer] = phi_2[transducer] + math.pi
             
     
-    return (phi)
+    return phi_2
 
 
 
@@ -76,6 +77,6 @@ def add_vortex_signature(rt, phi): # Array needs to be centerd around the origin
         phi[transducer] = phi[transducer] + transducer_angles[transducer]
             
     
-    return (phi)
+    return phi
 
 

@@ -78,6 +78,7 @@ def pressure_derivative (x, y, z, rt, phi, nt):
 
     return d_p_dr
 
+"""
 phi = 0   # Phase of the transducer
 x= 1.5       # Point in space x,y,z
 y= 0.4
@@ -87,6 +88,7 @@ nt = [0,1,0]
 
 Test = pressure_derivative (x, y, z, rt, phi, nt)
 print(Test)
+"""
 
 """
 

@@ -91,7 +91,7 @@ def find_best(phase_offset):
     
     return objective
     
-
+"""
 
 
 import scipy; import constants; import numpy as np; import math
@@ -123,7 +123,7 @@ test = find_best
 
 
 
-
+"""
 
 # For finding the value of the objective function with twin and vortex signatures
 """
