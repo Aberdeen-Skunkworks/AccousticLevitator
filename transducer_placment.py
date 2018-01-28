@@ -117,7 +117,7 @@ def random(ntrans,half_grid_size, min_allowable_dist):
         rt[transducer,0,0] = keep_x[transducer]
         rt[transducer,0,2] = keep_z[transducer]
     
-    return(rt)
+    return rt
 
 
 def direction_vectors(ntrans):
@@ -165,7 +165,3 @@ def big_daddy():
 
     return rt
     
-     
-    
-    
-
