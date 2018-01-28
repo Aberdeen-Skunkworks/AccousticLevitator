@@ -230,8 +230,8 @@ def read_from_excel(): # Reads the transducer locations from excel locations.xls
 import matplotlib.pyplot as plt;
 test = read_from_excel()
 plt.plot(test[0], test[1], 'ro')
-plt.show()"""
-
+plt.show()
+"""
 
 def read_from_excel_phases(): # Reads the phases from phase.xlsx
     #import required libraries

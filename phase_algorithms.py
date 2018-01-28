@@ -58,7 +58,7 @@ def add_twin_signature(rt, phase): # Array needs to be centerd around the origin
     phi_2 = np.zeros((ntrans))
     
     for transducer in range(0, ntrans):
-        if 0 < transducer_angles[transducer] < math.pi: # all possitive z value transducers have pi added to their phase signature to create twin trap
+        if -0.00001 <= transducer_angles[transducer] <= math.pi+0.00001: # all possitive z value transducers have pi added to their phase signature to create twin trap
             phi_2[transducer] = phase[transducer] + math.pi
             
     return phi_2

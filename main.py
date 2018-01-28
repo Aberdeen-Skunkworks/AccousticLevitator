@@ -3,13 +3,12 @@
 # -------------------------Import Libaries------------------------------------
 
 import constants; import numpy as np; from calc_pressure_field import calc_pressure_field
-import transducer_placment; from vti_writer import vti_writer; import phase_algorithms; 
-
+import transducer_placment; from vti_writer import vti_writer; import phase_algorithms;
 
 # -------------------------Variables to set------------------------------------
 
 #trans_to_delete = [4,5,6,13,14,15,16,17,22,23,24,25,26,31,32,33,34,35,40,41,42,43,44,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87]  # List of unwanted transducers leave blank to keep all 
-rt = transducer_placment.big_daddy()    # spcing , x nummber, y number of transducers
+rt = transducer_placment.big_daddy()   # spcing , x nummber, y number of transducers
 #rt = transducer_placment.delete_transducers(rt,trans_to_delete)
 #rt = transducer_placment.array_grid(0.01,6,6) 
 
