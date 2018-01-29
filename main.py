@@ -24,7 +24,6 @@ phi = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus))
 
 p = np.zeros ((constants.npoints,constants.npoints,constants.npoints,ntrans), dtype=complex)
 pcombined = np.zeros ((constants.npoints,constants.npoints,constants.npoints),dtype=complex)
-realcombined = np.zeros ((constants.npoints,constants.npoints,constants.npoints),dtype=float)
 
 px = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=complex)
 py = np.copy(px); pz = np.copy(px)
@@ -45,23 +44,15 @@ p = calc_pressure_field(rt, nt, ntrans, phi) # calculate pressure field
 
 # -----------------Loop to sum pressure of all transducers---------------------
 
-for xloop in range (0,constants.npoints): #Combining the tranducer  fields
-    for yloop in range (0,constants.npoints):
-        for zloop in range (0,constants.npoints):
-            for transducers in range (0,ntrans):
-                pcombined[xloop,yloop,zloop] = pcombined[xloop,yloop,zloop] + p[xloop,yloop,zloop, transducers]
-                realcombined[xloop,yloop,zloop] = np.absolute(pcombined[xloop,yloop,zloop]) 
-            height[xloop,yloop,zloop] = yloop * constants.deltaxyz
+height = np.multiply(constants.deltaxyz, np.indices([21,21,21])[1]) # 55 times faster
+pcombined_numpy = np.sum(p, axis = 3) 
 
 # -----------------Calculating derrivitive of the pressure field---------------
-
 
 diff_p = np.gradient(pcombined,constants.deltaxyz)
 px = np.copy(diff_p[0]); py = np.copy(diff_p[1]); pz = np.copy(diff_p[2])
 
-
 # ----------------- Calculating the Gork’ov potential-------------------------
-
 
 # Calculating absuloute values for the pressure field and its derrivitives
        
@@ -70,20 +61,13 @@ pxabs  = np.absolute(px)
 pyabs  = np.absolute(py)  
 pzabs  = np.absolute(pz)  
 
+# Calculating Gork’ov potential u (Including gravity)
 
-# Calculating Gork’ov potential u
-for xloop in range (0,constants.npoints):
-    for yloop in range (0,constants.npoints):
-        for zloop in range (0,constants.npoints):
-            u[xloop,yloop,zloop] = (2*constants.k1*pabs[xloop,yloop,zloop]**2) - (2*constants.k2*(pxabs[xloop,yloop,zloop]**2 + pyabs[xloop,yloop,zloop]**2 + pzabs[xloop,yloop,zloop]**2))
-            u[xloop,yloop,zloop] = u[xloop,yloop,zloop] - (constants.p_mass*constants.gravity*(yloop*constants.deltaxyz)) # including potential energy (mass*g*height) it is taken away even though gravity is negitive so that when the negitive gradient is takn then the force will be downwards
-
-#u_numpy = np.subtract( np.subtract( np.multiply(2, constants.k1, (np.power(pabs, 2)) ),  np.multiply(2, constants.k2, np.add(np.power(pxabs, 2), np.power(pyabs, 2), np.power(pzabs, 2) ) ) ), np.multiply(constants.p_mass, constants.gravity, np.copy(height))) 
-
-
+u = ( np.subtract( np.subtract( np.multiply(np.multiply(2, constants.k1), np.power(pabs, 2) ), 
+np.multiply( np.multiply(2, constants.k2), np.add(np.add(np.power(pxabs, 2), np.power(pyabs, 2)), np.power(pzabs, 2) ) ) ),  
+np.multiply(constants.p_mass, np.multiply(constants.gravity, np.copy(height)))) ) # Gravity term
 
 # -----------------Calculating derrivitive of Gork’ov potential ---------------
-
 
 diff_u = np.gradient(u,constants.deltaxyz)
 ux = np.copy(diff_u[0]); uy = np.copy(diff_u[1]); uz = np.copy(diff_u[2])
@@ -94,7 +78,7 @@ fx = np.copy(-ux); fy = np.copy(-uy); fz = np.copy(-uz)
 
 # -------------------Creating output images and vtk file----------------------
 
-vti_writer (constants.npoints,realcombined,fx,fy,fz,u)
+vti_writer (constants.npoints, pabs, fx, fy, fz, u)
 
 print("Calculations compleated successfuly")
 
