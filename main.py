@@ -10,7 +10,7 @@ import transducer_placment; from vti_writer import vti_writer; import phase_algo
 #trans_to_delete = [4,5,6,13,14,15,16,17,22,23,24,25,26,31,32,33,34,35,40,41,42,43,44,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87]  # List of unwanted transducers leave blank to keep all 
 #rt = transducer_placment.big_daddy()   # spcing , x nummber, y number of transducers
 #rt = transducer_placment.delete_transducers(rt,trans_to_delete)
-rt = transducer_placment.array_grid(0.01,9,9) 
+rt = transducer_placment.array_grid(0.01,6,6) 
 
 ntrans = len (rt)   # Total number of transducers in grid
 
@@ -43,7 +43,7 @@ p = calc_pressure_field(rt, nt, ntrans, phi) # calculate pressure field
 
 # -----------------Loop to sum pressure of all transducers---------------------
 
-for xloop in range (0,constants.npoints): #Combining the tranducer fields
+for xloop in range (0,constants.npoints): #Combining the tranducer  fields
         for yloop in range (0,constants.npoints):
             for zloop in range (0,constants.npoints):
                 for transducers in range (0,ntrans):
