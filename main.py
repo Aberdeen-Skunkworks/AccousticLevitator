@@ -10,7 +10,7 @@ import transducer_placment; from vti_writer import vti_writer; import phase_algo
 #trans_to_delete = [4,5,6,13,14,15,16,17,22,23,24,25,26,31,32,33,34,35,40,41,42,43,44,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87]  # List of unwanted transducers leave blank to keep all 
 #rt = transducer_placment.big_daddy()   # spcing , x nummber, y number of transducers
 #rt = transducer_placment.delete_transducers(rt,trans_to_delete)
-rt = transducer_placment.array_grid(0.01,6,6) 
+rt = transducer_placment.array_grid(0.01,2,2) 
 
 ntrans = len (rt)   # Total number of transducers in grid
 
@@ -37,6 +37,8 @@ pxabs = np.copy(pabs); pyabs = np.copy(pabs); pzabs = np.copy(pabs)
 
 u = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=float)
 
+height = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=float)
+
 # ----------------------------------------------------------------------------
 
 p = calc_pressure_field(rt, nt, ntrans, phi) # calculate pressure field
@@ -44,13 +46,13 @@ p = calc_pressure_field(rt, nt, ntrans, phi) # calculate pressure field
 # -----------------Loop to sum pressure of all transducers---------------------
 
 for xloop in range (0,constants.npoints): #Combining the tranducer  fields
-        for yloop in range (0,constants.npoints):
-            for zloop in range (0,constants.npoints):
-                for transducers in range (0,ntrans):
-                    pcombined[xloop,yloop,zloop] = pcombined[xloop,yloop,zloop] + p[xloop,yloop,zloop, transducers]
-                    realcombined[xloop,yloop,zloop] = np.absolute(pcombined[xloop,yloop,zloop]) 
-                    
-                    
+    for yloop in range (0,constants.npoints):
+        for zloop in range (0,constants.npoints):
+            for transducers in range (0,ntrans):
+                pcombined[xloop,yloop,zloop] = pcombined[xloop,yloop,zloop] + p[xloop,yloop,zloop, transducers]
+                realcombined[xloop,yloop,zloop] = np.absolute(pcombined[xloop,yloop,zloop]) 
+            height[xloop,yloop,zloop] = yloop * constants.deltaxyz
+
 # -----------------Calculating derrivitive of the pressure field---------------
 
 
@@ -60,15 +62,14 @@ px = np.copy(diff_p[0]); py = np.copy(diff_p[1]); pz = np.copy(diff_p[2])
 
 # ----------------- Calculating the Gork’ov potential-------------------------
 
-# Calculating absuloute values for the pressure field and its derrivitives
 
-for xloop in range (0,(constants.npoints)):
-    for yloop in range (0,(constants.npoints)):
-        for zloop in range (0,(constants.npoints)): 
-            pabs[xloop,yloop,zloop]   = np.absolute(pcombined[xloop,yloop,zloop])  
-            pxabs[xloop,yloop,zloop]  = np.absolute(px[xloop,yloop,zloop])  
-            pyabs[xloop,yloop,zloop]  = np.absolute(py[xloop,yloop,zloop])  
-            pzabs[xloop,yloop,zloop]  = np.absolute(pz[xloop,yloop,zloop])  
+# Calculating absuloute values for the pressure field and its derrivitives
+       
+pabs   = np.absolute(pcombined)  
+pxabs  = np.absolute(px)  
+pyabs  = np.absolute(py)  
+pzabs  = np.absolute(pz)  
+
 
 # Calculating Gork’ov potential u
 for xloop in range (0,constants.npoints):
@@ -76,7 +77,11 @@ for xloop in range (0,constants.npoints):
         for zloop in range (0,constants.npoints):
             u[xloop,yloop,zloop] = (2*constants.k1*pabs[xloop,yloop,zloop]**2) - (2*constants.k2*(pxabs[xloop,yloop,zloop]**2 + pyabs[xloop,yloop,zloop]**2 + pzabs[xloop,yloop,zloop]**2))
             u[xloop,yloop,zloop] = u[xloop,yloop,zloop] - (constants.p_mass*constants.gravity*(yloop*constants.deltaxyz)) # including potential energy (mass*g*height) it is taken away even though gravity is negitive so that when the negitive gradient is takn then the force will be downwards
-            
+
+#u_numpy = np.subtract( np.subtract( np.multiply(2, constants.k1, (np.power(pabs, 2)) ),  np.multiply(2, constants.k2, np.add(np.power(pxabs, 2), np.power(pyabs, 2), np.power(pzabs, 2) ) ) ), np.multiply(constants.p_mass, constants.gravity, np.copy(height))) 
+
+
+
 # -----------------Calculating derrivitive of Gork’ov potential ---------------
 
 
@@ -105,11 +110,12 @@ import constants; import numpy as np; from calc_pressure_field import calc_press
 import transducer_placment; from vti_writer import vti_writer; import phase_algorithms; import algorithms;
 
 
-rt = transducer_placment.big_daddy() 
+#rt = transducer_placment.big_daddy()
+rt = transducer_placment.array_grid(0.01, 6, 6) 
 ntrans = len (rt)
 nt = transducer_placment.direction_vectors(ntrans)
-phi_focus = phase_algorithms.phase_find(rt,0,0.02,0) # phi is the initial phase of each transducer to focus on a point
-phi = phase_algorithms.add_twin_signature(rt,np.copy(phi_focus))
+phi_focus = phase_algorithms.phase_find(rt,0, 0.02, 0) # phi is the initial phase of each transducer to focus on a point
+phi = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus))
 
 
 ################# Wont work now without adding p_abs to the acoustic_potential function in algorithms(invalid index to scalar variable.)
