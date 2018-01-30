@@ -2,27 +2,26 @@
 
 # -------------------------Import Libaries------------------------------------
 
-import constants; import numpy as np; from calc_pressure_field import calc_pressure_field
+import constants; import numpy as np; import calc_pressure_field
 import transducer_placment; from vti_writer import vti_writer; import phase_algorithms;
 
 # -------------------------Variables to set------------------------------------
 
 #trans_to_delete = [4,5,6,13,14,15,16,17,22,23,24,25,26,31,32,33,34,35,40,41,42,43,44,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87]  # List of unwanted transducers leave blank to keep all 
-#rt = transducer_placment.big_daddy()   # spcing , x nummber, y number of transducers
+rt = transducer_placment.big_daddy()   # spcing , x nummber, y number of transducers
 #rt = transducer_placment.delete_transducers(rt,trans_to_delete)
-rt = transducer_placment.array_grid(0.01,2,2) 
+#rt = transducer_placment.array_grid(0.01,6,6) 
 
 ntrans = len (rt)   # Total number of transducers in grid
 
 nt = transducer_placment.direction_vectors(ntrans) # nt is the direction vector of each transducer
 
-phi_focus = phase_algorithms.phase_find(rt,0,0.02,0) # phi is the initial phase of each transducer to focus on a point
+phi_focus = phase_algorithms.phase_find(rt,0,0.04,0) # phi is the initial phase of each transducer to focus on a point
 phi = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus))
 
 
 # ----------------------Setting up output arrays-------------------------------
 
-p = np.zeros ((constants.npoints,constants.npoints,constants.npoints,ntrans), dtype=complex)
 pcombined = np.zeros ((constants.npoints,constants.npoints,constants.npoints),dtype=complex)
 
 px = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=complex)
@@ -40,12 +39,29 @@ height = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtyp
 
 # ----------------------------------------------------------------------------
 
-p = calc_pressure_field(rt, nt, ntrans, phi) # calculate pressure field
+import time
+t0 = time.time()
+
+p_old = calc_pressure_field.calc_pressure_field(rt, nt, ntrans, phi) # calculate pressure field
+
+t1 = time.time()
+
+p = calc_pressure_field.calc_pressure_field_numpy(rt, nt, ntrans, phi)
+
+t2 = time.time()
+
+t_1 = t1-t0
+t_2 = t2-t1
+
+print("Loops took ",t_1, " seconds" )
+print("Numpy took ",t_2, " seconds" )
+print(t_1/t_2, " times faster" )
+
 
 # -----------------Loop to sum pressure of all transducers---------------------
 
-height = np.multiply(constants.deltaxyz, np.indices([21,21,21])[1]) # 55 times faster
-pcombined_numpy = np.sum(p, axis = 3) 
+height = np.multiply(constants.deltaxyz, np.indices([constants.npoints, constants.npoints, constants.npoints])[1]) # 55 times faster
+pcombined = np.sum(p, axis = 0) 
 
 # -----------------Calculating derrivitive of the pressure field---------------
 

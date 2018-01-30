@@ -9,8 +9,9 @@ def calc_pressure_field(rt, nt, ntrans, phi):
     gsize = constants.gsize; deltaxyz = constants.deltaxyz; x = constants.x; y = constants.y; z = constants.z
     npoints = constants.npoints; p0 = constants.p0; A = constants.A; a = constants.a; lamda = constants.lamda
     
-    p = np.zeros ((npoints,npoints,npoints,ntrans), dtype=complex)
+    p = np.zeros ((ntrans, npoints,npoints,npoints), dtype=complex)
     
+    k = (2*math.pi)/(float(lamda))                         # Wavenumber
     
     for transducer in range (0,ntrans):
         for xloop in range (0,npoints):
@@ -26,13 +27,12 @@ def calc_pressure_field(rt, nt, ntrans, phi):
                     dmag = np.linalg.norm(d)     # Distance between transducer and point in space
                     
                     if dmag < (1*10**(-13)):     # Calculating complex acoustic pressure at point r[x,y,z] 
-                        p[xloop,yloop,zloop,transducer] = 0 
+                        p[transducer, xloop, yloop, zloop] = 0 
                     else:
                         
                         dot = d[0]*nt[transducer,0,0] + d[1]*nt[transducer,0,1] + d[2]*nt[transducer,0,2] # Dot product of the direction of the transducer and the separation vector
                         theta = math.acos(dot/dmag)
     
-                        k = (2*math.pi)/(float(lamda))                         # Wavenumber
                         exp = cmath.exp(1j*(float(phi[transducer])+k*dmag))    # Exponential term
                             
                         if theta < 1*(10**-13):
@@ -40,7 +40,7 @@ def calc_pressure_field(rt, nt, ntrans, phi):
                         else:
                             Df = (cmath.sin(k*a*cmath.sin(theta)))/(k*a*cmath.sin(theta))   # Directivity function of a circular piston source
                             
-                        p[xloop,yloop,zloop,transducer] = p0*A*((Df)/(dmag))*exp    
+                        p[transducer, xloop, yloop, zloop] = p0*A*((Df)/(dmag))*exp    
                                             
                     z = z + deltaxyz    # Adding delta to x,y and z
                 y = y + deltaxyz
@@ -55,3 +55,48 @@ def calc_pressure_field(rt, nt, ntrans, phi):
     
     return p
 
+
+def calc_pressure_field_numpy(rt, nt, ntrans, phi):
+    
+    import numpy as np; import math; import constants; 
+    
+    p = np.zeros ((ntrans, constants.npoints, constants.npoints, constants.npoints), dtype=complex)
+    k = (2*math.pi)/(float(constants.lamda)) # Wavenumber
+    
+    x_temp = np.linspace(-constants.gsize,   constants.gsize, constants.npoints)
+    y_temp = np.linspace(               0, 2*constants.gsize, constants.npoints)
+    z_temp = np.linspace(-constants.gsize,   constants.gsize, constants.npoints)
+    
+    x_y_z_mesh = np.meshgrid(y_temp, z_temp, x_temp)
+    
+    x_co_ords = x_y_z_mesh[2]
+    y_co_ords = x_y_z_mesh[0]
+    z_co_ords = x_y_z_mesh[1]
+    
+    
+    for transducer in range (0,ntrans):
+        print("Reached transducer ", transducer, " of ", ntrans)
+        d_x = np.subtract(x_co_ords, rt[transducer,0,0])
+        d_y = np.subtract(y_co_ords, rt[transducer,0,1])
+        d_z = np.subtract(z_co_ords, rt[transducer,0,2])
+        
+        d = np.array([d_x, d_y, d_z])
+        
+        dmag = np.linalg.norm(d, axis = 0)
+        
+        dot = np.add( np.add(np.multiply(d_x, nt[transducer,0,0]) ,  np.multiply(d_y, nt[transducer,0,1])) ,  np.multiply(d_z, nt[transducer,0,2]))
+        
+        theta = np.arccos( np.divide(dot, dmag) )
+        
+        exp = np.exp(np.multiply(1j, np.add(phi[transducer], np.multiply(k, dmag))))
+        
+        df_numerator   = np.sin(np.multiply(k, np.multiply(constants.a, np.sin(theta))))
+        df_denominator = np.multiply(k, np.multiply(constants.a, np.sin(theta)))
+        df = np.divide(df_numerator, df_denominator)
+        
+        p[transducer] = np.multiply(np.multiply(np.multiply(constants.p0, constants.A), exp), np.divide(df, dmag) )
+        
+    return p
+    
+    
+    
