@@ -16,8 +16,10 @@ ntrans = len (rt)   # Total number of transducers in grid
 
 nt = transducer_placment.direction_vectors(ntrans) # nt is the direction vector of each transducer
 
-phi_focus = phase_algorithms.phase_find(rt,0,0.04,0) # phi is the initial phase of each transducer to focus on a point
-phi = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus))
+focus_point = [ 0 , 0.03 , 0 ]
+
+phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
+phi = phase_algorithms.add_twin_signature(rt, phi_focus)
 
 
 # ----------------------Setting up output arrays-------------------------------
@@ -42,7 +44,7 @@ height = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtyp
 import time
 t0 = time.time()
 
-p_old = calc_pressure_field.calc_pressure_field(rt, nt, ntrans, phi) # calculate pressure field
+#p_old = calc_pressure_field.calc_pressure_field(rt, nt, ntrans, phi) # calculate pressure field
 
 t1 = time.time()
 
@@ -97,6 +99,7 @@ fx = np.copy(-ux); fy = np.copy(-uy); fz = np.copy(-uz)
 vti_writer (constants.npoints, pabs, fx, fy, fz, u)
 
 print("Calculations compleated successfuly")
+print("Trap point at index ", [])
 
 
 
