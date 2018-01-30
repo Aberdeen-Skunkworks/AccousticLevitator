@@ -40,16 +40,11 @@ u = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=flo
 height = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=float)
 
 # ----------------------------------------------------------------------------
-<<<<<<< HEAD
-
 import time
 t0 = time.time()
 
 #p_old = calc_pressure_field.calc_pressure_field(rt, nt, ntrans, phi) # calculate pressure field
 
-=======
-#p_old  = p = calc_pressure_field.calc_pressure_field(rt, nt, ntrans, phi)
->>>>>>> 6949f2cb291657531a9dcc1465150faefe7118c7
 t1 = time.time()
 p = calc_pressure_field.calc_pressure_field_numpy(rt, nt, ntrans, phi)
 t2 = time.time()
