@@ -3,7 +3,7 @@
 
 def vti_writer (npoints,realcombined,fx,fy,fz,u):
     
-    import vtk; 
+    import vtk; import numpy as  np
     
     
     # creating vti image file with combined pressure magnitude data
@@ -52,6 +52,17 @@ def vti_writer (npoints,realcombined,fx,fy,fz,u):
     dims = imageData.GetDimensions()
     
     # Fill every entry of the image data
+    """
+    file2 = open('output'+str(npoints)+'x'+str(npoints)+'x'+str(npoints)+'.raw', 'wb')
+    minu = np.min(u)
+    maxu = np.max(u)
+    for z in range(dims[2]):
+        for y in range(dims[1]):
+            for x in range(dims[0]):
+                    val = int(255 * ((u[x,y,z]-minu) / (maxu-minu)))                    
+                    file2.write(val.to_bytes(1, byteorder='little', signed=False))
+    file2.close()
+    """
     for z in range(dims[2]):
         for y in range(dims[1]):
             for x in range(dims[0]):

@@ -75,7 +75,7 @@ def calc_pressure_field_numpy(rt, nt, ntrans, phi):
     
     
     for transducer in range (0,ntrans):
-        print("Reached transducer ", transducer, " of ", ntrans)
+        print("Calculated up to transducer ", transducer, " out of ", ntrans)
         d_x = np.subtract(x_co_ords, rt[transducer,0,0])
         d_y = np.subtract(y_co_ords, rt[transducer,0,1])
         d_z = np.subtract(z_co_ords, rt[transducer,0,2])
@@ -97,6 +97,9 @@ def calc_pressure_field_numpy(rt, nt, ntrans, phi):
         p[transducer] = np.multiply(np.multiply(np.multiply(constants.p0, constants.A), exp), np.divide(df, dmag) )
         
     return p
-    
+
+
+
+
     
     

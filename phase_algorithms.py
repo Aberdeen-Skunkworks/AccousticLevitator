@@ -5,17 +5,20 @@ def phase_discretize(phase): ### Not needed anymore
     
     import numpy as np; import math; import constants
     
+    phase_with_resoluton = np.zeros(len(phase))
     cutoffs = np.linspace((2*math.pi)/constants.phaseresolution,(2*math.pi),constants.phaseresolution) # Calculates phase cutoffs from 0 to 2pi taking into account the resolution (infinite resolution would be continious)
 
     def find_nearest(cutoffs, phase):  # Finds the value of cutoff that is closest to the "real phase"
         idx = (np.abs(cutoffs-phase)).argmin()
         return cutoffs[idx]
-    
-    phase_with_resoluton = find_nearest(cutoffs,phase)
+    for transducer in range(len(phase)):
+        if phase[transducer] > (math.pi*2):
+            number_over_2pi = phase[transducer] / (math.pi*2)
+            fraction_of_2pi =  number_over_2pi%1 # Mod 1 gives the decimal remainder
+            phase[transducer] = fraction_of_2pi * (math.pi*2)
+        phase_with_resoluton[transducer] = find_nearest(cutoffs,phase[transducer])
     
     return phase_with_resoluton
-
-
 
 
 def phase_find(rt, x, y, z):
@@ -62,7 +65,9 @@ def add_twin_signature(rt, phase): # Array needs to be centerd around the origin
             phi_2[transducer] = phase[transducer] + math.pi
         elif transducer_angles[transducer] <= math.pi/2:
             phi_2[transducer] = phase[transducer] + math.pi
-        
+        else:
+            phi_2[transducer] = phase[transducer]
+            
     return phi_2
 
 
