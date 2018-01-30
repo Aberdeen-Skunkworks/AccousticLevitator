@@ -2,7 +2,7 @@
 
 # -------------------------Import Libaries------------------------------------
 
-import constants; import numpy as np; import calc_pressure_field
+import constants; import numpy as np; import calc_pressure_field; import time
 import transducer_placment; from vti_writer import vti_writer; import phase_algorithms;
 
 # -------------------------Variables to set------------------------------------
@@ -41,23 +41,12 @@ height = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtyp
 
 # ----------------------------------------------------------------------------
 
-import time
-t0 = time.time()
-
-#p_old = calc_pressure_field.calc_pressure_field(rt, nt, ntrans, phi) # calculate pressure field
-
 t1 = time.time()
-
 p = calc_pressure_field.calc_pressure_field_numpy(rt, nt, ntrans, phi)
-
 t2 = time.time()
-
-t_1 = t1-t0
-t_2 = t2-t1
-
-print("Loops took ",t_1, " seconds" )
-print("Numpy took ",t_2, " seconds" )
-print(t_1/t_2, " times faster" )
+print(" ")
+print("Numpy pressure calculation took ",round(t2-t1,2), " seconds" )
+print(" ")
 
 
 # -----------------Loop to sum pressure of all transducers---------------------
@@ -98,10 +87,12 @@ fx = np.copy(-ux); fy = np.copy(-uy); fz = np.copy(-uz)
 
 vti_writer (constants.npoints, pabs, fx, fy, fz, u)
 
+
+print("For use in paraview: ")
+print("Trap point at index ", np.divide(focus_point, constants.deltaxyz), " Away from [0,0,0]")
+print("Particle radius in indexes = ", np.divide(np.divide(constants.particle_diamiter,2), constants.deltaxyz))
+print(" ")
 print("Calculations compleated successfuly")
-print("Trap point at index ", [])
-
-
 
 
 """
