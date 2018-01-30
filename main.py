@@ -17,8 +17,8 @@ ntrans = len (rt)   # Total number of transducers in grid
 nt = transducer_placment.direction_vectors(ntrans) # nt is the direction vector of each transducer
 
 phi_focus = phase_algorithms.phase_find(rt,0,0.04,0) # phi is the initial phase of each transducer to focus on a point
-phi = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus))
-
+#phi = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus))
+phi = phi_focus
 
 # ----------------------Setting up output arrays-------------------------------
 
@@ -42,7 +42,7 @@ height = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtyp
 import time
 t0 = time.time()
 
-p_old = calc_pressure_field.calc_pressure_field(rt, nt, ntrans, phi) # calculate pressure field
+#p_old = calc_pressure_field.calc_pressure_field(rt, nt, ntrans, phi) # calculate pressure field
 
 t1 = time.time()
 
