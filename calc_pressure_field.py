@@ -97,6 +97,9 @@ def calc_pressure_field_numpy(rt, nt, ntrans, phi):
         p[transducer] = np.multiply(np.multiply(np.multiply(constants.p0, constants.A), exp), np.divide(df, dmag) )
         
     return p
-    
+
+
+
+
     
     

@@ -88,7 +88,7 @@ def random(ntrans,half_grid_size, min_allowable_dist):
     keep_x[0] = (random.random() * 2 * half_grid_size) - half_grid_size
     keep_z[0] = (random.random() * 2 * half_grid_size) - half_grid_size
     
-    counter = 2
+    counter = 1
     end_counter = 1 # counter to terminate the function if stuck in infinate loop
     while counter < ntrans and end_counter < 20000:
         

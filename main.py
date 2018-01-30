@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 
 # -------------------------Import Libaries------------------------------------
 
@@ -10,8 +10,8 @@ import transducer_placment; from vti_writer import vti_writer; import phase_algo
 #trans_to_delete = [4,5,6,13,14,15,16,17,22,23,24,25,26,31,32,33,34,35,40,41,42,43,44,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87]  # List of unwanted transducers leave blank to keep all 
 rt = transducer_placment.big_daddy()   # spcing , x nummber, y number of transducers
 #rt = transducer_placment.delete_transducers(rt,trans_to_delete)
-#rt = transducer_placment.array_grid(0.01,6,6) 
 
+#rt = transducer_placment.random(88,0.055, 0.01)
 ntrans = len (rt)   # Total number of transducers in grid
 
 nt = transducer_placment.direction_vectors(ntrans) # nt is the direction vector of each transducer
@@ -20,7 +20,7 @@ focus_point = [ 0 , 0.03 , 0 ]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
 phi = phase_algorithms.add_twin_signature(rt, phi_focus)
-
+#phi = phase_algorithms.phase_discretize(np.copy(phi))
 
 # ----------------------Setting up output arrays-------------------------------
 
@@ -40,7 +40,7 @@ u = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=flo
 height = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=float)
 
 # ----------------------------------------------------------------------------
-
+#p_old  = p = calc_pressure_field.calc_pressure_field(rt, nt, ntrans, phi)
 t1 = time.time()
 p = calc_pressure_field.calc_pressure_field_numpy(rt, nt, ntrans, phi)
 t2 = time.time()
