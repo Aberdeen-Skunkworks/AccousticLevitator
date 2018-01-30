@@ -21,6 +21,23 @@ def phase_discretize(phase): ### Not needed anymore
     return phase_with_resoluton
 
 
+def phase_random_noise(multiplier, phase):
+    """"Function to take in a intager which defines how spread the randomness should be and a 
+    list of phases. then outputs the phases with added noise to their signals"""
+    
+    import random; import math
+    
+    for transducer in range(len(phase)):
+        
+        phase[transducer] = phase[transducer] + random.random()*multiplier
+        if phase[transducer] > (math.pi*2):
+            number_over_2pi = phase[transducer] / (math.pi*2)
+            fraction_of_2pi =  number_over_2pi%1 # Mod 1 gives the decimal remainder
+            phase[transducer] = fraction_of_2pi * (math.pi*2)
+        
+    return phase
+    
+
 def phase_find(rt, x, y, z):
     
     # This function takes in a array of transducers and a position in space and

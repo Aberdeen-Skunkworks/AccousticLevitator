@@ -19,8 +19,15 @@ nt = transducer_placment.direction_vectors(ntrans) # nt is the direction vector 
 focus_point = [ 0 , 0.03 , 0 ]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
-phi = phase_algorithms.add_twin_signature(rt, phi_focus)
+phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus))
+phi_noise = phase_algorithms.phase_random_noise(4, np.copy(phi_signature)) # number is randomness multiplier (0-1)*multiplier scaled between 0 and 2pi
+
+phi = phi_noise
+
 #phi = phase_algorithms.phase_discretize(np.copy(phi))
+
+
+
 
 # ----------------------Setting up output arrays-------------------------------
 
