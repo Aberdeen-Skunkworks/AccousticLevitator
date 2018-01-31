@@ -103,3 +103,51 @@ def add_vortex_signature(rt, phi): # Array needs to be centerd around the origin
     return phi
 
 
+def phase_contributions(point, complex_pressure):
+    
+    import numpy as np; import math; import constants
+    
+    x = int(point[0] / constants.deltaxyz)
+    y = int(point[1] / constants.deltaxyz)
+    z = int(point[2] / constants.deltaxyz)
+      
+    number_of_transducers = np.ma.size(complex_pressure,0)
+    
+    phase_at_point_per_transducer = np.zeros(number_of_transducers)
+    
+    for transducer in range (number_of_transducers):
+        
+        phase_at_point_per_transducer[transducer] = math.atan((complex_pressure[transducer][x][y][z].imag) / (complex_pressure[transducer][x][y][z].real))
+        
+    
+    
+    
+    return phase_at_point_per_transducer
+
+"""
+
+import numpy as np; import matplotlib.pyplot as plt
+
+r = [0.008,0.006,0.008]
+test = phase_contributions(r, p)
+
+print(np.min(test))
+print(np.max(test))
+
+
+ones = np.ones(len(test))
+plt.figure()
+plt.plot(test, ones, 'ro')
+plt.show()
+
+"""
+
+
+
+
+
+
+
+
+
+
