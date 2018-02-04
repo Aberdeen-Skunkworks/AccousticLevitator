@@ -45,7 +45,7 @@ if choose == ("h"):
 
 elif choose == ("p"):
     print ("Pattern mode selected")
-    phi_focus = phase_algorithms.phase_find(rt,0,0.018,0) # phi is the initial phase of each transducer to focus on a point
+    phi_focus = phase_algorithms.phase_find(rt,0,0.02,0) # phi is the initial phase of each transducer to focus on a point
     phi = phase_algorithms.add_twin_signature(rt,phi_focus)
     phase_index = np.zeros((ntrans),dtype=int)
     #phi_focus = algorithms.read_from_excel_phases() # Takes phases from an excel spreadsheet of phases from 0 to 2pi, any over 2pi just loops
@@ -209,9 +209,9 @@ elif choose == ("GUI"):
             global phase_index
 
             phi_focus = phase_algorithms.phase_find(rt,x,y,z)
-            #phi = phase_algorithms.add_twin_signature(rt,phi_focus)
+            phi = phase_algorithms.add_twin_signature(rt,phi_focus)
             for transducer in range(0,ntrans):
-                phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250)) 
+                phase_index[transducer] = int(2500-phi[transducer]/((2*math.pi)/1250)) 
             print(" ")
             print("Moved!")
             print("Phase index is ", phase_index)
@@ -229,11 +229,16 @@ elif choose == ("GUI"):
             
             from connect import Controller
             with Controller() as ctl:
-    
-                for i in range(ctl.outputs):
-                    ctl.setOffset(i,phase_index[i])
-                ctl.loadOffsets()
-    
+                print("You have 15 seconds to trap the particle until fuzzing stops")
+                a = 1
+                while a==1: 
+                    
+                    for fuzz in range(3000):
+                        for i in range(ctl.outputs):
+                            ctl.setOffset(i,phase_index[i])
+                        ctl.loadOffsets()
+                    a = 0
+            
         def forward_click(self):
             global x               
             x += 0.001
@@ -273,8 +278,7 @@ elif choose == ("GUI"):
         def fuzz_click(self):
             print(' ')
             print('Fuzzing for 30 seconds')
-            for x in range(300): # 150 roughly takes 14 seconds ish
-                self.calculate_and_move_trap_no_print()
+            self.calculate_and_move_trap_no_print()
             print(' ')
             print('Finished Fuzzing')
             
