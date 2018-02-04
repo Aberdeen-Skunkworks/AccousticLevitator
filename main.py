@@ -47,7 +47,7 @@ u = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=flo
 height = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=float)
 
 # ----------------------------------------------------------------------------
-import time
+
 t0 = time.time()
 
 #p_old = calc_pressure_field.calc_pressure_field(rt, nt, ntrans, phi) # calculate pressure field
@@ -63,7 +63,7 @@ print(" ")
 # -----------------Loop to sum pressure of all transducers---------------------
 
 height = np.multiply(constants.deltaxyz, np.indices([constants.npoints, constants.npoints, constants.npoints])[1]) # 55 times faster
-pcombined = np.sum(p, axis = 0) 
+pcombined = np.sum(np.copy(p), axis = 0) 
 
 # -----------------Calculating derrivitive of the pressure field---------------
 

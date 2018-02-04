@@ -56,7 +56,7 @@ def calc_pressure_field(rt, nt, ntrans, phi):
     return p
 
 
-def calc_pressure_field_numpy(rt, nt, ntrans, phi):
+def calc_pressure_field_numpy(rt, nt, ntrans, phi): ## x,y,z directions do not match the above algorithm (May be mirrored dur to mesh function)
     
     import numpy as np; import math; import constants; 
     
