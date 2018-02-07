@@ -5,7 +5,7 @@ NET "RST" LOC = "P101" ;
 #For the serial board
 #NET "UART_TX" LOC = "p178" ; 
 #NET "UART_RX" LOC = "p172" ; 
-#For the "dumb" Lolin32 board
+#For the Lolin32 board
 NET "UART_TX" LOC = "p203" ; 
 NET "UART_RX" LOC = "p200" ; 
 

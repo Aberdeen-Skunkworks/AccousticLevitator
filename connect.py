@@ -13,7 +13,7 @@ class Controller():
             if os.name == "nt":
                 self.ports = ["COM"+str(i) for i in range(1, 9)]
             else:
-                self.ports = ["/dev/ttyUSB"+str(i) for i in range(1, 9)]
+                self.ports = ["/dev/ttyUSB"+str(i) for i in range(0, 9)]
 
         self.outputs = 0
         for port in self.ports:

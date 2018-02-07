@@ -4,7 +4,7 @@ parameter FREQ = 40000;
 parameter OFFSET_WIDTH = 12;
 parameter [OFFSET_WIDTH-3:0] DIVIDE = CLOCK / FREQ / 2 - 1;
 parameter DATA_WIDTH = 8;
-parameter BAUD = 460800;//115200;
+parameter BAUD = 460800;
 parameter [15:0] UART_SCALE = CLOCK/(BAUD*8);
 reg reload;
 reg [OFFSET_WIDTH * OUTPUTS - 1:0] offsets;

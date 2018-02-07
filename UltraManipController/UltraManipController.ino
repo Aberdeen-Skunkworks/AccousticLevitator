@@ -1,18 +1,18 @@
-#define BypassSerial
+#include <HardwareSerial.h>
 
-#ifdef BypassSerial
-void setup() {
-    pinMode(35, INPUT);
-    pinMode(34, INPUT);
-}
-void loop() {}
-#endif
+HardwareSerial to_FPGA(1); //Use UART 1
+const int baud = 460800;
 
-#ifdef SoftwareSerial
 void setup() {
-   Serial.setup();
-    pinMode(35, INPUT);
-    pinMode(34, INPUT);
+  Serial.begin(baud);
+  to_FPGA.begin(baud, SERIAL_8N1, 19, 23);
 }
-void loop() {}
-#endif
+void loop() {
+  if (to_FPGA.available()) {
+    Serial.write(to_FPGA.read());
+  }
+  if (Serial.available()) {
+    to_FPGA.write(Serial.read());
+  }
+}
+
