@@ -7,7 +7,15 @@ NET "RST" LOC = "P101" ;
 #NET "UART_RX" LOC = "p172" ; 
 #For the Lolin32 board
 NET "UART_TX" LOC = "p203" ; 
-NET "UART_RX" LOC = "p200" ; 
+NET "UART_RX" LOC = "p200" ;
+#197
+#193
+#190
+#187
+#185
+#180
+#178
+NET "SYNC_CLK_OUT" LOC = "p172" ;
 
 NET "led[0]" LOC =" P68";
 NET "led[1]" LOC = "P78" ;

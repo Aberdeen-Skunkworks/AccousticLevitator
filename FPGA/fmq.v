@@ -1,4 +1,4 @@
-module fmq #(parameter OUTPUTS = 88)(input clk, input rst, output [OUTPUTS-1:0] tx, output UART_TX, input UART_RX, output [4:0] led);
+module fmq #(parameter OUTPUTS = 88)(input clk, input rst, output [OUTPUTS-1:0] tx, output UART_TX, input UART_RX, output SYNC_CLK_OUT, output [4:0] led);
 parameter CLOCK=50000000;
 parameter FREQ = 40000;
 parameter OFFSET_WIDTH = 12;
@@ -6,16 +6,20 @@ parameter [OFFSET_WIDTH-3:0] DIVIDE = CLOCK / FREQ / 2 - 1;
 parameter DATA_WIDTH = 8;
 parameter BAUD = 460800;
 parameter [15:0] UART_SCALE = CLOCK/(BAUD*8);
-reg reload;
+reg reload_now;
 reg [OFFSET_WIDTH * OUTPUTS - 1:0] offsets;
 
-//Generate the parallel clocks
+//Generate the clocks which drive all of the outputs
 genvar j;
 generate
 	for (j=0; j < OUTPUTS; j=j+1) begin : clock_generator
-		clock #(OFFSET_WIDTH) osc(clk, reload, offsets[OFFSET_WIDTH*j+:OFFSET_WIDTH], DIVIDE, tx[j]);	
+		clock #(OFFSET_WIDTH) osc(clk, reload_now, offsets[OFFSET_WIDTH*j+:OFFSET_WIDTH], DIVIDE, tx[j]);	
 	end
 endgenerate
+
+//The main clock, outputting the zero-time shift signal, used for sync with other boards and for ensuring reloads happen at the start of a sync cycle.
+//This only resets/reloads when the reset line is down, unlike the other clocks which go down on reload
+clock #(OFFSET_WIDTH) main_clk(clk, rst, {1'b1,{OFFSET_WIDTH-1{1'b0}}}, DIVIDE, SYNC_CLK_OUT);
 
 reg [DATA_WIDTH-1:0]  tx_data;
 reg                   tx_valid;
@@ -35,7 +39,7 @@ uart #(DATA_WIDTH)
 		.prescale(UART_SCALE));
 
 /*First LED just notes the reset events!*/
-assign led[0] = ~reload;
+assign led[0] = ~reload_now;
 /*The second LED flashes to indicate the system is working, even under reset*/
 reg [32:0] LEDcounter;
 assign led[1] = LEDcounter[25];
@@ -53,10 +57,10 @@ begin
       tx_valid <= 0;
       rx_ready <= 0;
 		offsets <= {OUTPUTS*OFFSET_WIDTH{1'b0}};
-		reload <= 1'b0; //Bring the reload line low
+		reload_now <= 1'b0; //Bring the reload line low
 		cmdbuffer <= 24'd0;
 	end else begin 
-		reload <= 1'b1; //Bring the reload line high
+		reload_now <= 1'b1; //Bring the reload line high
 		LEDcounter <= LEDcounter + 1;
       if (tx_valid) begin
 			// attempting to transmit a byte
@@ -92,7 +96,7 @@ begin
 						offsets[OFFSET_WIDTH*i +: OFFSET_WIDTH] <= {cmdbuffer[12:8], cmdbuffer[6:0]};
 			end
 			2'b01 : begin
-				reload <= 1'b0; //Bring the reload line low
+				reload_now <= 1'b0; //Bring the reload line low
 			end
 			2'b10 : begin //Output the number of outputs configured
 				tx_data <= OUTPUTS;
