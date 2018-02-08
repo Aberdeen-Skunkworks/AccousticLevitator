@@ -14,7 +14,7 @@ NET "UART_RX" LOC = "p200" ;
 #187
 #185
 #180
-#178
+NET "RELOAD_OUT" LOC = "p178" ;
 NET "SYNC_CLK_OUT" LOC = "p172" ;
 
 NET "led[0]" LOC =" P68";
