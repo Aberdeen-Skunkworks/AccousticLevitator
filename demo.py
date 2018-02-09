@@ -30,16 +30,17 @@ if choose == ("h"):
         phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))
         
     from connect import Controller 
-    with Controller() as ctl:
-        
+    with Controller() as ctl:        
         while True:          # Turns the pattern off and on as fast as possible
-            
             for i in range(ctl.outputs):
                 ctl.setOffset(i,phase_index[i])
+            ctl.setOutputDACPower(255) 
+            ctl.setOutputDACDivisor(20)
             ctl.loadOffsets()
     
             for i in range(ctl.outputs):
                 ctl.disableOutput(i)
+            
 # -------------------------------------------------------------------------- #
     
 
@@ -124,16 +125,3 @@ elif choose == ("m"):
 
 else:
     print("Come on, pick one of the correct letters!")
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    

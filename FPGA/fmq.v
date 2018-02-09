@@ -1,4 +1,5 @@
-module fmq #(parameter OUTPUTS = 88)(input clk, input rst, output [OUTPUTS-1:0] tx, output UART_TX, input UART_RX, output SYNC_CLK_OUT, output RELOAD_OUT, output [4:0] led);
+`include "dac.v"
+module fmq #(parameter OUTPUTS = 88)(input clk, input rst, output [OUTPUTS-1:0] tx, output UART_TX, input UART_RX, output SYNC_CLK_OUT, output RELOAD_OUT, output OE_OUT, output [4:0] led);
 parameter CLOCK=50000000;
 parameter FREQ = 40000;
 parameter OFFSET_WIDTH = 11;
@@ -8,18 +9,28 @@ parameter BAUD = 460800;
 parameter [15:0] UART_SCALE = CLOCK/(BAUD*8);
 reg reload_now;
 reg [(OFFSET_WIDTH+1) * OUTPUTS - 1:0] offsets;
+wire OE;
 
 //Generate the clocks which drive all of the outputs
 genvar j;
 generate
 	for (j=0; j < OUTPUTS; j=j+1) begin : clock_generator
-		clock #(OFFSET_WIDTH) osc(clk, reload_now, offsets[(OFFSET_WIDTH+1)*j+:OFFSET_WIDTH], DIVIDE, offsets[(OFFSET_WIDTH+1)*j+OFFSET_WIDTH], tx[j]);	
+		clock #(OFFSET_WIDTH) osc(clk, reload_now, offsets[(OFFSET_WIDTH+1)*j+:OFFSET_WIDTH], DIVIDE, offsets[(OFFSET_WIDTH+1)*j+OFFSET_WIDTH], OE, tx[j]);	
 	end
 endgenerate
 
 //The main clock, outputting the zero-time shift signal, used for sync with other boards and for ensuring reloads happen at the start of a sync cycle.
 //This only resets/reloads when the reset line is down, unlike the other clocks which go down on reload
-clock #(OFFSET_WIDTH) main_clk(clk, rst, {OFFSET_WIDTH{1'b0}}, DIVIDE, 1, SYNC_CLK_OUT);
+clock #(OFFSET_WIDTH) main_clk(clk, rst, {OFFSET_WIDTH{1'b0}}, DIVIDE, 1, 1, SYNC_CLK_OUT);
+
+wire dac_clk;
+reg [7:0] dac_clk_divisor;
+Clock_divider dac_clk_div(clk, dac_clk, dac_clk_divisor, rst);
+
+reg [7:0] dac_value;
+dac output_dac(OE, dac_value, dac_clk, rst);
+
+assign OE_OUT = OE;
 
 reg last_sync_clk;
 reg reload_next;
@@ -55,7 +66,7 @@ uart #(DATA_WIDTH)
 /*First LED just notes the reset events!*/
 assign led[0] = ~reload_now;
 /*The second LED flashes to indicate the system is working, even under reset*/
-reg [32:0] LEDcounter;
+reg [27:0] LEDcounter;
 assign led[1] = LEDcounter[25];
 assign led[2] = LEDcounter[26];
 assign led[3] = LEDcounter[27];
@@ -73,7 +84,9 @@ begin
 		offsets <= {OUTPUTS*(OFFSET_WIDTH+1){1'b0}};
 		reload_next <= 1'b1; //Trigger a reload next main clock cycle
 		cmdbuffer <= 24'd0;
-	end else begin 
+		dac_value <= {8{1'b1}};
+		dac_clk_divisor <= 8'd128;
+	end else begin
 		if (reload_cond) begin
 			reload_next <= 1'b0; //Reload is happening, so clear it for the next clock
 		end
@@ -118,6 +131,12 @@ begin
 			2'b10 : begin //Output the number of outputs configured
 				tx_data <= OUTPUTS;
 				tx_valid <= 1;
+			end
+			2'b11 : begin //Set the DAC value
+				if (cmdbuffer[20])
+					dac_clk_divisor <= {cmdbuffer[8], cmdbuffer[6:0]};
+				else
+					dac_value <= {cmdbuffer[8], cmdbuffer[6:0]};
 			end
 			default: begin
 				tx_data <= 8'd0;
