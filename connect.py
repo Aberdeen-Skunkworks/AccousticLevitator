@@ -98,6 +98,30 @@ class Controller():
         
         self.sendCmd(cmd)
 
+    def setOutputDACPower(self, power):
+        # #The structure of the command
+        #   23  22  21  20  19  18  17  16  15  14  13  12  11  10  9   8   7   6   5   4   3   2   1   0
+        # | 1 | 1 | 1 | X | X | X | X | X | 0 | X | X | X | X | X | X | Y | 0 | Y | Y | Y | Y | Y | Y | Y |
+        #  X = UNUSED
+        #  Y = 7 bit DAC value
+        if power > 0b11111111:
+            raise Exception("Power selected is too large!")
+
+        cmd = bytearray([0b11100000, 0b00000001 & (power >> 7), 0b01111111 & power])
+        self.sendCmd(cmd) 
+
+    def setOutputDACDivisor(self, divisor):
+        # #The structure of the command
+        #   23  22  21  20  19  18  17  16  15  14  13  12  11  10  9   8   7   6   5   4   3   2   1   0
+        # | 1 | 1 | 1 | X | X | X | X | X | 0 | X | X | X | X | X | X | Y | 0 | Y | Y | Y | Y | Y | Y | Y |
+        #  X = UNUSED
+        #  Y = 7 bit DAC value
+        if divisor > 0b11111111:
+            raise Exception("Power selected is too large!")
+
+        cmd = bytearray([0b11110000, 0b00000001 & (divisor >> 7), 0b01111111 & divisor])
+        self.sendCmd(cmd) 
+        
     def disableOutput(self, clock):
         self.setOffset(clock, 0, enable=False)
         
