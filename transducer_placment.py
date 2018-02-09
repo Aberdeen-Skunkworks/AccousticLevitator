@@ -21,7 +21,7 @@ def array_grid(tspacing,xtrans,ztrans):
     else:
         ntrans = int(xtrans*ztrans) # Total number of transducers in grid
         
-        rt = np.zeros((ntrans,1,3)) # Defininf the output matrix of transducer positions
+        rt = np.zeros((ntrans,3)) # Defininf the output matrix of transducer positions
         
         x = np.linspace(-(tspacing*xtrans-tspacing)/2, (tspacing*xtrans-tspacing)/2, xtrans)
         z = np.linspace(-(tspacing*ztrans-tspacing)/2, (tspacing*ztrans-tspacing)/2, ztrans)
@@ -32,12 +32,12 @@ def array_grid(tspacing,xtrans,ztrans):
         
         for transducer in range (0,ntrans): # Writing the coordinates to output rt
             
-            rt[transducer,0,0] = xv[transducer]
-            rt[transducer,0,2] = zv[transducer]
+            rt[transducer,0] = xv[transducer]
+            rt[transducer,2] = zv[transducer]
     
         return rt
-    
-    
+
+
 def hex_grid(tspacing,xtrans,ztrans): 
     
     # tspacing is transducer spacing in [m] between their centers
@@ -49,7 +49,7 @@ def hex_grid(tspacing,xtrans,ztrans):
     columns = xtrans;    rows = ztrans;    space = tspacing
     
     sqrt3half = math.sqrt(3) / 2
-    rt = np.zeros((columns*rows,1,3)) # Defininf the output matrix of transducer positions
+    rt = np.zeros((columns*rows,3)) # Defininf the output matrix of transducer positions
     
     counter = 0
     for row in range (0, rows):
@@ -57,18 +57,20 @@ def hex_grid(tspacing,xtrans,ztrans):
 
             if row % 2 == 0: # Calculating even row co-ordinates and adjusting to be centered on (0,0)
                 
-                rt[counter,0,0]= (column * space) - ((columns-1) * space /2)
-                rt[counter,0,2]= (sqrt3half * row * space ) - (((rows-1)*sqrt3half) * space/2)
+                rt[counter,0]= (column * space) - ((columns-1) * space /2)
+                rt[counter,2]= (sqrt3half * row * space ) - (((rows-1)*sqrt3half) * space/2)
             
             else: # Calculating odd row co-ordinates and adjusting to be centered on (0,0)
                 
-                rt[counter,0,0]= ((column + 0.5) * space) - ((columns-1) * space /2)
-                rt[counter,0,2]= ((sqrt3half * row) * space) - (((rows-1)*sqrt3half) * space/2)
+                rt[counter,0]= ((column + 0.5) * space) - ((columns-1) * space /2)
+                rt[counter,2]= ((sqrt3half * row) * space) - (((rows-1)*sqrt3half) * space/2)
             
             counter += 1
    
     return rt
     
+
+
 
 def random(ntrans,half_grid_size, min_allowable_dist):
     
@@ -80,7 +82,7 @@ def random(ntrans,half_grid_size, min_allowable_dist):
     
     import random;    import numpy as np;    import math    
     
-    rt = np.zeros((ntrans,1,3))     # Defininf the output matrix of transducer positions
+    rt = np.zeros((ntrans,3))     # Defininf the output matrix of transducer positions
     keep_x =  np.zeros ((ntrans))
     keep_z =  np.zeros ((ntrans))
     distances = np.ones ((ntrans))
@@ -114,10 +116,12 @@ def random(ntrans,half_grid_size, min_allowable_dist):
     
     for transducer in range (0,ntrans): # Writing the coordinates to output rt
     
-        rt[transducer,0,0] = keep_x[transducer]
-        rt[transducer,0,2] = keep_z[transducer]
+        rt[transducer,0] = keep_x[transducer]
+        rt[transducer,2] = keep_z[transducer]
     
     return rt
+
+
 
 
 def direction_vectors(ntrans):
@@ -150,15 +154,16 @@ def delete_transducers(rt,trans_to_delete):
     return rt    
 
 
+
 def big_daddy():
     from algorithms import read_from_excel; from numpy import zeros;
     coordinates = read_from_excel()
     ntrans = len(coordinates[0])
-    rt = zeros((ntrans,1,3))
+    rt = zeros((ntrans,3))
     for transducer in range (0,ntrans): # Writing the coordinates to output rt
     
-        rt[transducer,0,0] = coordinates[0][transducer]
-        rt[transducer,0,2] = coordinates[1][transducer]
+        rt[transducer,0] = coordinates[0][transducer]
+        rt[transducer,2] = coordinates[1][transducer]
     return rt
 
 

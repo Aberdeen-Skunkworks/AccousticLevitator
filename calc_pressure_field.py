@@ -22,7 +22,7 @@ def calc_pressure_field(rt, nt, ntrans, phi):
                     d = [0,0,0]                 # Seperation vector of transducer form point in space
                     
                     for i in range (3):
-                        d[i] = r[i] - rt[transducer,0,i]   # Seperation vector of transducer form point in space
+                        d[i] = r[i] - rt[transducer,i]   # Seperation vector of transducer form point in space
                     
                     dmag = np.linalg.norm(d)     # Distance between transducer and point in space
                     
@@ -30,7 +30,7 @@ def calc_pressure_field(rt, nt, ntrans, phi):
                         p[transducer, xloop, yloop, zloop] = 0 
                     else:
                         
-                        dot = d[0]*nt[transducer,0,0] + d[1]*nt[transducer,0,1] + d[2]*nt[transducer,0,2] # Dot product of the direction of the transducer and the separation vector
+                        dot = d[0]*nt[transducer,0] + d[1]*nt[transducer,1] + d[2]*nt[transducer,2] # Dot product of the direction of the transducer and the separation vector
                         theta = math.acos(dot/dmag)
     
                         exp = cmath.exp(1j*(float(phi[transducer])+k*dmag))    # Exponential term
@@ -76,15 +76,15 @@ def calc_pressure_field_numpy(rt, nt, ntrans, phi): ## x,y,z directions do not m
     
     for transducer in range (0,ntrans):
         print("Calculated up to transducer ", transducer, " out of ", ntrans)
-        d_x = np.subtract(x_co_ords, rt[transducer,0,0])
-        d_y = np.subtract(y_co_ords, rt[transducer,0,1])
-        d_z = np.subtract(z_co_ords, rt[transducer,0,2])
+        d_x = np.subtract(x_co_ords, rt[transducer,0])
+        d_y = np.subtract(y_co_ords, rt[transducer,1])
+        d_z = np.subtract(z_co_ords, rt[transducer,2])
         
         d = np.array([d_x, d_y, d_z])
         
         dmag = np.linalg.norm(d, axis = 0)
         
-        dot = np.add( np.add(np.multiply(d_x, nt[transducer,0,0]) ,  np.multiply(d_y, nt[transducer,0,1])) ,  np.multiply(d_z, nt[transducer,0,2]))
+        dot = np.add( np.add(np.multiply(d_x, nt[transducer,0]) ,  np.multiply(d_y, nt[transducer,1])) ,  np.multiply(d_z, nt[transducer,2]))
         
         theta = np.arccos( np.divide(dot, dmag) )
         

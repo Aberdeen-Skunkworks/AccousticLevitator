@@ -12,7 +12,7 @@ def get_angle(rt):
     
     for transducer in range(0, ntrans):
         
-        r = [rt[transducer,0,0], rt[transducer,0,1], rt[transducer,0,2]]
+        r = [rt[transducer,0], rt[transducer,1], rt[transducer,2]]
         dmag = np.linalg.norm(r)     # Distance between transducer and origin
 
         if dmag < (1*10**(-13)):
@@ -21,7 +21,7 @@ def get_angle(rt):
             dot = r[0]*xdir[0] + r[1]*xdir[1] + r[2]*xdir[2] # Dot product of the direction of the transducr and the position in space
             theta[transducer] = math.acos(dot/dmag)
             
-        if rt[transducer,0,2] < 0: # making angle go from 0 to 2 pi anticlockwise angle from the x axis
+        if rt[transducer,2] < 0: # making angle go from 0 to 2 pi anticlockwise angle from the x axis
             theta[transducer] = math.pi*2 - theta[transducer]
             
         #print(theta[transducer]/(math.pi/180)) # To test uncomment to get angle in degrees 
@@ -95,8 +95,8 @@ def acoustic_potential (r, rt, phi, nt):
     differentiate_pressure_z = np.zeros((ntrans), dtype=complex)
     
     for transducer in range (0, ntrans):
-        nt_trans = [ nt[transducer,0,0], nt[transducer,0,1], nt[transducer,0,2] ]
-        rt_trans = [ rt[transducer,0,0], rt[transducer,0,1], rt[transducer,0,2] ]
+        nt_trans = [ nt[transducer,0], nt[transducer,1], nt[transducer,2] ]
+        rt_trans = [ rt[transducer,0], rt[transducer,1], rt[transducer,2] ]
         phi_trans = phi[transducer]
         
         pressure[transducer] = algorithms.pressure(r, rt_trans , phi_trans, nt_trans)

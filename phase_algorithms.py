@@ -59,7 +59,7 @@ def phase_find(rt, x, y, z):
         d = [0,0,0]                 # defining the seperation vector of transducer form point in space
         
         for i in range (3):
-            d[i] = r[i] - rt[transducer,0,i]   # Calculating the seperation vector of transducer form point in space
+            d[i] = r[i] - rt[transducer,i]   # Calculating the seperation vector of transducer form point in space
         
         dmag = np.linalg.norm(d)     # Distance between transducer and point in space
         
