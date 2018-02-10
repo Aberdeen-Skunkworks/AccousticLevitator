@@ -134,11 +134,11 @@ def direction_vectors(ntrans):
     # -------------------- Calculate direction vectors------------------------     
     
     
-    nt = np.zeros((ntrans,1,3))     # Defininf the output matrix of transducer directions
+    nt = np.zeros((ntrans,3))     # Defininf the output matrix of transducer directions
 
     for trans in range(0,ntrans):   # setting all the transducers vertical
         
-        nt[trans,0,1] = 1 
+        nt[trans,1] = 1 
         
     return nt
 
@@ -165,6 +165,40 @@ def big_daddy():
         rt[transducer,0] = coordinates[0][transducer]
         rt[transducer,2] = coordinates[1][transducer]
     return rt
+
+
+def plot_as_vectors(rt,nt):
+
+    from mpl_toolkits import mplot3d
+    import numpy as np
+    import matplotlib.pyplot as plt
+    
+    nt = np.multiply(nt,0.01)
+    
+    fig = plt.figure()
+    ax = plt.axes(projection='3d')
+    
+    #ax.scatter(rt[:,0], rt[:,2], rt[:,1], s=200, facecolors='none', edgecolors='r') # Weird circles
+    ax.quiver(rt[:,0], rt[:,2], rt[:,1], nt[:,0], nt[:,2], nt[:,1]);
+    
+    
+    ## Code to test plotter
+    """
+    rt = big_daddy()
+    ntrans = len (rt)   # Total number of transducers in grid
+    nt = direction_vectors(ntrans) # nt is the direction vector of each transducer
+    
+    plot_as_vectors(rt,nt)   
+    """
+    
+
+
+
+
+
+
+
+
 
 
 
