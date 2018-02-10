@@ -14,13 +14,13 @@ rt = transducer_placment.big_daddy()   # spcing , x nummber, y number of transdu
 #rt = transducer_placment.random(88,0.055, 0.01)
 ntrans = len (rt)   # Total number of transducers in grid
 
-nt = transducer_placment.direction_vectors(ntrans) # nt is the direction vector of each transducer
+nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
 
-focus_point = [ 0 , 0.03 , 0 ]
+focus_point = [ 0 , 0 , 0.03 ]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
 phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus))
-phi_noise = phase_algorithms.phase_random_noise(4, np.copy(phi_signature)) # number is randomness multiplier (0-1)*multiplier scaled between 0 and 2pi
+phi_noise = phase_algorithms.phase_random_noise(0, np.copy(phi_signature)) # number is randomness multiplier (0-1)*multiplier scaled between 0 and 2pi
 
 phi = phi_noise
 

@@ -33,7 +33,7 @@ def array_grid(tspacing,xtrans,ztrans):
         for transducer in range (0,ntrans): # Writing the coordinates to output rt
             
             rt[transducer,0] = xv[transducer]
-            rt[transducer,2] = zv[transducer]
+            rt[transducer,1] = zv[transducer]
     
         return rt
 
@@ -58,18 +58,17 @@ def hex_grid(tspacing,xtrans,ztrans):
             if row % 2 == 0: # Calculating even row co-ordinates and adjusting to be centered on (0,0)
                 
                 rt[counter,0]= (column * space) - ((columns-1) * space /2)
-                rt[counter,2]= (sqrt3half * row * space ) - (((rows-1)*sqrt3half) * space/2)
+                rt[counter,1]= (sqrt3half * row * space ) - (((rows-1)*sqrt3half) * space/2)
             
             else: # Calculating odd row co-ordinates and adjusting to be centered on (0,0)
                 
                 rt[counter,0]= ((column + 0.5) * space) - ((columns-1) * space /2)
-                rt[counter,2]= ((sqrt3half * row) * space) - (((rows-1)*sqrt3half) * space/2)
+                rt[counter,1]= ((sqrt3half * row) * space) - (((rows-1)*sqrt3half) * space/2)
             
             counter += 1
    
     return rt
     
-
 
 
 def random(ntrans,half_grid_size, min_allowable_dist):
@@ -117,14 +116,13 @@ def random(ntrans,half_grid_size, min_allowable_dist):
     for transducer in range (0,ntrans): # Writing the coordinates to output rt
     
         rt[transducer,0] = keep_x[transducer]
-        rt[transducer,2] = keep_z[transducer]
+        rt[transducer,1] = keep_z[transducer]
     
     return rt
 
 
 
-
-def direction_vectors(ntrans):
+def direction_vectors(ntrans, direction):
     
     # This function takes a number of transducers and outputs a vertical direction
     # vector for each transducer
@@ -133,12 +131,16 @@ def direction_vectors(ntrans):
     import numpy as np
     # -------------------- Calculate direction vectors------------------------     
     
+    mag_direction = np.linalg.norm(direction)
+    direction = np.divide(direction, mag_direction)  # normalising the vector to the unit direction vector
     
-    nt = np.zeros((ntrans,3))     # Defininf the output matrix of transducer directions
+    nt = np.zeros((ntrans,3))     # Defining the output matrix of transducer directions
 
     for trans in range(0,ntrans):   # setting all the transducers vertical
         
-        nt[trans,1] = 1 
+        nt[trans,0] = direction[0]
+        nt[trans,1] = direction[1]
+        nt[trans,2] = direction[2]
         
     return nt
 
@@ -154,7 +156,6 @@ def delete_transducers(rt,trans_to_delete):
     return rt    
 
 
-
 def big_daddy():
     from algorithms import read_from_excel; from numpy import zeros;
     coordinates = read_from_excel()
@@ -163,7 +164,7 @@ def big_daddy():
     for transducer in range (0,ntrans): # Writing the coordinates to output rt
     
         rt[transducer,0] = coordinates[0][transducer]
-        rt[transducer,2] = coordinates[1][transducer]
+        rt[transducer,1] = coordinates[1][transducer]
     return rt
 
 
@@ -179,26 +180,65 @@ def plot_as_vectors(rt,nt):
     ax = plt.axes(projection='3d')
     
     #ax.scatter(rt[:,0], rt[:,2], rt[:,1], s=200, facecolors='none', edgecolors='r') # Weird circles
-    ax.quiver(rt[:,0], rt[:,2], rt[:,1], nt[:,0], nt[:,2], nt[:,1]);
-    
-    
+    ax.quiver(rt[:,0], rt[:,1], rt[:,2], nt[:,0], nt[:,1], nt[:,2]);
+    ax.set_xlabel('xlabel')
+    ax.set_ylabel('ylabel')
+    ax.set_zlabel('zlabel')
+
     ## Code to test plotter
-    """
-    rt = big_daddy()
-    ntrans = len (rt)   # Total number of transducers in grid
-    nt = direction_vectors(ntrans) # nt is the direction vector of each transducer
+"""
+rt = big_daddy()
+ntrans = len (rt)  
+nt = direction_vectors(ntrans,[0,0,1]) 
+plot_as_vectors(rt,nt)
+"""
+
+
+##opposite arrays
     
-    plot_as_vectors(rt,nt)   
-    """
+"""
+rt = big_daddy()
+
+ntrans = len (rt)   # Total number of transducers in grid
+nt_1 = direction_vectors(ntrans,[1,0,0]) # nt is the direction vector of each transducer
+nt_2 = direction_vectors(ntrans,[-1,0,0])
+
+
+import numpy as np
+
+main_layout = big_daddy()
+sideways_1 = np.copy(main_layout)
+sideways_2 = np.copy(main_layout)
+
+sideways_1[:,0] = np.add(main_layout[:,2], -0.05)
+sideways_1[:,2] = np.add(main_layout[:,0], 0)
+
+sideways_2[:,0] = np.add(main_layout[:,2], 0.05)
+sideways_2[:,2] = np.add(main_layout[:,0], 0)
+
+rt_both_arrays = np.append(sideways_1, sideways_2, axis=0)
+nt_both_arrays = np.append(nt_1, nt_2, axis=0)
+
+plot_as_vectors(rt_both_arrays,nt_both_arrays)  
+
+
+"""
     
-
-
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 

@@ -4,12 +4,12 @@
 import math
 
 
-gsize = 0.01         # Half the length of grid box (m)
-deltaxyz = 0.002     # Distance between points in grid (m)
+gsize = 0.05         # Half the length of grid box (m)
+deltaxyz = 0.0009     # Distance between points in grid (m)
 
 x = -gsize           # Initial values of x,y and z in (m) Grid volume
-y = 0.00
-z = -gsize
+y = -gsize
+z = 0.00
 npoints = int(1 + ((2 * gsize) / deltaxyz)) # Number of points on x y and z axis, plus 1 to index properly
 
 

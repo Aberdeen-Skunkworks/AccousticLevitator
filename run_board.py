@@ -22,7 +22,7 @@ choose = input("Please choose haptic as (h) or pattern as (p) or moving as (m) o
 if choose == ("h"):
     print ("Haptic mode selected")
     phase_index = np.zeros((ntrans),dtype=int)
-    phi_focus = phase_algorithms.phase_find(rt,0,0.08,0)
+    phi_focus = phase_algorithms.phase_find( rt, 0, 0, 0.08 ) #  (x , y , z) (z = up)
     for transducer in range(0,ntrans):
         phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))
         
@@ -45,7 +45,7 @@ if choose == ("h"):
 
 elif choose == ("p"):
     print ("Pattern mode selected")
-    phi_focus = phase_algorithms.phase_find(rt,0,0.02,0) # phi is the initial phase of each transducer to focus on a point
+    phi_focus = phase_algorithms.phase_find( rt, 0, 0, 0.02 ) #  (x , y , z) (z = up)
     phi = phase_algorithms.add_twin_signature(rt,phi_focus)
     phase_index = np.zeros((ntrans),dtype=int)
     #phi_focus = algorithms.read_from_excel_phases() # Takes phases from an excel spreadsheet of phases from 0 to 2pi, any over 2pi just loops
@@ -126,11 +126,11 @@ elif choose == ("m"):
 elif choose == ("GUI"):
     print ("GUI mode selected")
     
-    # Initial position in m
+    # Initial position in m (x , y , z) (z = up)
     global x,y,z
     x = 0    
-    y = 0.02
-    z = 0
+    y = 0
+    z = 0.02
     rt = transducer_placment.big_daddy()
     ntrans = len(rt);
     phase_index = np.zeros((ntrans),dtype=int)
@@ -284,9 +284,9 @@ elif choose == ("GUI"):
             
         def reset_click(self):
             global x,y,z
-            x = 0; y = 0.02; z = 0;
+            x = 0; y = 0; z = 0.02;
             print(' ')
-            print('Reset to [0, 0.02, 0]')
+            print('Reset to [0, 0, 0.02]')
     
     app = QtWidgets.QApplication(sys.argv)
     app.aboutToQuit.connect(app.deleteLater)
