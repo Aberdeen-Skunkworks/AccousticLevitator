@@ -194,35 +194,9 @@ plot_as_vectors(rt,nt)
 """
 
 
-##opposite arrays
-    
-"""
-rt = big_daddy()
-
-ntrans = len (rt)   # Total number of transducers in grid
-nt_1 = direction_vectors(ntrans,[1,0,0]) # nt is the direction vector of each transducer
-nt_2 = direction_vectors(ntrans,[-1,0,0])
 
 
-import numpy as np
 
-main_layout = big_daddy()
-sideways_1 = np.copy(main_layout)
-sideways_2 = np.copy(main_layout)
-
-sideways_1[:,0] = np.add(main_layout[:,2], -0.05)
-sideways_1[:,2] = np.add(main_layout[:,0], 0)
-
-sideways_2[:,0] = np.add(main_layout[:,2], 0.05)
-sideways_2[:,2] = np.add(main_layout[:,0], 0)
-
-rt_both_arrays = np.append(sideways_1, sideways_2, axis=0)
-nt_both_arrays = np.append(nt_1, nt_2, axis=0)
-
-plot_as_vectors(rt_both_arrays,nt_both_arrays)  
-
-
-"""
     
     
     

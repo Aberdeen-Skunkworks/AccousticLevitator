@@ -7,22 +7,50 @@ import transducer_placment; from vti_writer import vti_writer; import phase_algo
 
 # -------------------------Variables to set------------------------------------
 
-#trans_to_delete = [4,5,6,13,14,15,16,17,22,23,24,25,26,31,32,33,34,35,40,41,42,43,44,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87]  # List of unwanted transducers leave blank to keep all 
-rt = transducer_placment.big_daddy()   # spcing , x nummber, y number of transducers
-#rt = transducer_placment.delete_transducers(rt,trans_to_delete)
 
-#rt = transducer_placment.random(88,0.055, 0.01)
+"""
+##opposite arrays
+    
+rt = transducer_placment.big_daddy()
+
+ntrans = len (rt)   # Total number of transducers in grid
+nt_1 = transducer_placment.direction_vectors(ntrans,[1,0,0]) # nt is the direction vector of each transducer
+nt_2 = transducer_placment.direction_vectors(ntrans,[-1,0,0])
+
+sideways_1 = np.copy(rt)
+sideways_2 = np.copy(rt)
+
+sideways_1[:,0] = np.add(rt[:,2], -0.05)
+sideways_1[:,2] = np.add(rt[:,0], 0.05)
+
+sideways_2[:,0] = np.add(rt[:,2], 0.05)
+sideways_2[:,2] = np.add(rt[:,0], 0.05)
+
+rt_both_arrays = np.append(sideways_1, sideways_2, axis=0)
+nt_both_arrays = np.append(nt_1, nt_2, axis=0)
+
+transducer_placment.plot_as_vectors(rt_both_arrays,nt_both_arrays)  
+
+rt = rt_both_arrays
+
+nt = nt_both_arrays
+"""
+
+
+
+
+rt = transducer_placment.big_daddy()   # spcing , x nummber, y number of transducers
 ntrans = len (rt)   # Total number of transducers in grid
 
 nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
 
-focus_point = [ 0 , 0 , 0.03 ]
+focus_point = [ 0 , 0 , 0.05 ]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
 phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus))
-phi_noise = phase_algorithms.phase_random_noise(0, np.copy(phi_signature)) # number is randomness multiplier (0-1)*multiplier scaled between 0 and 2pi
+#phi_noise = phase_algorithms.phase_random_noise(2, np.copy(phi_signature)) # number is randomness multiplier (0-1)*multiplier scaled between 0 and 2pi
 
-phi = phi_noise
+phi = phi_signature
 
 #phi = phase_algorithms.phase_discretize(np.copy(phi))
 
