@@ -34,13 +34,12 @@ if choose == ("h"):
         while True:          # Turns the pattern off and on as fast as possible
             for i in range(ctl.outputs):
                 ctl.setOffset(i,phase_index[i])
-            ctl.setOutputDACPower(255) 
-            ctl.setOutputDACDivisor(20)
+            ctl.setOutputDACPower(128)
+            ctl.setOutputDACDivisor(50)
             ctl.loadOffsets()
     
             for i in range(ctl.outputs):
                 ctl.disableOutput(i)
-            
 # -------------------------------------------------------------------------- #
     
 
@@ -59,15 +58,11 @@ elif choose == ("p"):
     
     from connect import Controller 
     with Controller() as ctl:
-        print("You have 35 seconds to trap the particle until fuzzing stops")
-        a = 1
-        while a==1: 
-            
-            for fuzz in range(7000):
-                for i in range(ctl.outputs):
-                    ctl.setOffset(i,phase_index[i])
-                ctl.loadOffsets()
-            a = 0
+        #ctl.setOutputDACPower(255)
+        #ctl.setOutputDACDivisor(100)
+        for i in range(ctl.outputs):
+            ctl.setOffset(i,phase_index[i])
+            ctl.loadOffsets()
     
 # -------------------------------------------------------------------------- #
 

@@ -1,5 +1,5 @@
 `include "dac.v"
-module fmq #(parameter OUTPUTS = 88)(input clk, input rst, output [OUTPUTS-1:0] tx, output UART_TX, input UART_RX, output SYNC_CLK_OUT, output RELOAD_OUT, output OE_OUT, output [4:0] led);
+module fmq #(parameter OUTPUTS = 88)(input clk, input rst, output [OUTPUTS-1:0] tx, output UART_TX, input UART_RX, output SYNC_CLK_OUT, output RELOAD_OUT, output OE_OUT, output DAC_CLK_OUT, output [4:0] led);
 parameter CLOCK=50000000;
 parameter FREQ = 40000;
 parameter OFFSET_WIDTH = 11;
@@ -31,6 +31,7 @@ reg [7:0] dac_value;
 dac output_dac(OE, dac_value, dac_clk, rst);
 
 assign OE_OUT = OE;
+assign DAC_CLK_OUT = dac_clk;
 
 reg last_sync_clk;
 reg reload_next;
