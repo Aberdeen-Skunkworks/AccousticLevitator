@@ -136,4 +136,14 @@ class Controller():
             ctl.loadOffsets()
         end = timeit.default_timer()
         print( "Benchmark - Pattern update at ", NTests/float(end-start), "Hz")
+
+    def benchmarkPower(self):
+        import timeit
+        start = timeit.default_timer()
+        NTests = 1000
+        outputs = self.getOutputs()
+        for i in range (NTests):
+            self.setOutputDACDivisor(0)
+        end = timeit.default_timer()
+        return NTests/float(end-start)
         

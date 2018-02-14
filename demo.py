@@ -34,7 +34,7 @@ if choose == ("h"):
         while True:          # Turns the pattern off and on as fast as possible
             for i in range(ctl.outputs):
                 ctl.setOffset(i,phase_index[i])
-            ctl.setOutputDACPower(128)
+            ctl.setOutputDACPower(255)
             ctl.setOutputDACDivisor(50)
             ctl.loadOffsets()
     
@@ -58,8 +58,6 @@ elif choose == ("p"):
     
     from connect import Controller 
     with Controller() as ctl:
-        #ctl.setOutputDACPower(255)
-        #ctl.setOutputDACDivisor(100)
         for i in range(ctl.outputs):
             ctl.setOffset(i,phase_index[i])
             ctl.loadOffsets()
@@ -118,5 +116,58 @@ elif choose == ("m"):
                 
 # -------------------------------------------------------------------------- #
 
+elif choose == ("b"):
+    from connect import Controller  
+    phase_index = np.zeros((ntrans),dtype=int)
+    phi_focus = phase_algorithms.phase_find(rt,0,0.12,0)
+    for transducer in range(0,ntrans):
+        phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))
+        
+    with Controller() as ctl:
+        updateRate = ctl.benchmarkPower()
+        print("Update freq = ", updateRate)
+
+        for i in range(ctl.outputs):
+            ctl.setOffset(i,phase_index[i])
+
+        targetfreq = 1000
+        rollover = updateRate / targetfreq / 2
+        counter = 0
+        while True:
+            if (counter > 2* rollover):
+                counter = counter % (2 * rollover)
+            if (counter < rollover):
+                ctl.setOutputDACPower(0)
+            elif (counter < 2 * rollover):
+                ctl.setOutputDACPower(255)
+            counter = counter + 1
+elif choose == ("w"):
+    from connect import Controller  
+    phase_index = np.zeros((ntrans),dtype=int)
+    phi_focus = phase_algorithms.phase_find(rt,0,0.12,0)
+    for transducer in range(0,ntrans):
+        phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))
+    
+    with Controller() as ctl:
+        updateRate = ctl.benchmarkPower()
+        print("Update freq = ", updateRate)
+
+        for i in range(ctl.outputs):
+            ctl.setOffset(i,phase_index[i])
+
+        targetfreq = 1000
+        rollover = updateRate / targetfreq / 2
+        counter = 0
+        import wave
+        wav = wave.open("test.wav", 'r')
+        
+        while True:
+            if (counter > 2* rollover):
+                counter = counter % (2 * rollover)
+            if (counter < rollover):
+                ctl.setOutputDACPower(0)
+            elif (counter < 2 * rollover):
+                ctl.setOutputDACPower(255)
+            counter = counter + 1
 else:
     print("Come on, pick one of the correct letters!")
