@@ -20,6 +20,7 @@ class Controller():
             try:
                 print("Trying to connect to board on "+port)
                 self.com = serial.Serial(port=port, baudrate=460800, timeout=0.5)
+                self.com.reset_input_buffer()
                 self.outputs = self.getOutputs()
                 print("Connected successfully to board with "+str(self.outputs)+" outputs")
                 break

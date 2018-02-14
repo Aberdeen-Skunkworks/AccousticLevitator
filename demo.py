@@ -11,8 +11,8 @@ rt = transducer_placment.big_daddy()
 rt = transducer_placment.delete_transducers(rt,trans_to_delete)
 ntrans = len(rt); x = np.zeros(ntrans); y = np.zeros(ntrans)
 for transducer in range (0,ntrans): # Writing the coordinates to output rt
-    x[transducer]= rt[transducer,0,0]
-    y[transducer]= rt[transducer,0,2] 
+    x[transducer]= rt[transducer,0]
+    y[transducer]= rt[transducer,2] 
 #plt.plot(x, y,'ro'); plt.show() # Show Plot of the positions
 # -------------------------------------------------------------------------- #p
 
@@ -25,7 +25,7 @@ choose = input("Please choose haptic as (h) or pattern as (p) or moving as (m): 
 if choose == ("h"):
     print ("Haptic mode selected")
     phase_index = np.zeros((ntrans),dtype=int)
-    phi_focus = phase_algorithms.phase_find(rt,0,0.12,0)
+    phi_focus = phase_algorithms.phase_find(rt,0,0,0.12)
     for transducer in range(0,ntrans):
         phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))
         
@@ -125,6 +125,7 @@ elif choose == ("b"):
         
     with Controller() as ctl:
         updateRate = ctl.benchmarkPower()
+        ctl.setOutputDACDivisor(50)
         print("Update freq = ", updateRate)
 
         for i in range(ctl.outputs):
@@ -151,6 +152,7 @@ elif choose == ("w"):
     with Controller() as ctl:
         updateRate = ctl.benchmarkPower()
         print("Update freq = ", updateRate)
+        ctl.setOutputDACDivisor(50)
 
         for i in range(ctl.outputs):
             ctl.setOffset(i,phase_index[i])
@@ -164,6 +166,7 @@ elif choose == ("w"):
         while True:
             if (counter > 2* rollover):
                 counter = counter % (2 * rollover)
+
             if (counter < rollover):
                 ctl.setOutputDACPower(0)
             elif (counter < 2 * rollover):
