@@ -11,7 +11,7 @@ def vti_writer (npoints,realcombined,fx,fy,fz,u):
     
     imageData = vtk.vtkImageData()
     imageData.SetDimensions(npoints, npoints, npoints )
-    imageData.SetOrigin( (-npoints+1)/2, 0, (-npoints+1)/2 )
+    imageData.SetOrigin( (-npoints+1)/2, (-npoints+1)/2, 0 )
     if vtk.VTK_MAJOR_VERSION <= 5:
         imageData.SetNumberOfScalarComponents(1)
         imageData.SetScalarTypeToDouble()
@@ -24,7 +24,7 @@ def vti_writer (npoints,realcombined,fx,fy,fz,u):
     for z in range(dims[2]):
         for y in range(dims[1]):
             for x in range(dims[0]):
-                imageData.SetScalarComponentFromDouble(x, y, z, 0, realcombined[x,y,z])
+                imageData.SetScalarComponentFromDouble(x, y, z, 0, realcombined[y,x,z])#### y,x,z to make orientation correct in paraview
     
     writer = vtk.vtkXMLImageDataWriter()
     writer.SetFileName(filename)
@@ -42,7 +42,7 @@ def vti_writer (npoints,realcombined,fx,fy,fz,u):
     
     imageData = vtk.vtkImageData()
     imageData.SetDimensions(npoints, npoints, npoints )
-    imageData.SetOrigin( (-npoints+1)/2, 0, (-npoints+1)/2 )
+    imageData.SetOrigin( (-npoints+1)/2, (-npoints+1)/2, 0 )
     if vtk.VTK_MAJOR_VERSION <= 5:
         imageData.SetNumberOfScalarComponents(1)
         imageData.SetScalarTypeToDouble()
@@ -66,7 +66,7 @@ def vti_writer (npoints,realcombined,fx,fy,fz,u):
     for z in range(dims[2]):
         for y in range(dims[1]):
             for x in range(dims[0]):
-                imageData.SetScalarComponentFromDouble(x, y, z, 0, u[x,y,z])
+                imageData.SetScalarComponentFromDouble(x, y, z, 0, u[y,x,z])
     
     writer = vtk.vtkXMLImageDataWriter()
     writer.SetFileName(filename2)
@@ -84,7 +84,7 @@ def vti_writer (npoints,realcombined,fx,fy,fz,u):
     
     imageDataForce = vtk.vtkImageData()
     imageDataForce.SetDimensions(npoints, npoints, npoints)
-    imageDataForce.SetOrigin( (-npoints+1)/2, 0, (-npoints+1)/2 )
+    imageData.SetOrigin( (-npoints+1)/2, (-npoints+1)/2, 0 )
     if vtk.VTK_MAJOR_VERSION <= 5:
         imageDataForce.SetNumberOfScalarComponents(3)
         imageDataForce.SetScalarTypeToDouble()
@@ -97,9 +97,9 @@ def vti_writer (npoints,realcombined,fx,fy,fz,u):
     for z in range(dims[2]):
         for y in range(dims[1]):
             for x in range(dims[0]):
-                imageDataForce.SetScalarComponentFromDouble(x, y, z, 0, fx[x,y,z])
-                imageDataForce.SetScalarComponentFromDouble(x, y, z, 1, fy[x,y,z])
-                imageDataForce.SetScalarComponentFromDouble(x, y, z, 2, fz[x,y,z])
+                imageDataForce.SetScalarComponentFromDouble(x, y, z, 0, fx[y,x,z])
+                imageDataForce.SetScalarComponentFromDouble(x, y, z, 1, fy[y,x,z])
+                imageDataForce.SetScalarComponentFromDouble(x, y, z, 2, fz[y,x,z])
     
     writer = vtk.vtkXMLImageDataWriter()
     writer.SetFileName(filename3)
