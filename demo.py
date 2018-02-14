@@ -41,14 +41,14 @@ if choose == ("h"):
             for i in range(ctl.outputs):
                 ctl.disableOutput(i)
 # -------------------------------------------------------------------------- #
-    
+
 
 
 ## -------------------------- Focused traps ------------------------------- ##  
 
 elif choose == ("p"):
     print ("Pattern mode selected")
-    phi_focus = phase_algorithms.phase_find(rt,0,0.018,0) # phi is the initial phase of each transducer to focus on a point
+    phi_focus = phase_algorithms.phase_find(rt,0,0,0.018) # phi is the initial phase of each transducer to focus on a point
     phi = phase_algorithms.add_twin_signature(rt,phi_focus)
     phase_index = np.zeros((ntrans),dtype=int)
     #phi_focus = algorithms.read_from_excel_phases() # Takes phases from an excel spreadsheet of phases from 0 to 2pi, any over 2pi just loops
@@ -58,6 +58,8 @@ elif choose == ("p"):
     
     from connect import Controller 
     with Controller() as ctl:
+        ctl.setOutputDACPower(255)
+        ctl.setOutputDACDivisor(50)
         for i in range(ctl.outputs):
             ctl.setOffset(i,phase_index[i])
             ctl.loadOffsets()
@@ -119,7 +121,7 @@ elif choose == ("m"):
 elif choose == ("b"):
     from connect import Controller  
     phase_index = np.zeros((ntrans),dtype=int)
-    phi_focus = phase_algorithms.phase_find(rt,0,0.12,0)
+    phi_focus = phase_algorithms.phase_find(rt,0,0,0.12)
     for transducer in range(0,ntrans):
         phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))
         
@@ -131,7 +133,7 @@ elif choose == ("b"):
         for i in range(ctl.outputs):
             ctl.setOffset(i,phase_index[i])
 
-        targetfreq = 1000
+        targetfreq = 200
         rollover = updateRate / targetfreq / 2
         counter = 0
         while True:
@@ -142,10 +144,12 @@ elif choose == ("b"):
             elif (counter < 2 * rollover):
                 ctl.setOutputDACPower(255)
             counter = counter + 1
+
+
 elif choose == ("w"):
     from connect import Controller  
     phase_index = np.zeros((ntrans),dtype=int)
-    phi_focus = phase_algorithms.phase_find(rt,0,0.12,0)
+    phi_focus = phase_algorithms.phase_find(rt,0,0,0.2)
     for transducer in range(0,ntrans):
         phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))
     
@@ -153,6 +157,7 @@ elif choose == ("w"):
         updateRate = ctl.benchmarkPower()
         print("Update freq = ", updateRate)
         ctl.setOutputDACDivisor(50)
+        ctl.setOutputDACPower(255)
 
         for i in range(ctl.outputs):
             ctl.setOffset(i,phase_index[i])
@@ -172,5 +177,31 @@ elif choose == ("w"):
             elif (counter < 2 * rollover):
                 ctl.setOutputDACPower(255)
             counter = counter + 1
+            
+
+elif choose == ("t"):
+    
+    import wave, struct, numpy as np
+    
+    wav = wave.open("test.wav", 'r')
+    length = wav.getnframes()
+    data_whole = np.zeros(length)
+   
+    for i in range(0,length):
+        waveData = wav.readframes(1)
+        data = struct.unpack("<h", waveData)
+        data_whole[i] = int(data[0])
+        #print(int(data[0]))
+
+    def scale_range (array, low, high):
+        #array.astype("float")
+        array += -(np.min(array))
+        array /= np.max(array) / (high - low)
+        array += low
+        return array
+    
+    data_whole_scaled = scale_range (data_whole, 0, 255)
+
+
 else:
     print("Come on, pick one of the correct letters!")

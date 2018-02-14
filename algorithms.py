@@ -23,7 +23,6 @@ def get_angle(rt):
             
         if rt[transducer,2] < 0: # making angle go from 0 to 2 pi anticlockwise angle from the x axis
             theta[transducer] = math.pi*2 - theta[transducer]
-        print(theta[transducer], transducer)    
         #print(theta[transducer]/(math.pi/180)) # To test uncomment to get angle in degrees 
     return theta
 
