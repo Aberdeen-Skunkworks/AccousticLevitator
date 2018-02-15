@@ -200,7 +200,7 @@ elif choose == ("t"):
         array += low
         return array
     
-    data_whole_scaled = scale_range (data_whole, 0, 255)
+    data_whole_scaled = scale_range (data_whole, 0, 255).astype(int)
 
 
 else:

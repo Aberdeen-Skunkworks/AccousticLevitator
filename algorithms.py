@@ -21,9 +21,9 @@ def get_angle(rt):
             dot = r[0]*xdir[0] + r[1]*xdir[1] + r[2]*xdir[2] # Dot product of the direction of the transducr and the position in space
             theta[transducer] = math.acos(dot/dmag)
             
-        if rt[transducer,2] < 0: # making angle go from 0 to 2 pi anticlockwise angle from the x axis
-            theta[transducer] = math.pi*2 - theta[transducer]
-        #print(theta[transducer]/(math.pi/180)) # To test uncomment to get angle in degrees 
+        #if rt[transducer,2] < 0: # making angle go from 0 to 2 pi anticlockwise angle from the x axis
+        #    theta[transducer] = math.pi*2 - theta[transducer]
+        print(theta[transducer]/(math.pi/180)) # To test uncomment to get angle in degrees 
     return theta
 
 
@@ -45,7 +45,6 @@ def pressure (r, rt, phi, nt):
         frac =  (constants.p0*constants.A)*( (math.sin(k*constants.a*math.sin(theta))) /  (k*constants.a*math.sin(theta)) )
         pressure = (exponential*frac)
     return pressure
-
 
 
 def differentiate_pressure(r, rt, phi, nt):
