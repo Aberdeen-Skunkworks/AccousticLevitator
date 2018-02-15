@@ -3,7 +3,7 @@
 # -------------------------Import Libaries------------------------------------
 
 import constants; import numpy as np; import calc_pressure_field; import time
-import transducer_placment; from vti_writer import vti_writer; import phase_algorithms;
+import transducer_placment; from vti_writer import vti_writer; import phase_algorithms; import scipy.ndimage
 
 # -------------------------Variables to set------------------------------------
 
@@ -20,10 +20,10 @@ nt_2 = transducer_placment.direction_vectors(ntrans,[-1,0,0])
 sideways_1 = np.copy(rt)
 sideways_2 = np.copy(rt)
 
-sideways_1[:,0] = np.add(rt[:,2], -0.05)
+sideways_1[:,0] = np.add(rt[:,2], -0.1)
 sideways_1[:,2] = np.add(rt[:,0], 0.05)
 
-sideways_2[:,0] = np.add(rt[:,2], 0.05)
+sideways_2[:,0] = np.add(rt[:,2], 0.1)
 sideways_2[:,2] = np.add(rt[:,0], 0.05)
 
 rt_both_arrays = np.append(sideways_1, sideways_2, axis=0)
@@ -50,7 +50,7 @@ phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focu
 phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus))
 #phi_noise = phase_algorithms.phase_random_noise(2, np.copy(phi_signature)) # number is randomness multiplier (0-1)*multiplier scaled between 0 and 2pi
 
-phi = phi_focus
+phi = phi_signature
 
 #phi = phase_algorithms.phase_discretize(np.copy(phi))
 
@@ -90,7 +90,7 @@ print(" ")
 
 # -----------------Loop to sum pressure of all transducers---------------------
 
-height = np.multiply(constants.deltaxyz, np.indices([constants.npoints, constants.npoints, constants.npoints])[1]) # 55 times faster
+height = np.multiply(constants.deltaxyz, np.indices([constants.npoints, constants.npoints, constants.npoints])[2]) # 55 times faster
 pcombined = np.sum(np.copy(p), axis = 0) 
 
 # -----------------Calculating derrivitive of the pressure field---------------
@@ -122,9 +122,14 @@ ux = np.copy(diff_u[0]); uy = np.copy(diff_u[1]); uz = np.copy(diff_u[2])
 
 fx = np.copy(-ux); fy = np.copy(-uy); fz = np.copy(-uz)
 
+
+laplace_u = scipy.ndimage.filters.laplace(u)
+
+
+
 # -------------------Creating output images and vtk file----------------------
 
-vti_writer (constants.npoints, pabs, fx, fy, fz, u)
+vti_writer (constants.npoints, pabs, fx, fy, fz, u, laplace_u)
 
 
 print("For use in paraview: ")

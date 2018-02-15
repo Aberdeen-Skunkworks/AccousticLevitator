@@ -1,13 +1,13 @@
 
 # Write data to vti files to be viewed in Paraview
 
-def vti_writer (npoints,realcombined,fx,fy,fz,u):
+def vti_writer (npoints,realcombined,fx,fy,fz,u, laplace_u):
     
     import vtk; import numpy as  np
     
     
     # creating vti image file with combined pressure magnitude data
-    filename = "writeImageData.vti"
+    filename = "Pressure.vti"
     
     imageData = vtk.vtkImageData()
     imageData.SetDimensions(npoints, npoints, npoints )
@@ -108,3 +108,34 @@ def vti_writer (npoints,realcombined,fx,fy,fz,u):
     else:
         writer.SetInputData(imageDataForce)
     writer.Write()
+
+    # ----------------------------------------------------------------------------
+    
+    # creating vti image file with laplace_u data
+    filename = "laplace_u.vti"
+    
+    imageData = vtk.vtkImageData()
+    imageData.SetDimensions(npoints, npoints, npoints )
+    imageData.SetOrigin( (-npoints+1)/2, (-npoints+1)/2, 0 )
+    if vtk.VTK_MAJOR_VERSION <= 5:
+        imageData.SetNumberOfScalarComponents(1)
+        imageData.SetScalarTypeToDouble()
+    else:
+        imageData.AllocateScalars(vtk.VTK_DOUBLE, 1)
+    
+    dims = imageData.GetDimensions()
+    
+    # Fill every entry of the image data
+    for z in range(dims[2]):
+        for y in range(dims[1]):
+            for x in range(dims[0]):
+                imageData.SetScalarComponentFromDouble(x, y, z, 0, laplace_u[y,x,z])#### y,x,z to make orientation correct in paraview
+    
+    writer = vtk.vtkXMLImageDataWriter()
+    writer.SetFileName(filename)
+    if vtk.VTK_MAJOR_VERSION <= 5:
+        writer.SetInputConnection(imageData.GetProducerPort())
+    else:
+        writer.SetInputData(imageData)
+    writer.Write()
+    

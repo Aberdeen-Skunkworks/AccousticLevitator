@@ -6,25 +6,16 @@ def get_angle(rt):
     
     import numpy as np; import math;
     
-    ntrans = len(rt)
-    theta = np.zeros ((ntrans),dtype=float)
-    xdir = np.array ((1,0,0)) # Vector pointing down the x axis to take angles from
+    x = rt[:,0]
+    y = rt[:,1]
     
-    for transducer in range(0, ntrans):
-        
-        r = [rt[transducer,0], rt[transducer,1], rt[transducer,2]]
-        dmag = np.linalg.norm(r)     # Distance between transducer and origin
+    #rho = np.sqrt(x**2 + y**2)
+    phi = np.arctan2(y, x)
+    
+    phi[phi<0] += math.pi*2
 
-        if dmag < (1*10**(-13)):
-            theta[transducer] = 0 # setting angle to zero if transducer is ontop of the origin
-        else:
-            dot = r[0]*xdir[0] + r[1]*xdir[1] + r[2]*xdir[2] # Dot product of the direction of the transducr and the position in space
-            theta[transducer] = math.acos(dot/dmag)
-            
-        #if rt[transducer,2] < 0: # making angle go from 0 to 2 pi anticlockwise angle from the x axis
-        #    theta[transducer] = math.pi*2 - theta[transducer]
-        print(theta[transducer]/(math.pi/180)) # To test uncomment to get angle in degrees 
-    return theta
+    #print(np.divide(phi,np.divide(math.pi,180))) # To test uncomment to get angle in degrees 
+    return phi
 
 
 def pressure (r, rt, phi, nt):
