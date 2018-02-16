@@ -84,7 +84,16 @@ def add_twin_signature(rt, phase): # Array needs to be centerd around the origin
             phi_2[transducer] = phase[transducer] + math.pi
         else:
             phi_2[transducer] = phase[transducer]
+    """
+      
+        
+    for transducer in range(0, ntrans):
+        if transducer_angles[transducer] <= math.pi:
+            phi_2[transducer] = phase[transducer] + math.pi
+        else:
+            phi_2[transducer] = phase[transducer]
             
+    """
     return phi_2
 
 
