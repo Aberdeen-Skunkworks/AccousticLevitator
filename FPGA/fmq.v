@@ -15,7 +15,7 @@ wire OE;
 genvar j;
 generate
 	for (j=0; j < OUTPUTS; j=j+1) begin : clock_generator
-		clock #(OFFSET_WIDTH) osc(clk, reload_now, offsets[(OFFSET_WIDTH+1)*j+:OFFSET_WIDTH], DIVIDE, offsets[(OFFSET_WIDTH+1)*(j+1)-1:1], OE, tx[j]);	
+		clock #(OFFSET_WIDTH) osc(clk, reload_now, offsets[(OFFSET_WIDTH+1)*j+:OFFSET_WIDTH], DIVIDE, offsets[(OFFSET_WIDTH+1)*(j+1)-1+:1], OE, tx[j]);	
 	end
 endgenerate
 
