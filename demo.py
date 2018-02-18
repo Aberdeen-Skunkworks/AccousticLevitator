@@ -47,23 +47,29 @@ if choose == ("h"):
 ## -------------------------- Focused traps ------------------------------- ##  
 
 elif choose == ("p"):
+    
+
     print ("Pattern mode selected")
-    phi_focus = phase_algorithms.phase_find(rt,0,0,0.018) # phi is the initial phase of each transducer to focus on a point
+    phi_focus = phase_algorithms.phase_find(rt,0,0,0.0535) #  0952 phi is the initial phase of each transducer to focus on a point
     phi = phase_algorithms.add_twin_signature(rt,phi_focus)
     phase_index = np.zeros((ntrans),dtype=int)
     #phi_focus = algorithms.read_from_excel_phases() # Takes phases from an excel spreadsheet of phases from 0 to 2pi, any over 2pi just loops
+    
     for transducer in range(0,ntrans):
-        phase_index[transducer] = int(2500-phi[transducer]/((2*math.pi)/1250))    
-    
-    
+        phase_index[transducer] = int(2500-phi[transducer]/((2*math.pi)/1250)) 
+        #print(phase_index[transducer])
+
     from connect import Controller 
     with Controller() as ctl:
         ctl.setOutputDACPower(255)
         ctl.setOutputDACDivisor(50)
         for i in range(ctl.outputs):
             ctl.setOffset(i,phase_index[i])
-            ctl.loadOffsets()
-    
+        ctl.loadOffsets()
+
+
+        
+        
 # -------------------------------------------------------------------------- #
 
 
@@ -118,10 +124,44 @@ elif choose == ("m"):
                 
 # -------------------------------------------------------------------------- #
 
+elif choose == ("two"):
+    print ("Move mode selected")
+    
+    sideways_1 = np.copy(rt)
+    sideways_2 = np.copy(rt)
+    
+    sideways_1[:,0] = np.add(rt[:,2], -0.0925)
+    sideways_1[:,2] = np.add(rt[:,0], 0.05)
+    
+    sideways_2[:,0] = np.add(rt[:,2], 0.0925)
+    sideways_2[:,2] = np.add(rt[:,0], 0.05)
+
+    
+    phi_focus = phase_algorithms.phase_find(sideways_1,0,0,0.05) # phi is the initial phase of each transducer to focus on a point
+    phi = phase_algorithms.add_twin_signature(sideways_1,phi_focus)
+    phase_index = np.zeros((ntrans),dtype=int)
+    #phi_focus = algorithms.read_from_excel_phases() # Takes phases from an excel spreadsheet of phases from 0 to 2pi, any over 2pi just loops
+    for transducer in range(0,ntrans):
+        phase_index[transducer] = int(2500-phi[transducer]/((2*math.pi)/1250))
+
+    
+    from connect import Controller 
+    with Controller() as ctl:
+        ctl.setOutputDACPower(255)
+        ctl.setOutputDACDivisor(50)
+        print("got here")
+        for i in range(ctl.outputs):
+            ctl.setOffset(i,phase_index[i])
+        ctl.loadOffsets()
+        print("loaded offsets")
+
+
+
+
 elif choose == ("b"):
     from connect import Controller  
     phase_index = np.zeros((ntrans),dtype=int)
-    phi_focus = phase_algorithms.phase_find(rt,0,0,0.12)
+    phi_focus = phase_algorithms.phase_find(rt,0,0,0)
     for transducer in range(0,ntrans):
         phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))
         
@@ -178,6 +218,9 @@ elif choose == ("w"):
                 ctl.setOutputDACPower(255)
             counter = counter + 1
             
+            
+            
+        
 
 elif choose == ("t"):
     
@@ -200,7 +243,12 @@ elif choose == ("t"):
         array += low
         return array
     
-    data_whole_scaled = scale_range (data_whole, 0, 255).astype(int)
+    data_whole_scaled = scale_range (np.copy(data_whole), 0, 255)
+    data_whole_scaled_int = np.round(np.copy(data_whole_scaled), 0)
+
+
+
+
 
 
 else:

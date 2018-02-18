@@ -20,16 +20,16 @@ nt_2 = transducer_placment.direction_vectors(ntrans,[-1,0,0])
 sideways_1 = np.copy(rt)
 sideways_2 = np.copy(rt)
 
-sideways_1[:,0] = np.add(rt[:,2], -0.1)
+sideways_1[:,0] = np.add(rt[:,2], -0.0925)
 sideways_1[:,2] = np.add(rt[:,0], 0.05)
 
-sideways_2[:,0] = np.add(rt[:,2], 0.1)
+sideways_2[:,0] = np.add(rt[:,2], 0.0925)
 sideways_2[:,2] = np.add(rt[:,0], 0.05)
 
 rt_both_arrays = np.append(sideways_1, sideways_2, axis=0)
 nt_both_arrays = np.append(nt_1, nt_2, axis=0)
 
-transducer_placment.plot_as_vectors(rt_both_arrays,nt_both_arrays)  
+transducer_placment.plot_as_vectors(rt_both_arrays,nt_both_arrays)  # Use to plot the array layout in 3D
 
 rt = rt_both_arrays
 

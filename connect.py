@@ -11,7 +11,8 @@ class Controller():
 
         if len(self.ports) == 0:
             if os.name == "nt":
-                self.ports = ["COM"+str(i) for i in range(1, 9)]
+                #self.ports = ["COM"+str(i) for i in range(1, 9)]
+                self.ports = ["COM5"]
             else:
                 self.ports = ["/dev/ttyUSB"+str(i) for i in range(0, 9)]
 
@@ -96,7 +97,7 @@ class Controller():
         #The last byte contains the low offset bits
         b3 = low_offset
         cmd = bytearray([b1, b2, b3])
-        
+        #print(list(map(bin,cmd)))
         self.sendCmd(cmd)
 
     def setOutputDACPower(self, power):
