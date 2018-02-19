@@ -2,7 +2,7 @@
 
 # -------------------------Import Libaries------------------------------------
 
-import constants; import numpy as np; import calc_pressure_field; import time
+import constants; import numpy as np; import calc_pressure_field; import time; import algorithms
 import transducer_placment; from vti_writer import vti_writer; import phase_algorithms; import scipy.ndimage
 
 # -------------------------Variables to set------------------------------------
@@ -44,7 +44,7 @@ ntrans = len (rt)   # Total number of transducers in grid
 
 #nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
 
-focus_point = [ 0 , 0 , 0.005 ]
+focus_point = [ 0 , 0 , 0.05 ]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
 phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus))
@@ -156,6 +156,7 @@ z_forces = fz[ focus_as_index_x, focus_as_index_y, :               ]
 x_distances = np.linspace(-constants.gsize,   constants.gsize, constants.npoints)
 y_distances = np.linspace(-constants.gsize,   constants.gsize, constants.npoints)
 z_distances = np.linspace(               0, 2*constants.gsize, constants.npoints)
+
 
 
 import matplotlib.pyplot as plt;
