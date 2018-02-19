@@ -48,28 +48,40 @@ if choose == ("h"):
 
 elif choose == ("p"):
     
-
-    print ("Pattern mode selected")
-    phi_focus = phase_algorithms.phase_find(rt,0,0,0.0535) #  0952 phi is the initial phase of each transducer to focus on a point
-    phi = phase_algorithms.add_twin_signature(rt,phi_focus)
-    phase_index = np.zeros((ntrans),dtype=int)
-    #phi_focus = algorithms.read_from_excel_phases() # Takes phases from an excel spreadsheet of phases from 0 to 2pi, any over 2pi just loops
-    
-    for transducer in range(0,ntrans):
-        phase_index[transducer] = int(2500-phi[transducer]/((2*math.pi)/1250)) 
-        #print(phase_index[transducer])
-
-    from connect import Controller 
-    with Controller() as ctl:
-        ctl.setOutputDACPower(255)
-        ctl.setOutputDACDivisor(50)
-        for i in range(ctl.outputs):
-            ctl.setOffset(i,phase_index[i])
-        ctl.loadOffsets()
-
-
+    on_or_off = np.zeros(1250)
+    transducer_test = np.zeros(88)
+    for test in range(1250):
         
+        for transducer_number in range(88):
         
+            print ("Pattern mode selected")
+            phi_focus = phase_algorithms.phase_find(rt,0,0,0.018) #  0952 phi is the initial phase of each transducer to focus on a point
+            phi = phase_algorithms.add_twin_signature(rt,phi_focus)
+            phase_index = np.zeros((ntrans),dtype=int)
+            #phi_focus = algorithms.read_from_excel_phases() # Takes phases from an excel spreadsheet of phases from 0 to 2pi, any over 2pi just loops
+            
+            #phi = np.zeros(88)
+            phi[transducer_number] = ((test*math.pi*2)/1250)
+            print(test)
+            
+            for transducer in range(0,ntrans):
+                phase_index[transducer] = int(2500-phi[transducer]/((2*math.pi)/1250)) 
+                #print(phase_index[transducer])
+        
+            from connect import Controller 
+            with Controller() as ctl:
+                ctl.setOutputDACPower(255)
+                ctl.setOutputDACDivisor(50)
+                for i in range(ctl.outputs):
+                    ctl.setOffset(i,phase_index[i])
+                ctl.loadOffsets()
+            
+            print("transducer number: ", transducer_number+1)
+            transducer_test = input("Next transducer ")
+            #on_or_off[test] = input("on(1) or off()? ")
+                        
+
+
 # -------------------------------------------------------------------------- #
 
 

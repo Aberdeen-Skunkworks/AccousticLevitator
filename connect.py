@@ -11,8 +11,8 @@ class Controller():
 
         if len(self.ports) == 0:
             if os.name == "nt":
-                #self.ports = ["COM"+str(i) for i in range(1, 9)]
-                self.ports = ["COM5"]
+                self.ports = ["COM"+str(i) for i in range(1, 9)]
+                #self.ports = ["COM3"]
             else:
                 self.ports = ["/dev/ttyUSB"+str(i) for i in range(0, 9)]
 
