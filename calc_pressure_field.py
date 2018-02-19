@@ -99,7 +99,47 @@ def calc_pressure_field_numpy(rt, nt, ntrans, phi): ## x,y,z directions do not m
     return p
 
 
-
+def calc_pressure_field_numpy_around_trap(rt, nt, ntrans, phi, trap_point): ## x,y,z directions do not match the above algorithm (May be mirrored dur to mesh function)
+    
+    import numpy as np; import math; import constants; 
+    
+    p = np.zeros ((ntrans, constants.npoints, constants.npoints, constants.npoints), dtype=complex)
+    k = (2*math.pi)/(float(constants.lamda)) # Wavenumber
+    
+    x_temp = np.linspace(-constants.gsize + trap_point[0],   constants.gsize + trap_point[0], constants.npoints)
+    y_temp = np.linspace(-constants.gsize + trap_point[1],   constants.gsize + trap_point[1], constants.npoints)
+    z_temp = np.linspace(-constants.gsize + trap_point[2],   constants.gsize + trap_point[2], constants.npoints)
+    
+    x_y_z_mesh = np.meshgrid(x_temp, y_temp, z_temp)
+    
+    x_co_ords = x_y_z_mesh[0]
+    y_co_ords = x_y_z_mesh[1]
+    z_co_ords = x_y_z_mesh[2]
+    
+    
+    for transducer in range (0,ntrans):
+        print("Calculated up to transducer ", transducer, " out of ", ntrans)
+        d_x = np.subtract(rt[transducer,0], x_co_ords)
+        d_y = np.subtract(rt[transducer,1], y_co_ords)
+        d_z = np.subtract(rt[transducer,2], z_co_ords)
+        
+        d = np.array([d_x, d_y, d_z])
+        
+        dmag = np.linalg.norm(d, axis = 0)
+        
+        dot = np.add( np.add(np.multiply(d_x, nt[transducer,0]) ,  np.multiply(d_y, nt[transducer,1])) ,  np.multiply(d_z, nt[transducer,2]))
+        
+        theta = np.arccos( np.divide(dot, dmag) )
+        
+        exp = np.exp(np.multiply(1j, np.add(phi[transducer], np.multiply(k, dmag))))
+        
+        df_numerator   = np.sin(np.multiply(k, np.multiply(constants.a, np.sin(theta))))
+        df_denominator = np.multiply(k, np.multiply(constants.a, np.sin(theta)))
+        df = np.divide(df_numerator, df_denominator)
+        
+        p[transducer] = np.multiply(np.multiply(np.multiply(constants.p0, constants.A), exp), np.divide(df, dmag) )
+        
+    return p
 
 
 
