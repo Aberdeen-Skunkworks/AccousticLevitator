@@ -20,16 +20,16 @@ nt_2 = transducer_placment.direction_vectors(ntrans,[-1,0,0])
 sideways_1 = np.copy(rt)
 sideways_2 = np.copy(rt)
 
-sideways_1[:,0] = np.add(rt[:,2], -0.0925)
+sideways_1[:,0] = np.add(rt[:,2], -0.0519)
 sideways_1[:,2] = np.add(rt[:,0], 0.05)
 
-sideways_2[:,0] = np.add(rt[:,2], 0.0925)
+sideways_2[:,0] = np.add(rt[:,2], 0.0519)
 sideways_2[:,2] = np.add(rt[:,0], 0.05)
 
 rt_both_arrays = np.append(sideways_1, sideways_2, axis=0)
 nt_both_arrays = np.append(nt_1, nt_2, axis=0)
 
-transducer_placment.plot_as_vectors(rt_both_arrays,nt_both_arrays)  # Use to plot the array layout in 3D
+#transducer_placment.plot_as_vectors(rt_both_arrays,nt_both_arrays)  # Use to plot the array layout in 3D
 
 rt = rt_both_arrays
 
@@ -44,7 +44,7 @@ ntrans = len (rt)   # Total number of transducers in grid
 
 #nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
 
-focus_point = [ 0 , 0 , 0.05 ]
+focus_point = [ 0 , 0 , 0.005 ]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
 phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus))
@@ -137,6 +137,52 @@ print("Trap point at index ", np.divide(focus_point, constants.deltaxyz), " Away
 print("Particle radius in indexes = ", np.divide(np.divide(constants.particle_diamiter,2), constants.deltaxyz))
 print(" ")
 print("Calculations compleated successfuly")
+
+
+
+
+############### force plotting tests
+
+focus_as_index = np.divide(focus_point , constants.deltaxyz)
+
+focus_as_index_x = int(focus_as_index[0])
+focus_as_index_y = int(focus_as_index[1])
+focus_as_index_z = int(focus_as_index[2])
+
+x_forces = fx[ :               , focus_as_index_y, focus_as_index_z]
+y_forces = fy[ focus_as_index_x, :               , focus_as_index_z]
+z_forces = fz[ focus_as_index_x, focus_as_index_y, :               ]
+
+x_distances = np.linspace(-constants.gsize,   constants.gsize, constants.npoints)
+y_distances = np.linspace(-constants.gsize,   constants.gsize, constants.npoints)
+z_distances = np.linspace(               0, 2*constants.gsize, constants.npoints)
+
+
+import matplotlib.pyplot as plt;
+
+#fig = plt.figure()
+ax = plt.axes()
+
+ax.plot(x_distances, x_forces, 'ro')
+ax.set_xlabel('Distances')
+ax.set_ylabel('forces')
+ax.set_title('x forces')
+
+fig = plt.figure()
+
+ax2 = plt.axes()
+ax2.plot(y_distances, y_forces, 'ro')
+ax2.set_xlabel('Distances')
+ax2.set_ylabel('forces')
+ax2.set_title('y forces')
+
+fig = plt.figure()
+
+ax3 = plt.axes()
+ax3.plot(z_distances, z_forces, 'ro')
+ax3.set_xlabel('Distances')
+ax3.set_ylabel('forces')
+ax3.set_title('z forces')
 
 
 """
