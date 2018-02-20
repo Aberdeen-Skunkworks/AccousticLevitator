@@ -36,12 +36,12 @@ nt = nt_both_arrays
 """
 
 
-rt = transducer_placment.array_grid(0.01,10,10) # spcing , x nummber, y number of transducers
+rt = transducer_placment.array_grid(0.01,8,8) # spcing , x nummber, y number of transducers
 ntrans = len (rt)   # Total number of transducers in grid
 
 nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
 
-focus_point = [ 0 , 0 , 0.03 ]
+focus_point = [ 0 , 0 , 0.02 ]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
 phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus))
@@ -153,26 +153,26 @@ z_distances = np.linspace(-constants.gsize + focus_point[2],   constants.gsize +
 
 import matplotlib.pyplot as plt;
 
-#fig = plt.figure()
+fig = plt.figure()
 ax = plt.axes()
 
 ax.plot(x_distances, x_forces, 'ro')
-ax.set_xlabel('Distances')
-ax.set_ylabel('forces')
-ax.set_title('x forces')
+ax.set_xlabel('Distance from origin /m')
+ax.set_ylabel('Force /N')
+ax.set_title('X forces for trap point of: ' + str(focus_point))
 
 fig = plt.figure()
 
 ax2 = plt.axes()
 ax2.plot(y_distances, y_forces, 'ro')
-ax2.set_xlabel('Distances')
-ax2.set_ylabel('forces')
-ax2.set_title('y forces')
+ax2.set_xlabel('Distance from origin /m')
+ax2.set_ylabel('Force /N')
+ax2.set_title('Y forces for trap point of: ' + str(focus_point))
 
 fig = plt.figure()
 
 ax3 = plt.axes()
 ax3.plot(z_distances, z_forces, 'ro')
-ax3.set_xlabel('Distances')
-ax3.set_ylabel('forces')
-ax3.set_title('z forces')
+ax3.set_xlabel('Distance from origin /m')
+ax3.set_ylabel('Force /N')
+ax3.set_title('Z forces for trap point of: ' + str(focus_point))
