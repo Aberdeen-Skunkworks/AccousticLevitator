@@ -7,7 +7,7 @@ import transducer_placment; from vti_writer import vti_writer; import phase_algo
 # -------------------------Variables to set------------------------------------
 
 
-"""
+
 ##opposite arrays
     
 rt = transducer_placment.big_daddy()
@@ -19,10 +19,10 @@ nt_2 = transducer_placment.direction_vectors(ntrans,[-1,0,0])
 sideways_1 = np.copy(rt)
 sideways_2 = np.copy(rt)
 
-sideways_1[:,0] = np.add(rt[:,2], -0.0519)
+sideways_1[:,0] = np.add(rt[:,2], -0.06)
 sideways_1[:,2] = np.add(rt[:,0], 0.05)
 
-sideways_2[:,0] = np.add(rt[:,2], 0.0519)
+sideways_2[:,0] = np.add(rt[:,2], 0.06)
 sideways_2[:,2] = np.add(rt[:,0], 0.05)
 
 rt_both_arrays = np.append(sideways_1, sideways_2, axis=0)
@@ -33,15 +33,15 @@ nt_both_arrays = np.append(nt_1, nt_2, axis=0)
 rt = rt_both_arrays
 
 nt = nt_both_arrays
-"""
 
 
-rt = transducer_placment.array_grid(0.01,8,8) # spcing , x nummber, y number of transducers
+
+#rt = transducer_placment.array_grid(0.01,6,6) # spcing , x nummber, y number of transducers
 ntrans = len (rt)   # Total number of transducers in grid
 
-nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
+#nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
 
-focus_point = [ 0 , 0 , 0.02 ]
+focus_point = [ 0 , 0 , 0.05]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
 phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus))
@@ -146,6 +146,10 @@ x_forces = fx[ :               , 0, 0]
 y_forces = fy[ 0, :               , 0]
 z_forces = fz[ 0, 0, :               ]
 
+x_potential = u[ :               , 0, 0]
+y_potential = u[ 0, :               , 0]
+z_potential = u[ 0, 0, :               ]
+
 x_distances = np.linspace(-constants.gsize + focus_point[0],   constants.gsize + focus_point[0], constants.npoints)
 y_distances = np.linspace(-constants.gsize + focus_point[1],   constants.gsize + focus_point[1], constants.npoints)
 z_distances = np.linspace(-constants.gsize + focus_point[2],   constants.gsize + focus_point[2], constants.npoints)
@@ -153,9 +157,9 @@ z_distances = np.linspace(-constants.gsize + focus_point[2],   constants.gsize +
 
 import matplotlib.pyplot as plt;
 
-fig = plt.figure()
-ax = plt.axes()
 
+ax = plt.axes()
+"""
 ax.plot(x_distances, x_forces, 'ro')
 ax.set_xlabel('Distance from origin /m')
 ax.set_ylabel('Force /N')
@@ -176,3 +180,27 @@ ax3.plot(z_distances, z_forces, 'ro')
 ax3.set_xlabel('Distance from origin /m')
 ax3.set_ylabel('Force /N')
 ax3.set_title('Z forces for trap point of: ' + str(focus_point))
+"""
+
+#fig = plt.figure()
+
+ax.plot(x_distances, x_potential, 'ro')
+ax.set_xlabel('Distance from origin /m')
+ax.set_ylabel('Potential Energy /J')
+ax.set_title('X - Potential energy around trap point: ' + str(focus_point))
+
+fig = plt.figure()
+
+ax2 = plt.axes()
+ax2.plot(y_distances, y_potential, 'ro')
+ax2.set_xlabel('Distance from origin /m')
+ax2.set_ylabel('Potential Energy /J')
+ax2.set_title('Y - Potential energy around trap point: ' + str(focus_point))
+
+fig = plt.figure()
+
+ax3 = plt.axes()
+ax3.plot(z_distances, z_potential, 'ro')
+ax3.set_xlabel('Distance from origin /m')
+ax3.set_ylabel('Potential Energy /J')
+ax3.set_title('Z - Potential energy around trap point: ' + str(focus_point))
