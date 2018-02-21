@@ -69,32 +69,45 @@ def phase_find(rt, x, y, z):
 
 
 
-def add_twin_signature(rt, phase): # Array needs to be centerd around the origin for this to work
-
+def add_twin_signature(rt, phase, angle): # Array needs to be centerd around the origin for this to work
+    
     import algorithms; import math; import numpy as np
     
-    transducer_angles = algorithms.get_angle(rt)
-    ntrans = len(rt)
-    phi_2 = np.zeros((ntrans))
-    
-    for transducer in range(0, ntrans):
-        if (3/2)*math.pi <= transducer_angles[transducer]: # all possitive z value transducers have pi added to their phase signature to create twin trap
-            phi_2[transducer] = phase[transducer] + math.pi
-        elif transducer_angles[transducer] <= math.pi/2:
-            phi_2[transducer] = phase[transducer] + math.pi
-        else:
-            phi_2[transducer] = phase[transducer]
-    """
-      
+    if angle > 180 or angle < 0:
+        print("Enter an angle in degrees between 0 and 180 for the plane of reflection")
+    else:
+        angle_rad = np.radians(angle)
+        transducer_angles = algorithms.get_angle(rt)
+        ntrans = len(rt)
+        phi_2 = np.zeros((ntrans))
         
-    for transducer in range(0, ntrans):
-        if transducer_angles[transducer] <= math.pi:
-            phi_2[transducer] = phase[transducer] + math.pi
-        else:
-            phi_2[transducer] = phase[transducer]
-            
-    """
-    return phi_2
+        for transducer in range(0, ntrans):
+            if angle_rad <= transducer_angles[transducer] and transducer_angles[transducer] <= (math.pi + angle_rad): # all possitive z value transducers have pi added to their phase signature to create twin trap
+                phi_2[transducer] = phase[transducer] + math.pi
+            else:
+                phi_2[transducer] = phase[transducer]
+
+        return phi_2
+#### Tester for angle of twin signature -- between 0 and 180 in degrees
+"""
+import constants; import numpy as np; import calc_pressure_field; import time; import algorithms
+import transducer_placment; from vti_writer import vti_writer; import scipy.ndimage
+rt = transducer_placment.array_grid(0.01,20,20) 
+ntrans = len (rt) 
+nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) 
+phi_signature = add_twin_signature(rt, np.zeros(ntrans), 35)
+phi = phi_signature
+trans_to_delete = []
+for changed in range(ntrans):
+    if phi[changed] > 3.0 and phi[changed] < 3.2:
+        trans_to_delete.append(changed)
+new_rt = transducer_placment.delete_transducers(rt,trans_to_delete)
+new_length = len(new_rt)
+new_nt = transducer_placment.direction_vectors(new_length,[0,0,1]) # nt is the direction vector of each transducer
+transducer_placment.plot_as_vectors(new_rt,new_nt)  # Use to plot the array layout in 3D
+transducer_placment.plot_as_vectors(rt,nt)  # Use to plot the array layout in 3D
+"""
+
 
 
 

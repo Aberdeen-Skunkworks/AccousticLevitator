@@ -118,7 +118,7 @@ def calc_pressure_field_numpy_around_trap(rt, nt, ntrans, phi, trap_point): ## x
     
     
     for transducer in range (0,ntrans):
-        print("Calculated up to transducer ", transducer, " out of ", ntrans)
+        print("Calculated up to transducer ", (transducer + 1), " out of ", ntrans)
         d_x = np.subtract(rt[transducer,0], x_co_ords)
         d_y = np.subtract(rt[transducer,1], y_co_ords)
         d_z = np.subtract(rt[transducer,2], z_co_ords)

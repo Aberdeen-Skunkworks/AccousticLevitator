@@ -20,10 +20,10 @@ nt_2 = transducer_placment.direction_vectors(ntrans,[-1,0,0])
 sideways_1 = np.copy(rt)
 sideways_2 = np.copy(rt)
 
-sideways_1[:,0] = np.add(rt[:,2], -0.0519)
+sideways_1[:,0] = np.add(rt[:,2], -0.05)
 sideways_1[:,2] = np.add(rt[:,0], 0.05)
 
-sideways_2[:,0] = np.add(rt[:,2], 0.0519)
+sideways_2[:,0] = np.add(rt[:,2], 0.05)
 sideways_2[:,2] = np.add(rt[:,0], 0.05)
 
 rt_both_arrays = np.append(sideways_1, sideways_2, axis=0)
@@ -47,7 +47,7 @@ ntrans = len (rt)   # Total number of transducers in grid
 focus_point = [ 0 , 0 , 0.05 ]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
-phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus))
+phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 90) # Positions, phases, angle of plane betweem 0 and 180 degrees
 #phi_noise = phase_algorithms.phase_random_noise(2, np.copy(phi_signature)) # number is randomness multiplier (0-1)*multiplier scaled between 0 and 2pi
 
 phi = phi_signature
