@@ -42,7 +42,7 @@ ntrans = len (rt)   # Total number of transducers in grid
 
 nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
 
-focus_point = [ 0 , 0, 0.018]
+focus_point = [ 0 , 0, 0.02]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
 phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 90)
@@ -155,9 +155,8 @@ z_potential = u[ focus_as_index  , focus_as_index , :             ]
 
 import matplotlib.pyplot as plt;
 
-
-ax = plt.axes()
 """
+ax = plt.axes()
 ax.plot(x_distances, x_forces, 'ro')
 ax.set_xlabel('Distance from origin /m')
 ax.set_ylabel('Force /N')
@@ -180,25 +179,26 @@ ax3.set_ylabel('Force /N')
 ax3.set_title('Z forces for trap point of: ' + str(focus_point))
 """
 
-#fig = plt.figure()
+fig = plt.figure()
 
-ax.plot(x_distances, x_potential, 'ro')
-ax.set_xlabel('Distance from origin /m')
-ax.set_ylabel('Potential Energy /J')
-ax.set_title('X - Potential energy around trap point: ' + str(focus_point))
+ax4 = plt.axes()
+ax4.plot(x_distances, x_potential, 'ro')
+ax4.set_xlabel('Distance from origin /m')
+ax4.set_ylabel('Potential Energy /J')
+ax4.set_title('X - Potential energy around trap point: ' + str(focus_point))
 
 fig = plt.figure()
 
-ax2 = plt.axes()
-ax2.plot(y_distances, y_potential, 'ro')
-ax2.set_xlabel('Distance from origin /m')
-ax2.set_ylabel('Potential Energy /J')
-ax2.set_title('Y - Potential energy around trap point: ' + str(focus_point))
+ax5 = plt.axes()
+ax5.plot(y_distances, y_potential, 'ro')
+ax5.set_xlabel('Distance from origin /m')
+ax5.set_ylabel('Potential Energy /J')
+ax5.set_title('Y - Potential energy around trap point: ' + str(focus_point))
 
 fig = plt.figure()
 
-ax3 = plt.axes()
-ax3.plot(z_distances, z_potential, 'ro')
-ax3.set_xlabel('Distance from origin /m')
-ax3.set_ylabel('Potential Energy /J')
-ax3.set_title('Z - Potential energy around trap point: ' + str(focus_point))
+ax6 = plt.axes()
+ax6.plot(z_distances, z_potential, 'ro')
+ax6.set_xlabel('Distance from origin /m')
+ax6.set_ylabel('Potential Energy /J')
+ax6.set_title('Z - Potential energy around trap point: ' + str(focus_point))

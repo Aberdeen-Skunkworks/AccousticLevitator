@@ -106,8 +106,9 @@ def acoustic_potential (r, rt, phi, nt):
 
     
     u = (2*constants.k1*p_abs**2) - (2*constants.k2*(px_abs**2 + py_abs**2 + pz_abs**2))
-
-    return u, p_abs
+    
+    #### add this back in when you need absolute pressure , p_abs
+    return u
 
 
 def differentiate_acoustic_potential(h,r,rt,phi,nt):

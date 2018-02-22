@@ -37,8 +37,6 @@ nt = nt_both_arrays
 
 
 
-
-
 #rt = transducer_placment.big_daddy()   # spcing , x nummber, y number of transducers
 ntrans = len (rt)   # Total number of transducers in grid
 
