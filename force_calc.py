@@ -35,13 +35,14 @@ rt = rt_both_arrays
 nt = nt_both_arrays
 """
 
-
-rt = transducer_placment.array_grid(0.01,10,10) # spcing , x nummber, y number of transducers
+rt = transducer_placment.array_grid(0.01,8,8) # spcing , x nummber, y number of transducers
+#rt = transducer_placment.big_daddy()
+#rt = transducer_placment.random(75,0.05,0.01)
 ntrans = len (rt)   # Total number of transducers in grid
 
 nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
 
-focus_point = [ 0 , 0 , 0.02]
+focus_point = [ 0 , 0, 0.018]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
 phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 90)
@@ -50,6 +51,10 @@ phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 90)
 phi = phi_signature
 
 #phi = phase_algorithms.phase_discretize(np.copy(phi))
+
+x_distances = np.linspace(-constants.gsize + focus_point[0],   constants.gsize + focus_point[0], constants.npoints)
+y_distances = np.linspace(-constants.gsize + focus_point[1],   constants.gsize + focus_point[1], constants.npoints)
+z_distances = np.linspace(-constants.gsize + focus_point[2],   constants.gsize + focus_point[2], constants.npoints)
 
 
 # ----------------------Setting up output arrays-------------------------------
@@ -85,7 +90,8 @@ print(" ")
 
 # -----------------Loop to sum pressure of all transducers---------------------
 
-height = np.multiply(constants.deltaxyz, np.indices([constants.npoints, constants.npoints, constants.npoints])[2]) # 55 times faster
+height_2D = np.tile(z_distances, (constants.npoints ,1))
+height = np.broadcast_to(height_2D, (constants.npoints, constants.npoints, constants.npoints))
 pcombined = np.sum(np.copy(p), axis = 0) 
 
 # -----------------Calculating derrivitive of the pressure field---------------
@@ -115,11 +121,11 @@ ux = np.copy(diff_u[0]); uy = np.copy(diff_u[1]); uz = np.copy(diff_u[2])
 
 # -----------------Calculating force on particle ---------------
 
+
 fx = np.copy(-ux); fy = np.copy(-uy); fz = np.copy(-uz)
 
 
 laplace_u = scipy.ndimage.filters.laplace(u)
-
 
 
 # -------------------Creating output images and vtk file----------------------
@@ -132,7 +138,6 @@ print("Trap point at index ", np.divide(focus_point, constants.deltaxyz), " Away
 print("Particle radius in indexes = ", np.divide(np.divide(constants.particle_diamiter,2), constants.deltaxyz))
 print(" ")
 print("Calculations compleated successfuly")
-
 
 
 
@@ -150,9 +155,6 @@ x_potential = u[ :               , 0, 0]
 y_potential = u[ 0, :               , 0]
 z_potential = u[ 0, 0, :               ]
 
-x_distances = np.linspace(-constants.gsize + focus_point[0],   constants.gsize + focus_point[0], constants.npoints)
-y_distances = np.linspace(-constants.gsize + focus_point[1],   constants.gsize + focus_point[1], constants.npoints)
-z_distances = np.linspace(-constants.gsize + focus_point[2],   constants.gsize + focus_point[2], constants.npoints)
 
 
 import matplotlib.pyplot as plt;
