@@ -109,7 +109,6 @@ def calc_pressure_field_numpy_around_trap(rt, nt, ntrans, phi, trap_point): ## x
     x_temp = np.linspace(-constants.gsize + trap_point[0],   constants.gsize + trap_point[0], constants.npoints)
     y_temp = np.linspace(-constants.gsize + trap_point[1],   constants.gsize + trap_point[1], constants.npoints)
     z_temp = np.linspace(-constants.gsize + trap_point[2],   constants.gsize + trap_point[2], constants.npoints)
-    
     x_y_z_mesh = np.meshgrid(x_temp, y_temp, z_temp)
     
     x_co_ords = x_y_z_mesh[0]

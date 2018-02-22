@@ -141,19 +141,15 @@ print("Calculations compleated successfuly")
 
 
 
-focus_as_index = np.divide(focus_point , constants.deltaxyz)
+focus_as_index = int(((constants.npoints-1)/ 2))
 
-focus_as_index_x = int(focus_as_index[0])
-focus_as_index_y = int(focus_as_index[1])
-focus_as_index_z = int(focus_as_index[2])
+x_forces = fx[ :               , focus_as_index  , focus_as_index]
+y_forces = fy[ focus_as_index  , :               , focus_as_index]
+z_forces = fz[ focus_as_index  , focus_as_index  , :             ]
 
-x_forces = fx[ :               , 0, 0]
-y_forces = fy[ 0, :               , 0]
-z_forces = fz[ 0, 0, :               ]
-
-x_potential = u[ :               , 0, 0]
-y_potential = u[ 0, :               , 0]
-z_potential = u[ 0, 0, :               ]
+x_potential = u[ :               , focus_as_index , focus_as_index]
+y_potential = u[ focus_as_index  , :              , focus_as_index]
+z_potential = u[ focus_as_index  , focus_as_index , :             ]
 
 
 

@@ -4,14 +4,20 @@
 import math
 
 
-gsize = 0.02        # Half the length of grid box (m)
-deltaxyz = 0.0004     # Distance between points in grid (m)
+gsize = 0.02       # Half the length of grid box (m)
+deltaxyz = 0.0006     # Distance between points in grid (m)
 
 x = -gsize           # Initial values of x,y and z in (m) Grid volume
 y = -gsize
 z = 0.00
 npoints = int(1 + ((2 * gsize) / deltaxyz)) # Number of points on x y and z axis, plus 1 to index properly
 
+
+if npoints % 2 == 0:
+    print("Number of points is even (No central point exists): ", npoints)  
+else:
+    print("Number of points is odd (central point exists): ", npoints)
+     
 
 phaseresolution = 1250      # Phase resolution x as in ( 2*pi )/( x ) number of divisions of the phases
 p0 = 0.17                   # Amplitude constant
