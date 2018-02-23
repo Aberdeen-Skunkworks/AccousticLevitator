@@ -7,7 +7,7 @@ inital_vel = [0,0,0]                        # m/s
 gravity    = [0, 0, -9.81]                  # m/s^2
 diamiter   = constants.particle_diamiter    # m    
 density    = constants.rhos                 # kg/m^3
-dt         = 0.00001                          # Time step s
+dt         = 0.0001                          # Time step s
 end_time   = 0.01                           # End time s
 
 vol_sph =   constants.v                     # m^3
