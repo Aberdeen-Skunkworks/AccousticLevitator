@@ -7,7 +7,7 @@ import transducer_placment; from vti_writer import vti_writer; import phase_algo
 # -------------------------Variables to set------------------------------------
 
 
-"""
+
 ##opposite arrays
     
 rt = transducer_placment.big_daddy()
@@ -33,14 +33,14 @@ nt_both_arrays = np.append(nt_1, nt_2, axis=0)
 rt = rt_both_arrays
 
 nt = nt_both_arrays
-"""
 
-rt = transducer_placment.array_grid(0.01,8,8) # spcing , x nummber, y number of transducers
+
+#rt = transducer_placment.array_grid(0.01,8,8) # spcing , x nummber, y number of transducers
 #rt = transducer_placment.big_daddy()
 #rt = transducer_placment.random(75,0.05,0.01)
 ntrans = len (rt)   # Total number of transducers in grid
 
-nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
+#nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
 
 focus_point = [ 0 , 0, 0.02]
 
@@ -48,7 +48,7 @@ phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focu
 phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 90)
 #phi_noise = phase_algorithms.phase_random_noise(2, np.copy(phi_signature)) # number is randomness multiplier (0-1)*multiplier scaled between 0 and 2pi
 
-phi = phi_signature
+phi = phi_focus
 
 #phi = phase_algorithms.phase_discretize(np.copy(phi))
 
