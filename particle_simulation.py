@@ -2,24 +2,33 @@ import matplotlib as mpl; import numpy as np; import matplotlib.pyplot as plt; f
 import math; import algorithms; import transducer_placment; import phase_algorithms; import constants;
 import time
  
-inital_pos = [0.01,0.01,0.0185]             # m
+inital_pos = [0.001,0.001,0.0185]             # m
 inital_vel = [0,0,0]                        # m/s
 gravity    = [0, 0, -9.81]                  # m/s^2
 diamiter   = constants.particle_diamiter    # m    
 density    = constants.rhos                 # kg/m^3
 dt         = 0.0001                          # Time step s
-end_time   = 0.01                           # End time s
+end_time   = 0.1                          # End time s
 
 vol_sph =   constants.v                     # m^3
 mass    = vol_sph * density                 # kg 
 
 
+focus_point = [ 0 , 0, 0.02]
+
 rt = transducer_placment.big_daddy()
 ntrans = len (rt)
 nt = transducer_placment.direction_vectors(ntrans,[0,0,1])
-phi_focus = phase_algorithms.phase_find(rt,0,0,0.018) # phi is the initial phase of each transducer to focus on a point
+phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
 phi = phase_algorithms.add_twin_signature(rt,phi_focus, 90)
 
+x_distances = np.linspace(-constants.gsize + focus_point[0],   constants.gsize + focus_point[0], constants.npoints)
+y_distances = np.linspace(-constants.gsize + focus_point[1],   constants.gsize + focus_point[1], constants.npoints)
+z_distances = np.linspace(-constants.gsize + focus_point[2],   constants.gsize + focus_point[2], constants.npoints)
+
+def find_nearest(array,value):
+    idx = (np.abs(array-value)).argmin()
+    return idx
 
 number_of_time_steps = int( end_time / dt )
 
@@ -67,7 +76,7 @@ for time_step in range(0, number_of_time_steps):
     
     timer = np.add(timer, dt)
     
-    total_energy[time_step] = algorithms.acoustic_potential(pos, rt, phi, nt) + (0.5 * mass * np.linalg.norm(vel)**2) + (mass * 9.81 * pos[2])
+    #total_energy[time_step] = algorithms.acoustic_potential(pos, rt, phi, nt) + (0.5 * mass * np.linalg.norm(vel)**2) + (mass * 9.81 * pos[2])
     if pos[2]<0:
         break
 
@@ -97,7 +106,7 @@ ax.plot(x, y, z, label='Trajectory')
 ax.legend()
 
 
-fig = plt.figure()
+#fig = plt.figure()
 #Energy Plot
-plt.plot(np.linspace(0,end_time,number_of_time_steps), total_energy, 'ro')
-plt.show()
+#plt.plot(np.linspace(0,end_time,number_of_time_steps), total_energy, 'ro')
+#plt.show()
