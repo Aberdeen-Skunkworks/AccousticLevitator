@@ -179,3 +179,4 @@ def read_from_excel_phases(): # Reads the phases from phase.xlsx
 
 
 
+print("Algorithms has ran")
