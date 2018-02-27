@@ -34,8 +34,8 @@ if choose == ("h"):
         while True:          # Turns the pattern off and on as fast as possible
             for i in range(ctl.outputs):
                 ctl.setOffset(i,phase_index[i])
-            ctl.setOutputDACPower(255)
-            ctl.setOutputDACDivisor(50)
+            ctl.setOutputDACPower(128) #50% duty cycle, turns the board off and on for equal amounts of time
+            ctl.setOutputDACDivisor(0b11111111111)
             ctl.loadOffsets()
     
             #for i in range(ctl.outputs):

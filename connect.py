@@ -26,8 +26,8 @@ class Controller():
                 self.outputs = self.getOutputs()
                 self.version = self.getVersion()
                 print("Checking firmware version",self.version)
-                if (self.version != 1):
-                    raise Exception("Unexpected board version")
+                if (self.version != 3):
+                    raise Exception("Unexpected board version",self.version)
                 print("Connected successfully to board with "+str(self.outputs)+" outputs")
                 break
             except Exception as e:
@@ -120,10 +120,10 @@ class Controller():
         # | 1 | 1 | 1 | X | X | X | X | X | 0 | X | X | X | X | X | X | Y | 0 | Y | Y | Y | Y | Y | Y | Y |
         #  X = UNUSED
         #  Y = 7 bit DAC value
-        if power > 0b11111111:
+        if power > 256: #Not a mistake! the DAC goes from 0-256, not 255!
             raise Exception("Power selected is too large!")
 
-        cmd = bytearray([0b11100000, 0b00000001 & (power >> 7), 0b01111111 & power])
+        cmd = bytearray([0b11100000, 0b00000011 & (power >> 7), 0b01111111 & power])
         self.sendCmd(cmd) 
 
     def setOutputDACDivisor(self, divisor):
@@ -132,11 +132,18 @@ class Controller():
         # | 1 | 1 | 1 | X | X | X | X | X | 0 | X | X | X | X | X | X | Y | 0 | Y | Y | Y | Y | Y | Y | Y |
         #  X = UNUSED
         #  Y = 7 bit DAC value
-        if divisor > 0b11111111:
-            raise Exception("Power selected is too large!")
-
-        cmd = bytearray([0b11110000, 0b00000001 & (divisor >> 7), 0b01111111 & divisor])
+        if divisor > 0b11111111111:
+            raise Exception("Divisor selected is too large!")
+        if divisor < 50:
+            raise Exception("You'll burn out the board if this divisor is too low (<50).")
+        cmd = bytearray([0b11110000, 0b00001111 & (divisor >> 7), 0b01111111 & divisor])
         self.sendCmd(cmd) 
+
+    def setOutputDACFreq(self, freq):
+        target_ratio=5e7/freq
+        divisor = int(target_ratio/2-1)
+        print("divisor=",divisor)
+        return self.setOutputDACDivisor(divisor)
         
     def disableOutput(self, clock):
         self.setOffset(clock, 0, enable=False)
