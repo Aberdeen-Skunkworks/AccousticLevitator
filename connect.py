@@ -22,10 +22,12 @@ class Controller():
                 print("Trying to connect to board on "+port)
                 self.com = serial.Serial(port=port, baudrate=460800, timeout=0.5)
                 self.com.reset_input_buffer()
+                print("Connected, testing for controller")
                 self.outputs = self.getOutputs()
                 print("Connected successfully to board with "+str(self.outputs)+" outputs")
                 break
             except Exception as e:
+                print(e)
                 self.com = None
         if (self.com == None):
             raise Exception("Failed to open communications!")
@@ -38,9 +40,14 @@ class Controller():
         self.com.close()        
             
     def getOutputs(self):
-        self.com.write(bytearray([0b11000000,0,0]))
+        bytestream=bytearray([0b11000000,0,0])
+        self.com.write(bytestream)
+        ack = bytearray(self.com.read(3))
+        if bytestream != ack:
+            print ("Sent", repr(bytestream), "but got", ack)
         ack = bytearray(self.com.read(1))
         if (len(ack) != 1):
+            print("Failed to read output count")
             raise Exception("Failed to read output count")
         return ack[0]
     
@@ -58,8 +65,10 @@ class Controller():
         #   23  22  21  20  19  18  17  16  15  14  13  12  11  10  9   8   7   6   5   4   3   2   1   0
         # | 1 | X | X | X | X | X | X | X | 0 | X | X | X | X | X | X | X | 0 | X | X | X | X | X | X | X |
         # 
-
         self.com.write(bytestream)
+        ack = bytearray(self.com.read(3))
+        if bytestream != ack:
+            print ("Sent", repr(bytestream), "but got", ack)
         
     def loadOffsets(self):
         self.sendCmd(bytearray([0b10100000, 0, 0]))

@@ -15,7 +15,7 @@ wire OE;
 genvar j;
 generate
 	for (j=0; j < OUTPUTS; j=j+1) begin : clock_generator
-		clock #(OFFSET_WIDTH) osc(clk, reload_now, offsets[(OFFSET_WIDTH+1)*j+:OFFSET_WIDTH], DIVIDE, offsets[(OFFSET_WIDTH+1)*(j+1)-1+:1], OE, tx[j]);	
+		clock #(OFFSET_WIDTH) osc(clk, reload_now, offsets[(OFFSET_WIDTH+1)*j+:OFFSET_WIDTH], DIVIDE, offsets[(OFFSET_WIDTH+1)*j+OFFSET_WIDTH], OE, tx[j]);	
 	end
 endgenerate
 
@@ -109,29 +109,44 @@ begin
             // (either clear it if it was set or set it if we just got a
             // byte out of waiting for the transmitter to send one)
             rx_ready <= ~rx_ready;
-            // send byte back out
-            //tx_data <= rx_data;
-            //tx_valid <= 1;
+            // send byte back out for verification
 				cmdbuffer <= {cmdbuffer[0+:16], rx_data};
+            tx_data <= rx_data;
+            tx_valid <= 1;
          end
       end
 		if (cmdbuffer[23]) begin//We have a command
-			//Echo the command back
-         //tx_data <= cmdbuffer[16+:8];
-         //tx_valid <= 1;
 			//Process the command
 			case(cmdbuffer[22:21])
 			2'b00 : begin
 				for (i = 0; i < OUTPUTS; i = i+1)
 					if (i == {cmdbuffer[20:16],cmdbuffer[14:13]})
 						offsets[(OFFSET_WIDTH+1)*i +: OFFSET_WIDTH+1] <= {cmdbuffer[12:8], cmdbuffer[6:0]};
+				//Wipe the command buffer
+				cmdbuffer <= 24'd0;
 			end
 			2'b01 : begin
 				reload_next <= 1'b1; //Trigger a reload next main clock cycle
+				//Wipe the command buffer
+				cmdbuffer <= 24'd0;
 			end
 			2'b10 : begin //Output the number of outputs configured
-				tx_data <= OUTPUTS;
-				tx_valid <= 1;
+				if (!tx_valid) begin
+					//We've waited till the previous byte was transmitted, now we can reply 	
+					tx_data <= OUTPUTS;
+					tx_valid <= 1;
+					//Wipe the command buffer
+					cmdbuffer <= 24'd0;
+				end
+			end
+			2'b11 : begin //Set the DAC value
+				if (cmdbuffer[20])
+					dac_clk_divisor <= {cmdbuffer[8], cmdbuffer[6:0]};
+				else
+					dac_value <= {cmdbuffer[8], cmdbuffer[6:0]};
+				
+				//Wipe the command buffer
+				cmdbuffer <= 24'd0;
 			end
 			2'b11 : begin //Set the DAC value
 				if (cmdbuffer[20])
@@ -142,10 +157,10 @@ begin
 			default: begin
 				tx_data <= 8'd0;
 				tx_valid <= 1;
+				//Wipe the command buffer
+				cmdbuffer <= 24'd0;
 			end
 			endcase
-			//Wipe the command buffer
-			cmdbuffer <= 24'd0;
 		end
 	end
 end

@@ -40,6 +40,7 @@ if choose == ("h"):
     
             for i in range(ctl.outputs):
                 ctl.disableOutput(i)
+            
 # -------------------------------------------------------------------------- #
 
 
@@ -257,11 +258,6 @@ elif choose == ("t"):
     
     data_whole_scaled = scale_range (np.copy(data_whole), 0, 255)
     data_whole_scaled_int = np.round(np.copy(data_whole_scaled), 0)
-
-
-
-
-
 
 else:
     print("Come on, pick one of the correct letters!")

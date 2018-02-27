@@ -6,10 +6,12 @@ reg[OFFSET_WIDTH-2:0] cnt;
 always@(posedge clk or negedge rst)
 if (!rst)
 	cnt <= offset[OFFSET_WIDTH-2:0];
-else if (cnt == divide)
-	cnt <= 0;
-else
-	cnt <= cnt+1'b1;
+else begin
+	if (cnt == divide)
+		cnt <= 0;
+	else
+		cnt <= cnt+1'b1;
+end
 
 //The output driver
 reg out_reg;
