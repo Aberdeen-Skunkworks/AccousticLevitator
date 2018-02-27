@@ -7,7 +7,7 @@ parameter [OFFSET_WIDTH-2:0] DIVIDE = CLOCK / FREQ / 2 - 1;
 parameter DATA_WIDTH = 8;
 parameter BAUD = 460800;
 parameter [15:0] UART_SCALE = CLOCK/(BAUD*8);
-parameter VERSION = 8'd3;
+parameter VERSION = 8'd4;
 reg reload_now;
 reg [(OFFSET_WIDTH+1) * OUTPUTS - 1:0] offsets;
 wire OE;
@@ -25,8 +25,8 @@ endgenerate
 clock #(OFFSET_WIDTH) main_clk(clk, rst, {OFFSET_WIDTH{1'b0}}, DIVIDE, 1, 1, SYNC_CLK_OUT);
 
 wire dac_clk;
-reg [OFFSET_WIDTH-1:0] dac_clk_divisor;
-Clock_divider #(OFFSET_WIDTH) dac_clk_div(clk, dac_clk, dac_clk_divisor, rst);
+reg [18:0] dac_clk_divisor;
+Clock_divider #(19) dac_clk_div(clk, dac_clk, dac_clk_divisor, rst);
 
 reg [8:0] dac_value;
 dac #(7) output_dac(OE, dac_value, dac_clk, rst);
@@ -87,7 +87,7 @@ begin
 		reload_next <= 1'b1; //Trigger a reload next main clock cycle
 		cmdbuffer <= 24'd0;
 		dac_value <= 9'd256;
-		dac_clk_divisor <= 8'd128;
+		dac_clk_divisor <= 19'd100;
 	end else begin
 		if (reload_cond) begin
 			reload_next <= 1'b0; //Reload is happening, so clear it for the next clock
@@ -127,8 +127,8 @@ begin
 				cmdbuffer <= 24'd0;
 			end
 			2'b01 : begin
-				reload_next <= 1'b1; //Trigger a reload next main clock cycle
-				//Wipe the command buffer
+				//Load divisor
+				dac_clk_divisor <= {cmdbuffer[20:16],cmdbuffer[14:8], cmdbuffer[6:0]};
 				cmdbuffer <= 24'd0;
 			end
 			2'b10 : begin //Output the number of outputs configured
@@ -147,7 +147,8 @@ begin
 					cmdbuffer <= 24'd0;
 				end
 				2'b10 : begin
-					dac_clk_divisor <= {cmdbuffer[11:8], cmdbuffer[6:0]};
+					reload_next <= 1'b1; //Trigger a reload next main clock cycle
+					//Wipe the command buffer
 					cmdbuffer <= 24'd0;
 				end
 				2'b01 : begin
