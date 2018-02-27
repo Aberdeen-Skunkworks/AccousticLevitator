@@ -140,6 +140,7 @@ class Controller():
         self.sendCmd(cmd) 
 
     def setOutputDACFreq(self, freq):
+        self.setOutputDACPower(128) #50% duty cycle, turns the board off and on for equal amounts of time
         divisor=int(5e7/(4*freq)+1)
         return self.setOutputDACDivisor(divisor)
         
