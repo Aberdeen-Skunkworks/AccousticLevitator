@@ -7,6 +7,7 @@ parameter [OFFSET_WIDTH-2:0] DIVIDE = CLOCK / FREQ / 2 - 1;
 parameter DATA_WIDTH = 8;
 parameter BAUD = 460800;
 parameter [15:0] UART_SCALE = CLOCK/(BAUD*8);
+parameter VERSION = 8'd1;
 reg reload_now;
 reg [(OFFSET_WIDTH+1) * OUTPUTS - 1:0] offsets;
 wire OE;
@@ -139,24 +140,29 @@ begin
 					cmdbuffer <= 24'd0;
 				end
 			end
-			2'b11 : begin //Set the DAC value
-				if (cmdbuffer[20])
-					dac_clk_divisor <= {cmdbuffer[8], cmdbuffer[6:0]};
-				else
+			2'b11 : begin //Extra commands
+				case(cmdbuffer[20:19])
+				2'b00 : begin
 					dac_value <= {cmdbuffer[8], cmdbuffer[6:0]};
-				
-				//Wipe the command buffer
-				cmdbuffer <= 24'd0;
-			end
-			2'b11 : begin //Set the DAC value
-				if (cmdbuffer[20])
+					cmdbuffer <= 24'd0;
+				end
+				2'b10 : begin
 					dac_clk_divisor <= {cmdbuffer[8], cmdbuffer[6:0]};
-				else
-					dac_value <= {cmdbuffer[8], cmdbuffer[6:0]};
+					cmdbuffer <= 24'd0;
+				end
+				2'b01 : begin
+					if (!tx_valid) begin
+						//We've waited till the previous byte was transmitted, now we can reply 	
+						tx_data <= VERSION;
+						tx_valid <= 1;
+						//Wipe the command buffer
+						cmdbuffer <= 24'd0;
+					end					
+				end
+				endcase
 			end
 			default: begin
-				tx_data <= 8'd0;
-				tx_valid <= 1;
+			   //Command not understood, so ignore it!
 				//Wipe the command buffer
 				cmdbuffer <= 24'd0;
 			end

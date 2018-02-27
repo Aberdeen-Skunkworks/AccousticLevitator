@@ -24,6 +24,10 @@ class Controller():
                 self.com.reset_input_buffer()
                 print("Connected, testing for controller")
                 self.outputs = self.getOutputs()
+                self.version = self.getVersion()
+                print("Checking firmware version",self.version)
+                if (self.version != 1):
+                    raise Exception("Unexpected board version")
                 print("Connected successfully to board with "+str(self.outputs)+" outputs")
                 break
             except Exception as e:
@@ -38,18 +42,19 @@ class Controller():
         #for i in range(self.outputs):
         #    self.disableOutput(i)
         self.com.close()        
-            
-    def getOutputs(self):
-        bytestream=bytearray([0b11000000,0,0])
-        self.com.write(bytestream)
-        ack = bytearray(self.com.read(3))
-        if bytestream != ack:
-            print ("Sent", repr(bytestream), "but got", ack)
+
+    def getOneWordReply(self, cmd):
+        self.sendCmd(cmd)
         ack = bytearray(self.com.read(1))
         if (len(ack) != 1):
-            print("Failed to read output count")
-            raise Exception("Failed to read output count")
+            raise Exception("Failed to read one word")
         return ack[0]
+
+    def getOutputs(self):
+        return self.getOneWordReply(bytearray([0b11000000,0,0]))
+
+    def getVersion(self):
+        return self.getOneWordReply(bytearray([0b11101000,0,0]))
     
     def sendCmd(self, bytestream):
         #Serial communication is carried out using 8 bit/byte

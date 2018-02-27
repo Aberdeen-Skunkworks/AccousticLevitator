@@ -38,8 +38,8 @@ if choose == ("h"):
             ctl.setOutputDACDivisor(50)
             ctl.loadOffsets()
     
-            for i in range(ctl.outputs):
-                ctl.disableOutput(i)
+            #for i in range(ctl.outputs):
+            #    ctl.disableOutput(i)
             
 # -------------------------------------------------------------------------- #
 
