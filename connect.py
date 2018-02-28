@@ -22,10 +22,16 @@ class Controller():
                 print("Trying to connect to board on "+port)
                 self.com = serial.Serial(port=port, baudrate=460800, timeout=0.5)
                 self.com.reset_input_buffer()
+                print("Connected, testing for controller")
                 self.outputs = self.getOutputs()
+                self.version = self.getVersion()
+                print("Checking firmware version",self.version)
+                if (self.version != 4):
+                    raise Exception("Unexpected board version",self.version)
                 print("Connected successfully to board with "+str(self.outputs)+" outputs")
                 break
             except Exception as e:
+                print(e)
                 self.com = None
         if (self.com == None):
             raise Exception("Failed to open communications!")
@@ -36,13 +42,19 @@ class Controller():
         #for i in range(self.outputs):
         #    self.disableOutput(i)
         self.com.close()        
-            
-    def getOutputs(self):
-        self.com.write(bytearray([0b11000000,0,0]))
+
+    def getOneWordReply(self, cmd):
+        self.sendCmd(cmd)
         ack = bytearray(self.com.read(1))
         if (len(ack) != 1):
-            raise Exception("Failed to read output count")
+            raise Exception("Failed to read one word")
         return ack[0]
+
+    def getOutputs(self):
+        return self.getOneWordReply(bytearray([0b11000000,0,0]))
+
+    def getVersion(self):
+        return self.getOneWordReply(bytearray([0b11101000,0,0]))
     
     def sendCmd(self, bytestream):
         #Serial communication is carried out using 8 bit/byte
@@ -58,11 +70,13 @@ class Controller():
         #   23  22  21  20  19  18  17  16  15  14  13  12  11  10  9   8   7   6   5   4   3   2   1   0
         # | 1 | X | X | X | X | X | X | X | 0 | X | X | X | X | X | X | X | 0 | X | X | X | X | X | X | X |
         # 
-
         self.com.write(bytestream)
+        ack = bytearray(self.com.read(3))
+        if bytestream != ack:
+            print ("Sent", repr(bytestream), "but got", ack)
         
     def loadOffsets(self):
-        self.sendCmd(bytearray([0b10100000, 0, 0]))
+        self.sendCmd(bytearray([0b11110000, 0, 0]))
 
     def setOffset(self, clock, offset, enable=True):
         # #The structure of the command
@@ -87,7 +101,7 @@ class Controller():
         high_offset = ((offset >> 7) & 0b00000111) + (sign << 3)
 
         #The command byte has the command bit set, plus 5 bits of the clock select
-        b1 = 0b10000000 | (clock>>2)
+        b1 = 0b10000000 | (clock >> 2)
         #The next bit has the output enable bit set high, plus the last two bits of the clock select, and the high offset bits
         enable_bit = 0b00010000
         if not enable:
@@ -106,23 +120,29 @@ class Controller():
         # | 1 | 1 | 1 | X | X | X | X | X | 0 | X | X | X | X | X | X | Y | 0 | Y | Y | Y | Y | Y | Y | Y |
         #  X = UNUSED
         #  Y = 7 bit DAC value
-        if power > 0b11111111:
+        if power > 256: #Not a mistake! the DAC goes from 0-256, not 255!
             raise Exception("Power selected is too large!")
 
-        cmd = bytearray([0b11100000, 0b00000001 & (power >> 7), 0b01111111 & power])
+        cmd = bytearray([0b11100000, 0b00000011 & (power >> 7), 0b01111111 & power])
         self.sendCmd(cmd) 
 
     def setOutputDACDivisor(self, divisor):
         # #The structure of the command
         #   23  22  21  20  19  18  17  16  15  14  13  12  11  10  9   8   7   6   5   4   3   2   1   0
-        # | 1 | 1 | 1 | X | X | X | X | X | 0 | X | X | X | X | X | X | Y | 0 | Y | Y | Y | Y | Y | Y | Y |
+        # | 1 | 0 | 1 | Y | Y | Y | Y | Y | 0 | Y | Y | Y | Y | Y | Y | Y | 0 | Y | Y | Y | Y | Y | Y | Y |
         #  X = UNUSED
         #  Y = 7 bit DAC value
-        if divisor > 0b11111111:
-            raise Exception("Power selected is too large!")
-
-        cmd = bytearray([0b11110000, 0b00000001 & (divisor >> 7), 0b01111111 & divisor])
+        if divisor > 0b1111111111111111111:
+            raise Exception("Divisor selected is too large!")
+        if divisor < 50:
+            raise Exception("You'll burn out the board if this divisor is too low (<50).")
+        cmd = bytearray([0b10100000 | (0b00011111 & (divisor >> 14)), 0b01111111 & (divisor >> 7), 0b01111111 & divisor])
         self.sendCmd(cmd) 
+
+    def setOutputDACFreq(self, freq):
+        self.setOutputDACPower(128) #50% duty cycle, turns the board off and on for equal amounts of time
+        divisor=int(5e7/(4*freq)+1)
+        return self.setOutputDACDivisor(divisor)
         
     def disableOutput(self, clock):
         self.setOffset(clock, 0, enable=False)

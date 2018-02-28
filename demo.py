@@ -34,12 +34,12 @@ if choose == ("h"):
         while True:          # Turns the pattern off and on as fast as possible
             for i in range(ctl.outputs):
                 ctl.setOffset(i,phase_index[i])
-            ctl.setOutputDACPower(255)
-            ctl.setOutputDACDivisor(50)
+            ctl.setOutputDACFreq(100)
             ctl.loadOffsets()
     
-            for i in range(ctl.outputs):
-                ctl.disableOutput(i)
+            #for i in range(ctl.outputs):
+            #    ctl.disableOutput(i)
+            
 # -------------------------------------------------------------------------- #
 
 
@@ -229,10 +229,6 @@ elif choose == ("w"):
             elif (counter < 2 * rollover):
                 ctl.setOutputDACPower(255)
             counter = counter + 1
-            
-            
-            
-        
 
 elif choose == ("t"):
     
@@ -257,11 +253,6 @@ elif choose == ("t"):
     
     data_whole_scaled = scale_range (np.copy(data_whole), 0, 255)
     data_whole_scaled_int = np.round(np.copy(data_whole_scaled), 0)
-
-
-
-
-
 
 else:
     print("Come on, pick one of the correct letters!")

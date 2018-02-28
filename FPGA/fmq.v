@@ -7,6 +7,7 @@ parameter [OFFSET_WIDTH-2:0] DIVIDE = CLOCK / FREQ / 2 - 1;
 parameter DATA_WIDTH = 8;
 parameter BAUD = 460800;
 parameter [15:0] UART_SCALE = CLOCK/(BAUD*8);
+parameter VERSION = 8'd4;
 reg reload_now;
 reg [(OFFSET_WIDTH+1) * OUTPUTS - 1:0] offsets;
 wire OE;
@@ -15,7 +16,7 @@ wire OE;
 genvar j;
 generate
 	for (j=0; j < OUTPUTS; j=j+1) begin : clock_generator
-		clock #(OFFSET_WIDTH) osc(clk, reload_now, offsets[(OFFSET_WIDTH+1)*j+:OFFSET_WIDTH], DIVIDE, offsets[(OFFSET_WIDTH+1)*(j+1)-1+:1], OE, tx[j]);	
+		clock #(OFFSET_WIDTH) osc(clk, reload_now, offsets[(OFFSET_WIDTH+1)*j+:OFFSET_WIDTH], DIVIDE, offsets[(OFFSET_WIDTH+1)*j+OFFSET_WIDTH], OE, tx[j]);	
 	end
 endgenerate
 
@@ -24,11 +25,11 @@ endgenerate
 clock #(OFFSET_WIDTH) main_clk(clk, rst, {OFFSET_WIDTH{1'b0}}, DIVIDE, 1, 1, SYNC_CLK_OUT);
 
 wire dac_clk;
-reg [7:0] dac_clk_divisor;
-Clock_divider dac_clk_div(clk, dac_clk, dac_clk_divisor, rst);
+reg [18:0] dac_clk_divisor;
+Clock_divider #(19) dac_clk_div(clk, dac_clk, dac_clk_divisor, rst);
 
-reg [7:0] dac_value;
-dac output_dac(OE, dac_value, dac_clk, rst);
+reg [8:0] dac_value;
+dac #(7) output_dac(OE, dac_value, dac_clk, rst);
 
 assign OE_OUT = OE;
 assign DAC_CLK_OUT = dac_clk;
@@ -85,8 +86,8 @@ begin
 		offsets <= {OUTPUTS*(OFFSET_WIDTH+1){1'b0}};
 		reload_next <= 1'b1; //Trigger a reload next main clock cycle
 		cmdbuffer <= 24'd0;
-		dac_value <= {8{1'b1}};
-		dac_clk_divisor <= 8'd128;
+		dac_value <= 9'd256;
+		dac_clk_divisor <= 19'd100;
 	end else begin
 		if (reload_cond) begin
 			reload_next <= 1'b0; //Reload is happening, so clear it for the next clock
@@ -109,43 +110,64 @@ begin
             // (either clear it if it was set or set it if we just got a
             // byte out of waiting for the transmitter to send one)
             rx_ready <= ~rx_ready;
-            // send byte back out
-            //tx_data <= rx_data;
-            //tx_valid <= 1;
+            // send byte back out for verification
 				cmdbuffer <= {cmdbuffer[0+:16], rx_data};
+            tx_data <= rx_data;
+            tx_valid <= 1;
          end
       end
 		if (cmdbuffer[23]) begin//We have a command
-			//Echo the command back
-         //tx_data <= cmdbuffer[16+:8];
-         //tx_valid <= 1;
 			//Process the command
 			case(cmdbuffer[22:21])
 			2'b00 : begin
 				for (i = 0; i < OUTPUTS; i = i+1)
 					if (i == {cmdbuffer[20:16],cmdbuffer[14:13]})
 						offsets[(OFFSET_WIDTH+1)*i +: OFFSET_WIDTH+1] <= {cmdbuffer[12:8], cmdbuffer[6:0]};
+				//Wipe the command buffer
+				cmdbuffer <= 24'd0;
 			end
 			2'b01 : begin
-				reload_next <= 1'b1; //Trigger a reload next main clock cycle
+				//Load divisor
+				dac_clk_divisor <= {cmdbuffer[20:16],cmdbuffer[14:8], cmdbuffer[6:0]};
+				cmdbuffer <= 24'd0;
 			end
 			2'b10 : begin //Output the number of outputs configured
-				tx_data <= OUTPUTS;
-				tx_valid <= 1;
+				if (!tx_valid) begin
+					//We've waited till the previous byte was transmitted, now we can reply 	
+					tx_data <= OUTPUTS;
+					tx_valid <= 1;
+					//Wipe the command buffer
+					cmdbuffer <= 24'd0;
+				end
 			end
-			2'b11 : begin //Set the DAC value
-				if (cmdbuffer[20])
-					dac_clk_divisor <= {cmdbuffer[8], cmdbuffer[6:0]};
-				else
-					dac_value <= {cmdbuffer[8], cmdbuffer[6:0]};
+			2'b11 : begin //Extra commands
+				case(cmdbuffer[20:19])
+				2'b00 : begin
+					dac_value <= {cmdbuffer[9:8], cmdbuffer[6:0]};
+					cmdbuffer <= 24'd0;
+				end
+				2'b10 : begin
+					reload_next <= 1'b1; //Trigger a reload next main clock cycle
+					//Wipe the command buffer
+					cmdbuffer <= 24'd0;
+				end
+				2'b01 : begin
+					if (!tx_valid) begin
+						//We've waited till the previous byte was transmitted, now we can reply 	
+						tx_data <= VERSION;
+						tx_valid <= 1;
+						//Wipe the command buffer
+						cmdbuffer <= 24'd0;
+					end					
+				end
+				endcase
 			end
 			default: begin
-				tx_data <= 8'd0;
-				tx_valid <= 1;
+			   //Command not understood, so ignore it!
+				//Wipe the command buffer
+				cmdbuffer <= 24'd0;
 			end
 			endcase
-			//Wipe the command buffer
-			cmdbuffer <= 24'd0;
 		end
 	end
 end
