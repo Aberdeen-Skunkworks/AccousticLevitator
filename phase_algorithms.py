@@ -88,15 +88,15 @@ def add_twin_signature(rt, phase, angle): # Array needs to be centerd around the
                 phi_2[transducer] = phase[transducer]
 
         return phi_2
-    
-#### Tester for angle of twin signature -- between 0 and 180 in degrees
 """
+#### Tester for angle of twin signature -- between 0 and 180 in degrees
+
 import constants; import numpy as np; import calc_pressure_field; import time; import algorithms
 import transducer_placment; from vti_writer import vti_writer; import scipy.ndimage
 rt = transducer_placment.array_grid(0.01,20,20) 
 ntrans = len (rt) 
 nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) 
-phi_signature = add_twin_signature(rt, np.zeros(ntrans), 35)
+phi_signature = add_twin_signature(rt, np.zeros(ntrans), 45)
 phi = phi_signature
 trans_to_delete = []
 for changed in range(ntrans):
@@ -108,7 +108,6 @@ new_nt = transducer_placment.direction_vectors(new_length,[0,0,1]) # nt is the d
 transducer_placment.plot_as_vectors(new_rt,new_nt)  # Use to plot the array layout in 3D
 transducer_placment.plot_as_vectors(rt,nt)  # Use to plot the array layout in 3D
 """
-
 
 def add_vortex_signature(rt, phi): # Array needs to be centerd around the origin for this to work
 
