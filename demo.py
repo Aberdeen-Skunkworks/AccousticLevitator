@@ -31,19 +31,10 @@ if choose == ("h"):
         
     from connect import Controller 
     with Controller() as ctl:        
-        while True:          # Turns the pattern off and on as fast as possible
-            for i in range(ctl.outputs):
-                ctl.setOffset(i,phase_index[i])
-            ctl.setOutputDACFreq(100)
-            ctl.loadOffsets()
-    
-            #for i in range(ctl.outputs):
-            #    ctl.disableOutput(i)
-            
-# -------------------------------------------------------------------------- #
-
-
-
+        for i in range(ctl.outputs):
+            ctl.setOffset(i,phase_index[i])
+        ctl.setOutputDACFreq(100)
+        ctl.loadOffsets()
 ## -------------------------- Focused traps ------------------------------- ##  
 
 elif choose == ("p"):
