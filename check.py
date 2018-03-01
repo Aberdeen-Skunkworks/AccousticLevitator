@@ -24,7 +24,7 @@ phase_index = np.zeros((ntrans),dtype=int)
 phi_focus = phase_algorithms.phase_find(rt,0,0,0.12)
 for transducer in range(0,ntrans):
     phase_index[transducer] = 0
-    
+
 from connect import Controller 
 with Controller() as ctl:  
     for i in range(ctl.outputs):

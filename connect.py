@@ -89,6 +89,9 @@ class Controller():
         if clock > 0b01111111:
             raise Exception("Clock selected is too large!")
         
+        if isinstance(offset, float):
+            offset = int(1250 * offset)
+
         sign = 0
         offset = offset % 1250
         if offset > 624:
