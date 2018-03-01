@@ -17,8 +17,15 @@ for transducer in range (0,ntrans): # Writing the coordinates to output rt
 #plt.plot(x, y,'ro'); plt.show() # Show Plot of the positions
 # -------------------------------------------------------------------------- #p
 
-
-choose = input("Please choose haptic as (h) or pattern as (p) or moving as (m): ")
+print(" ")
+print("Control modes:")
+print("(h) = Haptic")
+print("(p) = Pattern")
+print("(m) = Moving - Circles abvoe array (NOT WORKING)")
+print("(two) = Two boards, Needs work for both boards at once")
+print("(w) = Frequency mode not really required anymore")
+print("(t) = Start on sound mode (NOT WORKING)")
+choose = input("Please choose a mode from above: ")
 
 
 ## --------------------------- Haptic feedback --------------------------- ##
@@ -147,6 +154,7 @@ elif choose == ("two"):
 
 
 elif choose == ("w"):
+    # Frequency mode not really required anymore
     from connect import Controller  
     phase_index = np.zeros((ntrans),dtype=int)
     phi_focus = phase_algorithms.phase_find(rt,0,0,0.2)
