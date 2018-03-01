@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 ##############################################################################
 #----------------------------------DEMO--------------------------------------#
 ##############################################################################
@@ -33,7 +34,7 @@ if choose == ("h"):
     with Controller() as ctl:        
         for i in range(ctl.outputs):
             ctl.setOffset(i,phase_index[i])
-        ctl.setOutputDACFreq(100)
+        ctl.setOutputDACFreq(200)
         ctl.loadOffsets()
 ## -------------------------- Focused traps ------------------------------- ##  
 
@@ -61,8 +62,8 @@ elif choose == ("p"):
         
             from connect import Controller 
             with Controller() as ctl:
-                ctl.setOutputDACPower(255)
-                ctl.setOutputDACDivisor(50)
+                ctl.setOutputDACPower(256)
+                ctl.setOutputDACDivisor(100)
                 for i in range(ctl.outputs):
                     ctl.setOffset(i,phase_index[i])
                 ctl.loadOffsets()
@@ -107,6 +108,8 @@ elif choose == ("m"):
     
     from connect import Controller  
     with Controller() as ctl:
+        ctl.setOutputDACPower(256)
+        ctl.setOutputDACDivisor(100)
 
         print("You have 25 seconds to trap the particle until fuzzing stops")
         a = 1
@@ -150,43 +153,13 @@ elif choose == ("two"):
     
     from connect import Controller 
     with Controller() as ctl:
-        ctl.setOutputDACPower(255)
-        ctl.setOutputDACDivisor(50)
+        ctl.setOutputDACPower(256)
+        ctl.setOutputDACDivisor(100)
         print("got here")
         for i in range(ctl.outputs):
             ctl.setOffset(i,phase_index[i])
         ctl.loadOffsets()
         print("loaded offsets")
-
-
-
-
-elif choose == ("b"):
-    from connect import Controller  
-    phase_index = np.zeros((ntrans),dtype=int)
-    phi_focus = phase_algorithms.phase_find(rt,0,0,0)
-    for transducer in range(0,ntrans):
-        phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))
-        
-    with Controller() as ctl:
-        updateRate = ctl.benchmarkPower()
-        ctl.setOutputDACDivisor(50)
-        print("Update freq = ", updateRate)
-
-        for i in range(ctl.outputs):
-            ctl.setOffset(i,phase_index[i])
-
-        targetfreq = 200
-        rollover = updateRate / targetfreq / 2
-        counter = 0
-        while True:
-            if (counter > 2* rollover):
-                counter = counter % (2 * rollover)
-            if (counter < rollover):
-                ctl.setOutputDACPower(0)
-            elif (counter < 2 * rollover):
-                ctl.setOutputDACPower(255)
-            counter = counter + 1
 
 
 elif choose == ("w"):
