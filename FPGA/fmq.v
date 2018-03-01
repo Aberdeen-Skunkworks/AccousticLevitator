@@ -1,5 +1,5 @@
 `include "dac.v"
-module fmq #(parameter OUTPUTS = 88)(input clk, input rst, output [OUTPUTS-1:0] tx, output UART_TX, input UART_RX, output SYNC_CLK_OUT, output RELOAD_OUT, output OE_OUT, output DAC_CLK_OUT, output [4:0] led);
+module fmq #(parameter OUTPUTS = 88)(input clk, input rst, output [OUTPUTS-1:0] tx, output UART_TX, input UART_RX, output MAIN_CLK_OUT, output RELOAD_OUT, output OE_OUT, input EXT_SYNC, output [4:0] led);
 parameter CLOCK=50000000;
 parameter FREQ = 40000;
 parameter OFFSET_WIDTH = 11;
@@ -7,7 +7,7 @@ parameter [OFFSET_WIDTH-2:0] DIVIDE = CLOCK / FREQ / 2 - 1;
 parameter DATA_WIDTH = 8;
 parameter BAUD = 460800;
 parameter [15:0] UART_SCALE = CLOCK/(BAUD*8);
-parameter VERSION = 8'd4;
+parameter VERSION = 8'd7;
 reg reload_now;
 reg [(OFFSET_WIDTH+1) * OUTPUTS - 1:0] offsets;
 wire OE;
@@ -21,8 +21,9 @@ generate
 endgenerate
 
 //The main clock, outputting the zero-time shift signal, used for sync with other boards and for ensuring reloads happen at the start of a sync cycle.
-//This only resets/reloads when the reset line is down, unlike the other clocks which go down on reload
-clock #(OFFSET_WIDTH) main_clk(clk, rst, {OFFSET_WIDTH{1'b0}}, DIVIDE, 1, 1, SYNC_CLK_OUT);
+//This only resets/reloads when the reset line is down (or the external reload is high), unlike the other clocks which go down on reload
+assign main_clk_reset = rst || !EXT_SYNC;
+clock #(OFFSET_WIDTH) main_clk(clk, main_clk_reset, {OFFSET_WIDTH{1'b0}}, DIVIDE, 1, 1, MAIN_CLK_OUT);
 
 wire dac_clk;
 reg [18:0] dac_clk_divisor;
@@ -32,18 +33,18 @@ reg [8:0] dac_value;
 dac #(7) output_dac(OE, dac_value, dac_clk, rst);
 
 assign OE_OUT = OE;
-assign DAC_CLK_OUT = dac_clk;
 
-reg last_sync_clk;
+reg last_main_clk;
 reg reload_next;
-assign reload_cond = SYNC_CLK_OUT && reload_next;
+//Only reload on a negative transition of the Main Clock, and when a reload is due, or when an external reload is called!
+assign reload_cond = (last_main_clk && !MAIN_CLK_OUT && reload_next);
 always@(posedge clk) begin
-	last_sync_clk <= SYNC_CLK_OUT;
-	if (!last_sync_clk && reload_cond) begin
+	if (reload_cond) begin
 		reload_now <= 1'b0; //Reload happens via a low reload line
 	end else begin
 		reload_now <= 1'b1;
 	end
+	last_main_clk <= MAIN_CLK_OUT;
 end
 
 assign RELOAD_OUT = reload_now;

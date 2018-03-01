@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import math
 
 class Controller():
     def __init__(self, ports = []):
@@ -26,7 +27,7 @@ class Controller():
                 self.outputs = self.getOutputs()
                 self.version = self.getVersion()
                 print("Checking firmware version",self.version)
-                if (self.version != 4):
+                if (self.version != 7):
                     raise Exception("Unexpected board version",self.version)
                 print("Connected successfully to board with "+str(self.outputs)+" outputs")
                 break
@@ -90,7 +91,7 @@ class Controller():
             raise Exception("Clock selected is too large!")
         
         if isinstance(offset, float):
-            offset = int(1250 * offset)
+            offset = int(1250 * (offset / (2 * math.pi)))
 
         sign = 0
         offset = offset % 1250
