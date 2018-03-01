@@ -153,6 +153,7 @@ z_potential = u[ focus_as_index  , focus_as_index , :             ]
 
 
 import matplotlib.pyplot as plt;
+from mpl_toolkits.mplot3d import axes3d
 
 """
 ax = plt.axes()
@@ -201,3 +202,14 @@ ax6.plot(z_distances, z_potential, 'ro')
 ax6.set_xlabel('Distance from origin /m')
 ax6.set_ylabel('Potential Energy /J')
 ax6.set_title('Z - Potential energy around trap point: ' + str(focus_point))
+
+
+fig = plt.figure()
+
+ax7 = fig.add_subplot(111, projection='3d')
+x = np.tile(x_distances,(len(x_distances),1))
+y = np.transpose(np.tile(y_distances,(len(y_distances),1)))
+u_plane = u[ :               , : , focus_as_index]
+ax7.plot_wireframe(x,y,u_plane, rstride = 1, cstride = 1)
+
+
