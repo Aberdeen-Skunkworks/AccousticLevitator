@@ -13,7 +13,7 @@ rt = transducer_placment.delete_transducers(rt,trans_to_delete)
 ntrans = len(rt); x = np.zeros(ntrans); y = np.zeros(ntrans)
 for transducer in range (0,ntrans): # Writing the coordinates to output rt
     x[transducer]= rt[transducer,0]
-    y[transducer]= rt[transducer,2] 
+    y[transducer]= rt[transducer,1] 
 #plt.plot(x, y,'ro'); plt.show() # Show Plot of the positions
 # -------------------------------------------------------------------------- #p
 
