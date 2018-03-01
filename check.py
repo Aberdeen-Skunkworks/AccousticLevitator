@@ -23,12 +23,13 @@ print ("Haptic mode selected")
 phase_index = np.zeros((ntrans),dtype=int)
 phi_focus = phase_algorithms.phase_find(rt,0,0,0.12)
 for transducer in range(0,ntrans):
-    phase_index[transducer] = 0
+    phase_index[transducer] = 600
 
 from connect import Controller 
 with Controller() as ctl:  
-    for i in range(ctl.outputs):
-        ctl.setOffset(i,phase_index[i])
     ctl.setOutputDACPower(256)
     ctl.setOutputDACDivisor(100)
+    for i in range(ctl.outputs):
+        ctl.setOffset(i,phase_index[i])
+    ctl.setOffset(0,0)
     ctl.loadOffsets()
