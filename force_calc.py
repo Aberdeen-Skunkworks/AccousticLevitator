@@ -129,7 +129,7 @@ laplace_u = scipy.ndimage.filters.laplace(u)
 
 
 # -------------------Creating output images and vtk file----------------------
-"""
+
 vti_writer (constants.npoints, pabs, fx, fy, fz, u, laplace_u)
 
 
@@ -139,7 +139,6 @@ print("Particle radius in indexes = ", np.divide(np.divide(constants.particle_di
 print(" ")
 print("Calculations compleated successfuly")
 
-"""
 
 focus_as_index = int(((constants.npoints-1)/ 2))
 
