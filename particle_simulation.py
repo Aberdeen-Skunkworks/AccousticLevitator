@@ -7,11 +7,11 @@ inital_vel = [0,0,0]                        # m/s
 gravity    = [0, 0, -9.81]                  # m/s^2
 diamiter   = constants.particle_diamiter    # m    
 density    = constants.rhos                 # kg/m^3
-dt         = 0.001                          # Time step s
-end_time   = 1                            # End time s
+dt         = 0.0001                          # Time step s
+end_time   = 0.01                            # End time s
 
 vol_sph =   constants.v                     # m^3
-mass    = vol_sph * density                 # kg 
+mass    = vol_sph * density               # kg 
 
 
 focus_point = [ 0 , 0, 0.018]
@@ -67,7 +67,7 @@ for time_step in range(0, number_of_time_steps):
     pos = np.add( pos, np.multiply(dt, vel), (acceleration*( (dt**2) / 2 ) ) )
   
     force = np.add( force_g, np.multiply(-1, algorithms.differentiate_acoustic_potential(dt,pos,rt,phi,nt)))
-    print(algorithms.differentiate_acoustic_potential(dt,pos,rt,phi,nt))
+    #print(algorithms.differentiate_acoustic_potential(dt,pos,rt,phi,nt))
     # Takes 0.0333 seconds per calculation
     acceleration_next = np.divide(force,mass)
     
@@ -84,24 +84,20 @@ for time_step in range(0, number_of_time_steps):
 
 fig = plt.figure()
 ax = fig.gca(projection='3d')
+ax.set_xlabel('xlabel')
+ax.set_ylabel('ylabel')
+ax.set_zlabel('zlabel')
 
 ###### turn to mm 
 pos_over_time = np.multiply(1000, pos_over_time)
 
 for time_step in range(0, number_of_time_steps):
     x[time_step] = pos_over_time[time_step][0]
-    z[time_step] = pos_over_time[time_step][1]
-    y[time_step] = pos_over_time[time_step][2]
-
-ax.set_xlabel('xlabel')
-ax.set_ylabel('ylabel')
-ax.set_zlabel('zlabel')
+    y[time_step] = pos_over_time[time_step][1]
+    z[time_step] = pos_over_time[time_step][2]
 
 yy, xx = np.meshgrid(np.linspace(-0.05, 0.05, num=21), np.linspace(-0.05, 0.05, num=21))
 zz = xx*0
-
-ax = plt.subplot(projection='3d')
-#x.plot_surface(xx, yy, zz)
 
 ax.plot(x, y, z, label='Trajectory')
 ax.legend()
