@@ -7,14 +7,14 @@ inital_vel = [0,0,0]                        # m/s
 gravity    = [0, 0, -9.81]                  # m/s^2
 diamiter   = constants.particle_diamiter    # m    
 density    = constants.rhos                 # kg/m^3
-dt         = 0.0001                          # Time step s
-end_time   = 0.1                          # End time s
+dt         = 0.001                          # Time step s
+end_time   = 1                            # End time s
 
 vol_sph =   constants.v                     # m^3
 mass    = vol_sph * density                 # kg 
 
 
-focus_point = [ 0 , 0, 0.02]
+focus_point = [ 0 , 0, 0.018]
 
 rt = transducer_placment.big_daddy()
 ntrans = len (rt)
@@ -67,6 +67,7 @@ for time_step in range(0, number_of_time_steps):
     pos = np.add( pos, np.multiply(dt, vel), (acceleration*( (dt**2) / 2 ) ) )
   
     force = np.add( force_g, np.multiply(-1, algorithms.differentiate_acoustic_potential(dt,pos,rt,phi,nt)))
+    print(algorithms.differentiate_acoustic_potential(dt,pos,rt,phi,nt))
     # Takes 0.0333 seconds per calculation
     acceleration_next = np.divide(force,mass)
     
@@ -77,8 +78,8 @@ for time_step in range(0, number_of_time_steps):
     timer = np.add(timer, dt)
     
     #total_energy[time_step] = algorithms.acoustic_potential(pos, rt, phi, nt) + (0.5 * mass * np.linalg.norm(vel)**2) + (mass * 9.81 * pos[2])
-    if pos[2]<0:
-        break
+    #if pos[2]<0:
+    #    break
 
 
 fig = plt.figure()

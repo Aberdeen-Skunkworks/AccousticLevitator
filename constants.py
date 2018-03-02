@@ -35,7 +35,7 @@ cs = 900                    # Speed of sound in particle material m/s
 particle_diamiter = 0.004   # Particle diamiter in m
 
 
-v = (1/6) * math.pi * particle_diamiter**3          # Particle Volume 
+v = (math.pi * particle_diamiter**3)/6.0        # Particle Volume 
 p_mass = rhos * v           # particle mass in kg
 gravity = -9.81             # m/s^2 negitive as gravity is down \|/
 
