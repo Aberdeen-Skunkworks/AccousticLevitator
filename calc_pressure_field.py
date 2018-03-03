@@ -14,6 +14,7 @@ def calc_pressure_field(rt, nt, ntrans, phi):
     k = (2*math.pi)/(float(lamda))                         # Wavenumber
     
     for transducer in range (0,ntrans):
+        print("Calculated up to transducer ", transducer + 1, " out of ", ntrans)
         for xloop in range (0,npoints):
             for yloop in range (0,npoints):
                 for zloop in range (0,npoints):
@@ -46,10 +47,10 @@ def calc_pressure_field(rt, nt, ntrans, phi):
                 y = y + deltaxyz
                 z = -gsize               # Resetting the value of z to start value for next loop
             x = x + deltaxyz
-            y = 0                       # Resetting the value of y to start value for next loop
+            y = -gsize                       # Resetting the value of y to start value for next loop
             z = -gsize                   # Resetting the value of z to start value for next loop
         x = -gsize # Initial values of x,y and z in (m) Grid volume
-        y = 0.00
+        y = -gsize
         z = -gsize
     
     
@@ -75,7 +76,7 @@ def calc_pressure_field_numpy(rt, nt, ntrans, phi): ## x,y,z directions do not m
     
     
     for transducer in range (0,ntrans):
-        print("Calculated up to transducer ", transducer, " out of ", ntrans)
+        print("Calculated up to transducer ", transducer + 1, " out of ", ntrans)
         d_x = np.subtract(rt[transducer,0], x_co_ords)
         d_y = np.subtract(rt[transducer,1], y_co_ords)
         d_z = np.subtract(rt[transducer,2], z_co_ords)

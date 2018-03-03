@@ -1,7 +1,6 @@
-
 # -------------------------Import Libaries------------------------------------
 
-import constants; import numpy as np; import calc_pressure_field; import time; import algorithms
+import constants; import numpy as np; import calc_pressure_field; import time; import algorithms; import math
 import transducer_placment; from vti_writer import vti_writer; import phase_algorithms; import scipy.ndimage
 
 # -------------------------Variables to set------------------------------------
@@ -35,14 +34,14 @@ rt = rt_both_arrays
 nt = nt_both_arrays
 """
 
-rt = transducer_placment.array_grid(0.01,8,8) # spcing , x nummber, y number of transducers
+rt = transducer_placment.array_grid(0.01,10,10) # spcing , x nummber, y number of transducers
 #rt = transducer_placment.big_daddy()
 #rt = transducer_placment.random(75,0.05,0.01)
 ntrans = len (rt)   # Total number of transducers in grid
 
 nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
 
-focus_point = [ 0 , 0, 0.05]
+focus_point = [ 0 , 0, 0.02]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
 phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 90)
@@ -83,6 +82,8 @@ t0 = time.time()
 
 t1 = time.time()
 p = calc_pressure_field.calc_pressure_field_numpy_around_trap(rt, nt, ntrans, phi, focus_point)
+#p = calc_pressure_field.calc_pressure_field(rt, nt, ntrans, phi) ## old method
+
 t2 = time.time()
 print(" ")
 print("Numpy pressure calculation took ",round(t2-t1,2), " seconds" )
@@ -110,14 +111,25 @@ pyabs  = np.absolute(py)
 pzabs  = np.absolute(pz)  
 
 # Calculating Gork’ov potential u (Including gravity)
-
+""" ################### WRONG
 u = ( np.subtract( np.subtract( np.multiply(np.multiply(2, constants.k1), np.power(pabs, 2) ), 
 np.multiply( np.multiply(2, constants.k2), np.add(np.add(np.power(pxabs, 2), np.power(pyabs, 2)), np.power(pzabs, 2) ) ) ),  
 np.multiply(constants.p_mass, np.multiply(constants.gravity, np.copy(height)))) ) # Gravity term
+"""
+
+left_side = np.multiply(np.power(pabs, 2), constants.m1)
+gradients = np.add(np.add(np.power(pxabs, 2), np.power(pyabs, 2)), np.power(pzabs, 2))
+right_side =  np.multiply(constants.m2, gradients)
+u = np.subtract(left_side, right_side)
+
+g_potential = np.subtract(0, np.multiply(constants.p_mass, np.multiply(constants.gravity, np.copy(height))))
+
+#u_with_gravity = np.subtract(u, np.multiply(constants.p_mass, np.multiply(constants.gravity, np.copy(height))))
+u_with_gravity = u
 
 # -----------------Calculating derrivitive of Gork’ov potential ---------------
 
-diff_u = np.gradient(u,constants.deltaxyz)
+diff_u = np.gradient(u_with_gravity,constants.deltaxyz)
 ux = np.copy(diff_u[0]); uy = np.copy(diff_u[1]); uz = np.copy(diff_u[2])
 
 # -----------------Calculating force on particle ---------------
@@ -126,7 +138,7 @@ ux = np.copy(diff_u[0]); uy = np.copy(diff_u[1]); uz = np.copy(diff_u[2])
 fx = np.copy(-ux); fy = np.copy(-uy); fz = np.copy(-uz)
 
 
-laplace_u = scipy.ndimage.filters.laplace(u)
+laplace_u = scipy.ndimage.filters.laplace(u_with_gravity)
 
 
 # -------------------Creating output images and vtk file----------------------
@@ -147,9 +159,13 @@ x_forces = fx[ :               , focus_as_index  , focus_as_index]
 y_forces = fy[ focus_as_index  , :               , focus_as_index]
 z_forces = fz[ focus_as_index  , focus_as_index  , :             ]
 
-x_potential = u[ :               , focus_as_index , focus_as_index]
-y_potential = u[ focus_as_index  , :              , focus_as_index]
-z_potential = u[ focus_as_index  , focus_as_index , :             ]
+x_pressure = pabs[ :               , focus_as_index , focus_as_index]
+y_pressure = pabs[ focus_as_index  , :              , focus_as_index]
+z_pressure = pabs[ focus_as_index  , focus_as_index , :             ]
+
+x_potential = u_with_gravity[ :               , focus_as_index , focus_as_index]
+y_potential = u_with_gravity[ focus_as_index  , :              , focus_as_index]
+z_potential = u_with_gravity[ focus_as_index  , focus_as_index , :             ]
 
 
 
@@ -210,7 +226,7 @@ fig = plt.figure()
 ax7 = fig.add_subplot(111, projection='3d')
 x = np.tile(x_distances,(len(x_distances),1))
 y = np.transpose(np.tile(y_distances,(len(y_distances),1)))
-u_plane = u[ :               , : , focus_as_index]
+u_plane = u_with_gravity[ :               , : , focus_as_index]
 ax7.plot_wireframe(x,y,u_plane, rstride = 1, cstride = 1)
 
 

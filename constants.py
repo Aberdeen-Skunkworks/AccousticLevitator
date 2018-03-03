@@ -5,12 +5,12 @@ import math
 
 
 
-gsize = 0.01       # Half the length of grid box (m)
-deltaxyz = 0.0005     # Distance between points in grid (m)
+gsize = 0.025      # Half the length of grid box (m)
+deltaxyz = 0.0005    # Distance between points in grid (m)
 
 x = -gsize           # Initial values of x,y and z in (m) Grid volume
 y = -gsize
-z = 0.00
+z = -gsize
 npoints = int(1 + ((2 * gsize) / deltaxyz)) # Number of points on x y and z axis, plus 1 to index properly
 
 
@@ -24,15 +24,15 @@ else:
 
 phaseresolution = 1250      # Phase resolution x as in ( 2*pi )/( x ) number of divisions of the phases
 p0 = 0.17                   # Amplitude constant
-A = 17                      # Peak to peak amplitude
+A = 18                      # Peak to peak amplitude
 a = 0.0045                  # Piston radius
 lamda = 0.00865             # Wavelegnth meters
 freq = 40000                # Frequency in Hz
 rhoo = 1.18                 # Density of air kg/m^3
-rhos = 29                   # Density of particle kg/m^3    13.7 Calculated by hand
+rhos = 20                   # Density of particle kg/m^3    13.7 Calculated by hand
 co = 346                    # Speed of sound in Air m/s
-cs = 900                    # Speed of sound in particle material m/s
-particle_diamiter = 0.004   # Particle diamiter in m
+cs = 2600                   # Speed of sound in particle material m/s
+particle_diamiter = 0.001   # Particle diamiter in m
 
 
 v = (math.pi * particle_diamiter**3)/6.0        # Particle Volume 
@@ -46,3 +46,24 @@ k2n = (rhoo - rhos)
 k2d = (freq**2) * rhoo * (rhoo + 2*rhos)
 k2 =  ( (3/4) * v * ( k2n/k2d ) )
 
+
+
+#### New constants for gorkov potential
+
+ohmega = freq * math.pi * 2
+
+k = 1 / (rhoo * co**2)
+k_p =  1 / (rhos * cs**2)
+k_tilda = k_p / k
+f_1 = 1 - k_tilda
+
+rho_tilda = rhos / rhoo
+f_2 = ( 2* (rho_tilda-1) ) / ( (2*rho_tilda) +1 )
+
+vkpretovel = 1 / (rhoo*ohmega)
+vkpre = (1/4) * f_1 *  k
+vkvel = (3/8) * f_2 * rhoo
+vpvol = v
+
+m1 = vpvol * vkpre
+m2 = vpvol * vkvel * (vkpretovel**2)
