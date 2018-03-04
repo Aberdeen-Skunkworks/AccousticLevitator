@@ -7,7 +7,7 @@ gravity    = [0, 0, -9.81]                  # m/s^2
 diamiter   = constants.particle_diamiter    # m    
 density    = constants.rhos                 # kg/m^3
 dt         = 0.00001                          # Time step s
-end_time   = 0.005                              # End time s
+end_time   = 0.2                              # End time s
 
 time_steps = end_time/dt
 print("Time steps = ", time_steps)
