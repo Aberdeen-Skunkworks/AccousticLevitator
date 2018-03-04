@@ -34,14 +34,14 @@ rt = rt_both_arrays
 nt = nt_both_arrays
 """
 
-rt = transducer_placment.array_grid(0.01,10,10) # spcing , x nummber, y number of transducers
-#rt = transducer_placment.big_daddy()
-#rt = transducer_placment.random(75,0.05,0.01)
+#rt = transducer_placment.array_grid(0.01,10,10) # spcing , x nummber, y number of transducers
+rt = transducer_placment.big_daddy()
+#rt = transducer_placment.random(88,0.05,0.01)
 ntrans = len (rt)   # Total number of transducers in grid
 
 nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
 
-focus_point = [ 0 , 0, 0.02]
+focus_point = [ 0 , 0, 0.01]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
 phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 90)
@@ -124,8 +124,8 @@ u = np.subtract(left_side, right_side)
 
 g_potential = np.subtract(0, np.multiply(constants.p_mass, np.multiply(constants.gravity, np.copy(height))))
 
-#u_with_gravity = np.subtract(u, np.multiply(constants.p_mass, np.multiply(constants.gravity, np.copy(height))))
-u_with_gravity = u
+u_with_gravity = np.subtract(u, np.multiply(constants.p_mass, np.multiply(constants.gravity, np.copy(height))))
+#u_with_gravity = u
 
 # -----------------Calculating derrivitive of Gork’ov potential ---------------
 

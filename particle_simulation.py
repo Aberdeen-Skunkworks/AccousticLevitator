@@ -1,17 +1,20 @@
 import matplotlib as mpl; import numpy as np; import matplotlib.pyplot as plt; from mpl_toolkits.mplot3d import Axes3D;
-import math; import algorithms; import transducer_placment; import phase_algorithms; import constants;
-import time
+import math; import algorithms; import transducer_placment; import phase_algorithms; import constants; import time
  
-inital_pos = [0.001,0.001,0.0185]             # m
+inital_pos = [0.001,0.001,0.0185]           # m
 inital_vel = [0,0,0]                        # m/s
 gravity    = [0, 0, -9.81]                  # m/s^2
 diamiter   = constants.particle_diamiter    # m    
 density    = constants.rhos                 # kg/m^3
-dt         = 0.0001                          # Time step s
-end_time   = 0.01                            # End time s
+dt         = 0.0003                          # Time step s
+end_time   = 0.1                              # End time s
+
+time_steps = end_time/dt
+print("Time steps = ", time_steps)
+print("Rough Sim Legnth = ", round(time_steps*0.033, 2) , " seconds")
 
 vol_sph =   constants.v                     # m^3
-mass    = vol_sph * density               # kg 
+mass    = vol_sph * density                 # kg 
 
 
 focus_point = [ 0 , 0, 0.018]
@@ -38,8 +41,6 @@ vel = np.copy(inital_vel)
 force_g = np.multiply( np.copy(gravity), mass)
 total_energy = np.zeros(number_of_time_steps)
 
-timer = np.zeros(1)
-
 force_over_time = np.zeros((number_of_time_steps,3))
 pos_over_time = np.zeros((number_of_time_steps,3))
 x = np.zeros(number_of_time_steps); y = np.zeros(number_of_time_steps); z = np.zeros(number_of_time_steps)
@@ -60,27 +61,27 @@ for time_step in range(0, number_of_time_steps):
 force = np.add( force_g, np.multiply(-1, algorithms.differentiate_acoustic_potential(dt,pos,rt,phi,nt)))
 acceleration = np.divide(force,mass)
 
-##### Verlet Algorithm Velocity
+print("Particle sim started")
+t1 = time.time()
+##### Verlet Algorithm Velocity       ### 1000 itterations took 32.7s 
 for time_step in range(0, number_of_time_steps):
     pos_over_time[time_step][0] = pos[0]; pos_over_time[time_step][1] = pos[1]; pos_over_time[time_step][2] = pos[2] 
     
     pos = np.add( pos, np.multiply(dt, vel), (acceleration*( (dt**2) / 2 ) ) )
   
     force = np.add( force_g, np.multiply(-1, algorithms.differentiate_acoustic_potential(dt,pos,rt,phi,nt)))
-    #print(algorithms.differentiate_acoustic_potential(dt,pos,rt,phi,nt))
-    # Takes 0.0333 seconds per calculation
+
     acceleration_next = np.divide(force,mass)
     
     vel = np.add(vel, np.multiply( ( dt / 2 ) , np.add( acceleration, acceleration_next ) )   )
     
     acceleration = acceleration_next
     
-    timer = np.add(timer, dt)
-    
     #total_energy[time_step] = algorithms.acoustic_potential(pos, rt, phi, nt) + (0.5 * mass * np.linalg.norm(vel)**2) + (mass * 9.81 * pos[2])
     #if pos[2]<0:
     #    break
-
+t2 = time.time()
+print("Time Taken = ", round(t2-t1,2)," s")
 
 fig = plt.figure()
 ax = fig.gca(projection='3d')

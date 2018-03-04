@@ -104,9 +104,11 @@ def acoustic_potential (r, rt, phi, nt):
     py_abs  = np.absolute(total_diff_pressure_y)  
     pz_abs  = np.absolute(total_diff_pressure_z)  
 
-    
-    u = (2*constants.k1*p_abs**2) - (2*constants.k2*(px_abs**2 + py_abs**2 + pz_abs**2))
-    
+    left_side = np.multiply(np.power(p_abs, 2), constants.m1)
+    gradients = np.add(np.add(np.power(px_abs, 2), np.power(py_abs, 2)), np.power(pz_abs, 2))
+    right_side =  np.multiply(constants.m2, gradients)
+    u = np.subtract(left_side, right_side)
+
     #### add this back in when you need absolute pressure , p_abs
     return u
 
