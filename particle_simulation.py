@@ -6,8 +6,8 @@ inital_vel = [0,0,0]                        # m/s
 gravity    = [0, 0, -9.81]                  # m/s^2
 diamiter   = constants.particle_diamiter    # m    
 density    = constants.rhos                 # kg/m^3
-dt         = 0.0003                          # Time step s
-end_time   = 0.1                              # End time s
+dt         = 0.00001                          # Time step s
+end_time   = 0.005                              # End time s
 
 time_steps = end_time/dt
 print("Time steps = ", time_steps)
@@ -19,9 +19,33 @@ mass    = vol_sph * density                 # kg
 
 focus_point = [ 0 , 0, 0.018]
 
+##opposite arrays
+focus_point = [ 0 , 0, 0.05]         # in the middle of the arrays
+inital_pos = [0.001,0.001,0.051]
 rt = transducer_placment.big_daddy()
+ntrans = len (rt)   # Total number of transducers in grid
+nt_1 = transducer_placment.direction_vectors(ntrans,[1,0,0]) # nt is the direction vector of each transducer
+nt_2 = transducer_placment.direction_vectors(ntrans,[-1,0,0])
+
+sideways_1 = np.copy(rt)
+sideways_2 = np.copy(rt)
+
+sideways_1[:,0] = np.add(rt[:,2], -0.0516)
+sideways_1[:,2] = np.add(rt[:,0], 0.05)
+
+sideways_2[:,0] = np.add(rt[:,2], 0.0516)
+sideways_2[:,2] = np.add(rt[:,0], 0.05)
+
+rt_both_arrays = np.append(sideways_1, sideways_2, axis=0)
+nt_both_arrays = np.append(nt_1, nt_2, axis=0)
+#transducer_placment.plot_as_vectors(rt_both_arrays,nt_both_arrays)  # Use to plot the array layout in 3D
+rt = rt_both_arrays
+nt = nt_both_arrays
+
+
+#rt = transducer_placment.big_daddy()
 ntrans = len (rt)
-nt = transducer_placment.direction_vectors(ntrans,[0,0,1])
+#nt = transducer_placment.direction_vectors(ntrans,[0,0,1])
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
 phi = phase_algorithms.add_twin_signature(rt,phi_focus, 90)
 
