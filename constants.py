@@ -5,8 +5,8 @@ import math
 
 
 
-gsize = 0.008      # Half the length of grid box (m)
-deltaxyz = 0.0001    # Distance between points in grid (m)
+gsize = 0.02      # Half the length of grid box (m)
+deltaxyz = 0.0004    # Distance between points in grid (m)
 
 x = -gsize           # Initial values of x,y and z in (m) Grid volume
 y = -gsize
@@ -24,7 +24,7 @@ else:
 
 phaseresolution = 1250      # Phase resolution x as in ( 2*pi )/( x ) number of divisions of the phases
 p0 = 0.17                   # Amplitude constant
-A = 18                      # Peak to peak amplitude
+A = 15                      # Peak to peak amplitude
 a = 0.0045                  # Piston radius
 lamda = 0.00865             # Wavelegnth meters
 freq = 40000                # Frequency in Hz
