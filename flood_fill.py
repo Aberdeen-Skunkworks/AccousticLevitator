@@ -9,7 +9,7 @@ test_with_walls[:, int(size/2)] =  1.0
 test_with_walls[int(size/2), :] =  1.0
 
 def floodfill(matrix, x, y):
-    #"hidden" stop clause - not reinvoking for "c" or "b", only for "a".
+    #"hidden" stop clause - not reinvoking for numbers less than a value.
     if matrix[x][y] < 1:  
         matrix[x][y] = 2 
         #recursively invoke flood fill on all surrounding cells:
