@@ -25,7 +25,51 @@ def floodfill(matrix, x, y):
             floodfill(matrix,x,y+1)
             
 floodfill(test_with_walls_after_fill, 1, 5 )
-            
+    
+
+been = np.full((101, 101), False, dtype=bool)
+def floodfill_vertical(matrix, x, y):
+    if x > 0 and x < len(layer_1)-1 and y > 0 and y < len(layer_1)-1:
+        been[x][y] = True
+        minimum = matrix[x][y]
+        down = matrix[x][y-1]
+        up = matrix[x][y+1]
+        if down >= minimum:
+            floodfill_vertical(matrix, x, y-1)
+        if up >= minimum:
+            floodfill_vertical(matrix, x, y+1)
+    
+
+def floodfill_horizontal(matrix, x, y):
+    if x > 0 and x < len(layer_1)-1 and y > 0 and y < len(layer_1)-1:
+        been[x][y] = True
+        minimum = matrix[x][y]
+        right = matrix[x+1][y]
+        left = matrix[x-1][y]
+        if right >= minimum:
+            floodfill_horizontal(matrix, x+1, y)
+        if left >= minimum:
+            floodfill_horizontal(matrix, x-1, y)
+        
+floodfill_vertical(layer_1,50,50)       
+
+for itterations in range(10):
+    for row in range(101):
+        for column in range(101):
+            if been[row,column]:
+                floodfill_horizontal(layer_1, row, column)
+                floodfill_vertical(layer_1, row, column)
+                
+
+
+
+
+"""
+
+
+
+
+        
 def floodfill_3d(matrix, x, y, z):
     #"hidden" stop clause - not reinvoking for numbers less than a value.
     if matrix[x][y][z] < 1:  
@@ -73,7 +117,7 @@ dims = imageData.GetDimensions()
 for z in range(dims[2]):
     for y in range(dims[1]):
         for x in range(dims[0]):
-            imageData.SetScalarComponentFromDouble(x, y, z, 0, test_3d_with_walls[x,y,z])
+            imageData.SetScalarComponentFromDouble(x, y, z, 0, test_3d_with_walls_after_fill[x,y,z])
 writer = vtk.vtkXMLImageDataWriter()
 writer.SetFileName(filename)
 if vtk.VTK_MAJOR_VERSION <= 5:
@@ -81,6 +125,31 @@ if vtk.VTK_MAJOR_VERSION <= 5:
 else:
     writer.SetInputData(imageData)
 writer.Write()
+
+
+
+
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
