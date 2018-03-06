@@ -27,18 +27,45 @@ def floodfill(matrix, x, y):
 floodfill(test_with_walls_after_fill, 1, 5 )
     
 
+
+
+############ Algorithm that has much less recursion ############
+
+
+
+
 been = np.full((101, 101), False, dtype=bool)
 def floodfill_vertical(matrix, x, y):
     if x > 0 and x < len(layer_1)-1 and y > 0 and y < len(layer_1)-1:
         been[x][y] = True
         minimum = matrix[x][y]
-        down = matrix[x][y-1]
         up = matrix[x][y+1]
-        if down >= minimum:
-            floodfill_vertical(matrix, x, y-1)
+        down = matrix[x][y-1]
+        
+        def flood_up(matrix, x, y):
+            if x > 0 and x < len(layer_1)-1 and y > 0 and y < len(layer_1)-1:
+                been[x][y] = True
+                minimum = matrix[x][y]
+                up = matrix[x][y+1]
+                if up >= minimum:
+                    flood_up(matrix, x, y+1)
+        
+        def flood_down(matrix, x, y):
+            if x > 0 and x < len(layer_1)-1 and y > 0 and y < len(layer_1)-1:
+                been[x][y] = True
+                minimum = matrix[x][y]
+                down = matrix[x][y-1]
+                if down >= minimum:
+                    flood_down(matrix, x, y-1)
+   
         if up >= minimum:
-            floodfill_vertical(matrix, x, y+1)
-    
+            flood_up(matrix, x, y+1)
+
+        if down >= minimum:
+            flood_down(matrix, x, y-1)
+
+
+
 
 def floodfill_horizontal(matrix, x, y):
     if x > 0 and x < len(layer_1)-1 and y > 0 and y < len(layer_1)-1:
@@ -46,12 +73,32 @@ def floodfill_horizontal(matrix, x, y):
         minimum = matrix[x][y]
         right = matrix[x+1][y]
         left = matrix[x-1][y]
-        if right >= minimum:
-            floodfill_horizontal(matrix, x+1, y)
-        if left >= minimum:
-            floodfill_horizontal(matrix, x-1, y)
         
-floodfill_vertical(layer_1,50,50)       
+        def flood_right(matrix, x, y):
+            if x > 0 and x < len(layer_1)-1 and y > 0 and y < len(layer_1)-1:
+                been[x][y] = True
+                minimum = matrix[x][y]
+                right = matrix[x+1][y]
+                if right >= minimum:
+                    flood_right(matrix, x+1, y)
+                    
+        def flood_left(matrix, x, y):
+            if x > 0 and x < len(layer_1)-1 and y > 0 and y < len(layer_1)-1:
+                been[x][y] = True
+                minimum = matrix[x][y]
+                left = matrix[x-1][y]
+                if left >= minimum:
+                    flood_left(matrix, x-1, y)
+                    
+        if right >= minimum:
+            flood_right(matrix, x+1, y)     
+            
+        if left >= minimum:
+            flood_left(matrix, x-1, y)
+        
+        
+floodfill_vertical(layer_1,50,50)  
+floodfill_horizontal(layer_1,50,50)  
 
 for itterations in range(10):
     for row in range(101):
@@ -59,7 +106,7 @@ for itterations in range(10):
             if been[row,column]:
                 floodfill_horizontal(layer_1, row, column)
                 floodfill_vertical(layer_1, row, column)
-                
+
 
 
 
