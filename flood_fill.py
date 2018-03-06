@@ -100,9 +100,9 @@ def floodfill_horizontal(matrix, x, y):
 floodfill_vertical(layer_1,50,50)  
 floodfill_horizontal(layer_1,50,50)  
 
-for itterations in range(10):
-    for row in range(101):
-        for column in range(101):
+for itterations in range(4):
+    for row in range(len(layer_1)):
+        for column in range(len(layer_1)):
             if been[row,column]:
                 floodfill_horizontal(layer_1, row, column)
                 floodfill_vertical(layer_1, row, column)
