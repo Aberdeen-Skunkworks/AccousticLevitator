@@ -31,10 +31,10 @@ floodfill(test_with_walls_after_fill, 1, 5 )
 
 ############ Algorithm that has much less recursion ############
 
-
-
+#layer = u[:,:,layer]
 
 been = np.full((101, 101), False, dtype=bool)
+
 def floodfill_vertical(matrix, x, y):
     if x > 0 and x < len(layer_1)-1 and y > 0 and y < len(layer_1)-1:
         been[x][y] = True

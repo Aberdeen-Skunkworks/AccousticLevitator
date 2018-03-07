@@ -1,12 +1,12 @@
 import matplotlib as mpl; import numpy as np; import matplotlib.pyplot as plt; from mpl_toolkits.mplot3d import Axes3D;
 import math; import algorithms; import transducer_placment; import phase_algorithms; import constants; import time
  
-inital_pos = [0.001,0.001,0.0185]           # m
+inital_pos = [0.001,0.001,0.0181]           # m
 inital_vel = [0,0,0]                        # m/s
 gravity    = [0, 0, -9.81]                  # m/s^2
 diamiter   = constants.particle_diamiter    # m    
 density    = constants.rhos                 # kg/m^3
-dt         = 0.00001                          # Time step s
+dt         = 0.0001                          # Time step s
 end_time   = 0.2                              # End time s
 
 time_steps = end_time/dt
