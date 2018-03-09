@@ -368,7 +368,7 @@ elif choose == ("GUI"):
                 print("Rising trap 2 cm")
                 z += 0.0004
                 self.calculate_and_move_trap()
-                time.sleep(0.25)
+                time.sleep(0.05)
                 print("Raised to final height")
     
         def forward_click(self):
