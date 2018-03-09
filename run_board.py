@@ -205,7 +205,7 @@ elif choose == ("GUI"):
             global phase_index
             
             phi_focus = phase_algorithms.phase_find(rt,x,y,z)
-            phi = phase_algorithms.add_twin_signature(rt,phi_focus)
+            phi = phase_algorithms.add_twin_signature(rt,phi_focus, 90)
             for transducer in range(0,ntrans):
                 phase_index[transducer] = int(2500-phi[transducer]/((2*math.pi)/1250)) 
             print(" ")
@@ -215,28 +215,24 @@ elif choose == ("GUI"):
             
             from connect import Controller
             with Controller() as ctl:
-                ctl.setOutputDACPower(255)
-                ctl.setOutputDACDivisor(50)
+                ctl.setOutputDACPower(256)
+                ctl.setOutputDACDivisor(100)
                 for i in range(ctl.outputs):
                     ctl.setOffset(i,phase_index[i])
-                    ctl.loadOffsets()
+                ctl.loadOffsets()
 
 
         def calculate_and_move_trap_no_print(self):
             
             from connect import Controller
             with Controller() as ctl:
-                ctl.setOutputDACPower(255)
-                ctl.setOutputDACDivisor(50)
-                print("You have 15 seconds to trap the particle until fuzzing stops")
-                a = 1
-                while a==1: 
-                    
-                    for fuzz in range(3000):
-                        ctl.setOutputDACPower(255)
-                        ctl.setOutputDACDivisor(50)
-                        ctl.setOutputDACPower(0)
-                    a = 0
+                ctl.setOutputDACPower(256)
+                ctl.setOutputDACDivisor(100)
+                for i in range(ctl.outputs):
+                    ctl.setOffset(i,phase_index[i])
+                ctl.setOutputDACFreq(200)
+                ctl.loadOffsets()
+
             
         def forward_click(self):
             global x               
