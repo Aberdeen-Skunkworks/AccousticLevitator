@@ -145,7 +145,7 @@ laplace_u = scipy.ndimage.filters.laplace(u_with_gravity)
 
 # -------------------Creating output images and vtk file----------------------
 
-vti_writer (constants.npoints, pabs, fx, fy, fz, u, laplace_u)
+vti_writer (constants.npoints, pabs, fx, fy, fz, u_with_gravity_nano, laplace_u)
 
 
 print("For use in paraview: ")
