@@ -5,8 +5,8 @@ import math
 
 
 
-gsize = 0.015      # Half the length of grid box (m)
-deltaxyz = 0.0005    # Distance between points in grid (m)
+gsize = 0.016      # Half the length of grid box (m)
+deltaxyz = 0.0006    # Distance between points in grid (m)
 
 x = -gsize           # Initial values of x,y and z in (m) Grid volume
 y = -gsize

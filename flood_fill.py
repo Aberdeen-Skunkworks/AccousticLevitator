@@ -1,6 +1,7 @@
 # Flood fill start
 
 import numpy as np
+"""
 size = 17
 
 test = np.zeros((size,size), dtype = float)
@@ -26,14 +27,12 @@ def floodfill(matrix, x, y):
             
 floodfill(test_with_walls_after_fill, 1, 5 )
     
-
+"""
 
 
 ############ Algorithm that has much less recursion ############
 #def floodfill_3d(potential_array,x,y,z):
     
-length = len(potential_array)
-been = np.full((length, length, length), False, dtype=bool)
 
 def floodfill_vertical(matrix, x, y, z):
     if x > 0 and x < length-1 and y > 0 and y < length-1 and z > 0 and z < length-1:
@@ -44,19 +43,20 @@ def floodfill_vertical(matrix, x, y, z):
         
         def flood_up(matrix, x, y):
             if x > 0 and x < length-1 and y > 0 and y < length-1 and z > 0 and z < length-1:
-                been[x][y][z] = True
                 minimum = matrix[x][y]
                 up = matrix[x][y+1]
                 if up >= minimum:
+                    been[x][y][z] = True
                     flood_up(matrix, x, y+1)
         
         def flood_down(matrix, x, y):
             if x > 0 and x < length-1 and y > 0 and y < length-1 and z > 0 and z < length-1:
-                been[x][y][z] = True
                 minimum = matrix[x][y]
                 down = matrix[x][y-1]
                 if down >= minimum:
+                    been[x][y][z] = True
                     flood_down(matrix, x, y-1)
+                    
    
         if up >= minimum:
             flood_up(matrix, x, y+1)
@@ -76,18 +76,19 @@ def floodfill_horizontal(matrix, x, y, z):
         
         def flood_right(matrix, x, y):
             if x > 0 and x < length-1 and y > 0 and y < length-1 and z > 0 and z < length-1:
-                been[x][y][z] = True
                 minimum = matrix[x][y]
                 right = matrix[x+1][y]
                 if right >= minimum:
+                    been[x][y][z] = True
                     flood_right(matrix, x+1, y)
+                    
                     
         def flood_left(matrix, x, y):
             if x > 0 and x < length-1 and y > 0 and y < length-1 and z > 0 and z < length-1:
-                been[x][y][z] = True
                 minimum = matrix[x][y]
                 left = matrix[x-1][y]
                 if left >= minimum:
+                    been[x][y][z] = True
                     flood_left(matrix, x-1, y)
                     
         if right >= minimum:
@@ -108,18 +109,18 @@ def floodfill_through(matrix_3d, x, y, z):
         
         def flood_through(matrix_3d, x, y, z):
             if x > 0 and x < length-1 and y > 0 and y < length-1 and z > 0 and z < length-1:
-                been[x][y][z] = True
                 minimum = matrix_3d[x][y][z]
                 through = matrix_3d[x][y][z+1]
                 if through >= minimum:
+                    been[x][y][z] = True
                     flood_through(matrix_3d, x, y, z+1)
                     
         def flood_back(matrix_3d, x, y, z):
             if x > 0 and x < length-1 and y > 0 and y < length-1 and z > 0 and z < length-1:
-                been[x][y][z] = True
                 minimum = matrix_3d[x][y][z]
                 back = matrix_3d[x][y][z-1]
                 if back >= minimum:
+                    been[x][y][z] = True
                     flood_back(matrix_3d, x, y, z-1)
                     
         if through >= minimum:
@@ -128,7 +129,8 @@ def floodfill_through(matrix_3d, x, y, z):
         if back >= minimum:
             flood_back(matrix_3d, x, y, z-1)
 
-
+length = len(potential_array)
+been = np.full((length, length, length), False, dtype=bool)
 
 middle = int((length-1)/2)
 layer_1 = potential_array[:,:,middle]
@@ -136,7 +138,7 @@ layer_1 = potential_array[:,:,middle]
 floodfill_vertical(layer_1,middle,middle, middle)  
 floodfill_horizontal(layer_1,middle,middle, middle)  
 
-for itterations in range(3):
+for itterations in range(5):
     for z in range(length):
         for row in range(length):
             for column in range(length):
