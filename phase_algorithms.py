@@ -122,6 +122,20 @@ def add_vortex_signature(rt, phi): # Array needs to be centerd around the origin
     
     return phi
 
+def add_bottle_signature(rt, phi, size): # Array needs to be centerd around the origin for this to work
+
+    import algorithms; import numpy as np; import math
+            
+    ntrans = len(rt)
+    transducer_distance = np.zeros(ntrans)
+    for i in range(ntrans):
+        transducer_distance[i] = np.linalg.norm([rt[i][0],rt[i][1],rt[i][2]])
+        if transducer_distance[i] < size:
+             phi[i] = phi[i] + math.pi
+    
+    return phi
+
+
 
 def phase_contributions(point, complex_pressure):
     
