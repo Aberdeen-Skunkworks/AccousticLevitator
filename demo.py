@@ -236,6 +236,9 @@ elif choose == ("GUI"):
             
             super().__init__()
             
+            #from connect import Controller
+            #self.ctl = Controller()
+            #self.ctl.__enter__()
             self.init_ui()
         
         def init_ui(self):
