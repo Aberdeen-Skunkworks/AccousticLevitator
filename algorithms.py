@@ -181,4 +181,96 @@ def read_from_excel_phases(): # Reads the phases from phase.xlsx
 
 
 
-#print("Algorithms has ran")
+
+def force_calc(focus_point, rt, nt, phi, vti = False): # Set vti to True to output vti files
+    
+    import constants; import numpy as np; import calc_pressure_field; import time;
+    from vti_writer import vti_writer; import scipy.ndimage
+    
+    z_distances = np.linspace(-constants.gsize + focus_point[2],   constants.gsize + focus_point[2], constants.npoints)
+    
+    
+    # ----------------------Setting up output arrays-------------------------------
+    
+    pcombined = np.zeros ((constants.npoints,constants.npoints,constants.npoints),dtype=complex)
+    
+    px = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=complex)
+    py = np.copy(px); pz = np.copy(px)
+    
+    ux = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=float)
+    uy = np.copy(ux); uz = np.copy(ux)
+    
+    pabs = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=float) 
+    pxabs = np.copy(pabs); pyabs = np.copy(pabs); pzabs = np.copy(pabs)
+    
+    u = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=float)
+    
+    height = np.zeros ((constants.npoints,constants.npoints,constants.npoints), dtype=float)
+    
+    ntrans = len(rt)
+    # ----------------------------------------------------------------------------
+    
+
+    t1 = time.time()
+    p = calc_pressure_field.calc_pressure_field_numpy_around_trap(rt, nt, ntrans, phi, focus_point)
+    t2 = time.time()
+    print(" ")
+    print("Numpy pressure calculation took ",round(t2-t1,2), " seconds" )
+    print(" ")
+    
+    
+    # -----------------Loop to sum pressure of all transducers---------------------
+    
+    height_2D = np.tile(z_distances, (constants.npoints ,1))
+    height = np.broadcast_to(height_2D, (constants.npoints, constants.npoints, constants.npoints))
+    pcombined = np.sum(np.copy(p), axis = 0) 
+    
+    # -----------------Calculating derrivitive of the pressure field---------------
+    
+    diff_p = np.gradient(pcombined,constants.deltaxyz)
+    px = np.copy(diff_p[0]); py = np.copy(diff_p[1]); pz = np.copy(diff_p[2])
+    
+    # ----------------- Calculating the Gork’ov potential-------------------------
+    
+    # Calculating absuloute values for the pressure field and its derrivitives
+           
+    pabs   = np.absolute(pcombined)  
+    pxabs  = np.absolute(px)  
+    pyabs  = np.absolute(py)  
+    pzabs  = np.absolute(pz)  
+    
+    # Calculating Gork’ov potential u (Including gravity)
+    """ ################### WRONG
+    u = ( np.subtract( np.subtract( np.multiply(np.multiply(2, constants.k1), np.power(pabs, 2) ), 
+    np.multiply( np.multiply(2, constants.k2), np.add(np.add(np.power(pxabs, 2), np.power(pyabs, 2)), np.power(pzabs, 2) ) ) ),  
+    np.multiply(constants.p_mass, np.multiply(constants.gravity, np.copy(height)))) ) # Gravity term
+    """
+    
+    left_side = np.multiply(np.power(pabs, 2), constants.m1)
+    gradients = np.add(np.add(np.power(pxabs, 2), np.power(pyabs, 2)), np.power(pzabs, 2))
+    right_side =  np.multiply(constants.m2, gradients)
+    u = np.subtract(left_side, right_side)
+    
+    u_with_gravity = np.subtract(u, np.multiply(constants.p_mass, np.multiply(constants.gravity, np.copy(height))))
+    u_with_gravity_nano = np.multiply(u_with_gravity, 1000000000)
+
+    # -----------------Calculating derrivitive of Gork’ov potential ---------------
+    
+    diff_u = np.gradient(u_with_gravity,constants.deltaxyz)
+    ux = np.copy(diff_u[0]); uy = np.copy(diff_u[1]); uz = np.copy(diff_u[2])
+    
+    # -----------------Calculating force on particle ---------------
+    
+    
+    fx = np.copy(-ux); fy = np.copy(-uy); fz = np.copy(-uz)
+    
+    
+    laplace_u = scipy.ndimage.filters.laplace(u_with_gravity)
+    
+
+    # -------------------Creating output images and vtk file----------------------
+    
+    if vti == True:
+        vti_writer (constants.npoints, pabs, fx, fy, fz, u_with_gravity_nano, laplace_u)
+    
+    return pabs, fx, fy, fz, u_with_gravity, u_with_gravity_nano, laplace_u
