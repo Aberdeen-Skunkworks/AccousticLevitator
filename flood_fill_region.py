@@ -14,7 +14,8 @@ import numpy.ma as ma
 heights = np.zeros((41,2))
 for height_rise in range(41):
     heights[height_rise][0] = (height_rise*2)/1000
-""" ## to go in the focus point for z : (height_rise*2)/1000
+     ## to go in the focus point for z : (height_rise*2)/1000
+"""
     
 # ----------------------Setup for potential calculation------------------------
 
@@ -28,9 +29,9 @@ nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction
 focus_point = [ 0 , 0, 0.025]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
-#phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 90)
+phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 90)
 #phi_signature = phase_algorithms.add_vortex_signature(rt, np.copy(phi_focus))
-phi_signature = phase_algorithms.add_bottle_signature(rt, np.copy(phi_focus),0.03)
+#phi_signature = phase_algorithms.add_bottle_signature(rt, np.copy(phi_focus),0.03)
 #phi_noise = phase_algorithms.phase_random_noise(2, np.copy(phi_signature)) # number is randomness multiplier (0-1)*multiplier scaled between 0 and 2pi
 
 phi = phi_signature
@@ -132,7 +133,8 @@ def flood_region(neighbours, x, y, z, current_minimum, region):
             if len(neighbours) == 0:
                 #print("Skipped as there are no neighbours for this region")
                 run = False
-                return current_minimum, "No maximum"
+                end_point = [x,y,z]
+                return current_minimum, current_minimum, end_point
             else:
                 new_minimum_id = np.argmin(neighbours[:,0])
                 new_minimum    = neighbours[new_minimum_id][0]
@@ -147,13 +149,15 @@ def flood_region(neighbours, x, y, z, current_minimum, region):
                 else:
                     print("Stopped since the boundary has been found")
                     #print("Edge Value = ", current_minimum)
+                    end_point = [neighbours[new_minimum_id][1], neighbours[new_minimum_id][2], neighbours[new_minimum_id][2]]
                     run = False
-                    return current_minimum, trap_maximum
+                    return current_minimum, trap_maximum, end_point
         
         else:
             #print("Reached the edge of the box")
             run = False
-            return current_minimum, trap_maximum
+            end_point = [neighbours[new_minimum_id][1], neighbours[new_minimum_id][2], neighbours[new_minimum_id][2]]
+            return current_minimum, trap_maximum, end_point
         
     
 """
@@ -209,19 +213,27 @@ output = flood_region(neighbours, x, y, z, current_minimum, region)
 
 edge_potential = output[0]
 maximum_of_trap = output[1]
+end_point = output[2]
 
-print("Potential to escape trap = ",edge_potential- trap_minimum_potential, "Micro joules ")
-print("Maximum Potential of the trap = ",maximum_of_trap, "Micro joules ")
+distance = np.linalg.norm(np.subtract(start_point, end_point))
+distance_meters = constants.deltaxyz * distance
+change_in_energy = edge_potential - trap_minimum_potential
+force = (change_in_energy/1000000)/distance_meters
 
-# Plotting the different heights stuff
+print("Potential between trap centre and lowest edge = ", "%.2f" % (edge_potential - trap_minimum_potential), "Micro joules ")
+print("Maximum Potential of the trap = ", "%.2f" % maximum_of_trap, "Micro joules ")
+print("Distance between trap centre and lowest edge = ", "%.2f" % (distance_meters*1000), "mm ")
+print("Force to leave trap = ","%.5f" % force, "Newtons ")
+
 """
-heights[height_rise][1] = edge_potential - trap_minimum_potential
+# Plotting the different heights stuff
+heights[height_rise][1] = force
 import matplotlib.pyplot as plt;
 from mpl_toolkits.mplot3d import axes3d
 ax = plt.axes()
 ax.plot(heights[:,0], heights[:,1], 'ro')
-"""
 
+"""
 """
 
 
@@ -254,9 +266,8 @@ Out[121]: (23, 33, 1)
 
 np.unravel_index(np.argmin(potential_array, axis=None), potential_array.shape)
 Out[122]: (23, 49, 1)
+
 """
-
-
 
 import vtk; import numpy as  np
 # creating vti image file 
@@ -283,8 +294,5 @@ else:
     writer.SetInputData(imageData)
 writer.Write()
 
-
-
-     
-        
+   
             
