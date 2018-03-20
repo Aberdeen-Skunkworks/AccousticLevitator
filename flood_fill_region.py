@@ -221,7 +221,7 @@ change_in_energy = edge_potential - trap_minimum_potential
 force = (change_in_energy/1000000)/distance_meters
 
 print("Potential between trap centre and lowest edge = ", "%.2f" % (edge_potential - trap_minimum_potential), "Micro joules ")
-print("Maximum Potential of the trap = ", "%.2f" % maximum_of_trap, "Micro joules ")
+#print("Maximum Potential of the trap = ", "%.2f" % maximum_of_trap, "Micro joules ")
 print("Distance between trap centre and lowest edge = ", "%.2f" % (distance_meters*1000), "mm ")
 print("Force to leave trap = ","%.5f" % force, "Newtons ")
 
