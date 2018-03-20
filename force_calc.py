@@ -54,7 +54,7 @@ phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 90)
 phi = phi_signature
 
 
-potential_calculated = algorithms.force_calc(focus_point, rt, nt, phi, vti = False)
+potential_calculated = algorithms.force_calc(focus_point, rt, nt, phi, vti = True)
 
 
 

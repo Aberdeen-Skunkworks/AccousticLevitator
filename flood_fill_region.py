@@ -42,7 +42,7 @@ u_with_gravity_nano = potential_calculated[5]
 
     
 potential_array = u_with_gravity_nano
-potential_array = np.pad(potential_array, (1), 'constant', constant_values=(np.max(potential_array))) # Padding the edge with max of array
+potential_array = np.pad(potential_array, (0), 'constant', constant_values=(np.max(potential_array))) # Padding the edge with 0
 length = len(potential_array)
 regions = np.full((length, length, length), 0, dtype=int)
 been = np.full((length, length, length), False, dtype=bool)
@@ -73,7 +73,7 @@ def flood_region(neighbours, x, y, z, current_minimum, region):
             if been[x+1,y,z] == True: # x+1
                 pass
             else:
-                regions[x+1,y,z] = region
+                
                 been[x+1,y,z] = True
                 new_list = np.zeros((1,4))
                 new_list[0][0] = potential_array[x+1,y,z]
@@ -83,7 +83,7 @@ def flood_region(neighbours, x, y, z, current_minimum, region):
             if been[x-1,y,z] == True: # x-1
                 pass
             else:
-                regions[x-1,y,z] = region
+                
                 been[x-1,y,z] = True
                 new_list = np.zeros((1,4))
                 new_list[0][0] = potential_array[x-1,y,z]
@@ -93,7 +93,7 @@ def flood_region(neighbours, x, y, z, current_minimum, region):
             if been[x,y+1,z] == True: # y+1
                 pass
             else:
-                regions[x,y+1,z] = region
+                
                 been[x,y+1,z] = True
                 new_list = np.zeros((1,4))
                 new_list[0][0] = potential_array[x,y+1,z]
@@ -103,7 +103,7 @@ def flood_region(neighbours, x, y, z, current_minimum, region):
             if been[x,y-1,z] == True: # y-1
                 pass
             else:
-                regions[x,y-1,z] = region
+                
                 been[x,y-1,z] = True
                 new_list = np.zeros((1,4))
                 new_list[0][0] = potential_array[x,y-1,z]
@@ -113,7 +113,7 @@ def flood_region(neighbours, x, y, z, current_minimum, region):
             if been[x,y,z+1] == True: # z+1
                 pass
             else:
-                regions[x,y,z+1] = region
+                
                 been[x,y,z+1] = True
                 new_list = np.zeros((1,4))
                 new_list[0][0] = potential_array[x,y,z+1]
@@ -123,7 +123,7 @@ def flood_region(neighbours, x, y, z, current_minimum, region):
             if been[x,y,z-1] == True: # z-1
                 pass
             else:
-                regions[x,y,z-1] = region
+                
                 been[x,y,z-1] = True
                 new_list = np.zeros((1,4))
                 new_list[0][0] = potential_array[x,y,z-1]
@@ -134,7 +134,7 @@ def flood_region(neighbours, x, y, z, current_minimum, region):
                 #print("Skipped as there are no neighbours for this region")
                 run = False
                 end_point = [x,y,z]
-                return current_minimum, current_minimum, end_point
+                return current_minimum, current_minimum, end_point, 0
             else:
                 new_minimum_id = np.argmin(neighbours[:,0])
                 new_minimum    = neighbours[new_minimum_id][0]
@@ -151,13 +151,13 @@ def flood_region(neighbours, x, y, z, current_minimum, region):
                     #print("Edge Value = ", current_minimum)
                     end_point = [neighbours[new_minimum_id][1], neighbours[new_minimum_id][2], neighbours[new_minimum_id][2]]
                     run = False
-                    return current_minimum, trap_maximum, end_point
+                    return current_minimum, trap_maximum, end_point, neighbours
         
         else:
             #print("Reached the edge of the box")
             run = False
             end_point = [neighbours[new_minimum_id][1], neighbours[new_minimum_id][2], neighbours[new_minimum_id][2]]
-            return current_minimum, trap_maximum, end_point
+            return current_minimum, trap_maximum, end_point, neighbours
         
     
 """
@@ -214,6 +214,7 @@ output = flood_region(neighbours, x, y, z, current_minimum, region)
 edge_potential = output[0]
 maximum_of_trap = output[1]
 end_point = output[2]
+neighbours = output[3]
 
 distance = np.linalg.norm(np.subtract(start_point, end_point))
 distance_meters = constants.deltaxyz * distance
