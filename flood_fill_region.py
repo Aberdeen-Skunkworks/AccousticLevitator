@@ -42,7 +42,7 @@ u_with_gravity_nano = potential_calculated[5]
 
     
 potential_array = u_with_gravity_nano
-potential_array = np.pad(potential_array, (0), 'constant', constant_values=(np.max(potential_array))) # Padding the edge with 0
+potential_array = np.pad(potential_array, (1), 'constant', constant_values=(0)) # Padding the edge with 0
 length = len(potential_array)
 regions = np.full((length, length, length), 0, dtype=int)
 been = np.full((length, length, length), False, dtype=bool)
@@ -144,6 +144,7 @@ def flood_region(neighbours, x, y, z, current_minimum, region):
                     y = int(neighbours[new_minimum_id][2])
                     z = int(neighbours[new_minimum_id][3])
                     regions[x,y,z] = region
+                    edges_been_to[x,y,z] = True
                     current_minimum = new_minimum
     
                 else:
@@ -151,15 +152,17 @@ def flood_region(neighbours, x, y, z, current_minimum, region):
                     #print("Edge Value = ", current_minimum)
                     end_point = [neighbours[new_minimum_id][1], neighbours[new_minimum_id][2], neighbours[new_minimum_id][2]]
                     run = False
+                    for number in range(len(neighbours)):
+                        been[int(neighbours[number][1]),int(neighbours[number][2]),int(neighbours[number][3])] = False
                     return current_minimum, trap_maximum, end_point, neighbours
         
         else:
             #print("Reached the edge of the box")
             run = False
-            end_point = [neighbours[new_minimum_id][1], neighbours[new_minimum_id][2], neighbours[new_minimum_id][2]]
-            return current_minimum, trap_maximum, end_point, neighbours
+            return current_minimum, 0,0, neighbours
         
-    
+        
+       
 """
 while not np.all(been):
     potential_array = ma.masked_array(potential_array, been)
@@ -192,7 +195,63 @@ sorted_size_of_regions = np.sort(sorted_size_of_regions, axis=0)
 
 
 
+edge_mask = np.copy(been)
+for x in range(2,length-1):
+    for y in range(2,length-1):
+        for z in range(2,length-1):
+            edge_mask[x,y,z] = True
+potential_array = ma.masked_array(potential_array, edge_mask)
+edges_been_to = np.full((length, length, length), True, dtype=bool)
 
+x = 1
+for y in range(1,length-1):
+        for z in range(1,length-1):
+                edges_been_to[x,y,z] = False
+            
+x = length-2
+for y in range(1,length-1):
+        for z in range(1,length-1):
+            edges_been_to[x,y,z] = False
+y = 1
+for x in range(1,length-1):
+        for z in range(1,length-1):
+            edges_been_to[x,y,z] = False
+            
+y = length-2
+for x in range(1,length-1):
+        for z in range(1,length-1):
+            edges_been_to[x,y,z] = False          
+z = 1
+for x in range(1,length-1):
+        for y in range(1,length-1):
+            edges_been_to[x,y,z] = False
+            
+z = length-2
+for x in range(1,length-1):
+        for y in range(1,length-1):
+            edges_been_to[x,y,z] = False
+            
+            
+while not np.all(edges_been_to):
+    potential_array = ma.masked_array(potential_array, edges_been_to)
+    global_min_index = np.unravel_index(np.argmin(potential_array, axis=None), potential_array.shape)
+    start_point = [global_min_index[0],global_min_index[1],global_min_index[2]]
+    x = start_point[0]
+    y = start_point[1]
+    z = start_point[2]
+    current_minimum = potential_array[x,y,z]
+    neighbours = np.zeros((1,4)) # Format: neighbours[Value, X, Y, Z]
+    neighbours[0][0] = current_minimum; 
+    neighbours[0][1] = x; neighbours[0][2] = y; neighbours[0][3] = z;
+    region = int(1)
+    #print("Filling region: ", region)
+    regions[x,y,z] = region
+    edges_been_to[x,y,z] = True
+    been[x,y,z]
+    flood_region(neighbours, x, y, z, current_minimum, region)
+
+
+"""
 #### Middle Start Point
 
 start_point = [int(np.argmin(x_potential_middle)+(length-1-20)/2),int(np.argmin(y_potential_middle)+(length-1-20)/2),int(np.argmin(z_potential_middle)+(length-1-20)/2)]
@@ -206,7 +265,7 @@ neighbours = np.zeros((1,4)) # Format: neighbours[Value, X, Y, Z]
 neighbours[0][0] = current_minimum; 
 neighbours[0][1] = x; neighbours[0][2] = y; neighbours[0][3] = z;
 ## Region?
-region = 1
+region = 2
 regions[x,y,z] = region
 been[x,y,z] = True
 output = flood_region(neighbours, x, y, z, current_minimum, region)
@@ -226,6 +285,79 @@ print("Potential between trap centre and lowest edge = ", "%.2f" % (edge_potenti
 print("Distance between trap centre and lowest edge = ", "%.2f" % (distance_meters*1000), "mm ")
 print("Force to leave trap = ","%.5f" % force, "Newtons ")
 
+
+
+
+
+
+x = 1
+for y in range(1,length):
+        for z in range(1,length):
+            regions[x,y,z] = region ## Only for the edge since the edge is "Forbidden"
+            neighbours = np.zeros((1,4)) # Format: neighbours[Value, X, Y, Z]
+            neighbours[0][0] = current_minimum; 
+            neighbours[0][1] = x; neighbours[0][2] = y; neighbours[0][3] = z;
+            current_minimum = potential_array[x,y,z]
+            region = 1
+            flood_region(neighbours, x, y, z, current_minimum, region)
+            
+x = length-2
+for y in range(1,length):
+        for z in range(1,length):
+            regions[x,y,z] = region ## Only for the edge since the edge is "Forbidden"
+            neighbours = np.zeros((1,4)) # Format: neighbours[Value, X, Y, Z]
+            neighbours[0][0] = current_minimum; 
+            neighbours[0][1] = x; neighbours[0][2] = y; neighbours[0][3] = z;
+            current_minimum = potential_array[x,y,z]
+            region = 1
+            flood_region(neighbours, x, y, z, current_minimum, region)   
+y = 1
+for x in range(1,length):
+        for z in range(1,length):
+            regions[x,y,z] = region ## Only for the edge since the edge is "Forbidden"
+            neighbours = np.zeros((1,4)) # Format: neighbours[Value, X, Y, Z]
+            neighbours[0][0] = current_minimum; 
+            neighbours[0][1] = x; neighbours[0][2] = y; neighbours[0][3] = z;
+            current_minimum = potential_array[x,y,z]
+            region = 1
+            flood_region(neighbours, x, y, z, current_minimum, region)
+            
+y = length-2
+for x in range(1,length):
+        for z in range(1,length):
+            regions[x,y,z] = region ## Only for the edge since the edge is "Forbidden"
+            neighbours = np.zeros((1,4)) # Format: neighbours[Value, X, Y, Z]
+            neighbours[0][0] = current_minimum; 
+            neighbours[0][1] = x; neighbours[0][2] = y; neighbours[0][3] = z;
+            current_minimum = potential_array[x,y,z]
+            region = 1
+            flood_region(neighbours, x, y, z, current_minimum, region)            
+z = 1
+for x in range(1,length):
+        for y in range(1,length):
+            regions[x,y,z] = region ## Only for the edge since the edge is "Forbidden"
+            neighbours = np.zeros((1,4)) # Format: neighbours[Value, X, Y, Z]
+            neighbours[0][0] = current_minimum; 
+            neighbours[0][1] = x; neighbours[0][2] = y; neighbours[0][3] = z;
+            current_minimum = potential_array[x,y,z]
+            region = 1
+            flood_region(neighbours, x, y, z, current_minimum, region)
+            
+z = length-2
+for x in range(1,length):
+        for y in range(1,length):
+            regions[x,y,z] = region ## Only for the edge since the edge is "Forbidden"
+            neighbours = np.zeros((1,4)) # Format: neighbours[Value, X, Y, Z]
+            neighbours[0][0] = current_minimum; 
+            neighbours[0][1] = x; neighbours[0][2] = y; neighbours[0][3] = z;
+            current_minimum = potential_array[x,y,z]
+            region = 1
+            flood_region(neighbours, x, y, z, current_minimum, region)   
+            
+            
+"""
+
+         
 """
 # Plotting the different heights stuff
 heights[height_rise][1] = force
