@@ -68,7 +68,7 @@ def flood_region(neighbours, x, y, z, current_minimum, region):
     
     run = True
     while run == True:
-        if x > 0 and x < length-1 and y > 0 and y < length-1 and z > 0 and z < length-1:
+        if x > 0 and x < length and y > 0 and y < length and z > 0 and z < length:
             neighbours = np.delete(neighbours,np.argmin(neighbours[:,0]),0)
             if been[x+1,y,z] == True: # x+1
                 pass
@@ -144,11 +144,11 @@ def flood_region(neighbours, x, y, z, current_minimum, region):
                     y = int(neighbours[new_minimum_id][2])
                     z = int(neighbours[new_minimum_id][3])
                     regions[x,y,z] = region
-                    edges_been_to[x,y,z] = True
+                    edge_mask[x,y,z] = True
                     current_minimum = new_minimum
     
                 else:
-                    print("Stopped since the boundary has been found")
+                    #print("Stopped since the boundary has been found")
                     #print("Edge Value = ", current_minimum)
                     end_point = [neighbours[new_minimum_id][1], neighbours[new_minimum_id][2], neighbours[new_minimum_id][2]]
                     run = False
@@ -194,61 +194,36 @@ sorted_size_of_regions = np.sort(sorted_size_of_regions, axis=0)
 
 
 
+edge_potential_array = np.copy(potential_array)
 
 edge_mask = np.copy(been)
-for x in range(2,length-1):
-    for y in range(2,length-1):
-        for z in range(2,length-1):
+for x in range(2,length-2):
+    for y in range(2,length-2):
+        for z in range(2,length-2):
             edge_mask[x,y,z] = True
-potential_array = ma.masked_array(potential_array, edge_mask)
-edges_been_to = np.full((length, length, length), True, dtype=bool)
+edge_potential_array = ma.masked_array(edge_potential_array, edge_mask)
 
-x = 1
-for y in range(1,length-1):
-        for z in range(1,length-1):
-                edges_been_to[x,y,z] = False
-            
-x = length-2
-for y in range(1,length-1):
-        for z in range(1,length-1):
-            edges_been_to[x,y,z] = False
-y = 1
-for x in range(1,length-1):
-        for z in range(1,length-1):
-            edges_been_to[x,y,z] = False
-            
-y = length-2
-for x in range(1,length-1):
-        for z in range(1,length-1):
-            edges_been_to[x,y,z] = False          
-z = 1
-for x in range(1,length-1):
-        for y in range(1,length-1):
-            edges_been_to[x,y,z] = False
-            
-z = length-2
-for x in range(1,length-1):
-        for y in range(1,length-1):
-            edges_been_to[x,y,z] = False
-            
-            
-while not np.all(edges_been_to):
-    potential_array = ma.masked_array(potential_array, edges_been_to)
-    global_min_index = np.unravel_index(np.argmin(potential_array, axis=None), potential_array.shape)
+
+run_number = 1
+while not np.all(edge_mask):
+    print("Run: ",int(run_number))
+    run_number += 1
+    edge_potential_array = ma.masked_array(edge_potential_array, edge_mask)
+    global_min_index = np.unravel_index(np.argmin(edge_potential_array, axis=None), edge_potential_array.shape)
     start_point = [global_min_index[0],global_min_index[1],global_min_index[2]]
     x = start_point[0]
     y = start_point[1]
     z = start_point[2]
-    current_minimum = potential_array[x,y,z]
+    current_minimum = edge_potential_array[x,y,z]
     neighbours = np.zeros((1,4)) # Format: neighbours[Value, X, Y, Z]
     neighbours[0][0] = current_minimum; 
     neighbours[0][1] = x; neighbours[0][2] = y; neighbours[0][3] = z;
     region = int(1)
     #print("Filling region: ", region)
     regions[x,y,z] = region
-    edges_been_to[x,y,z] = True
-    been[x,y,z]
-    flood_region(neighbours, x, y, z, current_minimum, region)
+    edge_mask[x,y,z] = True
+    been[x,y,z] = True
+    test = flood_region(neighbours, x, y, z, current_minimum, region)
 
 
 """
