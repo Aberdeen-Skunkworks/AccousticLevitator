@@ -55,13 +55,6 @@ been[:,length-1,:] = True
 been[:,:,0] = True
 been[:,:,length-1] = True
 
-focus_as_index = int(((length-1)/ 2))
-x_potential = potential_array[ :               , focus_as_index , focus_as_index]
-x_potential_middle = x_potential[(focus_as_index-10):(focus_as_index+10)]
-y_potential = potential_array[ focus_as_index  , :              , focus_as_index]
-y_potential_middle = y_potential[(focus_as_index-10):(focus_as_index+10)]
-z_potential = potential_array[ focus_as_index  , focus_as_index , :             ]
-z_potential_middle = z_potential[(focus_as_index-10):(focus_as_index+10)]
 
 
 def flood_region(neighbours, x, y, z, current_minimum, region):
@@ -154,7 +147,7 @@ def flood_region(neighbours, x, y, z, current_minimum, region):
                     end_point = [neighbours[new_minimum_id][1], neighbours[new_minimum_id][2], neighbours[new_minimum_id][2]]
                     run = False
                     for number in range(len(neighbours)):
-                        been[int(neighbours[number][1]),int(neighbours[number][2]),int(neighbours[number][3])] = False
+                    1       been[int(neighbours[number][1]),int(neighbours[number][2]),int(neighbours[number][3])] = False
                     return current_minimum, end_point, neighbours
         
         else:
@@ -191,9 +184,6 @@ for number_of_region in range(np.max(regions)):
     
 sorted_size_of_regions = np.sort(sorted_size_of_regions, axis=0)
 """
-
-
-
 
 
 
