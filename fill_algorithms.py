@@ -50,6 +50,45 @@ def find_edges(dim): # As array [dimention,dimention...] (Finds index of edges o
     return edges
 
 
+def find_edges_mcb():    ### Creates duplicates in coeners and edges
+    dimensions = [3,3]
+    d = len(dimensions)
+    #Loop over the dimensions whose faces you are collecting
+    edges=[]
+    for d1 in range(d):
+       #Calculate a list of the dimensions you will iterate over
+       facedims=[(d1+a) % d for a in range(1,d)]
+    
+       #Loop over all face cells
+       #This is the coordinate of the face cell you are working on
+       print("dim = ",d1)
+       face_coord = [0]*d
+       while True:
+           print(face_coord)
+           edge_cell = [0]*d
+           for di in range(d-1):
+               edge_cell[facedims[di]] = face_coord[di]
+           edge_cell[d1] = 0
+           edges.append(edge_cell)
+           edge_cell[d1] = dimensions[d1]-1
+           edges.append(edge_cell)
+    
+           #This is just rollover math for integers
+           face_coord[0] = face_coord[0] + 1
+           for di in range(0,d-1):
+               if face_coord[di] >= dimensions[facedims[di]]:
+                   face_coord[di] = 0
+                   face_coord[di+1] += 1
+           if face_coord[d-1] > 0:
+               break
+
+
+def set_all_parents_false(index):
+    regions_list[index][2] = False
+    if regions_list[index][0] != None:
+        set_all_parents_false(regions_list[index][0])
+    
+
 def tests():
     test_1d_array = [1,2,3,4,5,4,3,4,5,6,5,4,3,2,1,2,3,2,1,0]
     #test_1d_array = [0,1,2,3,4,5,6,7,8,9,10,9,8,7,6,5,4,3,2,1,0] ## Single Hill
@@ -103,42 +142,46 @@ def tests():
         raise Exception("Failed find_edges test 2")
     print("All Tests Passed!")
     
-    
-
-tests()
+tests() ## Run all tests  
 
 
+# -------------------------------- Input data --------------------------------
 
-test_1d_array = [1,2,3,4,5,4,3,4,5,6,5,4,3,2,1,2,3,2,1,0]
-#test_1d_array = [0,1,2,3,4,5,6,7,8,9,10,9,8,7,6,5,4,3,2,1,0] ## Single Hill
-#test_1d_array = [10,9,8,7,6,5,4,3,2,1,0,1,2,3,4,5,6,7,8,9,10] ## Single vally
+test_1d_array_1 = [1,2,3,4,5,4,3,4,5,6,5,4,3,2,1,2,3,2,1,0]
+test_1d_array_2 = [10,9,10,9,8,7,6,5,4,3,2,1,0,1,2,3,4,3,2,1,2,3,4,5,6,7,8,9,10,9,10]
+test_1d_array_3 = [0,1,2,3,4,5,6,7,8,9,10,9,8,7,6,5,4,3,2,1,0] ## Single Hill
+test_1d_array_4 = [10,9,8,7,6,5,4,3,2,1,0,1,2,3,4,5,6,7,8,9,10] ## Single vally
 
 
-regions = [-1] * len(test_1d_array)
+flat_array = test_1d_array_2      ## Input array
+dim = [len(flat_array)]         ## Shape of input array [length, length, length].. so on
+
+# ----------------------------------------------------------------------------
+
+
+regions = [-1] * len(flat_array)
 regions_list = []
-
-dim = (len(test_1d_array))
+length = len(flat_array)
 sorted_indices = []
-
-sorted_indices = list(range(len(test_1d_array)))
-sorted_indices.sort(key=lambda idx : test_1d_array[idx])
-
+sorted_indices = list(range(len(flat_array)))
+sorted_indices.sort(key=lambda idx : flat_array[idx])
 region = 0 # Starts at zero
 
-for pixle in range(dim):
-    neighbours = nbhood(sorted_indices[pixle],[dim])
-    assigned = [False] * len(neighbours)
-
+for pixle in range(length):
+    neighbours = nbhood(sorted_indices[pixle],dim)
+    assigned_neighbour = []
+    
     for num_nb in range(len(neighbours)):
         if regions[neighbours[num_nb]] != -1:
-            assigned[num_nb] = True
-    
-    if not any(assigned): # Check if there is zero assigned neighbours
+            assigned_neighbour.append(neighbours[num_nb])
+    unique_assigned_neighbour = list(set(assigned_neighbour))
+            
+    if len(unique_assigned_neighbour) == 0: # Check if there is zero assigned neighbours
         regions[sorted_indices[pixle]] = region
         regions_list.append([None, [],True])
         region += 1
         
-    elif sum(map(bool, assigned)) == 1: # Checks if there is only 1 assigned neighbour
+    elif len(unique_assigned_neighbour) == 1: # Checks if there is only 1 assigned neighbour
         for num_nb in range(len(neighbours)):
             if regions[neighbours[num_nb]] != -1:
                 set_to_this_region = find_highest_parent(regions[neighbours[num_nb]])
@@ -161,12 +204,56 @@ for pixle in range(dim):
         
 
 
-edges = find_edges([dim])
+edges = find_edges(dim)
 inside_regions_list = []
 edge_regions = []
+highest_intetnal_parents = []
 
 for i in range(len(edges)):
     edge_regions.append(regions[edges[i]])
+
+for i in range(len(edge_regions)):
+    set_all_parents_false(edge_regions[i])
+    
+for i in range(region):
+    if regions_list[i][2] == True and regions_list[regions_list[i][0]][2] == False:
+        highest_intetnal_parents.append(i)
+
+
+
+
+
+# ------------- Exporting Tree To Dot File - Use Graphviz To View -------------
+
+from anytree import Node
+
+def find_children_add_to_dict(index):
+    children = regions_list[index][1]
+    for i in range(len(children)):
+        if regions_list[children[i]][2] == True:
+            nodes[children[i]] = Node("- "+str(children[i])+" -", parent = nodes[index])
+            find_children_add_to_dict(children[i])
+        elif regions_list[children[i]][2] == False:
+            nodes[children[i]] = Node(str(children[i]), parent = nodes[index])
+            find_children_add_to_dict(children[i])
+    
+nodes = dict()
+root_node  = find_highest_parent(0)
+nodes[root_node] = Node("Region "+str(root_node)+" = Root", parent = None,)
+find_children_add_to_dict(root_node)
+
+from anytree.exporter import DotExporter
+DotExporter(nodes[root_node]).to_dotfile("tree.dot")
+
+
+
+
+
+
+
+
+
+
 
 
 
