@@ -148,13 +148,15 @@ tests() ## Run all tests
 # -------------------------------- Input data --------------------------------
 
 test_1d_array_1 = [1,2,3,4,5,4,3,4,5,6,5,4,3,2,1,2,3,2,1,0]
-test_1d_array_2 = [10,9,10,9,8,7,6,5,4,3,2,1,0,1,2,3,4,3,2,1,2,3,4,5,6,7,8,9,10,9,10]
+test_1d_array_2 = [10.1,9,10,9,8,7,6,5,4,3,2,1,0,1,2,3,4,3,2,1,2,3,4,5,6,7,8,9,10,9,10.1]
 test_1d_array_3 = [0,1,2,3,4,5,6,7,8,9,10,9,8,7,6,5,4,3,2,1,0] ## Single Hill
 test_1d_array_4 = [10,9,8,7,6,5,4,3,2,1,0,1,2,3,4,5,6,7,8,9,10] ## Single vally
 
+test_2d_array_1 = [5.1,5.2,5.3,5.4,5.5,5.6,3.1,3.2,3.3,5.7,5.8,3.4,4.5,3.5,5.9,5.11,3.6,3.7,3.8,5.12,5.13,5.14,5.15,5.16,5.17]## 5 by 5
 
-flat_array = test_1d_array_2      ## Input array
-dim = [len(flat_array)]         ## Shape of input array [length, length, length].. so on
+
+flat_array = test_big.flatten()      ## Input array
+dim = [61,61]         ## Shape of input array [length, length, length].. so on
 
 # ----------------------------------------------------------------------------
 
@@ -173,7 +175,7 @@ for pixle in range(length):
     
     for num_nb in range(len(neighbours)):
         if regions[neighbours[num_nb]] != -1:
-            assigned_neighbour.append(neighbours[num_nb])
+            assigned_neighbour.append(regions[neighbours[num_nb]])
     unique_assigned_neighbour = list(set(assigned_neighbour))
             
     if len(unique_assigned_neighbour) == 0: # Check if there is zero assigned neighbours
@@ -182,15 +184,14 @@ for pixle in range(length):
         region += 1
         
     elif len(unique_assigned_neighbour) == 1: # Checks if there is only 1 assigned neighbour
-        for num_nb in range(len(neighbours)):
-            if regions[neighbours[num_nb]] != -1:
-                set_to_this_region = find_highest_parent(regions[neighbours[num_nb]])
-                regions[sorted_indices[pixle]] = set_to_this_region
+        set_to_this_region = find_highest_parent(unique_assigned_neighbour[0])
+        regions[sorted_indices[pixle]] = set_to_this_region
     
     else: # multiple assigned neighbours
         adj_regions = []
         for num_nb in range(len(neighbours)):
-            adj_regions.append(regions[neighbours[num_nb]])
+            if regions[neighbours[num_nb]] != -1:
+                adj_regions.append(regions[neighbours[num_nb]])
         region_parents = list(map(find_highest_parent, adj_regions))
         unique_region_parents = list(set(region_parents))
         if len(unique_region_parents) == 1:
@@ -224,6 +225,7 @@ for i in range(region):
 
 
 # ------------- Exporting Tree To Dot File - Use Graphviz To View -------------
+# - number - = Inside     number  = Outside
 
 from anytree import Node
 

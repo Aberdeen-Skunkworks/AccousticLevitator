@@ -157,4 +157,8 @@ y = np.transpose(np.tile(y_distances,(len(y_distances),1)))
 u_plane = u_with_gravity[ :               , : , focus_as_index]
 ax7.plot_wireframe(x,y,u_plane, rstride = 1, cstride = 1)
 
-
+u_plane = u_with_gravity_nano[ :               , : , focus_as_index]
+test_big = np.zeros((len(x),len(x)))
+for a in range(len(x)):
+    for b in range(len(y)):
+       test_big[a,b] = u_plane[a,b]
