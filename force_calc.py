@@ -46,7 +46,7 @@ nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction
 focus_point = [ 0 , 0, 0.025]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
-phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 90)
+phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 45)
 #phi_signature = phase_algorithms.add_vortex_signature(rt, np.copy(phi_focus))
 #phi_signature = phase_algorithms.add_bottle_signature(rt, np.copy(phi_focus),0.03)
 #phi_noise = phase_algorithms.phase_random_noise(2, np.copy(phi_signature)) # number is randomness multiplier (0-1)*multiplier scaled between 0 and 2pi
@@ -157,8 +157,3 @@ y = np.transpose(np.tile(y_distances,(len(y_distances),1)))
 u_plane = u_with_gravity[ :               , : , focus_as_index]
 ax7.plot_wireframe(x,y,u_plane, rstride = 1, cstride = 1)
 
-u_plane = u_with_gravity_nano[ :               , : , focus_as_index]
-test_big = np.zeros((len(x),len(x)))
-for a in range(len(x)):
-    for b in range(len(y)):
-       test_big[a,b] = u_plane[a,b]

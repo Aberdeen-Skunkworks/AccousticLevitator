@@ -154,9 +154,10 @@ test_1d_array_4 = [10,9,8,7,6,5,4,3,2,1,0,1,2,3,4,5,6,7,8,9,10] ## Single vally
 
 test_2d_array_1 = [5.1,5.2,5.3,5.4,5.5,5.6,3.1,3.2,3.3,5.7,5.8,3.4,4.5,3.5,5.9,5.11,3.6,3.7,3.8,5.12,5.13,5.14,5.15,5.16,5.17]## 5 by 5
 
+test_3d_array_1 = [0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
-flat_array = test_big.flatten()      ## Input array
-dim = [61,61]         ## Shape of input array [length, length, length].. so on
+flat_array = u_with_gravity_nano.flatten()     ## Flat input array use .flatten()    
+dim = [61,61,61]         ## Shape of input array [length, length, length].. so on
 
 # ----------------------------------------------------------------------------
 
@@ -220,6 +221,23 @@ for i in range(region):
     if regions_list[i][2] == True and regions_list[regions_list[i][0]][2] == False:
         highest_intetnal_parents.append(i)
 
+region_values = dict()
+for region_iter in range(region):
+    region_values[region_iter] = dict()
+    region_values[region_iter]["region_values"] = []
+    for i in range(length):
+        if regions[i] == region_iter:
+            region_values[region_iter]["region_values"].append(flat_array[i])
+
+    region_values[region_iter]["number_of_values"] = len(region_values[region_iter]["region_values"])
+    region_values[region_iter]["min_value"] = np.min(region_values[region_iter]["region_values"])
+    region_values[region_iter]["max_value"] = np.max(region_values[region_iter]["region_values"])
+    region_values[region_iter]["escape_energy"] = region_values[region_iter]["max_value"] - region_values[region_iter]["min_value"]
+    if regions_list[region_iter][2] == True:
+        region_values[region_iter]["internal_region"] = True
+        print("Escape energy of internal region: ",region_iter," is ", "%.2f" % region_values[region_iter]["escape_energy"]," micro joules ")
+    else:
+        region_values[region_iter]["internal_region"] = False
 
 
 
@@ -228,7 +246,6 @@ for i in range(region):
 # - number - = Inside     number  = Outside
 
 from anytree import Node
-
 def find_children_add_to_dict(index):
     children = regions_list[index][1]
     for i in range(len(children)):
@@ -238,21 +255,45 @@ def find_children_add_to_dict(index):
         elif regions_list[children[i]][2] == False:
             nodes[children[i]] = Node(str(children[i]), parent = nodes[index])
             find_children_add_to_dict(children[i])
+   
     
 nodes = dict()
 root_node  = find_highest_parent(0)
 nodes[root_node] = Node("Region "+str(root_node)+" = Root", parent = None,)
 find_children_add_to_dict(root_node)
-
 from anytree.exporter import DotExporter
 DotExporter(nodes[root_node]).to_dotfile("tree.dot")
 
 
+output_regions = np.reshape(regions,(dim))
 
 
 
-
-
+length_vtk = len(output_regions)
+import vtk; import numpy as  np
+# creating vti image file 
+filename = "regions.vti"
+imageData = vtk.vtkImageData()
+imageData.SetDimensions(length_vtk, length_vtk, length_vtk )
+imageData.SetOrigin( (-length_vtk+1)/2, (-length_vtk+1)/2, 0 )
+if vtk.VTK_MAJOR_VERSION <= 5:
+    imageData.SetNumberOfScalarComponents(1)
+    imageData.SetScalarTypeToDouble()
+else:
+    imageData.AllocateScalars(vtk.VTK_DOUBLE, 1)
+dims = imageData.GetDimensions()
+# Fill every entry of the image data
+for z in range(dims[2]):
+    for y in range(dims[1]):
+        for x in range(dims[0]):
+            imageData.SetScalarComponentFromDouble(x, y, z, 0, output_regions[x,y,z])
+writer = vtk.vtkXMLImageDataWriter()
+writer.SetFileName(filename)
+if vtk.VTK_MAJOR_VERSION <= 5:
+    writer.SetInputConnection(imageData.GetProducerPort())
+else:
+    writer.SetInputData(imageData)
+writer.Write()
 
 
 
