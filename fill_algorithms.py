@@ -1,5 +1,7 @@
     
-import numpy as np
+import constants; import numpy as np; import calc_pressure_field; import time; import algorithms; import math
+import transducer_placment; from vti_writer import vti_writer; import phase_algorithms; import scipy.ndimage
+import numpy.ma as ma
 
 def coord_to_idx(coord, dim):
     idx = coord[-1]
@@ -147,6 +149,38 @@ tests() ## Run all tests
 
 # -------------------------------- Input data --------------------------------
 
+"""
+heights = np.zeros((41,2))
+for height_rise in range(41):
+    heights[height_rise][0] = (height_rise*2)/1000
+     ## to go in the focus point for z : (height_rise*2)/1000
+"""
+    
+# ----------------------Setup for potential calculation------------------------
+
+#rt = transducer_placment.array_grid(0.01,10,10) # spcing , x nummber, y number of transducers
+rt = transducer_placment.big_daddy()
+#rt = transducer_placment.random(88,0.05,0.01)
+ntrans = len (rt)   # Total number of transducers in grid
+
+nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
+
+focus_point = [ 0 , 0, 0.02]
+
+phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
+phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 90)
+#phi_signature = phase_algorithms.add_vortex_signature(rt, np.copy(phi_focus))
+#phi_signature = phase_algorithms.add_bottle_signature(rt, np.copy(phi_focus),0.03)
+#phi_noise = phase_algorithms.phase_random_noise(2, np.copy(phi_signature)) # number is randomness multiplier (0-1)*multiplier scaled between 0 and 2pi
+
+phi = phi_signature
+
+potential_calculated = algorithms.force_calc(focus_point, rt, nt, phi, vti = False) ## Outputs = pabs, fx, fy, fz, u_with_gravity, u_with_gravity_nano, laplace_u
+
+u_with_gravity_nano = potential_calculated[5]
+
+
+
 test_1d_array_1 = [1,2,3,4,5,4,3,4,5,6,5,4,3,2,1,2,3,2,1,0]
 test_1d_array_2 = [10.1,9,10,9,8,7,6,5,4,3,2,1,0,1,2,3,4,3,2,1,2,3,4,5,6,7,8,9,10,9,10.1]
 test_1d_array_3 = [0,1,2,3,4,5,6,7,8,9,10,9,8,7,6,5,4,3,2,1,0] ## Single Hill
@@ -157,9 +191,11 @@ test_2d_array_1 = [5.1,5.2,5.3,5.4,5.5,5.6,3.1,3.2,3.3,5.7,5.8,3.4,4.5,3.5,5.9,5
 test_3d_array_1 = [0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
 flat_array = u_with_gravity_nano.flatten()     ## Flat input array use .flatten()    
-dim = [61,61,61]         ## Shape of input array [length, length, length].. so on
+dim = u_with_gravity_nano.shape        ## Shape of input array [length, length, length].. so on
 
 # ----------------------------------------------------------------------------
+
+
 
 
 regions = [-1] * len(flat_array)
