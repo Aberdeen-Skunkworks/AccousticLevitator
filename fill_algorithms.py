@@ -166,7 +166,9 @@ ntrans = len (rt)   # Total number of transducers in grid
 
 nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
 
-focus_point = [ 0 , 0, 0.07]
+focus_point = [ 0 , 0, 0.080]
+
+calculation_centre_point = [ 0 , 0, 0.05]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
 phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 90)
@@ -176,7 +178,7 @@ phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 90)
 
 phi = phi_signature
 
-potential_calculated = algorithms.force_calc(focus_point, rt, nt, phi, vti = False) ## Outputs = pabs, fx, fy, fz, u_with_gravity, u_with_gravity_nano, laplace_u
+potential_calculated = algorithms.force_calc(calculation_centre_point, rt, nt, phi, vti = False) ## Outputs = pabs, fx, fy, fz, u_with_gravity, u_with_gravity_nano, laplace_u
 
 u_with_gravity_nano = potential_calculated[5]
 
@@ -277,8 +279,21 @@ for region_iter in range(region):
     if regions_list[region_iter][2] == True:
         region_values[region_iter]["internal_region"] = True
         print("Escape energy of internal region: ",region_iter," is ", "%.2f" % region_values[region_iter]["escape_energy"]," micro joules ")
+        min_value = -5000
+        index_of_min = -1
+        for i in range(region_values[region_iter]["number_of_values"]):
+            
+            if flat_array[region_values[region_iter]["region_indexs"][i]] > min_value:
+                min_value = flat_array[region_values[region_iter]["region_indexs"][i]]
+                index_of_min = region_values[region_iter]["region_indexs"][i]
+        if index_of_min == -1:
+            print("min finding location failed")
+        z_distances = np.linspace(-constants.gsize + calculation_centre_point[2],   constants.gsize + calculation_centre_point[2], constants.npoints)
+        print("Height of min = ",z_distances[idx_to_coord(index_of_min,dim)[2]]*1000)
     else:
         region_values[region_iter]["internal_region"] = False
+
+
 
 
 
