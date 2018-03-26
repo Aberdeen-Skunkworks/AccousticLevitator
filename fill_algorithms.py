@@ -155,7 +155,8 @@ for height_rise in range(41):
     heights[height_rise][0] = (height_rise*2)/1000
      ## to go in the focus point for z : (height_rise*2)/1000
 """
-    
+
+
 # ----------------------Setup for potential calculation------------------------
 
 #rt = transducer_placment.array_grid(0.01,10,10) # spcing , x nummber, y number of transducers
@@ -165,7 +166,7 @@ ntrans = len (rt)   # Total number of transducers in grid
 
 nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
 
-focus_point = [ 0 , 0, 0.02]
+focus_point = [ 0 , 0, 0.07]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
 phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 90)
@@ -261,14 +262,18 @@ region_values = dict()
 for region_iter in range(region):
     region_values[region_iter] = dict()
     region_values[region_iter]["region_values"] = []
+    region_values[region_iter]["region_indexs"] = []
     for i in range(length):
         if regions[i] == region_iter:
             region_values[region_iter]["region_values"].append(flat_array[i])
+            region_values[region_iter]["region_indexs"].append(i)
 
     region_values[region_iter]["number_of_values"] = len(region_values[region_iter]["region_values"])
     region_values[region_iter]["min_value"] = np.min(region_values[region_iter]["region_values"])
     region_values[region_iter]["max_value"] = np.max(region_values[region_iter]["region_values"])
+    region_values[region_iter]["region_volume_mm3"] = region_values[region_iter]["number_of_values"] * ((constants.deltaxyz**3) * 10**(9))
     region_values[region_iter]["escape_energy"] = region_values[region_iter]["max_value"] - region_values[region_iter]["min_value"]
+    
     if regions_list[region_iter][2] == True:
         region_values[region_iter]["internal_region"] = True
         print("Escape energy of internal region: ",region_iter," is ", "%.2f" % region_values[region_iter]["escape_energy"]," micro joules ")
