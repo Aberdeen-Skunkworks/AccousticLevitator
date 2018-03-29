@@ -173,3 +173,6 @@ class Controller():
         end = timeit.default_timer()
         return NTests/float(end-start)
         
+    def syncResets(self):
+        self.com.write(bytearray([0b11110000]))
+        self.com.write(bytearray([0b11110001]))

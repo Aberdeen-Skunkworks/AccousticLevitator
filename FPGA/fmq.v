@@ -22,7 +22,7 @@ endgenerate
 
 //The main clock, outputting the zero-time shift signal, used for sync with other boards and for ensuring reloads happen at the start of a sync cycle.
 //This only resets/reloads when the reset line is down (or the external reload is high), unlike the other clocks which go down on reload
-assign main_clk_reset = rst || !EXT_SYNC;
+assign main_clk_reset = rst && EXT_SYNC;
 clock #(OFFSET_WIDTH) main_clk(clk, main_clk_reset, {OFFSET_WIDTH{1'b0}}, DIVIDE, 1, 1, MAIN_CLK_OUT);
 
 wire dac_clk;
@@ -160,6 +160,9 @@ begin
 						//Wipe the command buffer
 						cmdbuffer <= 24'd0;
 					end					
+				end
+				2'b11 : begin
+					// This command byte is for the Arduino and should never get here
 				end
 				endcase
 			end
