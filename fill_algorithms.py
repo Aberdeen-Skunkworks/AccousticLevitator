@@ -166,9 +166,9 @@ ntrans = len (rt)   # Total number of transducers in grid
 
 nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
 
-focus_point = [ 0 , 0, 0.080]
+focus_point = [ 0 , 0, 0.04]
 
-calculation_centre_point = [ 0 , 0, 0.05]
+calculation_centre_point = [ 0 , 0, 0.04]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
 phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 90)
@@ -178,7 +178,7 @@ phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 90)
 
 phi = phi_signature
 
-potential_calculated = algorithms.force_calc(calculation_centre_point, rt, nt, phi, vti = False) ## Outputs = pabs, fx, fy, fz, u_with_gravity, u_with_gravity_nano, laplace_u
+potential_calculated = algorithms.force_calc(calculation_centre_point, rt, nt, phi, vti = True) ## Outputs = pabs, fx, fy, fz, u_with_gravity, u_with_gravity_nano, laplace_u
 
 u_with_gravity_nano = potential_calculated[5]
 

@@ -271,6 +271,6 @@ def force_calc(focus_point, rt, nt, phi, vti = False): # Set vti to True to outp
     # -------------------Creating output images and vtk file----------------------
     
     if vti == True:
-        vti_writer (constants.npoints, pabs, fx, fy, fz, u_with_gravity_nano, laplace_u)
+        vti_writer(constants.npoints, pabs, fx, fy, fz, u_with_gravity_nano, laplace_u)
     
     return pabs, fx, fy, fz, u_with_gravity, u_with_gravity_nano, laplace_u
