@@ -149,29 +149,24 @@ tests() ## Run all tests
 
 # -------------------------------- Input data --------------------------------
 
-"""
-heights = np.zeros((41,2))
-for height_rise in range(41):
-    heights[height_rise][0] = (height_rise*2)/1000
-     ## to go in the focus point for z : (height_rise*2)/1000
-"""
 
 
 # ----------------------Setup for potential calculation------------------------
 
-#rt = transducer_placment.array_grid(0.01,10,10) # spcing , x nummber, y number of transducers
-rt = transducer_placment.big_daddy()
+rt = transducer_placment.array_grid(0.01,8,11) # spcing , x nummber, y number of transducers
+#rt = transducer_placment.big_daddy()
 #rt = transducer_placment.random(88,0.05,0.01)
 ntrans = len (rt)   # Total number of transducers in grid
 
 nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
 
-focus_point = [ 0 , 0, 0.04]
 
-calculation_centre_point = [ 0 , 0, 0.04]
+focus_point = [ 0 , 0, 0.065]
+
+calculation_centre_point = [ 0 , 0, 0.06]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
-phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 90)
+phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 0)
 #phi_signature = phase_algorithms.add_vortex_signature(rt, np.copy(phi_focus))
 #phi_signature = phase_algorithms.add_bottle_signature(rt, np.copy(phi_focus),0.03)
 #phi_noise = phase_algorithms.phase_random_noise(2, np.copy(phi_signature)) # number is randomness multiplier (0-1)*multiplier scaled between 0 and 2pi
@@ -279,8 +274,7 @@ for region_iter in range(region):
     if regions_list[region_iter][2] == True:
         region_values[region_iter]["internal_region"] = True
         print("Escape energy of internal region: ",region_iter," is ", "%.2f" % region_values[region_iter]["escape_energy"]," micro joules ")
-        
-        
+
         ## Crappy implamentation just wanted results fast
         
         min_value = -5000
@@ -300,8 +294,7 @@ for region_iter in range(region):
         
     else:
         region_values[region_iter]["internal_region"] = False
-
-
+        
 
 
 
@@ -350,7 +343,7 @@ dims = imageData.GetDimensions()
 for z in range(dims[2]):
     for y in range(dims[1]):
         for x in range(dims[0]):
-            imageData.SetScalarComponentFromDouble(x, y, z, 0, output_regions[x,y,z])
+            imageData.SetScalarComponentFromDouble(x, y, z, 0, output_regions[y,x,z])
 writer = vtk.vtkXMLImageDataWriter()
 writer.SetFileName(filename)
 if vtk.VTK_MAJOR_VERSION <= 5:

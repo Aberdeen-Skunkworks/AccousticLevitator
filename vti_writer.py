@@ -84,7 +84,7 @@ def vti_writer (npoints,realcombined,fx,fy,fz,u, laplace_u):
     
     imageDataForce = vtk.vtkImageData()
     imageDataForce.SetDimensions(npoints, npoints, npoints)
-    imageData.SetOrigin( (-npoints+1)/2, (-npoints+1)/2, 0 )
+    imageDataForce.SetOrigin( (-npoints+1)/2, (-npoints+1)/2, 0 )
     if vtk.VTK_MAJOR_VERSION <= 5:
         imageDataForce.SetNumberOfScalarComponents(3)
         imageDataForce.SetScalarTypeToDouble()
