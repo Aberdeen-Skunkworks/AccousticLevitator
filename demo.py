@@ -251,7 +251,7 @@ elif choose == ("GUI"):
             self.up = QtWidgets.QPushButton('Up')
             self.down = QtWidgets.QPushButton('Down')
             self.fuzz = QtWidgets.QPushButton('FUZZ')
-            self.reset = QtWidgets.QPushButton('Reset to [0, 0.02, 0]')
+            self.reset = QtWidgets.QPushButton('Reset to [0, 0, 0.02]')
             self.turn_off = QtWidgets.QPushButton('OFF')
             self.turn_on = QtWidgets.QPushButton('ON')   
             self.capture = QtWidgets.QPushButton('Capture')   

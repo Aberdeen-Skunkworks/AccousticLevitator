@@ -207,8 +207,6 @@ for height_rise in range(0,41):
     # ----------------------------------------------------------------------------
     
     
-    
-    
     regions = [-1] * len(flat_array)
     regions_list = []
     length = len(flat_array)
@@ -287,22 +285,21 @@ for height_rise in range(0,41):
         if regions_list[region_iter][2] == True:
             region_values[region_iter]["internal_region"] = True
             print("Escape energy of internal region: ",region_iter," is ", "%.2f" % region_values[region_iter]["escape_energy"]," micro joules ")
-            if region_values[region_iter]["escape_energy"] > max_for_this_loop:
-                max_for_this_loop = region_values[region_iter]["escape_energy"]
-            
+    
             ## Crappy implamentation just wanted results fast
             
-            min_value = -5000
+            min_value = 50000
             index_of_min = -1
             for i in range(region_values[region_iter]["number_of_values"]):
                 
-                if flat_array[region_values[region_iter]["region_indexs"][i]] > min_value:
+                if flat_array[region_values[region_iter]["region_indexs"][i]] < min_value:
                     min_value = flat_array[region_values[region_iter]["region_indexs"][i]]
                     index_of_min = region_values[region_iter]["region_indexs"][i]
             if index_of_min == -1:
                 print("min finding location failed")
             z_distances = np.linspace(-constants.gsize + calculation_centre_point[2],   constants.gsize + calculation_centre_point[2], constants.npoints)
             print("Height of min = ",z_distances[idx_to_coord(index_of_min,dim)[2]]*1000)
+            print("index of min = ", index_of_min)
             
             
             

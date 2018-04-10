@@ -45,7 +45,7 @@ def find_edges(dim): # As array [dimention,dimention...] (Finds index of edges o
     edges = []
     smaller_array = np.full((np.subtract(dim,2)), False, dtype=bool)
     same_sized_with_edges = np.pad(smaller_array, (1), 'constant', constant_values=(True))
-    flat_version = same_sized_with_edges.flatten()
+    flat_version = same_sized_with_edges.flatten(order='F')
     for i in range(len(flat_version)):
         if flat_version[i] == True:
             edges.append(i)
@@ -153,7 +153,7 @@ tests() ## Run all tests
 
 # ----------------------Setup for potential calculation------------------------
 
-rt = transducer_placment.array_grid(0.01,8,11) # spcing , x nummber, y number of transducers
+rt = transducer_placment.array_grid(0.01,10,10) # spcing , x nummber, y number of transducers
 #rt = transducer_placment.big_daddy()
 #rt = transducer_placment.random(88,0.05,0.01)
 ntrans = len (rt)   # Total number of transducers in grid
@@ -161,9 +161,9 @@ ntrans = len (rt)   # Total number of transducers in grid
 nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
 
 
-focus_point = [ 0 , 0, 0.065]
+focus_point = [ 0 , 0, 0.04]
 
-calculation_centre_point = [ 0 , 0, 0.06]
+calculation_centre_point = [ 0 , 0, 0.04]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
 phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 0)
@@ -188,8 +188,9 @@ test_2d_array_1 = [5.1,5.2,5.3,5.4,5.5,5.6,3.1,3.2,3.3,5.7,5.8,3.4,4.5,3.5,5.9,5
 
 test_3d_array_1 = [0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
-flat_array = u_with_gravity_nano.flatten()     ## Flat input array use .flatten()    
-dim = u_with_gravity_nano.shape        ## Shape of input array [length, length, length].. so on
+flat_array = u_with_gravity_nano.flatten(order='F')     ## Flat input array use .flatten(order='F')
+dim = u_with_gravity_nano.shape        ## Shape of input array [length, length, length].. so on, has to be array
+
 
 # ----------------------------------------------------------------------------
 
@@ -277,17 +278,18 @@ for region_iter in range(region):
 
         ## Crappy implamentation just wanted results fast
         
-        min_value = -5000
+        min_value = 50000
         index_of_min = -1
         for i in range(region_values[region_iter]["number_of_values"]):
             
-            if flat_array[region_values[region_iter]["region_indexs"][i]] > min_value:
+            if flat_array[region_values[region_iter]["region_indexs"][i]] < min_value:
                 min_value = flat_array[region_values[region_iter]["region_indexs"][i]]
                 index_of_min = region_values[region_iter]["region_indexs"][i]
         if index_of_min == -1:
             print("min finding location failed")
         z_distances = np.linspace(-constants.gsize + calculation_centre_point[2],   constants.gsize + calculation_centre_point[2], constants.npoints)
         print("Height of min = ",z_distances[idx_to_coord(index_of_min,dim)[2]]*1000)
+        print("index of min = ", index_of_min)
         
         
         
@@ -322,7 +324,7 @@ from anytree.exporter import DotExporter
 DotExporter(nodes[root_node]).to_dotfile("tree.dot")
 
 
-output_regions = np.reshape(regions,(dim))
+output_regions = np.reshape(regions,(dim), order='F')
 
 
 
