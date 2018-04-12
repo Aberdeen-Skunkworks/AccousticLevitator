@@ -149,26 +149,54 @@ tests() ## Run all tests
 
 # -------------------------------- Input data --------------------------------
 
+"""
+##opposite arrays
+    
+rt = transducer_placment.big_daddy()
+
+ntrans = len (rt)   # Total number of transducers in grid
+nt_1 = transducer_placment.direction_vectors(ntrans,[1,0,0]) # nt is the direction vector of each transducer
+nt_2 = transducer_placment.direction_vectors(ntrans,[-1,0,0])
+
+sideways_1 = np.copy(rt)
+sideways_2 = np.copy(rt)
+
+sideways_1[:,0] = np.add(rt[:,2], -0.0516)
+sideways_1[:,2] = np.add(rt[:,0], 0.05)
+
+sideways_2[:,0] = np.add(rt[:,2], 0.0516)
+sideways_2[:,2] = np.add(rt[:,0], 0.05)
+
+rt_both_arrays = np.append(sideways_1, sideways_2, axis=0)
+nt_both_arrays = np.append(nt_1, nt_2, axis=0)
+
+#transducer_placment.plot_as_vectors(rt_both_arrays,nt_both_arrays)  # Use to plot the array layout in 3D
+
+rt = rt_both_arrays
+
+nt = nt_both_arrays
+"""
 
 
 # ----------------------Setup for potential calculation------------------------
 
-rt = transducer_placment.array_grid(0.01,10,10) # spcing , x nummber, y number of transducers
-#rt = transducer_placment.big_daddy()
+#rt = transducer_placment.array_grid(0.010,10,10) # spcing , x nummber, y number of transducers
+#rt = transducer_placment.hex_grid(0.01,10,10)
+#rt = transducer_placment.random(100, 0.06,0.01)
+rt = transducer_placment.big_daddy()
 #rt = transducer_placment.random(88,0.05,0.01)
 ntrans = len (rt)   # Total number of transducers in grid
 
 nt = transducer_placment.direction_vectors(ntrans,[0,0,1]) # nt is the direction vector of each transducer
 
+focus_point = [ 0 , 0, 0.024]
 
-focus_point = [ 0 , 0, 0.04]
-
-calculation_centre_point = [ 0 , 0, 0.04]
+calculation_centre_point = [ 0 , 0, 0.024]
 
 phi_focus = phase_algorithms.phase_find(rt, focus_point[0], focus_point[1], focus_point[2]) # phi is the initial phase of each transducer to focus on a point
-phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 0)
+#phi_signature = phase_algorithms.add_twin_signature(rt, np.copy(phi_focus), 90)
 #phi_signature = phase_algorithms.add_vortex_signature(rt, np.copy(phi_focus))
-#phi_signature = phase_algorithms.add_bottle_signature(rt, np.copy(phi_focus),0.03)
+phi_signature = phase_algorithms.add_bottle_signature(rt, np.copy(phi_focus),0.03)
 #phi_noise = phase_algorithms.phase_random_noise(2, np.copy(phi_signature)) # number is randomness multiplier (0-1)*multiplier scaled between 0 and 2pi
 
 phi = phi_signature
@@ -272,7 +300,7 @@ for region_iter in range(region):
     region_values[region_iter]["region_volume_mm3"] = region_values[region_iter]["number_of_values"] * ((constants.deltaxyz**3) * 10**(9))
     region_values[region_iter]["escape_energy"] = region_values[region_iter]["max_value"] - region_values[region_iter]["min_value"]
     
-    if regions_list[region_iter][2] == True:
+    if regions_list[region_iter][2] == True and region_values[region_iter]["number_of_values"] > 5:
         region_values[region_iter]["internal_region"] = True
         print("Escape energy of internal region: ",region_iter," is ", "%.2f" % region_values[region_iter]["escape_energy"]," micro joules ")
 
