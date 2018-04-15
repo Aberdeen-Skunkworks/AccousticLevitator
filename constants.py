@@ -22,7 +22,7 @@ else:
     print("Number of points is odd (central point exists): ", npoints)
  
 
-phaseresolution = 1250      # Phase resolution x as in ( 2*pi )/( x ) number of divisions of the phases
+phaseresolution = 15     # Phase resolution x as in ( 2*pi )/( x ) number of divisions of the phases
 p0 = 0.364                  # Amplitude constant 0.364 checked to be correct for our baord
 A = 18                 # Peak to peak amplitude
 a = 0.0045                  # Piston radius
