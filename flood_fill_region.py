@@ -147,7 +147,7 @@ def flood_region(neighbours, x, y, z, current_minimum, region):
                     end_point = [neighbours[new_minimum_id][1], neighbours[new_minimum_id][2], neighbours[new_minimum_id][2]]
                     run = False
                     for number in range(len(neighbours)):
-                    1       been[int(neighbours[number][1]),int(neighbours[number][2]),int(neighbours[number][3])] = False
+                           been[int(neighbours[number][1]),int(neighbours[number][2]),int(neighbours[number][3])] = False
                     return current_minimum, end_point, neighbours
         
         else:
