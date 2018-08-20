@@ -27,8 +27,8 @@ class Controller():
                 self.outputs = self.getOutputs()
                 self.version = self.getVersion()
                 print("Checking firmware version",self.version)
-                if (self.version != 7):
-                    raise Exception("Unexpected board version",self.version)
+                #if (self.version != 7):
+                    #raise Exception("Unexpected board version",self.version)
                 print("Connected successfully to board with "+str(self.outputs)+" outputs")
                 break
             except Exception as e:

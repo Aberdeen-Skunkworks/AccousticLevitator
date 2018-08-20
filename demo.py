@@ -36,7 +36,7 @@ choose = input("Please choose a mode from above: ")
 if choose == ("h"):
     print ("Haptic mode selected")
     phase_index = np.zeros((ntrans),dtype=int)
-    phi_focus = phase_algorithms.phase_find(rt,0,0,0.12)
+    phi_focus = phase_algorithms.phase_find(rt,0,0,0.05)
     for transducer in range(0,ntrans):
         phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))
         
@@ -161,7 +161,7 @@ elif choose == ("w"):
     # Frequency mode not really required anymore
     from connect import Controller  
     phase_index = np.zeros((ntrans),dtype=int)
-    phi_focus = phase_algorithms.phase_find(rt,0,0,0.2)
+    phi_focus = phase_algorithms.phase_find(rt,0,0,0.05)
     for transducer in range(0,ntrans):
         phase_index[transducer] = int(2500-phi_focus[transducer]/((2*math.pi)/1250))
     
