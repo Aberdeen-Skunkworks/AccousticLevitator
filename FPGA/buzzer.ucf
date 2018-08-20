@@ -6,18 +6,21 @@ NET "RST" LOC = "P101" ;
 #NET "UART_TX" LOC = "p178" ; 
 #NET "UART_RX" LOC = "p172" ; 
 #For the Lolin32 board
-NET "UART_TX" LOC = "p203" ; 
-NET "UART_RX" LOC = "p200" ;
-#197
-#193
-#190
-#187
-NET "EXT_SYNC" PULLDOWN;
-NET "EXT_SYNC" LOC = "p185";
-NET "OE_OUT" LOC = "p180";
-NET "RELOAD_OUT" LOC = "p178";
-NET "MAIN_CLK_OUT" LOC = "p172";
 
+/// PINS!!!
+NET "UART_TX" LOC = "p203" ; //Opposite side to ground pin 9
+NET "UART_RX" LOC = "p200" ; //pin 8
+#197 //pin 7
+#193 //pin 6
+#190 //pin 5
+#187 //pin 4
+NET "EXT_SYNC" PULLDOWN;
+NET "EXT_SYNC" LOC = "p185"; //pin 3
+NET "OE_OUT" LOC = "p180"; //pin 2
+NET "RELOAD_OUT" LOC = "p178"; //pin 1
+NET "MAIN_CLK_OUT" LOC = "p172"; //pin 0
+
+/// LEDs!
 NET "led[0]" LOC =" P68";
 NET "led[1]" LOC = "P78" ;
 NET "led[2]" LOC = "P83" ;

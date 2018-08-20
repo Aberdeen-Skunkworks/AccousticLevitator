@@ -22,7 +22,7 @@ endgenerate
 
 //The main clock, outputting the zero-time shift signal, used for sync with other boards and for ensuring reloads happen at the start of a sync cycle.
 //This only resets/reloads when the reset line is down (or the external reload is high), unlike the other clocks which go down on reload
-assign main_clk_reset = rst && EXT_SYNC;
+assign main_clk_reset = rst && !EXT_SYNC;
 clock #(OFFSET_WIDTH) main_clk(clk, main_clk_reset, {OFFSET_WIDTH{1'b0}}, DIVIDE, 1, 1, MAIN_CLK_OUT);
 
 wire dac_clk;
@@ -36,8 +36,9 @@ assign OE_OUT = OE;
 
 reg last_main_clk;
 reg reload_next;
-//Only reload on a negative transition of the Main Clock, and when a reload is due, or when an external reload is called!
-assign reload_cond = (last_main_clk && !MAIN_CLK_OUT && reload_next);
+//Only reload on a negative transition of the Main Clock, and when a reload is due!
+assign falling_main_clk = last_main_clk && !MAIN_CLK_OUT; 
+assign reload_cond = (falling_main_clk && reload_next);
 always@(posedge clk) begin
 	if (reload_cond) begin
 		reload_now <= 1'b0; //Reload happens via a low reload line
