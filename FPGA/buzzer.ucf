@@ -1,6 +1,6 @@
 ##############################################Core3S500E#################################################
-NET "clk" LOC = "P184" ;
-NET "RST" LOC = "P101" ;
+NET "clk" LOC = "P184" | SLEW=SLOW;
+NET "RST" LOC = "P101" | SLEW=SLOW;
 
 #For the serial board
 #NET "UART_TX" LOC = "p178" ; 
@@ -8,109 +8,108 @@ NET "RST" LOC = "P101" ;
 #For the Lolin32 board
 
 /// PINS!!!
-NET "UART_TX" LOC = "p203" ; //Opposite side to ground pin 9
-NET "UART_RX" LOC = "p200" ; //pin 8
+NET "UART_TX" LOC = "p203" | SLEW=SLOW; //Opposite side to ground pin 9
+NET "UART_RX" LOC = "p200" | SLEW=SLOW; //pin 8
 #197 //pin 7
 #193 //pin 6
 #190 //pin 5
 #187 //pin 4
-NET "EXT_SYNC" PULLDOWN;
-NET "EXT_SYNC" LOC = "p185"; //pin 3
-NET "OE_OUT" LOC = "p180"; //pin 2
-NET "RELOAD_OUT" LOC = "p178"; //pin 1
-NET "MAIN_CLK_OUT" LOC = "p172"; //pin 0
+NET "EXT_SYNC" LOC = "p185" | PULLDOWN | SLEW=SLOW; //pin 3
+NET "OE_OUT" LOC = "p180" | SLEW=SLOW; //pin 2
+NET "RELOAD_OUT" LOC = "p178" | SLEW=SLOW; //pin 1
+NET "MAIN_CLK_OUT" LOC = "p172" | SLEW=SLOW; //pin 0
 
 /// LEDs!
-NET "led[0]" LOC =" P68";
-NET "led[1]" LOC = "P78" ;
-NET "led[2]" LOC = "P83" ;
-NET "led[3]" LOC = "P89";
+NET "led[0]" LOC =" P68" | SLEW=SLOW;
+NET "led[1]" LOC = "P78" | SLEW=SLOW;
+NET "led[2]" LOC = "P83" | SLEW=SLOW;
+NET "led[3]" LOC = "P89" | SLEW=SLOW;
 
-NET "tx[0]"  LOC = "p2";
-NET "tx[1]"  LOC = "p4";
-NET "tx[2]"  LOC = "p165";
-NET "tx[3]"  LOC = "p168";
-NET "tx[4]"  LOC = "p163";
-NET "tx[5]"  LOC = "p161";
-NET "tx[6]"  LOC = "p162";
-NET "tx[7]"  LOC = "p196";
-NET "tx[8]"  LOC = "p199";
-NET "tx[9]"  LOC = "p192";
-NET "tx[10]"  LOC = "p189";
-NET "tx[11]"  LOC = "p177";
-NET "tx[12]"  LOC = "p179";
-NET "tx[13]"  LOC = "p171";
-NET "tx[14]"  LOC = "p167";
-NET "tx[15]"  LOC = "p164";
-NET "tx[16]"  LOC = "p11";
-NET "tx[17]"  LOC = "p15";
-NET "tx[18]"  LOC = "p19";
-NET "tx[19]"  LOC = "p16";
-NET "tx[20]"  LOC = "p186";
-NET "tx[21]"  LOC = "p181";
-NET "tx[22]"  LOC = "p152";
-NET "tx[23]"  LOC = "p160";
-NET "tx[24]"  LOC = "p150";
-NET "tx[25]"  LOC = "p30";
-NET "tx[26]"  LOC = "p33";
-NET "tx[27]"  LOC = "p31";
-NET "tx[28]"  LOC = "p29";
-NET "tx[29]"  LOC = "p153";
-NET "tx[30]"  LOC = "p151";
-NET "tx[31]"  LOC = "p139";
-NET "tx[32]"  LOC = "p144";
-NET "tx[33]"  LOC = "p146";
-NET "tx[34]"  LOC = "p35";
-NET "tx[35]"  LOC = "p39";
-NET "tx[36]"  LOC = "p40";
-NET "tx[37]"  LOC = "p36";
-NET "tx[38]"  LOC = "p147";
-NET "tx[39]"  LOC = "p145";
-NET "tx[40]"  LOC = "p122";
-NET "tx[41]"  LOC = "p126";
-NET "tx[42]"  LOC = "p119";
-NET "tx[43]"  LOC = "p41";
-NET "tx[44]"  LOC = "p45";
-NET "tx[45]"  LOC = "p47";
-NET "tx[46]"  LOC = "p42";
-NET "tx[47]"  LOC = "p140";
-NET "tx[48]"  LOC = "p138";
-NET "tx[49]"  LOC = "p108";
-NET "tx[50]"  LOC = "p112";
-NET "tx[51]"  LOC = "p115";
-NET "tx[52]"  LOC = "p48";
-NET "tx[53]"  LOC = "p50";
-NET "tx[54]"  LOC = "p55";
-NET "tx[55]"  LOC = "p49";
-NET "tx[56]"  LOC = "p135";
-NET "tx[57]"  LOC = "p133";
-NET "tx[58]"  LOC = "p100";
-NET "tx[59]"  LOC = "p106";
-NET "tx[60]"  LOC = "p98";
-NET "tx[61]"  LOC = "p77";
-NET "tx[62]"  LOC = "p75";
-NET "tx[63]"  LOC = "p63";
-NET "tx[64]"  LOC = "p61";
-NET "tx[65]"  LOC = "p129";
-NET "tx[66]"  LOC = "p127";
-NET "tx[67]"  LOC = "p109";
-NET "tx[68]"  LOC = "p93";
-NET "tx[69]"  LOC = "p96";
-NET "tx[70]"  LOC = "p69";
-NET "tx[71]"  LOC = "p64";
-NET "tx[72]"  LOC = "p74";
-NET "tx[73]"  LOC = "p65";
-NET "tx[74]"  LOC = "p123";
-NET "tx[75]"  LOC = "p120";
-NET "tx[76]"  LOC = "p102";
-NET "tx[77]"  LOC = "p107";
-NET "tx[78]"  LOC = "p99";
-NET "tx[79]"  LOC = "p62";
-NET "tx[80]"  LOC = "p60";
-NET "tx[81]"  LOC = "p82";
-NET "tx[82]"  LOC = "p76";
-NET "tx[83]"  LOC = "p116";
-NET "tx[84]"  LOC = "p113";
-NET "tx[85]"  LOC = "p94";
-NET "tx[86]"  LOC = "p90";
-NET "tx[87]"  LOC = "p97";
+NET "tx[0]"  LOC = "p2" | SLEW=SLOW;
+NET "tx[1]"  LOC = "p4" | SLEW=SLOW;
+NET "tx[2]"  LOC = "p165" | SLEW=SLOW;
+NET "tx[3]"  LOC = "p168" | SLEW=SLOW;
+NET "tx[4]"  LOC = "p163" | SLEW=SLOW;
+NET "tx[5]"  LOC = "p161" | SLEW=SLOW;
+NET "tx[6]"  LOC = "p162" | SLEW=SLOW;
+NET "tx[7]"  LOC = "p196" | SLEW=SLOW;
+NET "tx[8]"  LOC = "p199" | SLEW=SLOW;
+NET "tx[9]"  LOC = "p192" | SLEW=SLOW;
+NET "tx[10]"  LOC = "p189" | SLEW=SLOW;
+NET "tx[11]"  LOC = "p177" | SLEW=SLOW;
+NET "tx[12]"  LOC = "p179" | SLEW=SLOW;
+NET "tx[13]"  LOC = "p171" | SLEW=SLOW;
+NET "tx[14]"  LOC = "p167" | SLEW=SLOW;
+NET "tx[15]"  LOC = "p164" | SLEW=SLOW;
+NET "tx[16]"  LOC = "p11" | SLEW=SLOW;
+NET "tx[17]"  LOC = "p15" | SLEW=SLOW;
+NET "tx[18]"  LOC = "p19" | SLEW=SLOW;
+NET "tx[19]"  LOC = "p16" | SLEW=SLOW;
+NET "tx[20]"  LOC = "p186" | SLEW=SLOW;
+NET "tx[21]"  LOC = "p181" | SLEW=SLOW;
+NET "tx[22]"  LOC = "p152" | SLEW=SLOW;
+NET "tx[23]"  LOC = "p160" | SLEW=SLOW;
+NET "tx[24]"  LOC = "p150" | SLEW=SLOW;
+NET "tx[25]"  LOC = "p30" | SLEW=SLOW;
+NET "tx[26]"  LOC = "p33" | SLEW=SLOW;
+NET "tx[27]"  LOC = "p31" | SLEW=SLOW;
+NET "tx[28]"  LOC = "p29" | SLEW=SLOW;
+NET "tx[29]"  LOC = "p153" | SLEW=SLOW;
+NET "tx[30]"  LOC = "p151" | SLEW=SLOW;
+NET "tx[31]"  LOC = "p139" | SLEW=SLOW;
+NET "tx[32]"  LOC = "p144" | SLEW=SLOW;
+NET "tx[33]"  LOC = "p146" | SLEW=SLOW;
+NET "tx[34]"  LOC = "p35" | SLEW=SLOW;
+NET "tx[35]"  LOC = "p39" | SLEW=SLOW;
+NET "tx[36]"  LOC = "p40" | SLEW=SLOW;
+NET "tx[37]"  LOC = "p36" | SLEW=SLOW;
+NET "tx[38]"  LOC = "p147" | SLEW=SLOW;
+NET "tx[39]"  LOC = "p145" | SLEW=SLOW;
+NET "tx[40]"  LOC = "p122" | SLEW=SLOW;
+NET "tx[41]"  LOC = "p126" | SLEW=SLOW;
+NET "tx[42]"  LOC = "p119" | SLEW=SLOW;
+NET "tx[43]"  LOC = "p41" | SLEW=SLOW;
+NET "tx[44]"  LOC = "p45" | SLEW=SLOW;
+NET "tx[45]"  LOC = "p47" | SLEW=SLOW;
+NET "tx[46]"  LOC = "p42" | SLEW=SLOW;
+NET "tx[47]"  LOC = "p140" | SLEW=SLOW;
+NET "tx[48]"  LOC = "p138" | SLEW=SLOW;
+NET "tx[49]"  LOC = "p108" | SLEW=SLOW;
+NET "tx[50]"  LOC = "p112" | SLEW=SLOW;
+NET "tx[51]"  LOC = "p115" | SLEW=SLOW;
+NET "tx[52]"  LOC = "p48" | SLEW=SLOW;
+NET "tx[53]"  LOC = "p50" | SLEW=SLOW;
+NET "tx[54]"  LOC = "p55" | SLEW=SLOW;
+NET "tx[55]"  LOC = "p49" | SLEW=SLOW;
+NET "tx[56]"  LOC = "p135" | SLEW=SLOW;
+NET "tx[57]"  LOC = "p133" | SLEW=SLOW;
+NET "tx[58]"  LOC = "p100" | SLEW=SLOW;
+NET "tx[59]"  LOC = "p106" | SLEW=SLOW;
+NET "tx[60]"  LOC = "p98" | SLEW=SLOW;
+NET "tx[61]"  LOC = "p77" | SLEW=SLOW;
+NET "tx[62]"  LOC = "p75" | SLEW=SLOW;
+NET "tx[63]"  LOC = "p63" | SLEW=SLOW;
+NET "tx[64]"  LOC = "p61" | SLEW=SLOW;
+NET "tx[65]"  LOC = "p129" | SLEW=SLOW;
+NET "tx[66]"  LOC = "p127" | SLEW=SLOW;
+NET "tx[67]"  LOC = "p109" | SLEW=SLOW;
+NET "tx[68]"  LOC = "p93" | SLEW=SLOW;
+NET "tx[69]"  LOC = "p96" | SLEW=SLOW;
+NET "tx[70]"  LOC = "p69" | SLEW=SLOW;
+NET "tx[71]"  LOC = "p64" | SLEW=SLOW;
+NET "tx[72]"  LOC = "p74" | SLEW=SLOW;
+NET "tx[73]"  LOC = "p65" | SLEW=SLOW;
+NET "tx[74]"  LOC = "p123" | SLEW=SLOW;
+NET "tx[75]"  LOC = "p120" | SLEW=SLOW;
+NET "tx[76]"  LOC = "p102" | SLEW=SLOW;
+NET "tx[77]"  LOC = "p107" | SLEW=SLOW;
+NET "tx[78]"  LOC = "p99" | SLEW=SLOW;
+NET "tx[79]"  LOC = "p62" | SLEW=SLOW;
+NET "tx[80]"  LOC = "p60" | SLEW=SLOW;
+NET "tx[81]"  LOC = "p82" | SLEW=SLOW;
+NET "tx[82]"  LOC = "p76" | SLEW=SLOW;
+NET "tx[83]"  LOC = "p116" | SLEW=SLOW;
+NET "tx[84]"  LOC = "p113" | SLEW=SLOW;
+NET "tx[85]"  LOC = "p94" | SLEW=SLOW;
+NET "tx[86]"  LOC = "p90" | SLEW=SLOW;
+NET "tx[87]"  LOC = "p97" | SLEW=SLOW;
