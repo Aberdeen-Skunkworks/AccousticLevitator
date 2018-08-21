@@ -5,7 +5,7 @@ parameter FREQ = 40000;
 parameter OFFSET_WIDTH = 11;
 parameter [OFFSET_WIDTH-2:0] DIVIDE = CLOCK / FREQ / 2 - 1;
 parameter DATA_WIDTH = 8;
-parameter BAUD = 460800;
+parameter BAUD = 250000; //We need to use something that divides nice
 parameter [15:0] UART_SCALE = CLOCK/(BAUD*8);
 parameter VERSION = 8'd7;
 reg reload_now;
@@ -38,7 +38,7 @@ reg last_main_clk;
 reg reload_next;
 //Only reload on a negative transition of the Main Clock, and when a reload is due!
 assign falling_main_clk = last_main_clk && !MAIN_CLK_OUT; 
-assign reload_cond = (falling_main_clk && reload_next);
+assign reload_cond = falling_main_clk && reload_next;
 always@(posedge clk) begin
 	if (reload_cond) begin
 		reload_now <= 1'b0; //Reload happens via a low reload line
