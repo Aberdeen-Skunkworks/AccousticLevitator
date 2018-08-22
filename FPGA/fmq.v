@@ -30,7 +30,24 @@ reg [18:0] dac_clk_divisor;
 Clock_divider #(19) dac_clk_div(clk, dac_clk, dac_clk_divisor, rst);
 
 reg [8:0] dac_value;
-dac #(7) output_dac(OE, dac_value, dac_clk, rst);
+reg [8:0] dac_counter;
+reg OE_driver;
+always@(posedge dac_clk) begin
+	if (!rst) begin
+		dac_counter <= 0;
+	end else begin
+		if (dac_counter < dac_value) begin
+			OE_driver <= 1;
+		end else begin
+			OE_driver <= 0;
+		end
+		dac_counter <= dac_counter + 1;
+	end
+end
+
+assign OE = OE_driver;
+
+//dac #(7) output_dac(OE, dac_value, dac_clk, rst);
 
 assign OE_OUT = OE;
 
@@ -71,9 +88,10 @@ uart #(DATA_WIDTH)
 assign led[0] = ~reload_now;
 /*The second LED flashes to indicate the system is working, even under reset*/
 reg [27:0] LEDcounter;
-assign led[1] = LEDcounter[25];
-assign led[2] = LEDcounter[26];
-assign led[3] = LEDcounter[27];
+assign led[1] = LEDcounter[24];
+assign led[2] = LEDcounter[25];
+assign led[3] = LEDcounter[26];
+assign led[4] = LEDcounter[27];
 
 //The reset logic for the device
 integer i;
