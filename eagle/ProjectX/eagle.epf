@@ -1,6 +1,6 @@
 [Eagle]
-Version="08 04 03"
-Platform="Linux"
+Version="09 01 03"
+Platform="Windows"
 Globals="Globals"
 Desktop="Desktop"
 
@@ -276,11 +276,11 @@ UsedLibraryUrn="urn:adsk.eagle:library:417"
 UsedLibraryUrn="urn:adsk.eagle:library:112"
 UsedLibraryUrn="urn:adsk.eagle:library:418"
 UsedLibraryUrn="urn:adsk.eagle:library:419"
+UsedLibraryUrn="urn:adsk.eagle:library:527439"
 UsedLibraryUrn="urn:adsk.eagle:library:113"
 UsedLibraryUrn="urn:adsk.eagle:library:114"
 UsedLibraryUrn="urn:adsk.eagle:library:115"
 UsedLibraryUrn="urn:adsk.eagle:library:116"
-UsedLibraryUrn="urn:adsk.eagle:library:527439"
 UsedLibraryUrn="urn:adsk.eagle:library:117"
 UsedLibraryUrn="urn:adsk.eagle:library:82"
 UsedLibraryUrn="urn:adsk.eagle:library:118"
@@ -348,14 +348,15 @@ UsedLibraryUrn="urn:adsk.eagle:library:174"
 UsedLibraryUrn="urn:adsk.eagle:library:175"
 UsedLibraryUrn="urn:adsk.eagle:library:176"
 UsedLibraryUrn="urn:adsk.eagle:library:177"
+UsedLibrary="S:/New folder/eagle/libraries/Eagle-master/Teensy356.lbr"
 UsedLibrary="Parts.lbr"
+UsedLibrary="S:/New folder/EAGLE/libraries/Eagle-master/Marcus_parts.lbr"
+UsedLibrary="S:/New folder/EAGLE/libraries/Eagle-master/SnapEDA-Library.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="1920 0 2875 1140"
-State=2
 Number=0
 
 [Desktop]
-Screen="3840 1200"
+Screen="3440 1440"
 Window="Win_1"
