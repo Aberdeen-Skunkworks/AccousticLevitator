@@ -5,7 +5,7 @@ parameter FREQ = 40000;
 parameter OFFSET_WIDTH = 11;
 parameter [OFFSET_WIDTH-2:0] DIVIDE = CLOCK / FREQ / 2 - 1;
 parameter DATA_WIDTH = 8;
-parameter BAUD = 460800;
+parameter BAUD = 1250000; //We need to use something that divides nicely into the main clock, especially at high speeds
 parameter [15:0] UART_SCALE = CLOCK/(BAUD*8);
 parameter VERSION = 8'd7;
 reg reload_now;
@@ -30,7 +30,24 @@ reg [18:0] dac_clk_divisor;
 Clock_divider #(19) dac_clk_div(clk, dac_clk, dac_clk_divisor, rst);
 
 reg [8:0] dac_value;
-dac #(7) output_dac(OE, dac_value, dac_clk, rst);
+reg [8:0] dac_counter;
+reg OE_driver;
+always@(posedge dac_clk) begin
+	if (!rst) begin
+		dac_counter <= 0;
+	end else begin
+		if (dac_counter < dac_value) begin
+			OE_driver <= 1;
+		end else begin
+			OE_driver <= 0;
+		end
+		dac_counter <= dac_counter + 1;
+	end
+end
+
+assign OE = OE_driver;
+
+//dac #(7) output_dac(OE, dac_value, dac_clk, rst);
 
 assign OE_OUT = OE;
 
@@ -38,9 +55,9 @@ reg last_main_clk;
 reg reload_next;
 //Only reload on a negative transition of the Main Clock, and when a reload is due!
 assign falling_main_clk = last_main_clk && !MAIN_CLK_OUT; 
-assign reload_cond = (falling_main_clk && reload_next);
+assign main_reload_cond = falling_main_clk && reload_next;
 always@(posedge clk) begin
-	if (reload_cond) begin
+	if (main_reload_cond) begin
 		reload_now <= 1'b0; //Reload happens via a low reload line
 	end else begin
 		reload_now <= 1'b1;
@@ -71,9 +88,10 @@ uart #(DATA_WIDTH)
 assign led[0] = ~reload_now;
 /*The second LED flashes to indicate the system is working, even under reset*/
 reg [27:0] LEDcounter;
-assign led[1] = LEDcounter[25];
-assign led[2] = LEDcounter[26];
-assign led[3] = LEDcounter[27];
+assign led[1] = LEDcounter[24];
+assign led[2] = LEDcounter[25];
+assign led[3] = LEDcounter[26];
+assign led[4] = LEDcounter[27];
 
 //The reset logic for the device
 integer i;
@@ -88,10 +106,10 @@ begin
 		offsets <= {OUTPUTS*(OFFSET_WIDTH+1){1'b0}};
 		reload_next <= 1'b1; //Trigger a reload next main clock cycle
 		cmdbuffer <= 24'd0;
-		dac_value <= 9'd256;
+		dac_value		<= 9'd256;
 		dac_clk_divisor <= 19'd100;
 	end else begin
-		if (reload_cond) begin
+		if (main_reload_cond) begin
 			reload_next <= 1'b0; //Reload is happening, so clear it for the next clock
 		end
 		
