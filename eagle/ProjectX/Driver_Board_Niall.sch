@@ -23576,6 +23576,7 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <wire x1="76.2" y1="132.08" x2="134.62" y2="132.08" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="149.86" x2="134.62" y2="149.86" width="0.1524" layer="91"/>
 <junction x="134.62" y="149.86"/>
+<label x="66.04" y="132.08" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -23609,6 +23610,7 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <wire x1="180.34" y1="124.46" x2="193.04" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="193.04" y1="124.46" x2="193.04" y2="139.7" width="0.1524" layer="91"/>
 <junction x="193.04" y="139.7"/>
+<junction x="177.8" y="139.7"/>
 </segment>
 </net>
 <net name="N$9" class="0">
@@ -23772,6 +23774,35 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="102,1,-25.4,144.78,GND,$GND,,,,"/>
+<approved hash="102,1,-53.34,144.78,GND,$GND,,,,"/>
+<approved hash="102,1,-10.16,144.78,GND,$GND,,,,"/>
+<approved hash="102,1,5.08,144.78,GND,$GND,,,,"/>
+<approved hash="102,1,27.94,162.56,GND,$GND,,,,"/>
+<approved hash="102,1,55.88,149.86,GND,$GND,,,,"/>
+<approved hash="102,1,83.82,142.24,GND,$GND,,,,"/>
+<approved hash="102,1,162.56,129.54,GND,$GND,,,,"/>
+<approved hash="102,1,175.26,149.86,GND,$GND,,,,"/>
+<approved hash="102,1,223.52,96.52,GND,$GND,,,,"/>
+<approved hash="102,1,132.08,208.28,GND,$GND,,,,"/>
+<approved hash="102,1,121.92,281.94,GND,$GND,,,,"/>
+<approved hash="102,1,35.56,182.88,VDD,$VDD,,,,"/>
+<approved hash="102,1,83.82,165.1,VDD,$VDD,,,,"/>
+<approved hash="102,1,175.26,170.18,VDD,$VDD,,,,"/>
+<approved hash="102,1,83.82,180.34,GND,$GND,,,,"/>
+<approved hash="102,1,175.26,185.42,GND,$GND,,,,"/>
+<approved hash="102,1,-81.28,172.72,GND,$GND,,,,"/>
+<approved hash="102,1,-66.04,114.3,GND,$GND,,,,"/>
+<approved hash="104,1,83.82,165.1,U1,V+,$VDD,,,"/>
+<approved hash="104,1,83.82,144.78,U1,V-,$GND,,,"/>
+<approved hash="104,1,175.26,170.18,U2,V+,$VDD,,,"/>
+<approved hash="104,1,175.26,149.86,U2,V-,$GND,,,"/>
+<approved hash="104,1,129.54,281.94,U35,VDD,$VIN,,,"/>
+<approved hash="108,1,177.8,139.7,N$7,,,,,"/>
+<approved hash="113,1,63.5,174.826,R15,,,,,"/>
+<approved hash="113,1,180.34,129.106,R16,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>
