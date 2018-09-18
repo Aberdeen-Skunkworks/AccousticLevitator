@@ -79,6 +79,20 @@ class Transducer(): # Make a new class Transducer
                 d_fraction_dr = (d_numerator_dr * denominator - numerator * d_denominator_dr) / denominator**2
                 return (d_fraction_dr * exponent_term) + (fraction_term * d_exponential_term_dr)
 
+from typing import List
+
+class ParticleSystem:
+    transducers : List[Transducer]
+    
+    def __init__(self):
+        self.transducers = []
+
+    def appendTransducer(self, *args, **kwargs):
+        self.transducers.append(Transducer(*args, **kwargs))
+
+    def potential(self, pos: Vector):
+        pass
+            
 #Here's the unit tests (small program to check the code above is working correctly!)
 import unittest
 
