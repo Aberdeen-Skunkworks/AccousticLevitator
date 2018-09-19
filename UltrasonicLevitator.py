@@ -41,7 +41,7 @@ class Transducer(): # Make a new class Transducer
     def __repr__(self) -> str:
         return "Transducer("+repr(self.pos)+", "+repr(self.director)+")"
 
-    def pressure(self, pos : Vector) -> complex:
+    def pressure(self, pos : Vector, shift: float = 0) -> complex:
         #import numpy as np; import math; import cmath; import constants
         rs = pos - self.pos
         mag_rs = numpy.linalg.norm(rs)
@@ -49,29 +49,35 @@ class Transducer(): # Make a new class Transducer
             return 0 + 0j
         else:
             theta = math.acos(numpy.dot(rs, self.director) / mag_rs)
-            exponential =  cmath.exp(1j * (self.phi + self.k * mag_rs) ) / mag_rs
+            if theta > math.pi/2:
+                return 0j;
+            
+            exponential =  cmath.exp(1j * (self.phi + self.k * mag_rs + shift) ) / mag_rs
             if theta < 0.0000001: # zero angle causes divistion by zero error -> directionality function aproaches 0
                 theta = 0.0000001
             frac = self.p0 * self.PkToPkA * math.sin(self.k * self.PistonRadius * math.sin(theta)) /  (self.k * self.PistonRadius * math.sin(theta))
             return exponential * frac
 
-    def dpdx(self, pos: Vector) -> numpy.array:
+    def dpdx(self, pos: Vector, shift: float = 0) -> numpy.array:
         rs = pos - self.pos
         mag_rs = numpy.linalg.norm(rs)
 
         if mag_rs < 0.001: # Setting calculated dp/dr on top of transducer to zero.
-            return numpy.array([0, 0, 0])
+            return numpy.array([0j, 0j, 0j])
         else:
             rs_hat = rs / mag_rs
             theta = math.acos((numpy.dot(rs, self.director)) / mag_rs)
-            exponent_term =  cmath.exp(1j * (self.phi + self.k * mag_rs) ) / mag_rs
+            if theta > math.pi/2:
+                return numpy.array([0j, 0j, 0j]);
+            
+            exponent_term =  cmath.exp(1j * (self.phi + shift + self.k * mag_rs ) ) / mag_rs
             if theta < 0.0001: # zero angle causes divistion by zero error -> directionality function aproaches 0
                 fraction_term =  (self.p0 * self.PkToPkA)
-                d_exponential_term_dr = ((rs_hat * 1j * self.k * cmath.exp(1j * (self.phi + self.k * mag_rs)) ) / (mag_rs))  -  ((cmath.exp(1j*(self.phi + self.k * mag_rs)) * rs_hat) / (mag_rs**2))
+                d_exponential_term_dr = ((rs_hat * 1j * self.k * cmath.exp(1j * (self.phi +shift + self.k * mag_rs)) ) / (mag_rs))  -  ((cmath.exp(1j*(self.phi + shift + self.k * mag_rs)) * rs_hat) / (mag_rs**2))
                 return fraction_term * d_exponential_term_dr
             else:
                 fraction_term =  self.p0 * self.PkToPkA * math.sin(self.k * self.PistonRadius * math.sin(theta)) /  (self.k * self.PistonRadius * math.sin(theta))
-                d_exponential_term_dr = rs_hat * 1j * self.k * cmath.exp(1j * (self.phi + self.k * mag_rs)) / mag_rs - cmath.exp(1j * (self.phi + self.k * mag_rs)) * rs_hat / mag_rs**2
+                d_exponential_term_dr = rs_hat * 1j * self.k * cmath.exp(1j * (self.phi + shift + self.k * mag_rs)) / mag_rs - cmath.exp(1j * (self.phi + shift + self.k * mag_rs)) * rs_hat / mag_rs**2
                 numerator = self.p0 * self.PkToPkA * math.sin(self.k * self.PistonRadius * math.sin(theta))
                 denominator =  self.k * self.PistonRadius * math.sin(theta)
                 d_denominator_dr = self.k * self.PistonRadius * (-numpy.dot(rs_hat, self.director)) / math.sqrt(1 - numpy.dot(rs_hat, self.director)) * (self.director - rs_hat * numpy.dot(self.director, rs_hat)) / mag_rs
@@ -108,16 +114,16 @@ class ParticleSystem:
     def appendTransducer(self, *args, **kwargs):
         self.transducers.append(Transducer(*args, **kwargs))
 
-    def pressure(self, pos: Vector):
+    def pressure(self, pos: Vector, shift:float = 0):
         p = 0j
         for transducer in self.transducers:
-            p += transducer.pressure(pos)
+            p += transducer.pressure(pos, shift)
         return p
 
-    def dpdx(self, pos: Vector):
+    def dpdx(self, pos: Vector, shift:float = 0):
         dpdx = numpy.array([0j,0j,0j])
         for transducer in self.transducers:
-            dpdx += transducer.dpdx(pos)
+            dpdx += transducer.dpdx(pos, shift)
         return dpdx
     
     def potential(self, particle: Particle):
