@@ -16,7 +16,7 @@ class Transducer(): # Make a new class Transducer
     p0: float # Amplitude constant (for our board)
     
     #Now we define what happens when you write Transducer(...)
-    def __init__(self, pos : Vector, director: Vector, phi: float): 
+    def __init__(self, pos : Vector, director: Vector, phi: float = 0): 
         #Save the position and director in the new Transducer
         self.pos = pos
         self.director = director
@@ -26,7 +26,6 @@ class Transducer(): # Make a new class Transducer
             raise Exception("Cannot use a zero director!")
         self.director = self.director / length
         self.phi = phi
-        
         self.wavelength = 0.00865
         self.PkToPkA = 18.0
         self.p0 = 0.364 # Amplitude constant for our board
@@ -120,6 +119,9 @@ class ParticleSystem:
             p += transducer.pressure(pos, shift)
         return p
 
+    def clear(self):
+        self.transducers = []
+    
     def dpdx(self, pos: Vector, shift:float = 0):
         dpdx = numpy.array([0j,0j,0j])
         for transducer in self.transducers:
@@ -151,6 +153,13 @@ class ParticleSystem:
         m2 = vpvol * vkvel * (vkpretovel**2)
 
         return abs_p**2 * m1 - m2 * abs_dpdx.dot(abs_dpdx) - particle.mass * self.gravity * particle.position[2]
+
+    def focus(self, pos:Vector):
+        for transducer in self.transducers:
+            dmag = numpy.linalg.norm(pos - transducer.pos)
+            transducer.phi = (1 - ((dmag / transducer.wavelength) % 1)) * 2 * math.pi
+        
+
             
 #Here's the unit tests (small program to check the code above is working correctly!)
 import unittest

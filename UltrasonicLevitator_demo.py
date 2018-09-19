@@ -28,36 +28,49 @@ from UltrasonicLevitator import *
 
 import matplotlib.pyplot as plt
 
-t = Transducer(Vector([0,0,0]), Vector([0,1,0]), 0)
+sys = ParticleSystem()
+sys.appendTransducer(Vector([0,0,0]), Vector([0,1,0]))
 
 import numpy as np
 
 res = 0.001
 xs = np.arange(-0.1,0.1,res)
-ys = np.arange(0,0.2,res)
+ys = np.arange(0.005,0.2,res)
 z = np.zeros((len(xs), len(ys)))
 
-for i,x in enumerate(xs):
-    for j,y in enumerate(ys):
-        z[i,j] = t.pressure(Vector([x,y,0])).real
-
-fig = plt.figure()
-im = plt.imshow(numpy.flip(z.T, 0), extent=(min(xs), max(xs), min(ys), max(ys)), animated=True)
-        
-def animate(ishift):
-    shift = -2 * math.pi *  ishift / 10
+def calcFields(shift:float =0):
     for i,x in enumerate(xs):
         for j,y in enumerate(ys):
-            z[i,j] = t.pressure(Vector([x,y,0]), shift).real
+            z[i,j] = sys.pressure(Vector([x,y,0]), shift).real
+
+calcFields(0)
+
+fig = plt.figure()
+ax = plt.gca()
+im = plt.imshow(numpy.flip(z.T, 0), extent=(min(xs), max(xs), min(ys), max(ys)), animated=True,  cmap="jet")
+plt.ylim(min(ys)-0.02, max(ys))
+import matplotlib.patches as patches
+rect = patches.Rectangle((-0.005, -0.005), 0.01, 0.01, fill=True, facecolor="black")
+ax.add_patch(rect)
+
+def animate(ishift):
+    calcFields(-2 * math.pi *  ishift / 30)
     im.set_array(numpy.flip(z.T, 0))
     return im,
 
 import matplotlib.animation as animation
-anim = animation.FuncAnimation(fig, animate, frames=10, interval=20, blit=True)
+anim = animation.FuncAnimation(fig, animate, frames=30, interval=20, blit=True)
+anim.save('single_transducer.gif', fps=30, dpi=80, writer='imagemagick')
 
-# save the animation as an mp4.  This requires ffmpeg or mencoder to be
-# installed.  The extra_args ensure that the x264 codec is used, so that
-# the video can be embedded in html5.  You may need to adjust this for
-# your system: for more information, see
-# http://matplotlib.sourceforge.net/api/animation_api.html
-anim.save('basic_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
+sys.clear()
+for x in np.arange(-0.03, 0.035, 0.01):    
+    sys.appendTransducer(Vector([x,0,0]), Vector([0,1,0]))
+    rect = patches.Rectangle((x-0.005, -0.005), 0.01, 0.01, fill=True, facecolor="black", edgecolor="white")
+    ax.add_patch(rect)
+
+anim = animation.FuncAnimation(fig, animate, frames=30, interval=20, blit=True)
+anim.save('multi_transducer.gif', fps=30, dpi=80, writer='imagemagick')
+
+sys.focus(Vector([0, 0.05, 0]))
+anim = animation.FuncAnimation(fig, animate, frames=30, interval=20, blit=True)
+anim.save('multi_transducer_focussed.gif', fps=30, dpi=80, writer='imagemagick')
