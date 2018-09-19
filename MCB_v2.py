@@ -68,7 +68,7 @@ class Transducer(): # Make a new class Transducer
             if theta < 0.0001: # zero angle causes divistion by zero error -> directionality function aproaches 0
                 fraction_term =  (self.p0 * self.PkToPkA)
                 d_exponential_term_dr = ((rs_hat * 1j * self.k * cmath.exp(1j * (self.phi + self.k * mag_rs)) ) / (mag_rs))  -  ((cmath.exp(1j*(self.phi + self.k * mag_rs)) * rs_hat) / (mag_rs**2))
-                d_p_dr = (fraction_term * d_exponential_term_dr)
+                return fraction_term * d_exponential_term_dr
             else:
                 fraction_term =  self.p0 * self.PkToPkA * math.sin(self.k * self.PistonRadius * math.sin(theta)) /  (self.k * self.PistonRadius * math.sin(theta))
                 d_exponential_term_dr = rs_hat * 1j * self.k * cmath.exp(1j * (self.phi + self.k * mag_rs)) / mag_rs - cmath.exp(1j * (self.phi + self.k * mag_rs)) * rs_hat / mag_rs**2
@@ -108,14 +108,21 @@ class ParticleSystem:
     def appendTransducer(self, *args, **kwargs):
         self.transducers.append(Transducer(*args, **kwargs))
 
-    def potential(self, particle: Particle):
+    def pressure(self, pos: Vector):
         p = 0j
+        for transducer in self.transducers:
+            p += transducer.pressure(pos)
+        return p
+
+    def dpdx(self, pos: Vector):
         dpdx = numpy.array([0j,0j,0j])
         for transducer in self.transducers:
-            p += transducer.pressure(particle.position)
-            dpdx += transducer.dpdx(particle.position)
-        abs_p = abs(p)
-        abs_dpdx = numpy.absolute(dpdx)
+            dpdx += transducer.dpdx(pos)
+        return dpdx
+    
+    def potential(self, particle: Particle):
+        abs_p = abs(self.pressure(particle.position))
+        abs_dpdx = numpy.absolute(self.dpdx(particle.position))
 
         omega = self.freq * math.pi * 2
         sound_speed_air = 346 # m/s
@@ -136,10 +143,8 @@ class ParticleSystem:
         
         m1 = vpvol * vkpre
         m2 = vpvol * vkvel * (vkpretovel**2)
-        
-        u = abs_p**2 * m1 - m2 * abs_dpdx.dot(abs_dpdx) - particle.mass * self.gravity * particle.position[1]
 
-        print(p, dpdx, u)
+        return abs_p**2 * m1 - m2 * abs_dpdx.dot(abs_dpdx) - particle.mass * self.gravity * particle.position[2]
             
 #Here's the unit tests (small program to check the code above is working correctly!)
 import unittest
@@ -160,10 +165,14 @@ class TestAccoustics(unittest.TestCase):
         
     def test_Transducer_potential(self):
         sys = ParticleSystem()
-        sys.appendTransducer(Vector([-1,2,-3]), Vector([-1,0,0]), 0.5)
-        part = Particle(Vector([0,0,0]), 7.176591426e-7, 0.0042)
-        sys.potential(part)
+        sys.appendTransducer(Vector([0,0,0]), Vector([0,0,1]), 0.5)
+        pos = Vector([-0.004545454545454545,-0.004545454545454545,0.19545454545454546])
+        self.assertAlmostEqual(abs(sys.pressure(pos)), 33.43931848898868)
+        particle = Particle(pos, 7.176591426e-7, 0.0042)
+        print("u=",)
+        self.assertAlmostEqual(sys.potential(particle), 1.3760189999640898e-06)
         
 #If this file is "run", then we execute the unit tests. If it is imported then we skip them
 if __name__ == '__main__':
+    print("### Running unit tests!")
     unittest.main()
