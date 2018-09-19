@@ -166,11 +166,11 @@ import unittest
 
 class TestAccoustics(unittest.TestCase):
     def test_Transducer_Pressure(self):
-        t = Transducer(Vector([-1,2,-3]), Vector([-1,0,0]), 0.5)
+        t = Transducer(Vector([-1,2,-3]), Vector([1,0,0]), 0.5)
         #Verify that the transducer pressure is calculated correctly
         self.assertEqual(t.pressure(Vector([1,2,3])), (0.0006780895717302391+0.013550483821988818j))
         #Verify that the transducer pressure derivative is calculated correctly
-        result = numpy.array([-3.11043288+0.1983842j, 0.0+0.0j,-9.33852191+0.45080741j])
+        result = numpy.array([-3.109593+0.215161j,  0.000000+0.j, -9.338802+0.445215j])
         numpy.testing.assert_array_almost_equal(t.dpdx(Vector([1,2,3])), result)
 
     def test_Particle_class(self):
@@ -184,7 +184,6 @@ class TestAccoustics(unittest.TestCase):
         pos = Vector([-0.004545454545454545,-0.004545454545454545,0.19545454545454546])
         self.assertAlmostEqual(abs(sys.pressure(pos)), 33.43931848898868)
         particle = Particle(pos, 7.176591426e-7, 0.0042)
-        print("u=",)
         self.assertAlmostEqual(sys.potential(particle), 1.3760189999640898e-06)
         
 #If this file is "run", then we execute the unit tests. If it is imported then we skip them
