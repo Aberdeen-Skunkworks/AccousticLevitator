@@ -55,12 +55,12 @@ class Transducer(): # Make a new class Transducer
             frac = self.p0 * self.PkToPkA * math.sin(self.k * self.PistonRadius * math.sin(theta)) /  (self.k * self.PistonRadius * math.sin(theta))
             return exponential * frac
 
-    def differentiate_pressure(self, pos: Vector) -> numpy.array:
+    def dpdx(self, pos: Vector) -> numpy.array:
         rs = pos - self.pos
         mag_rs = numpy.linalg.norm(rs)
 
         if mag_rs < 0.001: # Setting calculated dp/dr on top of transducer to zero.
-            return [0, 0, 0] 
+            return numpy.array([0, 0, 0])
         else:
             rs_hat = rs / mag_rs
             theta = math.acos((numpy.dot(rs, self.director)) / mag_rs)
@@ -81,17 +81,65 @@ class Transducer(): # Make a new class Transducer
 
 from typing import List
 
+class Particle:
+    position: Vector
+    mass: float
+    diameter : float  # Particle diamiter in m
+    density: float
+    volume: float
+    
+    def __init__(self, pos: Vector, mass: float, diameter: float):
+        self.position = pos
+        self.mass = mass
+        self.diameter = diameter
+        self.volume = math.pi * self.diameter**3 / 6.0        # Particle Volume
+        self.density = self.mass / self.volume
+
+
 class ParticleSystem:
     transducers : List[Transducer]
+    gravity: float
     
     def __init__(self):
         self.transducers = []
-
+        self.gravity = -9.81
+        self.freq = 40000
+        
     def appendTransducer(self, *args, **kwargs):
         self.transducers.append(Transducer(*args, **kwargs))
 
-    def potential(self, pos: Vector):
-        pass
+    def potential(self, particle: Particle):
+        p = 0j
+        dpdx = numpy.array([0j,0j,0j])
+        for transducer in self.transducers:
+            p += transducer.pressure(particle.position)
+            dpdx += transducer.dpdx(particle.position)
+        abs_p = abs(p)
+        abs_dpdx = numpy.absolute(dpdx)
+
+        omega = self.freq * math.pi * 2
+        sound_speed_air = 346 # m/s
+        sound_speed_particle = 2600 # m/s
+        air_density = 1.2 # Density of air kg/m^3
+
+        k = 1 / (air_density * sound_speed_air**2)
+        k_p =  1 / (particle.density * sound_speed_particle**2)
+        k_tilda = k_p / k
+        f_1 = 1 - k_tilda
+        rho_tilda = particle.density / air_density
+        f_2 = ( 2* (rho_tilda-1) ) / ( (2*rho_tilda) +1 )
+        
+        vkpretovel = 1 / (air_density * omega)
+        vkpre = (1.0/4.0) * f_1 *  k
+        vkvel = (3.0/8.0) * f_2 * air_density
+        vpvol = particle.volume
+        
+        m1 = vpvol * vkpre
+        m2 = vpvol * vkvel * (vkpretovel**2)
+        
+        u = abs_p**2 * m1 - m2 * abs_dpdx.dot(abs_dpdx) - particle.mass * self.gravity * particle.position[1]
+
+        print(p, dpdx, u)
             
 #Here's the unit tests (small program to check the code above is working correctly!)
 import unittest
@@ -103,8 +151,19 @@ class TestAccoustics(unittest.TestCase):
         self.assertEqual(t.pressure(Vector([1,2,3])), (0.0006780895717302391+0.013550483821988818j))
         #Verify that the transducer pressure derivative is calculated correctly
         result = numpy.array([-3.11043288+0.1983842j, 0.0+0.0j,-9.33852191+0.45080741j])
-        numpy.testing.assert_array_almost_equal(t.differentiate_pressure(Vector([1,2,3])), result)
+        numpy.testing.assert_array_almost_equal(t.dpdx(Vector([1,2,3])), result)
 
+    def test_Particle_class(self):
+        def __init__(self, pos: Vector, mass: float, diameter: float):
+            part = Particle(Vector([0,0,0]), 7.176591426e-7, 0.0042)
+            self.assertAlmostEqual(part.density, 18.5)
+        
+    def test_Transducer_potential(self):
+        sys = ParticleSystem()
+        sys.appendTransducer(Vector([-1,2,-3]), Vector([-1,0,0]), 0.5)
+        part = Particle(Vector([0,0,0]), 7.176591426e-7, 0.0042)
+        sys.potential(part)
+        
 #If this file is "run", then we execute the unit tests. If it is imported then we skip them
 if __name__ == '__main__':
     unittest.main()
