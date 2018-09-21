@@ -1,29 +1,3 @@
-#import algorithms
-#import constants
-#
-#import numpy
-#import numpy as np
-#
-#Vector = numpy.array
-#
-#trap_point = Vector([0.0,0.0,0.2])
-#x_temp = np.linspace(-constants.gsize + trap_point[0],   constants.gsize + trap_point[0], constants.npoints)
-#y_temp = np.linspace(-constants.gsize + trap_point[1],   constants.gsize + trap_point[1], constants.npoints)
-#z_temp = np.linspace(-constants.gsize + trap_point[2],   constants.gsize + trap_point[2], constants.npoints )
-##z_temp = np.linspace(               0.005, 2*constants.gsize, constants.npoints)
-#x_y_z_mesh = np.meshgrid(x_temp, y_temp, z_temp)
-#
-#x_co_ords = x_y_z_mesh[0]
-#y_co_ords = x_y_z_mesh[1]
-#z_co_ords = x_y_z_mesh[2]
-#
-#
-#print(x_co_ords[34,34,44], y_co_ords[34,34,44], z_co_ords[34,34,34])
-#absp, fx,fy,fz,u_incl_grav, u_incl_grav_nano, laplaceu = algorithms.force_calc(focus_point=trap_point, rt=Vector([[0,0,0]]), nt=Vector([[0,0,1]]), phi=[0.5], vti = False)
-#print("abs_p=",absp[34,34,34])
-#print("u=",u_incl_grav[34,34,34])
-
-
 from UltrasonicLevitator import *
 
 import matplotlib.pyplot as plt
@@ -60,8 +34,7 @@ def animate(ishift):
 
 import matplotlib.animation as animation
 anim = animation.FuncAnimation(fig, animate, frames=30, interval=20, blit=True)
-#anim.save('single_transducer.gif', fps=30, dpi=80, writer='imagemagick')
-"""
+anim.save('single_transducer.gif', fps=30, dpi=80, writer='imagemagick')
 sys.clear()
 for x in np.arange(-0.03, 0.035, 0.01):    
     sys.appendTransducer(Vector([x,0,0]), Vector([0,1,0]))
@@ -74,4 +47,3 @@ anim.save('multi_transducer.gif', fps=30, dpi=80, writer='imagemagick')
 sys.focus(Vector([0, 0.05, 0]))
 anim = animation.FuncAnimation(fig, animate, frames=30, interval=20, blit=True)
 anim.save('multi_transducer_focussed.gif', fps=30, dpi=80, writer='imagemagick')
-"""
