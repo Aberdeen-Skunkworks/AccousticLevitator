@@ -60,8 +60,8 @@ def animate(ishift):
 
 import matplotlib.animation as animation
 anim = animation.FuncAnimation(fig, animate, frames=30, interval=20, blit=True)
-anim.save('single_transducer.gif', fps=30, dpi=80, writer='imagemagick')
-
+#anim.save('single_transducer.gif', fps=30, dpi=80, writer='imagemagick')
+"""
 sys.clear()
 for x in np.arange(-0.03, 0.035, 0.01):    
     sys.appendTransducer(Vector([x,0,0]), Vector([0,1,0]))
@@ -74,3 +74,4 @@ anim.save('multi_transducer.gif', fps=30, dpi=80, writer='imagemagick')
 sys.focus(Vector([0, 0.05, 0]))
 anim = animation.FuncAnimation(fig, animate, frames=30, interval=20, blit=True)
 anim.save('multi_transducer_focussed.gif', fps=30, dpi=80, writer='imagemagick')
+"""
