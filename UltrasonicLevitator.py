@@ -30,7 +30,9 @@ class Transducer(): # Make a new class Transducer
         return "Transducer("+repr(self.pos)+", "+repr(self.director)+")"
 
     def pressure(self, pos, shift = 0):
-        #import numpy as np; import math; import cmath; import constants
+        #This calculates the pressure this transducer gives to a
+        #position in space.  shift allows you to phase shift the
+        #transducer (e.g. to make it appear like time is passing)
         rs = pos - self.pos
         mag_rs = numpy.linalg.norm(rs)
         if mag_rs < 0.001: #If within 1mm of the transducer, don't report the pressure, as its flaky if mag_rs->0
@@ -49,6 +51,10 @@ class Transducer(): # Make a new class Transducer
             return exponential * frac
 
     def dpdx(self, pos, shift = 0):
+        #This is an exact expression for calculating nabla p (gradient
+        #of the pressure). This is much faster than getting it
+        #numerically.
+        
         rs = pos - self.pos
         mag_rs = numpy.linalg.norm(rs)
 
@@ -78,6 +84,8 @@ class Transducer(): # Make a new class Transducer
 from typing import List
 
 class Particle:
+    #This class represents a single particle
+    
     def __init__(self, pos, mass, diameter):
         self.position = pos
         self.mass = mass
@@ -87,30 +95,40 @@ class Particle:
 
 
 class ParticleSystem:
+    #This class represents a lot of transducers together and allows the calculation of forces etc.
     def __init__(self):
         self.transducers = []
         self.gravity = -9.81
         self.freq = 40000
         
     def appendTransducer(self, *args, **kwargs):
+        #Add a transducer to the system
         self.transducers.append(Transducer(*args, **kwargs))
 
     def pressure(self, pos, shift = 0):
+        #Calculate the pressure from all transducers at a given position in space
         p = 0j
         for transducer in self.transducers:
             p += transducer.pressure(pos, shift)
         return p
 
     def clear(self):
+        #clear all transducers from the system
         self.transducers = []
     
     def dpdx(self, pos, shift = 0):
+        #Calculate \nabla p (gradient of the pressure) from all
+        #transducers at a given position in space
         dpdx = numpy.array([0j,0j,0j])
         for transducer in self.transducers:
             dpdx += transducer.dpdx(pos, shift)
         return dpdx
     
-    def potential(self, particle):
+    def Gorkov_potential(self, particle):
+        #Calculate the gorkov potential, which is the particle
+        #interaction energy with the accoustic field if viscous
+        #effects are ignored.
+        
         sound_speed_air = 346 # m/s
         sound_speed_particle = 2600 # m/s
         air_density = 1.2 # Density of air kg/m^3
@@ -144,6 +162,7 @@ class ParticleSystem:
         return particle.volume * (f_1 * 0.5 * k_0 * avg_psq - f_2 * 0.75 * air_density * avg_vsq) - particle.mass * self.gravity * particle.position[2]
 
     def focus(self, pos):
+        #Focus the transducers at a single point in space
         for transducer in self.transducers:
             dmag = numpy.linalg.norm(pos - transducer.pos)
             transducer.phi = (1 - ((dmag / transducer.wavelength) % 1)) * 2 * math.pi
@@ -151,6 +170,7 @@ class ParticleSystem:
 
             
 #Here's the unit tests (small program to check the code above is working correctly!)
+#They only run if this file is run, not when this file is imported
 import unittest
 
 class TestAccoustics(unittest.TestCase):
