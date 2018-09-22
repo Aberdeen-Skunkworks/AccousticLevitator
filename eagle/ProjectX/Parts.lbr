@@ -1933,7 +1933,7 @@ The Xilinx Spartan 3E FPGA board from WaveShare.</description>
 </deviceset>
 <deviceset name="TEENSY_SMD">
 <gates>
-<gate name="G$1" symbol="TEENSY_3.5/3.6_BASIC" x="0" y="20.32"/>
+<gate name="G$1" symbol="TEENSY_3.5/3.6_BASIC" x="0" y="25.4"/>
 </gates>
 <devices>
 <device name="" package="TEENSY_3.6_SMD">
