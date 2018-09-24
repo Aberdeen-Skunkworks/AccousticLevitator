@@ -4689,7 +4689,6 @@ design rules under a new name.
 <wire x1="98.32" y1="70.307" x2="98.359" y2="70.268" width="0.3048" layer="16"/>
 <wire x1="93.9724" y1="65.80706875" x2="94.62706875" y2="65.1524" width="0.3048" layer="16"/>
 <wire x1="95.55293125" y1="65.1524" x2="95.897" y2="65.1524" width="0.3048" layer="16"/>
-<wire x1="95.5" y1="65.1524" x2="95.55293125" y2="65.1524" width="0.3048" layer="16"/>
 <wire x1="95.55293125" y1="65.1524" x2="96.2076" y2="65.80706875" width="0.3048" layer="16"/>
 <wire x1="98.20089375" y1="70.307" x2="98.32" y2="70.307" width="0.3048" layer="16"/>
 <wire x1="97.10629375" y1="69.2124" x2="98.20089375" y2="70.307" width="0.3048" layer="16"/>
@@ -4725,14 +4724,12 @@ design rules under a new name.
 <wire x1="91.1276" y1="69.2514" x2="92.28029375" y2="69.2514" width="0.3048" layer="16"/>
 <wire x1="91.1276" y1="65.80706875" x2="91.1276" y2="69.2514" width="0.3048" layer="16"/>
 <wire x1="88.813" y1="70.34" x2="89.1254" y2="70.0276" width="0.3048" layer="16"/>
-<wire x1="86.5686" y1="80.75729375" x2="86.5686" y2="80.59429375" width="0.3048" layer="16"/>
 <wire x1="85.46389375" y1="81.862" x2="86.412946875" y2="80.912946875" width="0.3048" layer="16"/>
 <wire x1="86.412946875" y1="80.912946875" x2="86.456946875" y2="80.868946875" width="0.3048" layer="16"/>
 <wire x1="86.456946875" y1="80.868946875" x2="86.5686" y2="80.75729375" width="0.3048" layer="16"/>
 <wire x1="86.5686" y1="78.48870625" x2="86.06589375" y2="77.986" width="0.3048" layer="16"/>
-<wire x1="86.5686" y1="80.59429375" x2="86.5686" y2="79.48870625" width="0.3048" layer="16"/>
+<wire x1="86.5686" y1="80.75729375" x2="86.5686" y2="78.48870625" width="0.3048" layer="16"/>
 <wire x1="86.06589375" y1="77.986" x2="85.442" y2="77.986" width="0.3048" layer="16"/>
-<wire x1="86.5686" y1="79.48870625" x2="86.5686" y2="78.48870625" width="0.3048" layer="16"/>
 <wire x1="85.336" y1="81.862" x2="85.46389375" y2="81.862" width="0.3048" layer="16"/>
 <wire x1="89.522" y1="82.943" x2="86.417" y2="82.943" width="0.3048" layer="16"/>
 <wire x1="90.455" y1="82.01" x2="89.522" y2="82.943" width="0.3048" layer="16"/>
@@ -4789,8 +4786,7 @@ design rules under a new name.
 <wire x1="76.25829375" y1="81.0816" x2="76.4666" y2="80.87329375" width="0.3048" layer="16"/>
 <wire x1="76.4666" y1="80.87329375" x2="76.4666" y2="79.27870625" width="0.3048" layer="16"/>
 <wire x1="76.4666" y1="79.27870625" x2="76.25829375" y2="79.0704" width="0.3048" layer="16"/>
-<wire x1="75.311" y1="81.976" x2="75.3935" y2="81.8935" width="0.3048" layer="16"/>
-<wire x1="75.3935" y1="81.8935" x2="76.2054" y2="81.0816" width="0.3048" layer="16"/>
+<wire x1="75.311" y1="81.976" x2="76.2054" y2="81.0816" width="0.3048" layer="16"/>
 <wire x1="76.2054" y1="81.0816" x2="76.25829375" y2="81.0816" width="0.3048" layer="16"/>
 <wire x1="76.25829375" y1="79.0704" x2="76.2534" y2="79.0704" width="0.3048" layer="16"/>
 <wire x1="76.2534" y1="79.0704" x2="75.245" y2="78.062" width="0.3048" layer="16"/>
@@ -4835,7 +4831,7 @@ design rules under a new name.
 <wire x1="68.3874" y1="73.1056" x2="68.44029375" y2="73.1056" width="0.3048" layer="16"/>
 <wire x1="68.006" y1="70.66010625" x2="68.006" y2="70.315" width="0.3048" layer="16"/>
 <wire x1="68.6486" y1="71.30270625" x2="68.006" y2="70.66010625" width="0.3048" layer="16"/>
-<wire x1="67.493" y1="74" x2="68.3874" y2="73.1056" width="0.3048" layer="16"/>
+<wire x1="67.7465" y1="73.7465" x2="68.3874" y2="73.1056" width="0.3048" layer="16"/>
 <wire x1="64.897" y1="81.976" x2="65.65710625" y2="81.976" width="0.3048" layer="16"/>
 <wire x1="65.65710625" y1="81.976" x2="66.68870625" y2="83.0076" width="0.3048" layer="16"/>
 <wire x1="66.68870625" y1="83.0076" x2="68.9424" y2="83.0076" width="0.3048" layer="16"/>
@@ -4863,7 +4859,7 @@ design rules under a new name.
 <wire x1="63.4924" y1="65.80706875" x2="64.14706875" y2="65.1524" width="0.3048" layer="16"/>
 <wire x1="64.14706875" y1="65.1524" x2="65.07293125" y2="65.1524" width="0.3048" layer="16"/>
 <wire x1="65.07293125" y1="65.1524" x2="65.405" y2="65.48446875" width="0.3048" layer="16"/>
-<wire x1="65.460265625" y1="65.539734375" x2="65.7276" y2="65.80706875" width="0.3048" layer="16"/>
+<wire x1="65.405" y1="65.48446875" x2="65.7276" y2="65.80706875" width="0.3048" layer="16"/>
 <wire x1="67.89689375" y1="70.403" x2="67.918" y2="70.403" width="0.3048" layer="16"/>
 <wire x1="66.75329375" y1="69.2594" x2="67.89689375" y2="70.403" width="0.3048" layer="16"/>
 <wire x1="62.902" y1="70.403" x2="63.4924" y2="69.8126" width="0.3048" layer="16"/>
@@ -4877,7 +4873,6 @@ design rules under a new name.
 <wire x1="59.472" y1="77.984" x2="60.6556" y2="79.1676" width="0.3048" layer="16"/>
 <via x="65.405" y="65.151" extent="1-16" drill="0.5"/>
 <wire x1="65.405" y1="65.151" x2="65.405" y2="65.48446875" width="0.3048" layer="16"/>
-<wire x1="65.405" y1="65.48446875" x2="65.460265625" y2="65.539734375" width="0.3048" layer="16"/>
 <wire x1="75.540265625" y1="65.459734375" x2="75.540265625" y2="65.302734375" width="0.3048" layer="16"/>
 <wire x1="75.540265625" y1="65.302734375" x2="75.5495875" y2="65.2934125" width="0.3048" layer="16"/>
 <via x="75.5495875" y="65.2934125" extent="1-16" drill="0.35"/>
@@ -4889,7 +4884,7 @@ design rules under a new name.
 <wire x1="90.660265625" y1="65.339734375" x2="90.7480875" y2="65.2519125" width="0.3048" layer="16"/>
 <via x="90.7480875" y="65.2519125" extent="1-16" drill="0.35"/>
 <via x="95.897" y="65.175" extent="1-16" drill="0.35"/>
-<wire x1="94.62706875" y1="65.1524" x2="95.5" y2="65.1524" width="0.3048" layer="16"/>
+<wire x1="94.62706875" y1="65.1524" x2="95.55293125" y2="65.1524" width="0.3048" layer="16"/>
 <wire x1="95.897" y1="65.175" x2="95.897" y2="65.1524" width="0.3048" layer="16"/>
 <wire x1="59.5" y1="81.95" x2="59.5" y2="83" width="0.3048" layer="16"/>
 <via x="59.5" y="83" extent="1-16" drill="0.35"/>
@@ -4915,6 +4910,7 @@ design rules under a new name.
 <wire x1="20.5" y1="37.5" x2="22.1" y2="37.5" width="0.508" layer="1"/>
 <wire x1="22.1" y1="15.5" x2="20.5" y2="15.5" width="0.3048" layer="1"/>
 <via x="20.5" y="15.5" extent="1-16" drill="0.35"/>
+<wire x1="67.493" y1="74" x2="67.7465" y2="73.7465" width="0.2032" layer="16"/>
 <wire x1="-6.8622" y1="-496.635" x2="-7.45" y2="-502.5" width="0" layer="19" extent="1-1"/>
 <wire x1="-7.45" y1="-488.5" x2="-6.8622" y2="-496.635" width="0" layer="19" extent="1-1"/>
 <wire x1="-6.8622" y1="-482.635" x2="-7.45" y2="-488.5" width="0" layer="19" extent="1-1"/>
@@ -5313,244 +5309,22 @@ design rules under a new name.
 <contactref element="U47" pad="4"/>
 </signal>
 <signal name="95">
-<contactref element="U5" pad="2"/>
 <contactref element="U48" pad="2"/>
-<wire x1="119.6378" y1="-36.365" x2="-6.8622" y2="-411.365" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="96">
-<contactref element="U5" pad="4"/>
 <contactref element="U48" pad="4"/>
-<wire x1="119.6378" y1="-38.905" x2="-6.8622" y2="-413.905" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="N$9">
-<contactref element="U5" pad="7"/>
-</signal>
-<signal name="DRIVE_5">
-<contactref element="U5" pad="5"/>
 </signal>
 <signal name="97">
-<contactref element="U6" pad="2"/>
 <contactref element="U49" pad="2"/>
-<wire x1="87.365" y1="55.6378" x2="-6.8622" y2="-425.365" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="98">
-<contactref element="U6" pad="4"/>
 <contactref element="U49" pad="4"/>
-<wire x1="89.905" y1="55.6378" x2="-6.8622" y2="-427.905" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="N$13">
-<contactref element="U6" pad="7"/>
-</signal>
-<signal name="DRIVE_6">
-<contactref element="U6" pad="5"/>
 </signal>
 <signal name="99">
-<contactref element="U7" pad="2"/>
 <contactref element="U50" pad="2"/>
-<wire x1="94.365" y1="55.6378" x2="-6.8622" y2="-439.365" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="100">
-<contactref element="U7" pad="4"/>
 <contactref element="U50" pad="4"/>
-<wire x1="96.905" y1="55.6378" x2="-6.8622" y2="-441.905" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="N$15">
-<contactref element="U7" pad="7"/>
-</signal>
-<signal name="DRIVE_7">
-<contactref element="U7" pad="5"/>
-</signal>
-<signal name="101">
-<contactref element="U8" pad="2"/>
-</signal>
-<signal name="102">
-<contactref element="U8" pad="4"/>
-</signal>
-<signal name="N$16">
-<contactref element="U8" pad="7"/>
-</signal>
-<signal name="DRIVE_8">
-<contactref element="U8" pad="5"/>
-</signal>
-<signal name="103">
-<contactref element="U9" pad="2"/>
-</signal>
-<signal name="104">
-<contactref element="U9" pad="4"/>
-</signal>
-<signal name="N$17">
-<contactref element="U9" pad="7"/>
-</signal>
-<signal name="DRIVE_9">
-<contactref element="U9" pad="5"/>
-</signal>
-<signal name="105">
-<contactref element="U10" pad="2"/>
-</signal>
-<signal name="106">
-<contactref element="U10" pad="4"/>
-</signal>
-<signal name="N$18">
-<contactref element="U10" pad="7"/>
-</signal>
-<signal name="DRIVE_10">
-<contactref element="U10" pad="5"/>
-</signal>
-<signal name="107">
-<contactref element="U11" pad="2"/>
-</signal>
-<signal name="108">
-<contactref element="U11" pad="4"/>
-</signal>
-<signal name="N$19">
-<contactref element="U11" pad="7"/>
-</signal>
-<signal name="DRIVE_11">
-<contactref element="U11" pad="5"/>
-</signal>
-<signal name="109">
-<contactref element="U12" pad="2"/>
-</signal>
-<signal name="110">
-<contactref element="U12" pad="4"/>
-</signal>
-<signal name="N$20">
-<contactref element="U12" pad="7"/>
-</signal>
-<signal name="DRIVE_12">
-<contactref element="U12" pad="5"/>
-</signal>
-<signal name="111">
-<contactref element="U13" pad="2"/>
-</signal>
-<signal name="112">
-<contactref element="U13" pad="4"/>
-</signal>
-<signal name="N$21">
-<contactref element="U13" pad="7"/>
-</signal>
-<signal name="DRIVE_13">
-<contactref element="U13" pad="5"/>
-</signal>
-<signal name="113">
-<contactref element="U14" pad="2"/>
-</signal>
-<signal name="114">
-<contactref element="U14" pad="4"/>
-</signal>
-<signal name="N$22">
-<contactref element="U14" pad="7"/>
-</signal>
-<signal name="DRIVE_14">
-<contactref element="U14" pad="5"/>
-</signal>
-<signal name="115">
-<contactref element="U15" pad="2"/>
-</signal>
-<signal name="116">
-<contactref element="U15" pad="4"/>
-</signal>
-<signal name="N$23">
-<contactref element="U15" pad="7"/>
-</signal>
-<signal name="DRIVE_15">
-<contactref element="U15" pad="5"/>
-</signal>
-<signal name="117">
-<contactref element="U16" pad="2"/>
-</signal>
-<signal name="118">
-<contactref element="U16" pad="4"/>
-</signal>
-<signal name="N$24">
-<contactref element="U16" pad="7"/>
-</signal>
-<signal name="DRIVE_16">
-<contactref element="U16" pad="5"/>
-</signal>
-<signal name="119">
-<contactref element="U17" pad="2"/>
-</signal>
-<signal name="120">
-<contactref element="U17" pad="4"/>
-</signal>
-<signal name="N$25">
-<contactref element="U17" pad="7"/>
-</signal>
-<signal name="DRIVE_17">
-<contactref element="U17" pad="5"/>
-</signal>
-<signal name="121">
-<contactref element="U18" pad="2"/>
-</signal>
-<signal name="122">
-<contactref element="U18" pad="4"/>
-</signal>
-<signal name="N$26">
-<contactref element="U18" pad="7"/>
-</signal>
-<signal name="DRIVE_18">
-<contactref element="U18" pad="5"/>
-</signal>
-<signal name="123">
-<contactref element="U19" pad="2"/>
-</signal>
-<signal name="124">
-<contactref element="U19" pad="4"/>
-</signal>
-<signal name="N$27">
-<contactref element="U19" pad="7"/>
-</signal>
-<signal name="DRIVE_19">
-<contactref element="U19" pad="5"/>
-</signal>
-<signal name="125">
-<contactref element="U20" pad="2"/>
-</signal>
-<signal name="126">
-<contactref element="U20" pad="4"/>
-</signal>
-<signal name="N$28">
-<contactref element="U20" pad="7"/>
-</signal>
-<signal name="DRIVE_20">
-<contactref element="U20" pad="5"/>
-</signal>
-<signal name="127">
-<contactref element="U21" pad="2"/>
-</signal>
-<signal name="128">
-<contactref element="U21" pad="4"/>
-</signal>
-<signal name="N$29">
-<contactref element="U21" pad="7"/>
-</signal>
-<signal name="DRIVE_21">
-<contactref element="U21" pad="5"/>
-</signal>
-<signal name="129">
-<contactref element="U22" pad="2"/>
-</signal>
-<signal name="130">
-<contactref element="U22" pad="4"/>
-</signal>
-<signal name="N$39">
-<contactref element="U22" pad="7"/>
-</signal>
-<signal name="DRIVE_22">
-<contactref element="U22" pad="5"/>
-</signal>
-<signal name="131">
-<contactref element="U23" pad="2"/>
-</signal>
-<signal name="132">
-<contactref element="U23" pad="4"/>
-</signal>
-<signal name="N$40">
-<contactref element="U23" pad="7"/>
-</signal>
-<signal name="DRIVE_23">
-<contactref element="U23" pad="5"/>
 </signal>
 <signal name="133">
 <contactref element="U24" pad="2"/>
@@ -6157,7 +5931,8 @@ design rules under a new name.
 <wire x1="74.77" y1="75.387" x2="74.77" y2="74.97289375" width="0.3048" layer="16"/>
 <wire x1="74.77" y1="74.97289375" x2="74.6964" y2="74.89929375" width="0.3048" layer="16"/>
 <wire x1="74.6964" y1="71.40470625" x2="74.77" y2="71.33110625" width="0.3048" layer="16"/>
-<wire x1="74.77" y1="71.33110625" x2="74.77" y2="66.27" width="0.3048" layer="16"/>
+<wire x1="74.77" y1="71.33110625" x2="74.77" y2="68.5" width="0.3048" layer="16"/>
+<wire x1="74.77" y1="68.5" x2="74.77" y2="66.27" width="0.3048" layer="16"/>
 <wire x1="74.6964" y1="74.89929375" x2="74.6964" y2="71.40470625" width="0.3048" layer="16"/>
 </signal>
 <signal name="FROM_TRANS_90">
@@ -6172,8 +5947,9 @@ design rules under a new name.
 <wire x1="72.23" y1="67.13210625" x2="73.2916" y2="68.19370625" width="0.3048" layer="1"/>
 <wire x1="73.2916" y1="68.19370625" x2="73.2916" y2="69.82429375" width="0.3048" layer="1"/>
 <wire x1="72.771" y1="70.612" x2="72.136" y2="70.927" width="0.3048" layer="1"/>
-<wire x1="71.882" y1="68.123" x2="71.882" y2="66.618" width="0.3048" layer="16"/>
+<wire x1="71.882" y1="67.5" x2="71.882" y2="66.618" width="0.3048" layer="16"/>
 <wire x1="71.882" y1="66.618" x2="72.23" y2="66.27" width="0.3048" layer="16"/>
+<wire x1="71.882" y1="68.123" x2="71.882" y2="67.5" width="0.2032" layer="16"/>
 </signal>
 <signal name="FROM_TRANS_89">
 <contactref element="JP1" pad="23"/>
@@ -6806,6 +6582,234 @@ design rules under a new name.
 </signal>
 <signal name="TO_TRAN_7">
 <contactref element="U4" pad="7"/>
+</signal>
+<signal name="9">
+<contactref element="U5" pad="2"/>
+</signal>
+<signal name="10">
+<contactref element="U5" pad="4"/>
+</signal>
+<signal name="TO_TRAN_10">
+<contactref element="U5" pad="5"/>
+</signal>
+<signal name="TO_TRAN_9">
+<contactref element="U5" pad="7"/>
+</signal>
+<signal name="11">
+<contactref element="U6" pad="2"/>
+</signal>
+<signal name="12">
+<contactref element="U6" pad="4"/>
+</signal>
+<signal name="TO_TRAN_11">
+<contactref element="U6" pad="7"/>
+</signal>
+<signal name="TO_TRAN_12">
+<contactref element="U6" pad="5"/>
+</signal>
+<signal name="13">
+<contactref element="U7" pad="2"/>
+</signal>
+<signal name="14">
+<contactref element="U7" pad="4"/>
+</signal>
+<signal name="TO_TRAN_13">
+<contactref element="U7" pad="7"/>
+</signal>
+<signal name="TO_TRAN_14">
+<contactref element="U7" pad="5"/>
+</signal>
+<signal name="15">
+<contactref element="U8" pad="2"/>
+</signal>
+<signal name="16">
+<contactref element="U8" pad="4"/>
+</signal>
+<signal name="TO_TRAN_15">
+<contactref element="U8" pad="7"/>
+</signal>
+<signal name="TO_TRAN_16">
+<contactref element="U8" pad="5"/>
+</signal>
+<signal name="18">
+<contactref element="U9" pad="4"/>
+</signal>
+<signal name="17">
+<contactref element="U9" pad="2"/>
+</signal>
+<signal name="TO_TRAN_17">
+<contactref element="U9" pad="7"/>
+</signal>
+<signal name="TO_TRAN_18">
+<contactref element="U9" pad="5"/>
+</signal>
+<signal name="20">
+<contactref element="U10" pad="4"/>
+</signal>
+<signal name="19">
+<contactref element="U10" pad="2"/>
+</signal>
+<signal name="TO_TRAN_19">
+<contactref element="U10" pad="7"/>
+</signal>
+<signal name="TO_TRAN_20">
+<contactref element="U10" pad="5"/>
+</signal>
+<signal name="21">
+<contactref element="U11" pad="2"/>
+</signal>
+<signal name="22">
+<contactref element="U11" pad="4"/>
+</signal>
+<signal name="TO_TRAN_22">
+<contactref element="U11" pad="5"/>
+</signal>
+<signal name="TO_TRAN_21">
+<contactref element="U11" pad="7"/>
+</signal>
+<signal name="23">
+<contactref element="U12" pad="2"/>
+</signal>
+<signal name="24">
+<contactref element="U12" pad="4"/>
+</signal>
+<signal name="TO_TRAN_24">
+<contactref element="U12" pad="5"/>
+</signal>
+<signal name="TO_TRAN_23">
+<contactref element="U12" pad="7"/>
+</signal>
+<signal name="25">
+<contactref element="U13" pad="2"/>
+</signal>
+<signal name="26">
+<contactref element="U13" pad="4"/>
+</signal>
+<signal name="TO_TRAN_25">
+<contactref element="U13" pad="7"/>
+</signal>
+<signal name="TO_TRAN_26">
+<contactref element="U13" pad="5"/>
+</signal>
+<signal name="27">
+<contactref element="U14" pad="2"/>
+</signal>
+<signal name="28">
+<contactref element="U14" pad="4"/>
+</signal>
+<signal name="TO_TRAN_27">
+<contactref element="U14" pad="7"/>
+</signal>
+<signal name="TO_TRAN_28">
+<contactref element="U14" pad="5"/>
+</signal>
+<signal name="29">
+<contactref element="U15" pad="2"/>
+</signal>
+<signal name="30">
+<contactref element="U15" pad="4"/>
+</signal>
+<signal name="TO_TRAN_30">
+<contactref element="U15" pad="5"/>
+</signal>
+<signal name="TO_TRAN_29">
+<contactref element="U15" pad="7"/>
+</signal>
+<signal name="31">
+<contactref element="U16" pad="2"/>
+</signal>
+<signal name="32">
+<contactref element="U16" pad="4"/>
+</signal>
+<signal name="TO_TRAN_31">
+<contactref element="U16" pad="7"/>
+</signal>
+<signal name="TO_TRAN_32">
+<contactref element="U16" pad="5"/>
+</signal>
+<signal name="33">
+<contactref element="U17" pad="2"/>
+</signal>
+<signal name="34">
+<contactref element="U17" pad="4"/>
+</signal>
+<signal name="TO_TRAN_33">
+<contactref element="U17" pad="7"/>
+</signal>
+<signal name="TO_TRAN_34">
+<contactref element="U17" pad="5"/>
+</signal>
+<signal name="35">
+<contactref element="U18" pad="2"/>
+</signal>
+<signal name="36">
+<contactref element="U18" pad="4"/>
+</signal>
+<signal name="TO_TRAN_35">
+<contactref element="U18" pad="7"/>
+</signal>
+<signal name="TO_TRAN_36">
+<contactref element="U18" pad="5"/>
+</signal>
+<signal name="37">
+<contactref element="U19" pad="2"/>
+</signal>
+<signal name="38">
+<contactref element="U19" pad="4"/>
+</signal>
+<signal name="TO_TRAN_37">
+<contactref element="U19" pad="7"/>
+</signal>
+<signal name="TO_TRAN_38">
+<contactref element="U19" pad="5"/>
+</signal>
+<signal name="39">
+<contactref element="U20" pad="4"/>
+</signal>
+<signal name="40">
+<contactref element="U20" pad="2"/>
+</signal>
+<signal name="TO_TRAN_40">
+<contactref element="U20" pad="7"/>
+</signal>
+<signal name="TO_TRAN_39">
+<contactref element="U20" pad="5"/>
+</signal>
+<signal name="41">
+<contactref element="U21" pad="2"/>
+</signal>
+<signal name="42">
+<contactref element="U21" pad="4"/>
+</signal>
+<signal name="TO_TRAN_41">
+<contactref element="U21" pad="7"/>
+</signal>
+<signal name="TO_TRAN_42">
+<contactref element="U21" pad="5"/>
+</signal>
+<signal name="43">
+<contactref element="U22" pad="2"/>
+</signal>
+<signal name="44">
+<contactref element="U22" pad="4"/>
+</signal>
+<signal name="TO_TRAN_44">
+<contactref element="U22" pad="5"/>
+</signal>
+<signal name="TO_TRAN_43">
+<contactref element="U22" pad="7"/>
+</signal>
+<signal name="45">
+<contactref element="U23" pad="2"/>
+</signal>
+<signal name="46">
+<contactref element="U23" pad="4"/>
+</signal>
+<signal name="TO_TRAN_45">
+<contactref element="U23" pad="7"/>
+</signal>
+<signal name="TO_TRAN_46">
+<contactref element="U23" pad="5"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
