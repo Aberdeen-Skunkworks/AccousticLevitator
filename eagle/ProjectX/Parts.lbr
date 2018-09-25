@@ -1150,14 +1150,14 @@ The Xilinx Spartan 3E FPGA board from WaveShare.</description>
 <smd name="14/A3" x="1.27" y="5.842" dx="1.016" dy="1.905" layer="1"/>
 <smd name="13/SCK3" x="3.81" y="9.398" dx="1.016" dy="1.905" layer="1"/>
 <smd name="GND7" x="6.35" y="5.842" dx="1.016" dy="1.905" layer="1"/>
-<smd name="A22/DAC4" x="8.89" y="9.398" dx="1.016" dy="1.905" layer="1"/>
+<smd name="A22/DAC1" x="8.89" y="9.398" dx="1.016" dy="1.905" layer="1"/>
 <wire x1="30.48" y1="8.89" x2="30.48" y2="6.35" width="0.127" layer="51"/>
 <wire x1="30.48" y1="6.35" x2="10.16" y2="6.35" width="0.127" layer="51"/>
 <wire x1="30.988" y1="10.6045" x2="30.988" y2="4.6355" width="0.127" layer="21"/>
 <wire x1="30.988" y1="4.6355" x2="9.652" y2="4.6355" width="0.127" layer="21"/>
 <wire x1="9.652" y1="10.6045" x2="30.988" y2="10.6045" width="0.127" layer="21"/>
 <wire x1="10.16" y1="8.89" x2="30.48" y2="8.89" width="0.127" layer="51"/>
-<smd name="21/DAC3" x="11.43" y="5.842" dx="1.016" dy="1.905" layer="1"/>
+<smd name="A21/DAC0" x="11.43" y="5.842" dx="1.016" dy="1.905" layer="1"/>
 <smd name="39/A3" x="13.97" y="9.398" dx="1.016" dy="1.905" layer="1"/>
 <smd name="38/A3" x="16.51" y="5.842" dx="1.016" dy="1.905" layer="1"/>
 <smd name="37/A3" x="19.05" y="9.398" dx="1.016" dy="1.905" layer="1"/>
@@ -1953,25 +1953,25 @@ The Xilinx Spartan 3E FPGA board from WaveShare.</description>
 <connect gate="G$1" pin="2" pad="2"/>
 <connect gate="G$1" pin="20/A6" pad="20/A3"/>
 <connect gate="G$1" pin="21/A7" pad="21/A3"/>
-<connect gate="G$1" pin="22/A8" pad="21/DAC3"/>
-<connect gate="G$1" pin="23/A9" pad="22/A3"/>
-<connect gate="G$1" pin="24" pad="23/A3"/>
-<connect gate="G$1" pin="25" pad="24"/>
-<connect gate="G$1" pin="26" pad="25"/>
-<connect gate="G$1" pin="27" pad="26"/>
-<connect gate="G$1" pin="28" pad="27"/>
-<connect gate="G$1" pin="29" pad="28"/>
+<connect gate="G$1" pin="22/A8" pad="22/A3"/>
+<connect gate="G$1" pin="23/A9" pad="23/A3"/>
+<connect gate="G$1" pin="24" pad="24"/>
+<connect gate="G$1" pin="25" pad="25"/>
+<connect gate="G$1" pin="26" pad="26"/>
+<connect gate="G$1" pin="27" pad="27"/>
+<connect gate="G$1" pin="28" pad="28"/>
+<connect gate="G$1" pin="29" pad="29"/>
 <connect gate="G$1" pin="3/CANTX" pad="3/CANTX3"/>
-<connect gate="G$1" pin="30" pad="29"/>
-<connect gate="G$1" pin="31/A12" pad="30"/>
-<connect gate="G$1" pin="32/A13" pad="31/A3"/>
-<connect gate="G$1" pin="33/A14" pad="32/A3"/>
-<connect gate="G$1" pin="34/A15" pad="33/A3"/>
-<connect gate="G$1" pin="35/A16" pad="34/A3"/>
-<connect gate="G$1" pin="36/A17" pad="35/A3"/>
-<connect gate="G$1" pin="37/A18" pad="36/A3"/>
-<connect gate="G$1" pin="38/A19" pad="37/A3"/>
-<connect gate="G$1" pin="39/A20" pad="38/A3"/>
+<connect gate="G$1" pin="30" pad="30"/>
+<connect gate="G$1" pin="31/A12" pad="31/A3"/>
+<connect gate="G$1" pin="32/A13" pad="32/A3"/>
+<connect gate="G$1" pin="33/A14" pad="33/A3"/>
+<connect gate="G$1" pin="34/A15" pad="34/A3"/>
+<connect gate="G$1" pin="35/A16" pad="35/A3"/>
+<connect gate="G$1" pin="36/A17" pad="36/A3"/>
+<connect gate="G$1" pin="37/A18" pad="37/A3"/>
+<connect gate="G$1" pin="38/A19" pad="38/A3"/>
+<connect gate="G$1" pin="39/A20" pad="39/A3"/>
 <connect gate="G$1" pin="3V3" pad="3V3_LO3"/>
 <connect gate="G$1" pin="3V3_LO" pad="3V4"/>
 <connect gate="G$1" pin="4/CANRX" pad="4/CANRX3"/>
@@ -1980,8 +1980,8 @@ The Xilinx Spartan 3E FPGA board from WaveShare.</description>
 <connect gate="G$1" pin="7" pad="7"/>
 <connect gate="G$1" pin="8" pad="8"/>
 <connect gate="G$1" pin="9/CS" pad="9/CS3"/>
-<connect gate="G$1" pin="A21/DAC0" pad="39/A3"/>
-<connect gate="G$1" pin="A22/DAC1" pad="A22/DAC4"/>
+<connect gate="G$1" pin="A21/DAC0" pad="A21/DAC0"/>
+<connect gate="G$1" pin="A22/DAC1" pad="A22/DAC1"/>
 <connect gate="G$1" pin="AGND" pad="AGND3"/>
 <connect gate="G$1" pin="GND" pad="GND6"/>
 <connect gate="G$1" pin="GND2" pad="GND7"/>
