@@ -4001,406 +4001,406 @@ design rules under a new name.
 <element name="DIP2" library="Parts" package="CORE3S500E-SMT" value="CORE3S500ESMT" x="49" y="31.5"/>
 <element name="5V-REG" library="Parts" package="OKI-78SR-HORIZ" value="OKI-78SR" x="6.5" y="2.5"/>
 <element name="DATA" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X11" package3d_urn="urn:adsk.eagle:package:38251/1" value="Data" x="2.024" y="41.394" rot="R90"/>
-<element name="U1" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-362.5">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-355" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-355" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-355" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-355" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-355" size="1.778" layer="27" display="off"/>
+<element name="U1" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-11.5" y="131.5" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-3.5" y="139" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-3.5" y="139" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-3.5" y="139" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-3.5" y="139" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-3.5" y="139" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C1" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="1" y="-361.5"/>
-<element name="U2" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-370">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-362.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-362.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-362.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-362.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-362.5" size="1.778" layer="27" display="off"/>
+<element name="C1" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-17" y="132.5" rot="MR0"/>
+<element name="U2" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-11.5" y="124" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-3.5" y="131.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-3.5" y="131.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-3.5" y="131.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-3.5" y="131.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-3.5" y="131.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C2" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-376.5"/>
-<element name="U3" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-384">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-376.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-376.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-376.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-376.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-376.5" size="1.778" layer="27" display="off"/>
+<element name="C2" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-9.5" y="117.5" rot="MR0"/>
+<element name="U3" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-11.5" y="110" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-3.5" y="117.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-3.5" y="117.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-3.5" y="117.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-3.5" y="117.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-3.5" y="117.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C3" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-390.5"/>
-<element name="U4" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-398">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-390.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-390.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-390.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-390.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-390.5" size="1.778" layer="27" display="off"/>
+<element name="C3" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-9.5" y="103.5" rot="MR0"/>
+<element name="U4" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-11.5" y="96" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-3.5" y="103.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-3.5" y="103.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-3.5" y="103.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-3.5" y="103.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-3.5" y="103.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C4" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-404.5"/>
-<element name="U5" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-412">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-404.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-404.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-404.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-404.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-404.5" size="1.778" layer="27" display="off"/>
+<element name="C4" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-9.5" y="89.5" rot="MR0"/>
+<element name="U5" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-11.5" y="82" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-3.5" y="89.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-3.5" y="89.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-3.5" y="89.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-3.5" y="89.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-3.5" y="89.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C5" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-418.5"/>
-<element name="U6" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-426">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-418.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-418.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-418.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-418.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-418.5" size="1.778" layer="27" display="off"/>
+<element name="C5" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-9.5" y="75.5" rot="MR0"/>
+<element name="U6" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-11.5" y="69" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-3.5" y="76.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-3.5" y="76.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-3.5" y="76.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-3.5" y="76.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-3.5" y="76.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C6" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-432.5"/>
-<element name="U7" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-440">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-432.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-432.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-432.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-432.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-432.5" size="1.778" layer="27" display="off"/>
+<element name="C6" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-9.5" y="62.5" rot="MR0"/>
+<element name="U7" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="59.5" y="9" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="67.5" y="16.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="67.5" y="16.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="67.5" y="16.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="67.5" y="16.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="67.5" y="16.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C7" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-446.5"/>
-<element name="U8" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-454">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-446.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-446.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-446.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-446.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-446.5" size="1.778" layer="27" display="off"/>
+<element name="C7" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="61.5" y="2.5" rot="MR0"/>
+<element name="U8" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="78.4" y="8.7" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="86.4" y="16.2" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="86.4" y="16.2" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="86.4" y="16.2" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="86.4" y="16.2" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="86.4" y="16.2" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C8" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-460.5"/>
-<element name="U9" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-468">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-460.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-460.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-460.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-460.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-460.5" size="1.778" layer="27" display="off"/>
+<element name="C8" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="78.4" y="4.7" rot="MR0"/>
+<element name="U9" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="86.3" y="8.6" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="94.3" y="16.1" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="94.3" y="16.1" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="94.3" y="16.1" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="94.3" y="16.1" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="94.3" y="16.1" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C9" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-474.5"/>
-<element name="U10" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-482">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-474.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-474.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-474.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-474.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-474.5" size="1.778" layer="27" display="off"/>
+<element name="C9" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="87.8" y="2.4" rot="MR0"/>
+<element name="U10" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="50.1" y="9.3" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="58.1" y="16.8" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="58.1" y="16.8" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="58.1" y="16.8" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="58.1" y="16.8" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="58.1" y="16.8" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C10" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-488.5"/>
-<element name="U11" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-496">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-488.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-488.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-488.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-488.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-488.5" size="1.778" layer="27" display="off"/>
+<element name="C10" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="50.1" y="4.8" rot="MR0"/>
+<element name="U11" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="42.6" y="9.5" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="50.6" y="17" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="50.6" y="17" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="50.6" y="17" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="50.6" y="17" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="50.6" y="17" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C11" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-502.5"/>
-<element name="U12" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-510">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-502.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-502.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-502.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-502.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-502.5" size="1.778" layer="27" display="off"/>
+<element name="C11" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="42.6" y="5" rot="MR0"/>
+<element name="U12" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="25.5" y="11" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="33.5" y="18.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="33.5" y="18.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="33.5" y="18.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="33.5" y="18.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="33.5" y="18.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C12" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-516.5"/>
-<element name="U13" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-524">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-516.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-516.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-516.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-516.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-516.5" size="1.778" layer="27" display="off"/>
+<element name="C12" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="27.5" y="4.5" rot="MR0"/>
+<element name="U13" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="17.5" y="11" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="25.5" y="18.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="25.5" y="18.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="25.5" y="18.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="25.5" y="18.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="25.5" y="18.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C13" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-530.5"/>
-<element name="U14" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-538">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-530.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-530.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-530.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-530.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-530.5" size="1.778" layer="27" display="off"/>
+<element name="C13" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="18.5" y="5.5" rot="MR0"/>
+<element name="U14" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-29.5" y="129" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-21.5" y="136.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-21.5" y="136.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-21.5" y="136.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-21.5" y="136.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-21.5" y="136.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C14" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-544.5"/>
-<element name="U15" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-552">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-544.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-544.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-544.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-544.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-544.5" size="1.778" layer="27" display="off"/>
+<element name="C14" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-27.5" y="122.5" rot="MR0"/>
+<element name="U15" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-29.5" y="115" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-21.5" y="122.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-21.5" y="122.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-21.5" y="122.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-21.5" y="122.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-21.5" y="122.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C15" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-558.5"/>
-<element name="U16" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-566">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-558.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-558.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-558.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-558.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-558.5" size="1.778" layer="27" display="off"/>
+<element name="C15" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-27.5" y="108.5" rot="MR0"/>
+<element name="U16" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-29.5" y="101" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-21.5" y="108.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-21.5" y="108.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-21.5" y="108.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-21.5" y="108.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-21.5" y="108.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C16" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-572.5"/>
-<element name="U17" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-580">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-572.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-572.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-572.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-572.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-572.5" size="1.778" layer="27" display="off"/>
+<element name="C16" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-27.5" y="94.5" rot="MR0"/>
+<element name="U17" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-29.5" y="87" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-21.5" y="94.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-21.5" y="94.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-21.5" y="94.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-21.5" y="94.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-21.5" y="94.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C17" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-586.5"/>
-<element name="U18" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-594">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-586.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-586.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-586.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-586.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-586.5" size="1.778" layer="27" display="off"/>
+<element name="C17" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-27.5" y="80.5" rot="MR0"/>
+<element name="U18" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-29.5" y="73" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-21.5" y="80.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-21.5" y="80.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-21.5" y="80.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-21.5" y="80.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-21.5" y="80.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C18" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-600.5"/>
-<element name="U19" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-608">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-600.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-600.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-600.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-600.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-600.5" size="1.778" layer="27" display="off"/>
+<element name="C18" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-27.5" y="66.5" rot="MR0"/>
+<element name="U19" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-29.5" y="59" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-21.5" y="66.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-21.5" y="66.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-21.5" y="66.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-21.5" y="66.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-21.5" y="66.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C19" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-614.5"/>
-<element name="U20" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-622">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-614.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-614.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-614.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-614.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-614.5" size="1.778" layer="27" display="off"/>
+<element name="C19" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-27.5" y="52.5" rot="MR0"/>
+<element name="U20" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-29.5" y="45" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-21.5" y="52.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-21.5" y="52.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-21.5" y="52.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-21.5" y="52.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-21.5" y="52.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C20" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-628.5"/>
-<element name="U21" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-636">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-628.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-628.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-628.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-628.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-628.5" size="1.778" layer="27" display="off"/>
+<element name="C20" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-27.5" y="38.5" rot="MR0"/>
+<element name="U21" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-29.5" y="31" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-21.5" y="38.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-21.5" y="38.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-21.5" y="38.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-21.5" y="38.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-21.5" y="38.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C21" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-642.5"/>
-<element name="U22" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-650">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-642.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-642.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-642.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-642.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-642.5" size="1.778" layer="27" display="off"/>
+<element name="C21" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-27.5" y="24.5" rot="MR0"/>
+<element name="U22" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-29.5" y="17" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-21.5" y="24.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-21.5" y="24.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-21.5" y="24.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-21.5" y="24.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-21.5" y="24.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C22" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-656.5"/>
-<element name="U23" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-664">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-656.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-656.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-656.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-656.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-656.5" size="1.778" layer="27" display="off"/>
+<element name="C22" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-27.5" y="10.5" rot="MR0"/>
+<element name="U23" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-29.5" y="3" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-21.5" y="10.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-21.5" y="10.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-21.5" y="10.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-21.5" y="10.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-21.5" y="10.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C23" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-670.5"/>
-<element name="U24" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-678">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-670.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-670.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-670.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-670.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-670.5" size="1.778" layer="27" display="off"/>
+<element name="C23" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-27.5" y="-3.5" rot="MR0"/>
+<element name="U24" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-29.5" y="-11" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-21.5" y="-3.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-21.5" y="-3.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-21.5" y="-3.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-21.5" y="-3.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-21.5" y="-3.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C24" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-684.5"/>
-<element name="U25" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-692">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-684.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-684.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-684.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-684.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-684.5" size="1.778" layer="27" display="off"/>
+<element name="C24" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-27.5" y="-17.5" rot="MR0"/>
+<element name="U25" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-29.5" y="-25" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-21.5" y="-17.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-21.5" y="-17.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-21.5" y="-17.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-21.5" y="-17.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-21.5" y="-17.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C25" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-698.5"/>
-<element name="U26" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-706">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-698.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-698.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-698.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-698.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-698.5" size="1.778" layer="27" display="off"/>
+<element name="C25" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-27.5" y="-31.5" rot="MR0"/>
+<element name="U26" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-49.5" y="128" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-41.5" y="135.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-41.5" y="135.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-41.5" y="135.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-41.5" y="135.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-41.5" y="135.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C26" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-712.5"/>
-<element name="U27" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-720">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-712.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-712.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-712.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-712.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-712.5" size="1.778" layer="27" display="off"/>
+<element name="C26" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-47.5" y="121.5" rot="MR0"/>
+<element name="U27" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-49.5" y="114" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-41.5" y="121.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-41.5" y="121.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-41.5" y="121.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-41.5" y="121.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-41.5" y="121.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C27" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-726.5"/>
-<element name="U28" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-734">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-726.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-726.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-726.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-726.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-726.5" size="1.778" layer="27" display="off"/>
+<element name="C27" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-47.5" y="107.5" rot="MR0"/>
+<element name="U28" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-49.5" y="100" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-41.5" y="107.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-41.5" y="107.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-41.5" y="107.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-41.5" y="107.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-41.5" y="107.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C28" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-740.5"/>
-<element name="U29" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-748">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-740.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-740.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-740.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-740.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-740.5" size="1.778" layer="27" display="off"/>
+<element name="C28" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-47.5" y="93.5" rot="MR0"/>
+<element name="U29" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-49.5" y="86" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-41.5" y="93.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-41.5" y="93.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-41.5" y="93.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-41.5" y="93.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-41.5" y="93.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C29" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-754.5"/>
-<element name="U30" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-762">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-754.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-754.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-754.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-754.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-754.5" size="1.778" layer="27" display="off"/>
+<element name="C29" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-47.5" y="79.5" rot="MR0"/>
+<element name="U30" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-49.5" y="72" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-41.5" y="79.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-41.5" y="79.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-41.5" y="79.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-41.5" y="79.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-41.5" y="79.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C30" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-768.5"/>
-<element name="U31" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-776">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-768.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-768.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-768.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-768.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-768.5" size="1.778" layer="27" display="off"/>
+<element name="C30" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-47.5" y="65.5" rot="MR0"/>
+<element name="U31" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-49.5" y="58" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-41.5" y="65.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-41.5" y="65.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-41.5" y="65.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-41.5" y="65.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-41.5" y="65.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C31" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-782.5"/>
-<element name="U32" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-790">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-782.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-782.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-782.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-782.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-782.5" size="1.778" layer="27" display="off"/>
+<element name="C31" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-47.5" y="51.5" rot="MR0"/>
+<element name="U32" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-49.5" y="44" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-41.5" y="51.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-41.5" y="51.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-41.5" y="51.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-41.5" y="51.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-41.5" y="51.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C32" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-796.5"/>
-<element name="U33" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-804">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-796.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-796.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-796.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-796.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-796.5" size="1.778" layer="27" display="off"/>
+<element name="C32" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-47.5" y="37.5" rot="MR0"/>
+<element name="U33" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-49.5" y="30" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-41.5" y="37.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-41.5" y="37.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-41.5" y="37.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-41.5" y="37.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-41.5" y="37.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C33" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-810.5"/>
-<element name="U34" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-818">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-810.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-810.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-810.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-810.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-810.5" size="1.778" layer="27" display="off"/>
+<element name="C33" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-47.5" y="23.5" rot="MR0"/>
+<element name="U34" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-49.5" y="16" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-41.5" y="23.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-41.5" y="23.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-41.5" y="23.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-41.5" y="23.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-41.5" y="23.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C34" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-824.5"/>
-<element name="U35" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-832">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-824.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-824.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-824.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-824.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-824.5" size="1.778" layer="27" display="off"/>
+<element name="C34" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-47.5" y="9.5" rot="MR0"/>
+<element name="U35" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-49.5" y="2" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-41.5" y="9.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-41.5" y="9.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-41.5" y="9.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-41.5" y="9.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-41.5" y="9.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C35" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-838.5"/>
-<element name="U36" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-846">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-838.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-838.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-838.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-838.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-838.5" size="1.778" layer="27" display="off"/>
+<element name="C35" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-47.5" y="-4.5" rot="MR0"/>
+<element name="U36" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-49.5" y="-12" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-41.5" y="-4.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-41.5" y="-4.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-41.5" y="-4.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-41.5" y="-4.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-41.5" y="-4.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C36" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-852.5"/>
-<element name="U37" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-860">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-852.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-852.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-852.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-852.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-852.5" size="1.778" layer="27" display="off"/>
+<element name="C36" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-47.5" y="-18.5" rot="MR0"/>
+<element name="U37" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-49.5" y="-26" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-41.5" y="-18.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-41.5" y="-18.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-41.5" y="-18.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-41.5" y="-18.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-41.5" y="-18.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C37" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-866.5"/>
-<element name="U38" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-874">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-866.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-866.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-866.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-866.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-866.5" size="1.778" layer="27" display="off"/>
+<element name="C37" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-47.5" y="-32.5" rot="MR0"/>
+<element name="U38" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-65.5" y="125" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-57.5" y="132.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-57.5" y="132.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-57.5" y="132.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-57.5" y="132.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-57.5" y="132.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C38" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-880.5"/>
-<element name="U39" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-888">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-880.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-880.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-880.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-880.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-880.5" size="1.778" layer="27" display="off"/>
+<element name="C38" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-63.5" y="118.5" rot="MR0"/>
+<element name="U39" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-65.5" y="111" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-57.5" y="118.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-57.5" y="118.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-57.5" y="118.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-57.5" y="118.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-57.5" y="118.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C39" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-894.5"/>
-<element name="U40" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-902">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-894.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-894.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-894.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-894.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-894.5" size="1.778" layer="27" display="off"/>
+<element name="C39" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-63.5" y="104.5" rot="MR0"/>
+<element name="U40" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-65.5" y="97" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-57.5" y="104.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-57.5" y="104.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-57.5" y="104.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-57.5" y="104.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-57.5" y="104.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C40" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-908.5"/>
-<element name="U41" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-916">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-908.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-908.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-908.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-908.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-908.5" size="1.778" layer="27" display="off"/>
+<element name="C40" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-63.5" y="90.5" rot="MR0"/>
+<element name="U41" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-65.5" y="83" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-57.5" y="90.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-57.5" y="90.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-57.5" y="90.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-57.5" y="90.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-57.5" y="90.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C41" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-922.5"/>
-<element name="U42" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-930">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-922.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-922.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-922.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-922.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-922.5" size="1.778" layer="27" display="off"/>
+<element name="C41" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-63.5" y="76.5" rot="MR0"/>
+<element name="U42" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-65.5" y="69" rot="MR0">
+<attribute name="MPN" value="TC4427AEOA" x="-57.5" y="76.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-57.5" y="76.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-57.5" y="76.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-57.5" y="76.5" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-57.5" y="76.5" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
-<element name="C42" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-936.5"/>
-<element name="U43" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-944">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-936.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-936.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-936.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-936.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-936.5" size="1.778" layer="27" display="off"/>
+<element name="C42" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-63.5" y="62.5" rot="MR0"/>
+<element name="U43" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="68.2" y="61" rot="MR90">
+<attribute name="MPN" value="TC4427AEOA" x="75.7" y="53" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="75.7" y="53" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="75.7" y="53" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="75.7" y="53" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="75.7" y="53" size="1.778" layer="28" rot="MR90" display="off"/>
 </element>
-<element name="C43" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-950.5"/>
-<element name="U44" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-958">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-950.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-950.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-950.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-950.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-950.5" size="1.778" layer="27" display="off"/>
+<element name="C43" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="64.5" y="61" rot="MR90"/>
+<element name="U44" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="68.2" y="69" rot="MR90">
+<attribute name="MPN" value="TC4427AEOA" x="75.7" y="61" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="75.7" y="61" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="75.7" y="61" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="75.7" y="61" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="75.7" y="61" size="1.778" layer="28" rot="MR90" display="off"/>
 </element>
-<element name="C44" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-964.5"/>
-<element name="U45" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-972">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-964.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-964.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-964.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-964.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-964.5" size="1.778" layer="27" display="off"/>
+<element name="C44" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="64.6" y="69" rot="MR90"/>
+<element name="U45" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="79.1" y="61.1" rot="MR90">
+<attribute name="MPN" value="TC4427AEOA" x="86.6" y="53.1" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="86.6" y="53.1" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="86.6" y="53.1" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="86.6" y="53.1" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="86.6" y="53.1" size="1.778" layer="28" rot="MR90" display="off"/>
 </element>
-<element name="C45" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-978.5"/>
-<element name="U46" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-986">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-978.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-978.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-978.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-978.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-978.5" size="1.778" layer="27" display="off"/>
+<element name="C45" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="75.5" y="61.1" rot="MR90"/>
+<element name="U46" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="79" y="69" rot="MR90">
+<attribute name="MPN" value="TC4427AEOA" x="86.5" y="61" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="86.5" y="61" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="86.5" y="61" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="86.5" y="61" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="86.5" y="61" size="1.778" layer="28" rot="MR90" display="off"/>
 </element>
-<element name="C46" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-992.5"/>
-<element name="U47" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="-4.5" y="-1000">
-<attribute name="MPN" value="TC4427AEOA" x="-12.5" y="-992.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="-12.5" y="-992.5" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="-12.5" y="-992.5" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="-12.5" y="-992.5" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="-12.5" y="-992.5" size="1.778" layer="27" display="off"/>
+<element name="C46" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="75.4" y="69" rot="MR90"/>
+<element name="U47" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="88.7" y="61" rot="MR90">
+<attribute name="MPN" value="TC4427AEOA" x="96.2" y="53" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="96.2" y="53" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="96.2" y="53" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="96.2" y="53" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="96.2" y="53" size="1.778" layer="28" rot="MR90" display="off"/>
 </element>
-<element name="C47" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="-6.5" y="-1006.5"/>
-<element name="U48" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="122" y="-37">
-<attribute name="MPN" value="TC4427AEOA" x="114" y="-1162" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="114" y="-1162" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="114" y="-1162" size="1.778" layer="27" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="114" y="-1162" size="1.778" layer="27" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="114" y="-1162" size="1.778" layer="27" display="off"/>
+<element name="C47" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="85.1" y="61" rot="MR90"/>
+<element name="U48" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="88.7" y="68.8" rot="MR90">
+<attribute name="MPN" value="TC4427AEOA" x="-1036.3" y="60.8" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-1036.3" y="60.8" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-1036.3" y="60.8" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-1036.3" y="60.8" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-1036.3" y="60.8" size="1.778" layer="28" rot="MR90" display="off"/>
 </element>
-<element name="C48" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="122" y="-33.5"/>
-<element name="U49" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="88" y="58" rot="R90">
-<attribute name="MPN" value="TC4427AEOA" x="1227" y="50" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="1227" y="50" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="1227" y="50" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="1227" y="50" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="1227" y="50" size="1.778" layer="27" rot="R90" display="off"/>
+<element name="C48" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="85.1" y="68.8" rot="MR90"/>
+<element name="U49" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="97" y="60.9" rot="MR90">
+<attribute name="MPN" value="TC4427AEOA" x="-1042" y="52.9" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-1042" y="52.9" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-1042" y="52.9" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-1042" y="52.9" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-1042" y="52.9" size="1.778" layer="28" rot="MR90" display="off"/>
 </element>
-<element name="C49" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="91.5" y="58" rot="R90"/>
-<element name="U50" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="95" y="58" rot="R90">
-<attribute name="MPN" value="TC4427AEOA" x="1248" y="50" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="OC_FARNELL" value="1292285" x="1248" y="50" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="OC_NEWARK" value="96K4020" x="1248" y="50" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="PACKAGE" value="SOIC-8" x="1248" y="50" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="SUPPLIER" value="Microchip" x="1248" y="50" size="1.778" layer="27" rot="R90" display="off"/>
+<element name="C49" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="93.4" y="60.9" rot="MR90"/>
+<element name="U50" library="Parts" package="SOIC127P600X175-8N" value="TC4427AEOA" x="97" y="68.7" rot="MR90">
+<attribute name="MPN" value="TC4427AEOA" x="-1056" y="60.7" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="OC_FARNELL" value="1292285" x="-1056" y="60.7" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="OC_NEWARK" value="96K4020" x="-1056" y="60.7" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="PACKAGE" value="SOIC-8" x="-1056" y="60.7" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="SUPPLIER" value="Microchip" x="-1056" y="60.7" size="1.778" layer="28" rot="MR90" display="off"/>
 </element>
-<element name="C50" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="98.5" y="58" rot="R90"/>
+<element name="C50" library="resistor" library_urn="urn:adsk.eagle:library:348" package="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF" x="93.5" y="68.7" rot="MR90"/>
 <element name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="2X20" package3d_urn="urn:adsk.eagle:package:22443/2" value="" x="73.922" y="75.049" rot="R180"/>
 <element name="R-TRANS-85" library="resistor" library_urn="urn:adsk.eagle:library:348" package="M0805" package3d_urn="urn:adsk.eagle:package:26079/1" value="10k" x="62.812" y="89.385" rot="R180"/>
 <element name="R-TRANS-86" library="resistor" library_urn="urn:adsk.eagle:library:348" package="M0805" package3d_urn="urn:adsk.eagle:package:26079/1" value="10k" x="62.931" y="80.917" rot="R270"/>
@@ -4452,11 +4452,11 @@ design rules under a new name.
 <element name="DATA1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="1X11" package3d_urn="urn:adsk.eagle:package:38251/1" value="Data" x="50.665" y="1.524"/>
 <element name="U$1" library="Parts" package="TEENSY_3.6_SMD" value="TEENSY_SMD" x="30.234" y="88.741"/>
 <element name="R_TO_GND" library="resistor" library_urn="urn:adsk.eagle:library:348" package="M0805" package3d_urn="urn:adsk.eagle:package:26079/1" value="1M" x="54.1" y="87" rot="MR270"/>
-<element name="R_PROTECT" library="resistor" library_urn="urn:adsk.eagle:library:348" package="M0805" package3d_urn="urn:adsk.eagle:package:26079/1" value="100" x="51" y="86" rot="MR180"/>
-<element name="U$2" library="Parts" package="40_PIN_SMD" value="40_PIN_SMD" x="98.5391" y="51.7954" rot="MR0"/>
-<element name="U$3" library="Parts" package="40_PIN_SMD" value="40_PIN_SMD" x="70.9521" y="51.9779" rot="MR0"/>
-<element name="U$4" library="Parts" package="40_PIN_SMD" value="40_PIN_SMD" x="37.907659375" y="51.8175" rot="MR0"/>
-<element name="U$5" library="Parts" package="40_PIN_SMD" value="40_PIN_SMD" x="13.0246" y="52.0144" rot="MR0"/>
+<element name="R_PROTECT" library="resistor" library_urn="urn:adsk.eagle:library:348" package="M0805" package3d_urn="urn:adsk.eagle:package:26079/1" value="10" x="51" y="86" rot="MR180"/>
+<element name="U$2" library="Parts" package="40_PIN_SMD" value="40_PIN_SMD" x="99.0391" y="51.2954" rot="MR0"/>
+<element name="U$3" library="Parts" package="40_PIN_SMD" value="40_PIN_SMD" x="73.5521" y="51.4779" rot="MR0"/>
+<element name="U$4" library="Parts" package="40_PIN_SMD" value="40_PIN_SMD" x="38.207659375" y="51.8175" rot="MR0"/>
+<element name="U$5" library="Parts" package="40_PIN_SMD" value="40_PIN_SMD" x="12.6246" y="51.8144" rot="MR0"/>
 </elements>
 <signals>
 <signal name="N$2">
@@ -4750,127 +4750,159 @@ design rules under a new name.
 <wire x1="54.1" y1="87.95" x2="52.05" y2="87.95" width="0.3048" layer="16"/>
 <wire x1="52.05" y1="87.95" x2="52" y2="88" width="0.3048" layer="16" curve="-90"/>
 <via x="52" y="88" extent="1-16" drill="0.35"/>
-<wire x1="-6.8622" y1="-496.635" x2="-7.45" y2="-502.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-488.5" x2="-6.8622" y2="-496.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-482.635" x2="-7.45" y2="-488.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-474.5" x2="-6.8622" y2="-482.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-468.635" x2="-7.45" y2="-474.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-460.5" x2="-6.8622" y2="-468.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-454.635" x2="-7.45" y2="-460.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-446.5" x2="-6.8622" y2="-454.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-440.635" x2="-7.45" y2="-446.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-432.5" x2="-6.8622" y2="-440.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-426.635" x2="-7.45" y2="-432.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-418.5" x2="-6.8622" y2="-426.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-412.635" x2="-7.45" y2="-418.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-404.5" x2="-6.8622" y2="-412.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-398.635" x2="-7.45" y2="-404.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-390.5" x2="-6.8622" y2="-398.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-384.635" x2="-7.45" y2="-390.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-376.5" x2="-6.8622" y2="-384.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-370.635" x2="-7.45" y2="-376.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-363.135" x2="-6.8622" y2="-370.635" width="0" layer="19" extent="1-1"/>
-<wire x1="0.05" y1="-361.5" x2="-6.8622" y2="-363.135" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-510.635" x2="-7.45" y2="-502.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-516.5" x2="-6.8622" y2="-510.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-524.635" x2="-7.45" y2="-516.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-530.5" x2="-6.8622" y2="-524.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-538.635" x2="-7.45" y2="-530.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-544.5" x2="-6.8622" y2="-538.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-552.635" x2="-7.45" y2="-544.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-558.5" x2="-6.8622" y2="-552.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-566.635" x2="-7.45" y2="-558.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-572.5" x2="-6.8622" y2="-566.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-580.635" x2="-7.45" y2="-572.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-586.5" x2="-6.8622" y2="-580.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-594.635" x2="-7.45" y2="-586.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-600.5" x2="-6.8622" y2="-594.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-608.635" x2="-7.45" y2="-600.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-614.5" x2="-6.8622" y2="-608.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-622.635" x2="-7.45" y2="-614.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-628.5" x2="-6.8622" y2="-622.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-636.635" x2="-7.45" y2="-628.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-642.5" x2="-6.8622" y2="-636.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-650.635" x2="-7.45" y2="-642.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-656.5" x2="-6.8622" y2="-650.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-664.635" x2="-7.45" y2="-656.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-670.5" x2="-6.8622" y2="-664.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-678.635" x2="-7.45" y2="-670.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-684.5" x2="-6.8622" y2="-678.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-692.635" x2="-7.45" y2="-684.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-698.5" x2="-6.8622" y2="-692.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-706.635" x2="-7.45" y2="-698.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-712.5" x2="-6.8622" y2="-706.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-720.635" x2="-7.45" y2="-712.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-726.5" x2="-6.8622" y2="-720.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-734.635" x2="-7.45" y2="-726.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-740.5" x2="-6.8622" y2="-734.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-748.635" x2="-7.45" y2="-740.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-754.5" x2="-6.8622" y2="-748.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-762.635" x2="-7.45" y2="-754.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-768.5" x2="-6.8622" y2="-762.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-776.635" x2="-7.45" y2="-768.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-782.5" x2="-6.8622" y2="-776.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-790.635" x2="-7.45" y2="-782.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-796.5" x2="-6.8622" y2="-790.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-804.635" x2="-7.45" y2="-796.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-810.5" x2="-6.8622" y2="-804.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-818.635" x2="-7.45" y2="-810.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-824.5" x2="-6.8622" y2="-818.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-832.635" x2="-7.45" y2="-824.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-838.5" x2="-6.8622" y2="-832.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-846.635" x2="-7.45" y2="-838.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-852.5" x2="-6.8622" y2="-846.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-860.635" x2="-7.45" y2="-852.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-866.5" x2="-6.8622" y2="-860.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-874.635" x2="-7.45" y2="-866.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-880.5" x2="-6.8622" y2="-874.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-888.635" x2="-7.45" y2="-880.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-894.5" x2="-6.8622" y2="-888.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-902.635" x2="-7.45" y2="-894.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-908.5" x2="-6.8622" y2="-902.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-916.635" x2="-7.45" y2="-908.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-922.5" x2="-6.8622" y2="-916.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-930.635" x2="-7.45" y2="-922.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-936.5" x2="-6.8622" y2="-930.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-944.635" x2="-7.45" y2="-936.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-950.5" x2="-6.8622" y2="-944.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-958.635" x2="-7.45" y2="-950.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-964.5" x2="-6.8622" y2="-958.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-972.635" x2="-7.45" y2="-964.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-978.5" x2="-6.8622" y2="-972.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-986.635" x2="-7.45" y2="-978.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-992.5" x2="-6.8622" y2="-986.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.8622" y1="-1000.635" x2="-7.45" y2="-992.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-7.45" y1="-1006.5" x2="-6.8622" y2="-1000.635" width="0" layer="19" extent="1-1"/>
-<wire x1="119.6378" y1="-37.635" x2="0.05" y2="-361.5" width="0" layer="19" extent="1-1"/>
-<wire x1="121.05" y1="-33.5" x2="119.6378" y2="-37.635" width="0" layer="19" extent="1-1"/>
-<wire x1="75.4" y1="28.5" x2="121.05" y2="-33.5" width="0" layer="19" extent="1-1"/>
-<wire x1="75.4" y1="50.5" x2="75.4" y2="28.5" width="0" layer="19" extent="1-1"/>
-<wire x1="88.635" y1="55.6378" x2="75.4" y2="50.5" width="0" layer="19" extent="1-1"/>
-<wire x1="91.5" y1="57.05" x2="88.635" y2="55.6378" width="0" layer="19" extent="1-1"/>
-<wire x1="95.635" y1="55.6378" x2="91.5" y2="57.05" width="0" layer="19" extent="1-1"/>
-<wire x1="98.5" y1="57.05" x2="95.635" y2="55.6378" width="0" layer="19" extent="1-1"/>
-<wire x1="89.4" y1="77.3" x2="91.5" y2="57.05" width="0" layer="19" extent="1-16"/>
+<wire x1="96.365" y1="66.3378" x2="95.73" y2="66.9728" width="0.3048" layer="16"/>
+<wire x1="95.73" y1="66.9728" x2="95.73" y2="67.47569375" width="0.3048" layer="16"/>
+<wire x1="95.73" y1="67.47569375" x2="95.45569375" y2="67.75" width="0.3048" layer="16"/>
+<wire x1="95.45569375" y1="67.75" x2="93.5" y2="67.75" width="0.3048" layer="16"/>
+<wire x1="96.365" y1="58.5378" x2="95.73" y2="59.1728" width="0.3048" layer="16"/>
+<wire x1="95.73" y1="59.1728" x2="95.73" y2="59.67569375" width="0.3048" layer="16"/>
+<wire x1="95.73" y1="59.67569375" x2="95.45569375" y2="59.95" width="0.3048" layer="16"/>
+<wire x1="95.45569375" y1="59.95" x2="93.4" y2="59.95" width="0.3048" layer="16"/>
+<wire x1="87.43" y1="67.57569375" x2="87.43" y2="67.0728" width="0.3048" layer="16"/>
+<wire x1="87.43" y1="67.0728" x2="88.065" y2="66.4378" width="0.3048" layer="16"/>
+<wire x1="85.1" y1="67.85" x2="87.15569375" y2="67.85" width="0.3048" layer="16"/>
+<wire x1="87.15569375" y1="67.85" x2="87.43" y2="67.57569375" width="0.3048" layer="16"/>
+<wire x1="93.5" y1="67.75" x2="93.5" y2="66.8" width="0.3048" layer="16"/>
+<wire x1="93.5" y1="66.8" x2="93.7" y2="66.6" width="0.3048" layer="16"/>
+<wire x1="93.7" y1="66.6" x2="93.6794125" y2="66.6205875" width="0.3048" layer="16"/>
+<wire x1="93.6794125" y1="66.6205875" x2="93.6205875" y2="66.6205875" width="0.3048" layer="16"/>
+<via x="93.6205875" y="66.6205875" extent="1-16" drill="0.35"/>
+<via x="85.1" y="66.6" extent="1-16" drill="0.35"/>
+<wire x1="85.1" y1="67.85" x2="85.1" y2="66.6" width="0.3048" layer="16"/>
+<via x="93.4" y="58.7" extent="1-16" drill="0.35"/>
+<wire x1="93.4" y1="59.95" x2="93.4" y2="58.7" width="0.3048" layer="16"/>
+<wire x1="87.43" y1="59.77569375" x2="87.43" y2="59.2728" width="0.3048" layer="16"/>
+<wire x1="87.43" y1="59.2728" x2="88.065" y2="58.6378" width="0.3048" layer="16"/>
+<wire x1="85.1" y1="60.05" x2="87.15569375" y2="60.05" width="0.3048" layer="16"/>
+<wire x1="87.15569375" y1="60.05" x2="87.43" y2="59.77569375" width="0.3048" layer="16"/>
+<via x="85.1" y="58.8" extent="1-16" drill="0.35"/>
+<wire x1="85.1" y1="60.05" x2="85.1" y2="58.8" width="0.3048" layer="16"/>
+<wire x1="77.7808" y1="67.7967375" x2="77.7808" y2="67.222" width="0.4064" layer="16"/>
+<wire x1="77.7808" y1="67.222" x2="78.365" y2="66.6378" width="0.4064" layer="16"/>
+<wire x1="75.4" y1="68.05" x2="77.5275375" y2="68.05" width="0.4064" layer="16"/>
+<wire x1="77.5275375" y1="68.05" x2="77.7808" y2="67.7967375" width="0.4064" layer="16"/>
+<wire x1="75.4" y1="68.05" x2="75.4" y2="67" width="0.4064" layer="16"/>
+<wire x1="75.4" y1="67" x2="75.3" y2="66.9" width="0.4064" layer="16"/>
+<via x="75.3" y="66.9" extent="1-16" drill="0.35"/>
+<wire x1="77.8808" y1="59.8967375" x2="77.8808" y2="59.322" width="0.4064" layer="16"/>
+<wire x1="77.8808" y1="59.322" x2="78.465" y2="58.7378" width="0.4064" layer="16"/>
+<wire x1="75.5" y1="60.15" x2="77.6275375" y2="60.15" width="0.4064" layer="16"/>
+<wire x1="77.6275375" y1="60.15" x2="77.8808" y2="59.8967375" width="0.4064" layer="16"/>
+<wire x1="75.5" y1="60.15" x2="75.5" y2="58.9" width="0.4064" layer="16"/>
+<wire x1="75.5" y1="58.9" x2="75.4" y2="58.8" width="0.4064" layer="16"/>
+<via x="75.4" y="58.8" extent="1-16" drill="0.35"/>
+<wire x1="66.9808" y1="67.7967375" x2="66.9808" y2="67.222" width="0.4064" layer="16"/>
+<wire x1="66.9808" y1="67.222" x2="67.565" y2="66.6378" width="0.4064" layer="16"/>
+<wire x1="64.6" y1="68.05" x2="66.7275375" y2="68.05" width="0.4064" layer="16"/>
+<wire x1="66.7275375" y1="68.05" x2="66.9808" y2="67.7967375" width="0.4064" layer="16"/>
+<via x="64.6" y="66.8" extent="1-16" drill="0.35"/>
+<wire x1="64.6" y1="68.05" x2="64.6" y2="66.8" width="0.4064" layer="16"/>
+<wire x1="66.7427375" y1="60.0348" x2="66.9808" y2="59.7967375" width="0.4064" layer="16"/>
+<wire x1="64.5" y1="60.05" x2="64.5152" y2="60.0348" width="0.4064" layer="16"/>
+<wire x1="66.9808" y1="59.7967375" x2="66.9808" y2="59.222" width="0.4064" layer="16"/>
+<wire x1="66.9808" y1="59.222" x2="67.565" y2="58.6378" width="0.4064" layer="16"/>
+<wire x1="64.5152" y1="60.0348" x2="66.7427375" y2="60.0348" width="0.4064" layer="16"/>
+<wire x1="75.4" y1="58.8" x2="75.4" y2="50.5" width="0" layer="19" extent="1-16"/>
+<wire x1="66.7427375" y1="60.0348" x2="67.565" y2="66.6378" width="0" layer="19" extent="16-16"/>
 <wire x1="1.024" y1="79.343" x2="6.5" y2="72.5" width="0" layer="19" extent="1-1"/>
+<wire x1="-8.55" y1="75.5" x2="1.024" y2="79.343" width="0" layer="19" extent="1-16"/>
+<wire x1="-9.1378" y1="81.365" x2="-8.55" y2="75.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-8.55" y1="89.5" x2="-9.1378" y2="81.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-9.1378" y1="95.365" x2="-8.55" y2="89.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-8.55" y1="103.5" x2="-9.1378" y2="95.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-9.1378" y1="109.365" x2="-8.55" y2="103.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-8.55" y1="117.5" x2="-9.1378" y2="109.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-9.1378" y1="123.365" x2="-8.55" y2="117.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-9.1378" y1="130.865" x2="-9.1378" y2="123.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-16.05" y1="132.5" x2="-9.1378" y2="130.865" width="0" layer="19" extent="16-16"/>
+<wire x1="-9.1378" y1="68.365" x2="-8.55" y2="75.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-8.55" y1="62.5" x2="-9.1378" y2="68.365" width="0" layer="19" extent="16-16"/>
+<wire x1="61.8622" y1="8.365" x2="-8.55" y2="62.5" width="0" layer="19" extent="16-16"/>
+<wire x1="62.45" y1="2.5" x2="61.8622" y2="8.365" width="0" layer="19" extent="16-16"/>
+<wire x1="80.7622" y1="8.065" x2="62.45" y2="2.5" width="0" layer="19" extent="16-16"/>
+<wire x1="79.35" y1="4.7" x2="80.7622" y2="8.065" width="0" layer="19" extent="16-16"/>
+<wire x1="88.6622" y1="7.965" x2="79.35" y2="4.7" width="0" layer="19" extent="16-16"/>
+<wire x1="88.75" y1="2.4" x2="88.6622" y2="7.965" width="0" layer="19" extent="16-16"/>
+<wire x1="52.4622" y1="8.665" x2="88.75" y2="2.4" width="0" layer="19" extent="16-16"/>
+<wire x1="51.05" y1="4.8" x2="52.4622" y2="8.665" width="0" layer="19" extent="16-16"/>
+<wire x1="44.9622" y1="8.865" x2="51.05" y2="4.8" width="0" layer="19" extent="16-16"/>
+<wire x1="43.55" y1="5" x2="44.9622" y2="8.865" width="0" layer="19" extent="16-16"/>
+<wire x1="27.8622" y1="10.365" x2="43.55" y2="5" width="0" layer="19" extent="16-16"/>
+<wire x1="28.45" y1="4.5" x2="27.8622" y2="10.365" width="0" layer="19" extent="16-16"/>
+<wire x1="19.8622" y1="10.365" x2="28.45" y2="4.5" width="0" layer="19" extent="16-16"/>
+<wire x1="19.45" y1="5.5" x2="19.8622" y2="10.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-27.1378" y1="128.365" x2="-16.05" y2="132.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-26.55" y1="122.5" x2="-27.1378" y2="128.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-27.1378" y1="114.365" x2="-26.55" y2="122.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-26.55" y1="108.5" x2="-27.1378" y2="114.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-27.1378" y1="100.365" x2="-26.55" y2="108.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-26.55" y1="94.5" x2="-27.1378" y2="100.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-27.1378" y1="86.365" x2="-26.55" y2="94.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-26.55" y1="80.5" x2="-27.1378" y2="86.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-27.1378" y1="72.365" x2="-26.55" y2="80.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-26.55" y1="66.5" x2="-27.1378" y2="72.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-27.1378" y1="58.365" x2="-26.55" y2="66.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-26.55" y1="52.5" x2="-27.1378" y2="58.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-27.1378" y1="44.365" x2="-26.55" y2="52.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-26.55" y1="38.5" x2="-27.1378" y2="44.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-27.1378" y1="30.365" x2="-26.55" y2="38.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-26.55" y1="24.5" x2="-27.1378" y2="30.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-27.1378" y1="16.365" x2="-26.55" y2="24.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-26.55" y1="10.5" x2="-27.1378" y2="16.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-27.1378" y1="2.365" x2="-26.55" y2="10.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-26.55" y1="-3.5" x2="-27.1378" y2="2.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-27.1378" y1="-11.635" x2="-26.55" y2="-3.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-26.55" y1="-17.5" x2="-27.1378" y2="-11.635" width="0" layer="19" extent="16-16"/>
+<wire x1="-27.1378" y1="-25.635" x2="-26.55" y2="-17.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-26.55" y1="-31.5" x2="-27.1378" y2="-25.635" width="0" layer="19" extent="16-16"/>
+<wire x1="-47.1378" y1="127.365" x2="-27.1378" y2="128.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-46.55" y1="121.5" x2="-47.1378" y2="127.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-47.1378" y1="113.365" x2="-46.55" y2="121.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-46.55" y1="107.5" x2="-47.1378" y2="113.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-47.1378" y1="99.365" x2="-46.55" y2="107.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-46.55" y1="93.5" x2="-47.1378" y2="99.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-47.1378" y1="85.365" x2="-46.55" y2="93.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-46.55" y1="79.5" x2="-47.1378" y2="85.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-47.1378" y1="71.365" x2="-46.55" y2="79.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-46.55" y1="65.5" x2="-47.1378" y2="71.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-47.1378" y1="57.365" x2="-46.55" y2="65.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-46.55" y1="51.5" x2="-47.1378" y2="57.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-47.1378" y1="43.365" x2="-46.55" y2="51.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-46.55" y1="37.5" x2="-47.1378" y2="43.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-47.1378" y1="29.365" x2="-46.55" y2="37.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-46.55" y1="23.5" x2="-47.1378" y2="29.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-47.1378" y1="15.365" x2="-46.55" y2="23.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-46.55" y1="9.5" x2="-47.1378" y2="15.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-47.1378" y1="1.365" x2="-46.55" y2="9.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-46.55" y1="-4.5" x2="-47.1378" y2="1.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-47.1378" y1="-12.635" x2="-46.55" y2="-4.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-46.55" y1="-18.5" x2="-47.1378" y2="-12.635" width="0" layer="19" extent="16-16"/>
+<wire x1="-47.1378" y1="-26.635" x2="-46.55" y2="-18.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-46.55" y1="-32.5" x2="-47.1378" y2="-26.635" width="0" layer="19" extent="16-16"/>
+<wire x1="-62.55" y1="118.5" x2="-47.1378" y2="113.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-63.1378" y1="124.365" x2="-62.55" y2="118.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-63.1378" y1="110.365" x2="-62.55" y2="118.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-62.55" y1="104.5" x2="-63.1378" y2="110.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-63.1378" y1="96.365" x2="-62.55" y2="104.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-62.55" y1="90.5" x2="-63.1378" y2="96.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-63.1378" y1="82.365" x2="-62.55" y2="90.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-62.55" y1="76.5" x2="-63.1378" y2="82.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-63.1378" y1="68.365" x2="-62.55" y2="76.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-62.55" y1="62.5" x2="-63.1378" y2="68.365" width="0" layer="19" extent="16-16"/>
+<wire x1="75.4" y1="28.5" x2="75.4" y2="50.5" width="0" layer="19" extent="1-1"/>
 <wire x1="22.6" y1="50.5" x2="2.024" y2="66.794" width="0" layer="19" extent="1-1"/>
 <wire x1="22.6" y1="28.5" x2="22.6" y2="50.5" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$5">
 <contactref element="R11" pad="2"/>
 <contactref element="R10" pad="1"/>
-<wire x1="48.5792" y1="99.5807" x2="54.873" y2="99.5807" width="0.254" layer="1"/>
-<wire x1="55" y1="99.4537" x2="55.119775" y2="99.4537" width="0.254" layer="1"/>
-<wire x1="55" y1="99.4537" x2="56.0463" y2="99.4537" width="0.254" layer="1"/>
-<wire x1="56.0463" y1="99.4537" x2="62" y2="93.5" width="0.254" layer="1"/>
-<wire x1="62" y1="93.5" x2="62.5" y2="94" width="0.254" layer="1"/>
-<wire x1="62.5" y1="94" x2="62.5" y2="94.05" width="0.254" layer="1"/>
 <wire x1="62.5" y1="94.05" x2="62.5" y2="93.05" width="0.254" layer="1"/>
 <wire x1="62.5" y1="93.05" x2="64.05" y2="91.5" width="0.254" layer="1"/>
 <contactref element="U$1" pad="39/A3"/>
-<wire x1="54.873" y1="99.5807" x2="55" y2="99.4537" width="0.254" layer="1"/>
-<wire x1="44.204" y1="98.139" x2="47.1375" y2="98.139" width="0.254" layer="1"/>
-<wire x1="47.1375" y1="98.139" x2="48.5792" y2="99.5807" width="0.254" layer="1"/>
+<wire x1="62" y1="94.05" x2="62.5" y2="94.05" width="0.4064" layer="1"/>
+<wire x1="44.204" y1="98.139" x2="46.0011" y2="96.3419" width="0.4064" layer="1"/>
+<wire x1="59.7081" y1="96.3419" x2="62" y2="94.05" width="0.4064" layer="1"/>
+<wire x1="46.0011" y1="96.3419" x2="59.7081" y2="96.3419" width="0.4064" layer="1"/>
 </signal>
 <signal name="+5V">
 <contactref element="DIP2" pad="5V@2"/>
@@ -5007,106 +5039,144 @@ design rules under a new name.
 <wire x1="87.89" y1="98.688" x2="87.376" y2="98.174" width="0.3048" layer="1"/>
 <wire x1="87.33" y1="99.318" x2="87.376" y2="99.272" width="0.254" layer="1"/>
 <wire x1="87.376" y1="99.272" x2="87.376" y2="98.174" width="0.254" layer="1"/>
-<wire x1="-2.1378" y1="-496.635" x2="-5.55" y2="-502.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-488.5" x2="-2.1378" y2="-496.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-482.635" x2="-5.55" y2="-488.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-474.5" x2="-2.1378" y2="-482.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-468.635" x2="-5.55" y2="-474.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-460.5" x2="-2.1378" y2="-468.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-454.635" x2="-5.55" y2="-460.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-446.5" x2="-2.1378" y2="-454.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-440.635" x2="-5.55" y2="-446.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-432.5" x2="-2.1378" y2="-440.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-426.635" x2="-5.55" y2="-432.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-418.5" x2="-2.1378" y2="-426.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-412.635" x2="-5.55" y2="-418.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-404.5" x2="-2.1378" y2="-412.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-398.635" x2="-5.55" y2="-404.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-390.5" x2="-2.1378" y2="-398.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-384.635" x2="-5.55" y2="-390.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-376.5" x2="-2.1378" y2="-384.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-370.635" x2="-5.55" y2="-376.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-363.135" x2="-2.1378" y2="-370.635" width="0" layer="19" extent="1-1"/>
-<wire x1="1.95" y1="-361.5" x2="-2.1378" y2="-363.135" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-510.635" x2="-5.55" y2="-502.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-516.5" x2="-2.1378" y2="-510.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-524.635" x2="-5.55" y2="-516.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-530.5" x2="-2.1378" y2="-524.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-538.635" x2="-5.55" y2="-530.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-544.5" x2="-2.1378" y2="-538.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-552.635" x2="-5.55" y2="-544.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-558.5" x2="-2.1378" y2="-552.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-566.635" x2="-5.55" y2="-558.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-572.5" x2="-2.1378" y2="-566.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-580.635" x2="-5.55" y2="-572.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-586.5" x2="-2.1378" y2="-580.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-594.635" x2="-5.55" y2="-586.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-600.5" x2="-2.1378" y2="-594.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-608.635" x2="-5.55" y2="-600.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-614.5" x2="-2.1378" y2="-608.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-622.635" x2="-5.55" y2="-614.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-628.5" x2="-2.1378" y2="-622.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-636.635" x2="-5.55" y2="-628.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-642.5" x2="-2.1378" y2="-636.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-650.635" x2="-5.55" y2="-642.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-656.5" x2="-2.1378" y2="-650.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-664.635" x2="-5.55" y2="-656.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-670.5" x2="-2.1378" y2="-664.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-678.635" x2="-5.55" y2="-670.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-684.5" x2="-2.1378" y2="-678.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-692.635" x2="-5.55" y2="-684.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-698.5" x2="-2.1378" y2="-692.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-706.635" x2="-5.55" y2="-698.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-712.5" x2="-2.1378" y2="-706.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-720.635" x2="-5.55" y2="-712.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-726.5" x2="-2.1378" y2="-720.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-734.635" x2="-5.55" y2="-726.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-740.5" x2="-2.1378" y2="-734.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-748.635" x2="-5.55" y2="-740.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-754.5" x2="-2.1378" y2="-748.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-762.635" x2="-5.55" y2="-754.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-768.5" x2="-2.1378" y2="-762.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-776.635" x2="-5.55" y2="-768.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-782.5" x2="-2.1378" y2="-776.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-790.635" x2="-5.55" y2="-782.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-796.5" x2="-2.1378" y2="-790.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-804.635" x2="-5.55" y2="-796.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-810.5" x2="-2.1378" y2="-804.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-818.635" x2="-5.55" y2="-810.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-824.5" x2="-2.1378" y2="-818.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-832.635" x2="-5.55" y2="-824.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-838.5" x2="-2.1378" y2="-832.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-846.635" x2="-5.55" y2="-838.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-852.5" x2="-2.1378" y2="-846.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-860.635" x2="-5.55" y2="-852.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-866.5" x2="-2.1378" y2="-860.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-874.635" x2="-5.55" y2="-866.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-880.5" x2="-2.1378" y2="-874.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-888.635" x2="-5.55" y2="-880.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-894.5" x2="-2.1378" y2="-888.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-902.635" x2="-5.55" y2="-894.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-908.5" x2="-2.1378" y2="-902.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-916.635" x2="-5.55" y2="-908.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-922.5" x2="-2.1378" y2="-916.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-930.635" x2="-5.55" y2="-922.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-936.5" x2="-2.1378" y2="-930.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-944.635" x2="-5.55" y2="-936.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-950.5" x2="-2.1378" y2="-944.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-958.635" x2="-5.55" y2="-950.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-964.5" x2="-2.1378" y2="-958.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-972.635" x2="-5.55" y2="-964.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-978.5" x2="-2.1378" y2="-972.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-986.635" x2="-5.55" y2="-978.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-992.5" x2="-2.1378" y2="-986.635" width="0" layer="19" extent="1-1"/>
-<wire x1="-2.1378" y1="-1000.635" x2="-5.55" y2="-992.5" width="0" layer="19" extent="1-1"/>
-<wire x1="-5.55" y1="-1006.5" x2="-2.1378" y2="-1000.635" width="0" layer="19" extent="1-1"/>
-<wire x1="124.3622" y1="-37.635" x2="1.95" y2="-361.5" width="0" layer="19" extent="1-1"/>
-<wire x1="122.95" y1="-33.5" x2="124.3622" y2="-37.635" width="0" layer="19" extent="1-1"/>
-<wire x1="98.5" y1="58.95" x2="122.95" y2="-33.5" width="0" layer="19" extent="1-1"/>
-<wire x1="95.635" y1="60.3622" x2="98.5" y2="58.95" width="0" layer="19" extent="1-1"/>
-<wire x1="91.5" y1="58.95" x2="95.635" y2="60.3622" width="0" layer="19" extent="1-1"/>
-<wire x1="88.635" y1="60.3622" x2="91.5" y2="58.95" width="0" layer="19" extent="1-1"/>
-<wire x1="87.376" y1="98.174" x2="88.635" y2="60.3622" width="0" layer="19" extent="1-1"/>
+<wire x1="96.365" y1="71.0622" x2="95.73" y2="70.4272" width="0.3048" layer="16"/>
+<wire x1="95.73" y1="70.4272" x2="95.73" y2="69.92430625" width="0.3048" layer="16"/>
+<wire x1="95.73" y1="69.92430625" x2="95.45569375" y2="69.65" width="0.3048" layer="16"/>
+<wire x1="95.45569375" y1="69.65" x2="93.5" y2="69.65" width="0.3048" layer="16"/>
+<wire x1="95.52169375" y1="61.916" x2="95.73" y2="62.12430625" width="0.3048" layer="16"/>
+<wire x1="93.4" y1="61.85" x2="93.466" y2="61.916" width="0.3048" layer="16"/>
+<wire x1="95.73" y1="62.12430625" x2="95.73" y2="62.6272" width="0.3048" layer="16"/>
+<wire x1="95.73" y1="62.6272" x2="96.365" y2="63.2622" width="0.3048" layer="16"/>
+<wire x1="93.466" y1="61.916" x2="95.52169375" y2="61.916" width="0.3048" layer="16"/>
+<wire x1="88.065" y1="71.1622" x2="87.43" y2="70.5272" width="0.3048" layer="16"/>
+<wire x1="87.43" y1="70.5272" x2="87.43" y2="70.02430625" width="0.3048" layer="16"/>
+<wire x1="87.43" y1="70.02430625" x2="87.15569375" y2="69.75" width="0.3048" layer="16"/>
+<wire x1="87.15569375" y1="69.75" x2="85.1" y2="69.75" width="0.3048" layer="16"/>
+<wire x1="93.5" y1="69.65" x2="93.6" y2="69.75" width="0.3048" layer="16"/>
+<wire x1="93.6" y1="70.7958" x2="93.6042" y2="70.8" width="0.3048" layer="16"/>
+<via x="93.6042" y="70.8" extent="1-16" drill="0.35"/>
+<wire x1="93.6" y1="69.75" x2="93.6" y2="70.7958" width="0.3048" layer="16"/>
+<wire x1="85.1" y1="69.75" x2="85.1" y2="70.9" width="0.3048" layer="16"/>
+<wire x1="85.1" y1="70.9" x2="85" y2="71" width="0.3048" layer="16"/>
+<via x="85" y="71" extent="1-16" drill="0.35"/>
+<wire x1="93.4" y1="61.85" x2="93.4" y2="62.9" width="0.3048" layer="16"/>
+<wire x1="93.4" y1="62.9" x2="93.4" y2="63.1" width="0.3048" layer="16"/>
+<via x="93.4" y="63.1" extent="1-16" drill="0.35"/>
+<wire x1="87.43" y1="62.22430625" x2="87.43" y2="62.7272" width="0.3048" layer="16"/>
+<wire x1="87.43" y1="62.7272" x2="88.065" y2="63.3622" width="0.3048" layer="16"/>
+<wire x1="85.1" y1="61.95" x2="87.15569375" y2="61.95" width="0.3048" layer="16"/>
+<wire x1="87.15569375" y1="61.95" x2="87.43" y2="62.22430625" width="0.3048" layer="16"/>
+<via x="85.1" y="63.2" extent="1-16" drill="0.35"/>
+<wire x1="85.1" y1="61.95" x2="85.1" y2="63.2" width="0.3048" layer="16"/>
+<wire x1="77.7808" y1="70.2032625" x2="77.7808" y2="70.778" width="0.4064" layer="16"/>
+<wire x1="77.7808" y1="70.778" x2="78.365" y2="71.3622" width="0.4064" layer="16"/>
+<wire x1="75.4" y1="69.95" x2="77.5275375" y2="69.95" width="0.4064" layer="16"/>
+<wire x1="77.5275375" y1="69.95" x2="77.7808" y2="70.2032625" width="0.4064" layer="16"/>
+<wire x1="75.4" y1="69.95" x2="75.4" y2="71.1" width="0.4064" layer="16"/>
+<wire x1="75.4" y1="71.1" x2="75.3" y2="71.2" width="0.4064" layer="16"/>
+<via x="75.3" y="71.2" extent="1-16" drill="0.35"/>
+<wire x1="77.8808" y1="62.3032625" x2="77.8808" y2="62.878" width="0.4064" layer="16"/>
+<wire x1="77.8808" y1="62.878" x2="78.465" y2="63.4622" width="0.4064" layer="16"/>
+<wire x1="75.5" y1="62.05" x2="77.6275375" y2="62.05" width="0.4064" layer="16"/>
+<wire x1="77.6275375" y1="62.05" x2="77.8808" y2="62.3032625" width="0.4064" layer="16"/>
+<wire x1="75.5" y1="62.05" x2="75.5" y2="63.2" width="0.4064" layer="16"/>
+<wire x1="75.5" y1="63.2" x2="75.4" y2="63.3" width="0.4064" layer="16"/>
+<via x="75.4" y="63.3" extent="1-16" drill="0.35"/>
+<wire x1="66.9808" y1="70.2032625" x2="66.9808" y2="70.778" width="0.4064" layer="16"/>
+<wire x1="66.9808" y1="70.778" x2="67.565" y2="71.3622" width="0.4064" layer="16"/>
+<wire x1="64.6" y1="69.95" x2="66.7275375" y2="69.95" width="0.4064" layer="16"/>
+<wire x1="66.7275375" y1="69.95" x2="66.9808" y2="70.2032625" width="0.4064" layer="16"/>
+<wire x1="64.6" y1="69.95" x2="64.6" y2="71.1" width="0.4064" layer="16"/>
+<via x="64.6" y="71.1" extent="1-16" drill="0.35"/>
+<wire x1="66.9808" y1="62.2032625" x2="66.9808" y2="62.778" width="0.4064" layer="16"/>
+<wire x1="66.9808" y1="62.778" x2="67.565" y2="63.3622" width="0.4064" layer="16"/>
+<wire x1="64.5" y1="61.95" x2="66.7275375" y2="61.95" width="0.4064" layer="16"/>
+<wire x1="66.7275375" y1="61.95" x2="66.9808" y2="62.2032625" width="0.4064" layer="16"/>
+<wire x1="66.7275375" y1="69.95" x2="67.565" y2="63.3622" width="0" layer="19" extent="16-16"/>
+<wire x1="49.15" y1="4.8" x2="9.04" y2="2.5" width="0" layer="19" extent="16-16"/>
+<wire x1="47.7378" y1="8.665" x2="49.15" y2="4.8" width="0" layer="19" extent="16-16"/>
+<wire x1="40.2378" y1="8.865" x2="49.15" y2="4.8" width="0" layer="19" extent="16-16"/>
+<wire x1="41.65" y1="5" x2="40.2378" y2="8.865" width="0" layer="19" extent="16-16"/>
+<wire x1="23.1378" y1="10.365" x2="41.65" y2="5" width="0" layer="19" extent="16-16"/>
+<wire x1="26.55" y1="4.5" x2="23.1378" y2="10.365" width="0" layer="19" extent="16-16"/>
+<wire x1="15.1378" y1="10.365" x2="26.55" y2="4.5" width="0" layer="19" extent="16-16"/>
+<wire x1="17.55" y1="5.5" x2="15.1378" y2="10.365" width="0" layer="19" extent="16-16"/>
+<wire x1="86.85" y1="2.4" x2="47.7378" y2="8.665" width="0" layer="19" extent="16-16"/>
+<wire x1="83.9378" y1="7.965" x2="86.85" y2="2.4" width="0" layer="19" extent="16-16"/>
+<wire x1="77.45" y1="4.7" x2="83.9378" y2="7.965" width="0" layer="19" extent="16-16"/>
+<wire x1="76.0378" y1="8.065" x2="77.45" y2="4.7" width="0" layer="19" extent="16-16"/>
+<wire x1="60.55" y1="2.5" x2="76.0378" y2="8.065" width="0" layer="19" extent="16-16"/>
+<wire x1="57.1378" y1="8.365" x2="60.55" y2="2.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-10.45" y1="62.5" x2="57.1378" y2="8.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-13.8622" y1="68.365" x2="-10.45" y2="62.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-10.45" y1="75.5" x2="-13.8622" y2="68.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-13.8622" y1="81.365" x2="-10.45" y2="75.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-10.45" y1="89.5" x2="-13.8622" y2="81.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-13.8622" y1="95.365" x2="-10.45" y2="89.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-10.45" y1="103.5" x2="-13.8622" y2="95.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-13.8622" y1="109.365" x2="-10.45" y2="103.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-10.45" y1="117.5" x2="-13.8622" y2="109.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-13.8622" y1="123.365" x2="-10.45" y2="117.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-13.8622" y1="130.865" x2="-13.8622" y2="123.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-17.95" y1="132.5" x2="-13.8622" y2="130.865" width="0" layer="19" extent="16-16"/>
+<wire x1="-31.8622" y1="128.365" x2="-17.95" y2="132.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-28.45" y1="122.5" x2="-31.8622" y2="128.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-31.8622" y1="114.365" x2="-28.45" y2="122.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-28.45" y1="108.5" x2="-31.8622" y2="114.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-31.8622" y1="100.365" x2="-28.45" y2="108.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-28.45" y1="94.5" x2="-31.8622" y2="100.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-31.8622" y1="86.365" x2="-28.45" y2="94.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-28.45" y1="80.5" x2="-31.8622" y2="86.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-31.8622" y1="72.365" x2="-28.45" y2="80.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-28.45" y1="66.5" x2="-31.8622" y2="72.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-31.8622" y1="58.365" x2="-28.45" y2="66.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-28.45" y1="52.5" x2="-31.8622" y2="58.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-31.8622" y1="44.365" x2="-28.45" y2="52.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-28.45" y1="38.5" x2="-31.8622" y2="44.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-31.8622" y1="30.365" x2="-28.45" y2="38.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-28.45" y1="24.5" x2="-31.8622" y2="30.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-31.8622" y1="16.365" x2="-28.45" y2="24.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-28.45" y1="10.5" x2="-31.8622" y2="16.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-31.8622" y1="2.365" x2="-28.45" y2="10.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-28.45" y1="-3.5" x2="-31.8622" y2="2.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-31.8622" y1="-11.635" x2="-28.45" y2="-3.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-28.45" y1="-17.5" x2="-31.8622" y2="-11.635" width="0" layer="19" extent="16-16"/>
+<wire x1="-31.8622" y1="-25.635" x2="-28.45" y2="-17.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-28.45" y1="-31.5" x2="-31.8622" y2="-25.635" width="0" layer="19" extent="16-16"/>
+<wire x1="-48.45" y1="-32.5" x2="-31.8622" y2="-25.635" width="0" layer="19" extent="16-16"/>
+<wire x1="-51.8622" y1="-26.635" x2="-48.45" y2="-32.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-48.45" y1="-18.5" x2="-51.8622" y2="-26.635" width="0" layer="19" extent="16-16"/>
+<wire x1="-51.8622" y1="-12.635" x2="-48.45" y2="-18.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-48.45" y1="-4.5" x2="-51.8622" y2="-12.635" width="0" layer="19" extent="16-16"/>
+<wire x1="-51.8622" y1="1.365" x2="-48.45" y2="-4.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-48.45" y1="9.5" x2="-51.8622" y2="1.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-51.8622" y1="15.365" x2="-48.45" y2="9.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-48.45" y1="23.5" x2="-51.8622" y2="15.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-51.8622" y1="29.365" x2="-48.45" y2="23.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-48.45" y1="37.5" x2="-51.8622" y2="29.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-51.8622" y1="43.365" x2="-48.45" y2="37.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-48.45" y1="51.5" x2="-51.8622" y2="43.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-51.8622" y1="57.365" x2="-48.45" y2="51.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-48.45" y1="65.5" x2="-51.8622" y2="57.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-51.8622" y1="71.365" x2="-48.45" y2="65.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-48.45" y1="79.5" x2="-51.8622" y2="71.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-51.8622" y1="85.365" x2="-48.45" y2="79.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-48.45" y1="93.5" x2="-51.8622" y2="85.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-51.8622" y1="99.365" x2="-48.45" y2="93.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-48.45" y1="107.5" x2="-51.8622" y2="99.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-51.8622" y1="113.365" x2="-48.45" y2="107.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-48.45" y1="121.5" x2="-51.8622" y2="113.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-51.8622" y1="127.365" x2="-48.45" y2="121.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-64.45" y1="118.5" x2="-51.8622" y2="113.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-67.8622" y1="124.365" x2="-64.45" y2="118.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-67.8622" y1="110.365" x2="-64.45" y2="118.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-64.45" y1="104.5" x2="-67.8622" y2="110.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-67.8622" y1="96.365" x2="-64.45" y2="104.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-64.45" y1="90.5" x2="-67.8622" y2="96.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-67.8622" y1="82.365" x2="-64.45" y2="90.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-64.45" y1="76.5" x2="-67.8622" y2="82.365" width="0" layer="19" extent="16-16"/>
+<wire x1="-67.8622" y1="68.365" x2="-64.45" y2="76.5" width="0" layer="19" extent="16-16"/>
+<wire x1="-64.45" y1="62.5" x2="-67.8622" y2="68.365" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="1">
 <contactref element="U1" pad="2"/>
@@ -5142,35 +5212,38 @@ design rules under a new name.
 <wire x1="88.54841875" y1="94.128" x2="89.278" y2="94.128" width="0.6096" layer="1"/>
 <wire x1="85.9586" y1="94.37298125" x2="86.26558125" y2="94.066" width="0.6096" layer="1"/>
 </signal>
-<signal name="91">
-<contactref element="U46" pad="2"/>
-</signal>
 <signal name="92">
-<contactref element="U46" pad="4"/>
-</signal>
-<signal name="93">
-<contactref element="U47" pad="2"/>
+<contactref element="U46" pad="2"/>
+<wire x1="79.635" y1="66.6378" x2="80.1" y2="66.1728" width="0.4064" layer="16"/>
+<wire x1="80.1" y1="66.1728" x2="80.1" y2="65.1" width="0.4064" layer="16"/>
+<via x="80.1" y="65.1" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="94">
-<contactref element="U47" pad="4"/>
-</signal>
-<signal name="95">
-<contactref element="U48" pad="2"/>
+<contactref element="U47" pad="2"/>
+<wire x1="89.335" y1="58.6378" x2="89.335" y2="57.535" width="0.3048" layer="16"/>
+<wire x1="89.335" y1="57.535" x2="89.1" y2="57.3" width="0.3048" layer="16"/>
+<via x="89.1" y="57.3" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="96">
-<contactref element="U48" pad="4"/>
-</signal>
-<signal name="97">
-<contactref element="U49" pad="2"/>
+<contactref element="U48" pad="2"/>
+<wire x1="89.335" y1="66.4378" x2="89.7" y2="66.0728" width="0.3048" layer="16"/>
+<wire x1="89.7" y1="66.0728" x2="89.7" y2="65.3" width="0.3048" layer="16"/>
+<wire x1="89.7" y1="65.3" x2="89.95" y2="65.05" width="0.3048" layer="16"/>
+<wire x1="89.95" y1="65.05" x2="89.9" y2="65" width="0.3048" layer="16"/>
+<via x="89.9" y="65" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="98">
-<contactref element="U49" pad="4"/>
-</signal>
-<signal name="99">
-<contactref element="U50" pad="2"/>
+<contactref element="U49" pad="2"/>
+<via x="97.2" y="57.2" extent="1-16" drill="0.35"/>
+<wire x1="97.635" y1="58.5378" x2="97.635" y2="57.2" width="0.3048" layer="16"/>
+<wire x1="97.635" y1="57.2" x2="97.2" y2="57.2" width="0.3048" layer="16"/>
 </signal>
 <signal name="100">
-<contactref element="U50" pad="4"/>
+<contactref element="U50" pad="2"/>
+<wire x1="97.635" y1="66.3378" x2="97.9" y2="66.0728" width="0.3048" layer="16"/>
+<wire x1="97.9" y1="66.0728" x2="97.9" y2="65.2" width="0.3048" layer="16"/>
+<via x="98.1" y="65" extent="1-16" drill="0.35"/>
+<wire x1="97.9" y1="65.2" x2="98.1" y2="65" width="0.3048" layer="16"/>
 </signal>
 <signal name="133">
 <contactref element="U24" pad="2"/>
@@ -5400,42 +5473,6 @@ design rules under a new name.
 <signal name="DRIVE_42">
 <contactref element="U42" pad="5"/>
 </signal>
-<signal name="171">
-<contactref element="U43" pad="2"/>
-</signal>
-<signal name="172">
-<contactref element="U43" pad="4"/>
-</signal>
-<signal name="N$60">
-<contactref element="U43" pad="7"/>
-</signal>
-<signal name="DRIVE_43">
-<contactref element="U43" pad="5"/>
-</signal>
-<signal name="173">
-<contactref element="U44" pad="2"/>
-</signal>
-<signal name="174">
-<contactref element="U44" pad="4"/>
-</signal>
-<signal name="N$61">
-<contactref element="U44" pad="7"/>
-</signal>
-<signal name="DRIVE_44">
-<contactref element="U44" pad="5"/>
-</signal>
-<signal name="175">
-<contactref element="U45" pad="2"/>
-</signal>
-<signal name="176">
-<contactref element="U45" pad="4"/>
-</signal>
-<signal name="N$62">
-<contactref element="U45" pad="7"/>
-</signal>
-<signal name="DRIVE_45">
-<contactref element="U45" pad="5"/>
-</signal>
 <signal name="N$1">
 <contactref element="PROTECT_R_1" pad="1"/>
 <contactref element="U1200" pad="9"/>
@@ -5445,19 +5482,21 @@ design rules under a new name.
 <wire x1="96.250225" y1="88.358775" x2="98.425" y2="86.184" width="0.254" layer="1"/>
 </signal>
 <signal name="TO_TRAN_100">
-<contactref element="U50" pad="5"/>
 <contactref element="JP1" pad="2"/>
 <contactref element="R-TRANS-100" pad="2"/>
 <wire x1="98.561" y1="79.837" x2="98.431" y2="79.967" width="0.3048" layer="1"/>
 <wire x1="99.1442" y1="76.77140625" x2="99.1442" y2="75.86659375" width="0.254" layer="1"/>
 <wire x1="98.431" y1="79.967" x2="98.431" y2="77.48460625" width="0.254" layer="1"/>
-<wire x1="98.052" y1="74.77439375" x2="98.052" y2="73.779" width="0.254" layer="1"/>
+<wire x1="98.052" y1="74.77439375" x2="98.052" y2="74" width="0.254" layer="1"/>
+<wire x1="98.052" y1="74" x2="98.052" y2="73.779" width="0.254" layer="1"/>
 <wire x1="98.431" y1="77.48460625" x2="99.1442" y2="76.77140625" width="0.254" layer="1"/>
 <wire x1="99.1442" y1="75.86659375" x2="98.052" y2="74.77439375" width="0.254" layer="1"/>
-<wire x1="96.905" y1="60.3622" x2="98.052" y2="73.779" width="0" layer="19" extent="1-1"/>
+<wire x1="98.052" y1="73.779" x2="98.052" y2="74" width="0.3048" layer="1"/>
+<contactref element="U50" pad="7"/>
+<wire x1="97.635" y1="71.0622" x2="98.052" y2="71.4792" width="0.3048" layer="16"/>
+<wire x1="98.052" y1="71.4792" x2="98.052" y2="73.779" width="0.3048" layer="16"/>
 </signal>
 <signal name="TO_TRAN_99">
-<contactref element="U50" pad="7"/>
 <contactref element="JP1" pad="4"/>
 <contactref element="R-TRANS-99" pad="2"/>
 <wire x1="96.021" y1="79.877" x2="95.931" y2="79.967" width="0.3048" layer="1"/>
@@ -5466,10 +5505,12 @@ design rules under a new name.
 <wire x1="95.512" y1="74.77439375" x2="95.512" y2="73.779" width="0.254" layer="1"/>
 <wire x1="95.931" y1="77.44460625" x2="96.6042" y2="76.77140625" width="0.254" layer="1"/>
 <wire x1="96.6042" y1="75.86659375" x2="95.512" y2="74.77439375" width="0.254" layer="1"/>
-<wire x1="94.365" y1="60.3622" x2="95.512" y2="73.779" width="0" layer="19" extent="1-1"/>
+<contactref element="U50" pad="5"/>
+<wire x1="95.095" y1="71.0622" x2="95.095" y2="71.195" width="0.3048" layer="16"/>
+<wire x1="95.512" y1="71.612" x2="95.512" y2="73.779" width="0.3048" layer="16"/>
+<wire x1="95.095" y1="71.195" x2="95.512" y2="71.612" width="0.3048" layer="16"/>
 </signal>
 <signal name="TO_TRAN_98">
-<contactref element="U49" pad="5"/>
 <contactref element="JP1" pad="6"/>
 <contactref element="R-TRANS-98" pad="2"/>
 <wire x1="94.0642" y1="76.77140625" x2="94.0642" y2="75.86659375" width="0.254" layer="1"/>
@@ -5477,10 +5518,17 @@ design rules under a new name.
 <wire x1="94.0642" y1="75.86659375" x2="92.972" y2="74.77439375" width="0.254" layer="1"/>
 <wire x1="93.431" y1="79.967" x2="93.431" y2="77.40460625" width="0.254" layer="1"/>
 <wire x1="93.431" y1="77.40460625" x2="94.0642" y2="76.77140625" width="0.254" layer="1"/>
-<wire x1="89.905" y1="60.3622" x2="92.972" y2="73.779" width="0" layer="19" extent="1-1"/>
+<contactref element="U49" pad="7"/>
+<wire x1="92.972" y1="73.779" x2="92.972" y2="71.1337125" width="0.4064" layer="16"/>
+<wire x1="92.972" y1="71.1337125" x2="92.3436" y2="70.5053125" width="0.4064" layer="16"/>
+<wire x1="92.3436" y1="70.5053125" x2="92.3436" y2="66.9316625" width="0.4064" layer="16"/>
+<wire x1="92.3436" y1="66.9316625" x2="94.5836625" y2="64.6916" width="0.4064" layer="16"/>
+<wire x1="97.0508" y1="64.4211375" x2="97.0508" y2="63.8464" width="0.4064" layer="16"/>
+<wire x1="97.0508" y1="63.8464" x2="97.635" y2="63.2622" width="0.4064" layer="16"/>
+<wire x1="96.7803375" y1="64.6916" x2="97.0508" y2="64.4211375" width="0.4064" layer="16"/>
+<wire x1="94.5836625" y1="64.6916" x2="96.7803375" y2="64.6916" width="0.4064" layer="16"/>
 </signal>
 <signal name="TO_TRAN_97">
-<contactref element="U49" pad="7"/>
 <contactref element="JP1" pad="8"/>
 <contactref element="R-TRANS-97" pad="2"/>
 <wire x1="91.5242" y1="76.77140625" x2="91.5242" y2="75.86659375" width="0.254" layer="1"/>
@@ -5488,10 +5536,13 @@ design rules under a new name.
 <wire x1="91.5242" y1="75.86659375" x2="90.432" y2="74.77439375" width="0.254" layer="1"/>
 <wire x1="90.931" y1="79.967" x2="90.931" y2="77.36460625" width="0.254" layer="1"/>
 <wire x1="90.931" y1="77.36460625" x2="91.5242" y2="76.77140625" width="0.254" layer="1"/>
-<wire x1="87.365" y1="60.3622" x2="90.432" y2="73.779" width="0" layer="19" extent="1-1"/>
+<contactref element="U49" pad="5"/>
+<wire x1="91.6356" y1="66.7212375" x2="95.0946375" y2="63.2622" width="0.4064" layer="16"/>
+<wire x1="90.432" y1="73.779" x2="91.6356" y2="72.5754" width="0.4064" layer="16"/>
+<wire x1="91.6356" y1="72.5754" x2="91.6356" y2="66.7212375" width="0.4064" layer="16"/>
+<wire x1="95.0946375" y1="63.2622" x2="95.095" y2="63.2622" width="0.4064" layer="16"/>
 </signal>
 <signal name="TO_TRAN_96">
-<contactref element="U48" pad="5"/>
 <contactref element="JP1" pad="10"/>
 <contactref element="R-TRANS-96" pad="2"/>
 <wire x1="88.9842" y1="76.77140625" x2="88.9842" y2="75.86659375" width="0.254" layer="1"/>
@@ -5499,10 +5550,11 @@ design rules under a new name.
 <wire x1="88.9842" y1="75.86659375" x2="87.892" y2="74.77439375" width="0.254" layer="1"/>
 <wire x1="88.431" y1="79.967" x2="88.431" y2="77.32460625" width="0.254" layer="1"/>
 <wire x1="88.431" y1="77.32460625" x2="88.9842" y2="76.77140625" width="0.254" layer="1"/>
-<wire x1="124.3622" y1="-38.905" x2="87.892" y2="73.779" width="0" layer="19" extent="1-1"/>
+<contactref element="U48" pad="7"/>
+<wire x1="89.335" y1="71.1622" x2="89.335" y2="72.336" width="0.3048" layer="16"/>
+<wire x1="89.335" y1="72.336" x2="87.892" y2="73.779" width="0.3048" layer="16"/>
 </signal>
 <signal name="TO_TRAN_95">
-<contactref element="U48" pad="7"/>
 <contactref element="JP1" pad="12"/>
 <contactref element="R-TRANS-95" pad="2"/>
 <wire x1="86.4442" y1="76.77140625" x2="86.4442" y2="75.86659375" width="0.254" layer="1"/>
@@ -5510,10 +5562,11 @@ design rules under a new name.
 <wire x1="86.4442" y1="75.86659375" x2="85.352" y2="74.77439375" width="0.254" layer="1"/>
 <wire x1="85.931" y1="79.967" x2="85.931" y2="77.28460625" width="0.254" layer="1"/>
 <wire x1="85.931" y1="77.28460625" x2="86.4442" y2="76.77140625" width="0.254" layer="1"/>
-<wire x1="124.3622" y1="-36.365" x2="85.352" y2="73.779" width="0" layer="19" extent="1-1"/>
+<contactref element="U48" pad="5"/>
+<wire x1="86.795" y1="71.1622" x2="86.795" y2="72.336" width="0.3048" layer="16"/>
+<wire x1="86.795" y1="72.336" x2="85.352" y2="73.779" width="0.3048" layer="16"/>
 </signal>
 <signal name="TO_TRAN_94">
-<contactref element="U47" pad="5"/>
 <contactref element="JP1" pad="14"/>
 <contactref element="R-TRANS-94" pad="2"/>
 <wire x1="83.9042" y1="76.77140625" x2="83.9042" y2="75.86659375" width="0.254" layer="1"/>
@@ -5521,10 +5574,16 @@ design rules under a new name.
 <wire x1="83.9042" y1="75.86659375" x2="82.812" y2="74.77439375" width="0.254" layer="1"/>
 <wire x1="83.304" y1="79.967" x2="83.304" y2="77.37160625" width="0.254" layer="1"/>
 <wire x1="83.304" y1="77.37160625" x2="83.9042" y2="76.77140625" width="0.254" layer="1"/>
-<wire x1="83.304" y1="79.967" x2="-2.1378" y2="-1001.905" width="0" layer="19" extent="1-1"/>
+<contactref element="U47" pad="7"/>
+<wire x1="89.335" y1="63.3622" x2="88.7508" y2="63.9464" width="0.4064" layer="16"/>
+<wire x1="88.7508" y1="63.9464" x2="88.7508" y2="64.5211375" width="0.4064" layer="16"/>
+<wire x1="82.8628" y1="73.779" x2="82.812" y2="73.779" width="0.4064" layer="16"/>
+<wire x1="88.7508" y1="64.5211375" x2="88.4311375" y2="64.8408" width="0.4064" layer="16"/>
+<wire x1="82.8628" y1="67.8712875" x2="82.8628" y2="73.779" width="0.4064" layer="16"/>
+<wire x1="88.4311375" y1="64.8408" x2="85.8932875" y2="64.8408" width="0.4064" layer="16"/>
+<wire x1="85.8932875" y1="64.8408" x2="82.8628" y2="67.8712875" width="0.4064" layer="16"/>
 </signal>
 <signal name="TO_TRAN_93">
-<contactref element="U47" pad="7"/>
 <contactref element="JP1" pad="16"/>
 <contactref element="R-TRANS-93" pad="2"/>
 <wire x1="81.3642" y1="76.77140625" x2="81.3642" y2="75.86659375" width="0.254" layer="1"/>
@@ -5532,10 +5591,14 @@ design rules under a new name.
 <wire x1="81.3642" y1="75.86659375" x2="80.272" y2="74.77439375" width="0.254" layer="1"/>
 <wire x1="80.804" y1="79.967" x2="80.804" y2="77.33160625" width="0.254" layer="1"/>
 <wire x1="80.804" y1="77.33160625" x2="81.3642" y2="76.77140625" width="0.254" layer="1"/>
-<wire x1="80.804" y1="79.967" x2="-2.1378" y2="-999.365" width="0" layer="19" extent="1-1"/>
+<contactref element="U47" pad="5"/>
+<wire x1="86.695" y1="63.3622" x2="86.795" y2="63.3622" width="0.3048" layer="16"/>
+<wire x1="86.3534625" y1="63.3622" x2="86.695" y2="63.3622" width="0.4064" layer="16"/>
+<wire x1="80.272" y1="73.779" x2="82.2532" y2="71.7978" width="0.4064" layer="16"/>
+<wire x1="82.2532" y1="71.7978" x2="82.2532" y2="67.4624625" width="0.4064" layer="16"/>
+<wire x1="82.2532" y1="67.4624625" x2="86.3534625" y2="63.3622" width="0.4064" layer="16"/>
 </signal>
 <signal name="TO_TRAN_92">
-<contactref element="U46" pad="5"/>
 <contactref element="JP1" pad="18"/>
 <contactref element="R-TRANS-92" pad="2"/>
 <wire x1="78.8242" y1="76.77140625" x2="78.8242" y2="75.86659375" width="0.254" layer="1"/>
@@ -5543,10 +5606,13 @@ design rules under a new name.
 <wire x1="78.8242" y1="75.86659375" x2="77.732" y2="74.77439375" width="0.254" layer="1"/>
 <wire x1="78.274" y1="79.944" x2="78.274" y2="77.32160625" width="0.254" layer="1"/>
 <wire x1="78.274" y1="77.32160625" x2="78.8242" y2="76.77140625" width="0.254" layer="1"/>
-<wire x1="78.274" y1="79.944" x2="-2.1378" y2="-987.905" width="0" layer="19" extent="1-1"/>
+<contactref element="U46" pad="7"/>
+<wire x1="78.8127375" y1="72.7592" x2="78.7518" y2="72.7592" width="0.4064" layer="16"/>
+<wire x1="78.7518" y1="72.7592" x2="77.732" y2="73.779" width="0.4064" layer="16"/>
+<wire x1="79.635" y1="71.3622" x2="79.635" y2="71.9369375" width="0.4064" layer="16"/>
+<wire x1="79.635" y1="71.9369375" x2="78.8127375" y2="72.7592" width="0.4064" layer="16"/>
 </signal>
 <signal name="TO_TRAN_91">
-<contactref element="U46" pad="7"/>
 <contactref element="JP1" pad="20"/>
 <contactref element="R-TRANS-91" pad="2"/>
 <wire x1="76.2842" y1="76.77140625" x2="76.2842" y2="75.86659375" width="0.254" layer="1"/>
@@ -5554,7 +5620,9 @@ design rules under a new name.
 <wire x1="76.2842" y1="75.86659375" x2="75.192" y2="74.77439375" width="0.254" layer="1"/>
 <wire x1="75.734" y1="79.952" x2="75.734" y2="77.32160625" width="0.254" layer="1"/>
 <wire x1="75.734" y1="77.32160625" x2="76.2842" y2="76.77140625" width="0.254" layer="1"/>
-<wire x1="75.734" y1="79.952" x2="-2.1378" y2="-985.365" width="0" layer="19" extent="1-1"/>
+<contactref element="U46" pad="5"/>
+<wire x1="77.095" y1="71.3622" x2="75.192" y2="73.2652" width="0.4064" layer="16"/>
+<wire x1="75.192" y1="73.2652" x2="75.192" y2="73.779" width="0.4064" layer="16"/>
 </signal>
 <signal name="TO_TRAN_90">
 <contactref element="JP1" pad="22"/>
@@ -5564,6 +5632,14 @@ design rules under a new name.
 <wire x1="72.652" y1="74.77439375" x2="72.652" y2="73.779" width="0.254" layer="1"/>
 <wire x1="73.067" y1="77.44860625" x2="73.7442" y2="76.77140625" width="0.254" layer="1"/>
 <wire x1="73.7442" y1="75.86659375" x2="72.652" y2="74.77439375" width="0.254" layer="1"/>
+<contactref element="U45" pad="7"/>
+<wire x1="79.735" y1="63.4622" x2="79.1508" y2="64.0464" width="0.4064" layer="16"/>
+<wire x1="79.1508" y1="64.0464" x2="79.1508" y2="64.8211375" width="0.4064" layer="16"/>
+<wire x1="79.1508" y1="64.8211375" x2="79.0311375" y2="64.9408" width="0.4064" layer="16"/>
+<wire x1="79.0311375" y1="64.9408" x2="76.2932875" y2="64.9408" width="0.4064" layer="16"/>
+<wire x1="76.2932875" y1="64.9408" x2="74.052" y2="67.1820875" width="0.4064" layer="16"/>
+<wire x1="74.052" y1="67.1820875" x2="74.052" y2="72.379" width="0.4064" layer="16"/>
+<wire x1="74.052" y1="72.379" x2="72.652" y2="73.779" width="0.4064" layer="16"/>
 </signal>
 <signal name="TO_TRAN_89">
 <contactref element="JP1" pad="24"/>
@@ -5573,6 +5649,14 @@ design rules under a new name.
 <wire x1="70.112" y1="74.77439375" x2="70.112" y2="73.779" width="0.254" layer="1"/>
 <wire x1="70.535" y1="77.44060625" x2="71.2042" y2="76.77140625" width="0.254" layer="1"/>
 <wire x1="71.2042" y1="75.86659375" x2="70.112" y2="74.77439375" width="0.254" layer="1"/>
+<contactref element="U45" pad="5"/>
+<wire x1="73.4424" y1="66.92958125" x2="76.24078125" y2="64.1312" width="0.4064" layer="16"/>
+<wire x1="73.4424" y1="66.92958125" x2="73.4424" y2="72.079" width="0.4064" layer="16"/>
+<wire x1="76.24078125" y1="64.1312" x2="77.326" y2="64.1312" width="0.4064" layer="16"/>
+<wire x1="77.326" y1="64.1312" x2="77.195" y2="64.0002" width="0.4064" layer="16"/>
+<wire x1="77.195" y1="64.0002" x2="77.195" y2="63.4622" width="0.4064" layer="16"/>
+<wire x1="71.812" y1="72.079" x2="70.112" y2="73.779" width="0.4064" layer="16"/>
+<wire x1="73.4424" y1="72.079" x2="71.812" y2="72.079" width="0.4064" layer="16"/>
 </signal>
 <signal name="TO_TRAN_88">
 <contactref element="JP1" pad="26"/>
@@ -5582,6 +5666,11 @@ design rules under a new name.
 <wire x1="67.572" y1="74.77439375" x2="67.572" y2="73.779" width="0.254" layer="1"/>
 <wire x1="68.003" y1="77.43260625" x2="68.6642" y2="76.77140625" width="0.254" layer="1"/>
 <wire x1="68.6642" y1="75.86659375" x2="67.572" y2="74.77439375" width="0.254" layer="1"/>
+<contactref element="U44" pad="7"/>
+<wire x1="68.835" y1="71.3622" x2="68.2508" y2="71.9464" width="0.4064" layer="16"/>
+<wire x1="68.2508" y1="71.9464" x2="68.2508" y2="72.5211375" width="0.4064" layer="16"/>
+<wire x1="67.572" y1="73.1999375" x2="67.572" y2="73.779" width="0.4064" layer="16"/>
+<wire x1="68.2508" y1="72.5211375" x2="67.572" y2="73.1999375" width="0.4064" layer="16"/>
 </signal>
 <signal name="TO_TRAN_87">
 <contactref element="JP1" pad="28"/>
@@ -5591,6 +5680,9 @@ design rules under a new name.
 <wire x1="65.032" y1="74.77439375" x2="65.032" y2="73.779" width="0.254" layer="1"/>
 <wire x1="65.447" y1="77.44860625" x2="66.1242" y2="76.77140625" width="0.254" layer="1"/>
 <wire x1="66.1242" y1="75.86659375" x2="65.032" y2="74.77439375" width="0.254" layer="1"/>
+<contactref element="U44" pad="5"/>
+<wire x1="66.295" y1="71.3622" x2="65.032" y2="72.6252" width="0.4064" layer="16"/>
+<wire x1="65.032" y1="72.6252" x2="65.032" y2="73.779" width="0.4064" layer="16"/>
 </signal>
 <signal name="TO_TRAN_86">
 <contactref element="JP1" pad="30"/>
@@ -5600,6 +5692,15 @@ design rules under a new name.
 <wire x1="62.492" y1="74.77439375" x2="62.492" y2="73.779" width="0.254" layer="1"/>
 <wire x1="62.931" y1="77.42460625" x2="63.5842" y2="76.77140625" width="0.254" layer="1"/>
 <wire x1="63.5842" y1="75.86659375" x2="62.492" y2="74.77439375" width="0.254" layer="1"/>
+<contactref element="U43" pad="7"/>
+<wire x1="67.9549375" y1="64.817" x2="65.6170875" y2="64.817" width="0.4064" layer="16"/>
+<wire x1="63.392" y1="67.0420875" x2="65.6170875" y2="64.817" width="0.4064" layer="16"/>
+<wire x1="63.392" y1="72.879" x2="63.392" y2="67.0420875" width="0.4064" layer="16"/>
+<wire x1="68.835" y1="63.5622" x2="68.2508" y2="64.1464" width="0.4064" layer="16"/>
+<wire x1="68.2508" y1="64.1464" x2="68.2508" y2="64.5211375" width="0.4064" layer="16"/>
+<wire x1="68.2508" y1="64.5211375" x2="67.9549375" y2="64.817" width="0.4064" layer="16"/>
+<wire x1="62.492" y1="73.779" x2="63.392" y2="72.879" width="0.4064" layer="16"/>
+<wire x1="68.835" y1="63.3622" x2="68.835" y2="63.5622" width="0.4064" layer="16"/>
 </signal>
 <signal name="TO_TRAN_85">
 <contactref element="JP1" pad="32"/>
@@ -5609,6 +5710,11 @@ design rules under a new name.
 <wire x1="59.952" y1="74.77439375" x2="59.952" y2="73.779" width="0.254" layer="1"/>
 <wire x1="61.0442" y1="87.1822" x2="61.0442" y2="75.86659375" width="0.254" layer="1"/>
 <wire x1="61.0442" y1="75.86659375" x2="59.952" y2="74.77439375" width="0.254" layer="1"/>
+<contactref element="U43" pad="5"/>
+<wire x1="66.195" y1="63.3622" x2="62.7466875" y2="66.8105125" width="0.4064" layer="16"/>
+<wire x1="62.7466875" y1="66.8105125" x2="62.7466875" y2="70.9843125" width="0.4064" layer="16"/>
+<wire x1="62.7466875" y1="70.9843125" x2="59.952" y2="73.779" width="0.4064" layer="16"/>
+<wire x1="66.295" y1="63.3622" x2="66.195" y2="63.3622" width="0.4064" layer="16"/>
 </signal>
 <signal name="FROM_TRANS_100">
 <contactref element="JP1" pad="1"/>
@@ -6469,6 +6575,75 @@ design rules under a new name.
 <via x="50.5" y="82.9" extent="1-16" drill="0.35"/>
 <wire x1="50.05" y1="86" x2="50.5" y2="85.55" width="0.3048" layer="16" curve="-90"/>
 <wire x1="50.5" y1="85.55" x2="50.5" y2="82.9" width="0.3048" layer="16"/>
+</signal>
+<signal name="99">
+<contactref element="U50" pad="4"/>
+<wire x1="95.095" y1="66.3378" x2="95.5058" y2="65.927" width="0.3048" layer="16"/>
+<wire x1="95.5058" y1="65.927" x2="95.5058" y2="65.4238" width="0.3048" layer="16"/>
+<via x="95.5762" y="65.4058" extent="1-16" drill="0.35"/>
+<wire x1="95.5058" y1="65.4238" x2="95.5762" y2="65.4058" width="0.3048" layer="16"/>
+</signal>
+<signal name="97">
+<contactref element="U49" pad="4"/>
+<wire x1="94.9" y1="57.3" x2="94.6" y2="57.3" width="0.3048" layer="16"/>
+<via x="94.6" y="57.3" extent="1-16" drill="0.35"/>
+<wire x1="95.095" y1="58.5378" x2="94.9" y2="58.3428" width="0.3048" layer="16"/>
+<wire x1="94.9" y1="58.3428" x2="94.9" y2="57.3" width="0.3048" layer="16"/>
+</signal>
+<signal name="95">
+<contactref element="U48" pad="4"/>
+<wire x1="86.795" y1="66.4378" x2="87.3058" y2="65.927" width="0.3048" layer="16"/>
+<wire x1="87.3058" y1="65.927" x2="87.3058" y2="65.5238" width="0.3048" layer="16"/>
+<via x="87.3058" y="65.5238" extent="1-16" drill="0.35"/>
+</signal>
+<signal name="93">
+<contactref element="U47" pad="4"/>
+<wire x1="86.795" y1="58.6378" x2="86.795" y2="57.495" width="0.3048" layer="16"/>
+<wire x1="86.795" y1="57.495" x2="86.6" y2="57.3" width="0.3048" layer="16"/>
+<via x="86.6" y="57.3" extent="1-16" drill="0.35"/>
+</signal>
+<signal name="91">
+<contactref element="U46" pad="4"/>
+<wire x1="77.095" y1="66.6378" x2="77.095" y2="66.1346" width="0.4064" layer="16"/>
+<wire x1="77.095" y1="66.1346" x2="77.6058" y2="65.6238" width="0.4064" layer="16"/>
+<via x="77.6058" y="65.6238" extent="1-16" drill="0.35"/>
+</signal>
+<signal name="89">
+<contactref element="U45" pad="4"/>
+<wire x1="77.195" y1="58.7378" x2="77.6" y2="58.3328" width="0.4064" layer="16"/>
+<wire x1="77.6" y1="58.3328" x2="77.6" y2="57.4" width="0.4064" layer="16"/>
+<via x="77.6" y="57.4" extent="1-16" drill="0.35"/>
+</signal>
+<signal name="90">
+<contactref element="U45" pad="2"/>
+<wire x1="79.735" y1="58.7378" x2="80.1" y2="58.7378" width="0.4064" layer="16"/>
+<wire x1="80.1" y1="58.7378" x2="80.1" y2="57.4" width="0.4064" layer="16"/>
+<via x="80.1" y="57.4" extent="1-16" drill="0.35"/>
+</signal>
+<signal name="88">
+<contactref element="U44" pad="2"/>
+<wire x1="68.835" y1="66.6378" x2="68.835" y2="65.3" width="0.4064" layer="16"/>
+<wire x1="68.835" y1="65.3" x2="69.1" y2="65.3" width="0.4064" layer="16"/>
+<via x="69.1" y="65.3" extent="1-16" drill="0.35"/>
+</signal>
+<signal name="87">
+<contactref element="U44" pad="4"/>
+<via x="66.8" y="65.5" extent="1-16" drill="0.35"/>
+<wire x1="66.295" y1="66.6378" x2="66.395" y2="66.5378" width="0.4064" layer="16"/>
+<wire x1="66.395" y1="66.005" x2="66.395" y2="66.5378" width="0.4064" layer="16"/>
+<wire x1="66.8" y1="65.5" x2="66.395" y2="66.005" width="0.4064" layer="16"/>
+</signal>
+<signal name="86">
+<contactref element="U43" pad="2"/>
+<wire x1="68.835" y1="58.6378" x2="68.835" y2="57.365" width="0.4064" layer="16"/>
+<wire x1="68.835" y1="57.365" x2="69" y2="57.2" width="0.4064" layer="16"/>
+<via x="69" y="57.2" extent="1-16" drill="0.35"/>
+</signal>
+<signal name="85">
+<contactref element="U43" pad="4"/>
+<wire x1="66.295" y1="58.6378" x2="66.295" y2="57.405" width="0.4064" layer="16"/>
+<wire x1="66.295" y1="57.405" x2="66.5" y2="57.2" width="0.4064" layer="16"/>
+<via x="66.5" y="57.2" extent="1-16" drill="0.35"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
