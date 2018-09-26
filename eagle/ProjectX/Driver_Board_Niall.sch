@@ -15623,6 +15623,66 @@ CONN_11
 <part name="SUPPLY106" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SUPPLY107" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SUPPLY108" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY129" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY130" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY131" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY132" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY133" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY134" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY135" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY136" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY137" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY138" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY139" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY140" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY141" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY142" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY143" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY144" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY145" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY146" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY147" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY148" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY149" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY150" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY151" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY152" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY153" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY154" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY155" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY156" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY157" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY158" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY159" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY160" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY161" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY162" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY163" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY164" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY165" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY166" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY167" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY168" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY109" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY110" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY111" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY112" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY113" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY114" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY115" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY116" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY117" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY118" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY119" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY120" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY121" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY122" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY123" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY124" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY125" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY126" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY127" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY128" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -16095,6 +16155,66 @@ CONN_11
 <instance part="SUPPLY106" gate="1" x="-271.78" y="203.2" rot="MR270"/>
 <instance part="SUPPLY107" gate="1" x="-271.78" y="208.28" rot="MR270"/>
 <instance part="SUPPLY108" gate="1" x="-271.78" y="213.36" rot="MR270"/>
+<instance part="SUPPLY129" gate="1" x="-406.4" y="114.3" rot="MR270"/>
+<instance part="SUPPLY130" gate="1" x="-406.4" y="119.38" rot="MR270"/>
+<instance part="SUPPLY131" gate="1" x="-406.4" y="124.46" rot="MR270"/>
+<instance part="SUPPLY132" gate="1" x="-406.4" y="129.54" rot="MR270"/>
+<instance part="SUPPLY133" gate="1" x="-406.4" y="134.62" rot="MR270"/>
+<instance part="SUPPLY134" gate="1" x="-406.4" y="139.7" rot="MR270"/>
+<instance part="SUPPLY135" gate="1" x="-406.4" y="144.78" rot="MR270"/>
+<instance part="SUPPLY136" gate="1" x="-406.4" y="149.86" rot="MR270"/>
+<instance part="SUPPLY137" gate="1" x="-406.4" y="154.94" rot="MR270"/>
+<instance part="SUPPLY138" gate="1" x="-406.4" y="160.02" rot="MR270"/>
+<instance part="SUPPLY139" gate="1" x="-406.4" y="165.1" rot="MR270"/>
+<instance part="SUPPLY140" gate="1" x="-406.4" y="170.18" rot="MR270"/>
+<instance part="SUPPLY141" gate="1" x="-406.4" y="175.26" rot="MR270"/>
+<instance part="SUPPLY142" gate="1" x="-406.4" y="180.34" rot="MR270"/>
+<instance part="SUPPLY143" gate="1" x="-406.4" y="185.42" rot="MR270"/>
+<instance part="SUPPLY144" gate="1" x="-406.4" y="190.5" rot="MR270"/>
+<instance part="SUPPLY145" gate="1" x="-406.4" y="195.58" rot="MR270"/>
+<instance part="SUPPLY146" gate="1" x="-406.4" y="200.66" rot="MR270"/>
+<instance part="SUPPLY147" gate="1" x="-406.4" y="205.74" rot="MR270"/>
+<instance part="SUPPLY148" gate="1" x="-406.4" y="210.82" rot="MR270"/>
+<instance part="SUPPLY149" gate="1" x="-472.44" y="114.3" rot="MR270"/>
+<instance part="SUPPLY150" gate="1" x="-472.44" y="119.38" rot="MR270"/>
+<instance part="SUPPLY151" gate="1" x="-472.44" y="124.46" rot="MR270"/>
+<instance part="SUPPLY152" gate="1" x="-472.44" y="129.54" rot="MR270"/>
+<instance part="SUPPLY153" gate="1" x="-472.44" y="134.62" rot="MR270"/>
+<instance part="SUPPLY154" gate="1" x="-472.44" y="139.7" rot="MR270"/>
+<instance part="SUPPLY155" gate="1" x="-472.44" y="144.78" rot="MR270"/>
+<instance part="SUPPLY156" gate="1" x="-472.44" y="149.86" rot="MR270"/>
+<instance part="SUPPLY157" gate="1" x="-472.44" y="154.94" rot="MR270"/>
+<instance part="SUPPLY158" gate="1" x="-472.44" y="160.02" rot="MR270"/>
+<instance part="SUPPLY159" gate="1" x="-472.44" y="165.1" rot="MR270"/>
+<instance part="SUPPLY160" gate="1" x="-472.44" y="170.18" rot="MR270"/>
+<instance part="SUPPLY161" gate="1" x="-472.44" y="175.26" rot="MR270"/>
+<instance part="SUPPLY162" gate="1" x="-472.44" y="180.34" rot="MR270"/>
+<instance part="SUPPLY163" gate="1" x="-472.44" y="185.42" rot="MR270"/>
+<instance part="SUPPLY164" gate="1" x="-472.44" y="190.5" rot="MR270"/>
+<instance part="SUPPLY165" gate="1" x="-472.44" y="195.58" rot="MR270"/>
+<instance part="SUPPLY166" gate="1" x="-472.44" y="200.66" rot="MR270"/>
+<instance part="SUPPLY167" gate="1" x="-472.44" y="205.74" rot="MR270"/>
+<instance part="SUPPLY168" gate="1" x="-472.44" y="210.82" rot="MR270"/>
+<instance part="SUPPLY109" gate="1" x="-340.36" y="114.3" rot="MR270"/>
+<instance part="SUPPLY110" gate="1" x="-340.36" y="119.38" rot="MR270"/>
+<instance part="SUPPLY111" gate="1" x="-340.36" y="124.46" rot="MR270"/>
+<instance part="SUPPLY112" gate="1" x="-340.36" y="129.54" rot="MR270"/>
+<instance part="SUPPLY113" gate="1" x="-340.36" y="134.62" rot="MR270"/>
+<instance part="SUPPLY114" gate="1" x="-340.36" y="139.7" rot="MR270"/>
+<instance part="SUPPLY115" gate="1" x="-340.36" y="144.78" rot="MR270"/>
+<instance part="SUPPLY116" gate="1" x="-340.36" y="149.86" rot="MR270"/>
+<instance part="SUPPLY117" gate="1" x="-340.36" y="154.94" rot="MR270"/>
+<instance part="SUPPLY118" gate="1" x="-340.36" y="160.02" rot="MR270"/>
+<instance part="SUPPLY119" gate="1" x="-340.36" y="165.1" rot="MR270"/>
+<instance part="SUPPLY120" gate="1" x="-340.36" y="170.18" rot="MR270"/>
+<instance part="SUPPLY121" gate="1" x="-340.36" y="175.26" rot="MR270"/>
+<instance part="SUPPLY122" gate="1" x="-340.36" y="180.34" rot="MR270"/>
+<instance part="SUPPLY123" gate="1" x="-340.36" y="185.42" rot="MR270"/>
+<instance part="SUPPLY124" gate="1" x="-340.36" y="190.5" rot="MR270"/>
+<instance part="SUPPLY125" gate="1" x="-340.36" y="195.58" rot="MR270"/>
+<instance part="SUPPLY126" gate="1" x="-340.36" y="200.66" rot="MR270"/>
+<instance part="SUPPLY127" gate="1" x="-340.36" y="205.74" rot="MR270"/>
+<instance part="SUPPLY128" gate="1" x="-340.36" y="210.82" rot="MR270"/>
 </instances>
 <busses>
 <bus name="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100">
@@ -16172,8 +16292,6 @@ CONN_11
 <wire x1="-467.36" y1="106.68" x2="-467.36" y2="215.9" width="0.762" layer="92" style="longdash"/>
 <wire x1="-398.78" y1="106.68" x2="-398.78" y2="215.9" width="0.762" layer="92" style="longdash"/>
 <wire x1="-327.66" y1="106.68" x2="-327.66" y2="215.9" width="0.762" layer="92" style="longdash"/>
-<wire x1="-264.16" y1="106.68" x2="-266.7" y2="106.68" width="0.762" layer="92"/>
-<wire x1="-266.7" y1="106.68" x2="-266.7" y2="215.9" width="0.762" layer="92" style="longdash"/>
 </segment>
 </bus>
 <bus name="FROM_TRANS:FROM_TRANS_1,FROM_TRANS_2,FROM_TRANS_3,FROM_TRANS_4,FROM_TRANS_5,FROM_TRANS_6,FROM_TRANS_7,FROM_TRANS_8,FROM_TRANS_9,FROM_TRANS_10,FROM_TRANS_11,FROM_TRANS_12,FROM_TRANS_13,FROM_TRANS_14,FROM_TRANS_15,FROM_TRANS_16,FROM_TRANS_17,FROM_TRANS_18,FROM_TRANS_19,FROM_TRANS_20,FROM_TRANS_21,FROM_TRANS_22,FROM_TRANS_23,FROM_TRANS_24,FROM_TRANS_25,FROM_TRANS_26,FROM_TRANS_27,FROM_TRANS_28,FROM_TRANS_29,FROM_TRANS_30,FROM_TRANS_31,FROM_TRANS_32,FROM_TRANS_33,FROM_TRANS_34,FROM_TRANS_35,FROM_TRANS_36,FROM_TRANS_37,FROM_TRANS_38,FROM_TRANS_39,FROM_TRANS_40,FROM_TRANS_41,FROM_TRANS_42,FROM_TRANS_43,FROM_TRANS_44,FROM_TRANS_45,FROM_TRANS_46,FROM_TRANS_47,FROM_TRANS_48,FROM_TRANS_49,FROM_TRANS_50,FROM_TRANS_51,FROM_TRANS_52,FROM_TRANS_53,FROM_TRANS_54,FROM_TRANS_55,FROM_TRANS_56,FROM_TRANS_57,FROM_TRANS_58,FROM_TRANS_59,FROM_TRANS_60,FROM_TRANS_61,FROM_TRANS_62,FROM_TRANS_63,FROM_TRANS_64,FROM_TRANS_65,FROM_TRANS_66,FROM_TRANS_67,FROM_TRANS_68,FROM_TRANS_69,FROM_TRANS_70,FROM_TRANS_71,FROM_TRANS_72,FROM_TRANS_73,FROM_TRANS_74,FROM_TRANS_75,FROM_TRANS_76,FROM_TRANS_77,FROM_TRANS_78,FROM_TRANS_79,FROM_TRANS_80,FROM_TRANS_81,FROM_TRANS_82,FROM_TRANS_83,FROM_TRANS_84,FROM_TRANS_85,FROM_TRANS_86,FROM_TRANS_87,FROM_TRANS_88,FROM_TRANS_89,FROM_TRANS_90,FROM_TRANS_91,FROM_TRANS_92,FROM_TRANS_93,FROM_TRANS_94,FROM_TRANS_95,FROM_TRANS_96,FROM_TRANS_97,FROM_TRANS_98,FROM_TRANS_99,FROM_TRANS_100">
@@ -16910,6 +17028,306 @@ CONN_11
 <pinref part="SUPPLY108" gate="1" pin="GND"/>
 <pinref part="TRANSDUCERS_4" gate="G$1" pin="P$1"/>
 <wire x1="-274.32" y1="213.36" x2="-289.56" y2="213.36" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="SUPPLY129" gate="1" pin="GND"/>
+<wire x1="-424.18" y1="114.3" x2="-408.94" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$39"/>
+</segment>
+<segment>
+<pinref part="SUPPLY130" gate="1" pin="GND"/>
+<wire x1="-424.18" y1="119.38" x2="-408.94" y2="119.38" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$37"/>
+</segment>
+<segment>
+<pinref part="SUPPLY131" gate="1" pin="GND"/>
+<wire x1="-424.18" y1="124.46" x2="-408.94" y2="124.46" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$35"/>
+</segment>
+<segment>
+<pinref part="SUPPLY132" gate="1" pin="GND"/>
+<wire x1="-424.18" y1="129.54" x2="-408.94" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$33"/>
+</segment>
+<segment>
+<pinref part="SUPPLY133" gate="1" pin="GND"/>
+<wire x1="-424.18" y1="134.62" x2="-408.94" y2="134.62" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$31"/>
+</segment>
+<segment>
+<pinref part="SUPPLY134" gate="1" pin="GND"/>
+<wire x1="-424.18" y1="139.7" x2="-408.94" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$29"/>
+</segment>
+<segment>
+<pinref part="SUPPLY135" gate="1" pin="GND"/>
+<wire x1="-408.94" y1="144.78" x2="-424.18" y2="144.78" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$27"/>
+</segment>
+<segment>
+<pinref part="SUPPLY136" gate="1" pin="GND"/>
+<wire x1="-424.18" y1="149.86" x2="-408.94" y2="149.86" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$25"/>
+</segment>
+<segment>
+<pinref part="SUPPLY137" gate="1" pin="GND"/>
+<wire x1="-408.94" y1="154.94" x2="-424.18" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$23"/>
+</segment>
+<segment>
+<pinref part="SUPPLY138" gate="1" pin="GND"/>
+<wire x1="-424.18" y1="160.02" x2="-408.94" y2="160.02" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$21"/>
+</segment>
+<segment>
+<pinref part="SUPPLY139" gate="1" pin="GND"/>
+<wire x1="-408.94" y1="165.1" x2="-424.18" y2="165.1" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$19"/>
+</segment>
+<segment>
+<pinref part="SUPPLY140" gate="1" pin="GND"/>
+<wire x1="-424.18" y1="170.18" x2="-408.94" y2="170.18" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$17"/>
+</segment>
+<segment>
+<pinref part="SUPPLY141" gate="1" pin="GND"/>
+<wire x1="-408.94" y1="175.26" x2="-424.18" y2="175.26" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$15"/>
+</segment>
+<segment>
+<pinref part="SUPPLY142" gate="1" pin="GND"/>
+<wire x1="-424.18" y1="180.34" x2="-408.94" y2="180.34" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$13"/>
+</segment>
+<segment>
+<pinref part="SUPPLY143" gate="1" pin="GND"/>
+<wire x1="-408.94" y1="185.42" x2="-424.18" y2="185.42" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$11"/>
+</segment>
+<segment>
+<pinref part="SUPPLY144" gate="1" pin="GND"/>
+<wire x1="-424.18" y1="190.5" x2="-408.94" y2="190.5" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$9"/>
+</segment>
+<segment>
+<pinref part="SUPPLY145" gate="1" pin="GND"/>
+<wire x1="-408.94" y1="195.58" x2="-424.18" y2="195.58" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$7"/>
+</segment>
+<segment>
+<pinref part="SUPPLY146" gate="1" pin="GND"/>
+<wire x1="-408.94" y1="200.66" x2="-424.18" y2="200.66" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$5"/>
+</segment>
+<segment>
+<pinref part="SUPPLY147" gate="1" pin="GND"/>
+<wire x1="-424.18" y1="205.74" x2="-408.94" y2="205.74" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$3"/>
+</segment>
+<segment>
+<pinref part="SUPPLY148" gate="1" pin="GND"/>
+<wire x1="-408.94" y1="210.82" x2="-424.18" y2="210.82" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_2" gate="G$1" pin="P$1"/>
+</segment>
+<segment>
+<pinref part="SUPPLY149" gate="1" pin="GND"/>
+<wire x1="-490.22" y1="114.3" x2="-474.98" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$39"/>
+</segment>
+<segment>
+<pinref part="SUPPLY150" gate="1" pin="GND"/>
+<wire x1="-490.22" y1="119.38" x2="-474.98" y2="119.38" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$37"/>
+</segment>
+<segment>
+<pinref part="SUPPLY151" gate="1" pin="GND"/>
+<wire x1="-490.22" y1="124.46" x2="-474.98" y2="124.46" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$35"/>
+</segment>
+<segment>
+<pinref part="SUPPLY152" gate="1" pin="GND"/>
+<wire x1="-490.22" y1="129.54" x2="-474.98" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$33"/>
+</segment>
+<segment>
+<pinref part="SUPPLY153" gate="1" pin="GND"/>
+<wire x1="-490.22" y1="134.62" x2="-474.98" y2="134.62" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$31"/>
+</segment>
+<segment>
+<pinref part="SUPPLY154" gate="1" pin="GND"/>
+<wire x1="-490.22" y1="139.7" x2="-474.98" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$29"/>
+</segment>
+<segment>
+<pinref part="SUPPLY155" gate="1" pin="GND"/>
+<wire x1="-474.98" y1="144.78" x2="-490.22" y2="144.78" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$27"/>
+</segment>
+<segment>
+<pinref part="SUPPLY156" gate="1" pin="GND"/>
+<wire x1="-490.22" y1="149.86" x2="-474.98" y2="149.86" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$25"/>
+</segment>
+<segment>
+<pinref part="SUPPLY157" gate="1" pin="GND"/>
+<wire x1="-474.98" y1="154.94" x2="-490.22" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$23"/>
+</segment>
+<segment>
+<pinref part="SUPPLY158" gate="1" pin="GND"/>
+<wire x1="-490.22" y1="160.02" x2="-474.98" y2="160.02" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$21"/>
+</segment>
+<segment>
+<pinref part="SUPPLY159" gate="1" pin="GND"/>
+<wire x1="-474.98" y1="165.1" x2="-490.22" y2="165.1" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$19"/>
+</segment>
+<segment>
+<pinref part="SUPPLY160" gate="1" pin="GND"/>
+<wire x1="-490.22" y1="170.18" x2="-474.98" y2="170.18" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$17"/>
+</segment>
+<segment>
+<pinref part="SUPPLY161" gate="1" pin="GND"/>
+<wire x1="-474.98" y1="175.26" x2="-490.22" y2="175.26" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$15"/>
+</segment>
+<segment>
+<pinref part="SUPPLY162" gate="1" pin="GND"/>
+<wire x1="-490.22" y1="180.34" x2="-474.98" y2="180.34" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$13"/>
+</segment>
+<segment>
+<pinref part="SUPPLY163" gate="1" pin="GND"/>
+<wire x1="-474.98" y1="185.42" x2="-490.22" y2="185.42" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$11"/>
+</segment>
+<segment>
+<pinref part="SUPPLY164" gate="1" pin="GND"/>
+<wire x1="-490.22" y1="190.5" x2="-474.98" y2="190.5" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$9"/>
+</segment>
+<segment>
+<pinref part="SUPPLY165" gate="1" pin="GND"/>
+<wire x1="-474.98" y1="195.58" x2="-490.22" y2="195.58" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$7"/>
+</segment>
+<segment>
+<pinref part="SUPPLY166" gate="1" pin="GND"/>
+<wire x1="-474.98" y1="200.66" x2="-490.22" y2="200.66" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$5"/>
+</segment>
+<segment>
+<pinref part="SUPPLY167" gate="1" pin="GND"/>
+<wire x1="-490.22" y1="205.74" x2="-474.98" y2="205.74" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$3"/>
+</segment>
+<segment>
+<pinref part="SUPPLY168" gate="1" pin="GND"/>
+<wire x1="-474.98" y1="210.82" x2="-490.22" y2="210.82" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_1" gate="G$1" pin="P$1"/>
+</segment>
+<segment>
+<pinref part="SUPPLY109" gate="1" pin="GND"/>
+<wire x1="-358.14" y1="114.3" x2="-342.9" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$39"/>
+</segment>
+<segment>
+<pinref part="SUPPLY110" gate="1" pin="GND"/>
+<wire x1="-358.14" y1="119.38" x2="-342.9" y2="119.38" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$37"/>
+</segment>
+<segment>
+<pinref part="SUPPLY111" gate="1" pin="GND"/>
+<wire x1="-358.14" y1="124.46" x2="-342.9" y2="124.46" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$35"/>
+</segment>
+<segment>
+<pinref part="SUPPLY112" gate="1" pin="GND"/>
+<wire x1="-358.14" y1="129.54" x2="-342.9" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$33"/>
+</segment>
+<segment>
+<pinref part="SUPPLY113" gate="1" pin="GND"/>
+<wire x1="-358.14" y1="134.62" x2="-342.9" y2="134.62" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$31"/>
+</segment>
+<segment>
+<pinref part="SUPPLY114" gate="1" pin="GND"/>
+<wire x1="-358.14" y1="139.7" x2="-342.9" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$29"/>
+</segment>
+<segment>
+<pinref part="SUPPLY115" gate="1" pin="GND"/>
+<wire x1="-342.9" y1="144.78" x2="-358.14" y2="144.78" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$27"/>
+</segment>
+<segment>
+<pinref part="SUPPLY116" gate="1" pin="GND"/>
+<wire x1="-358.14" y1="149.86" x2="-342.9" y2="149.86" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$25"/>
+</segment>
+<segment>
+<pinref part="SUPPLY117" gate="1" pin="GND"/>
+<wire x1="-342.9" y1="154.94" x2="-358.14" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$23"/>
+</segment>
+<segment>
+<pinref part="SUPPLY118" gate="1" pin="GND"/>
+<wire x1="-358.14" y1="160.02" x2="-342.9" y2="160.02" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$21"/>
+</segment>
+<segment>
+<pinref part="SUPPLY119" gate="1" pin="GND"/>
+<wire x1="-342.9" y1="165.1" x2="-358.14" y2="165.1" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$19"/>
+</segment>
+<segment>
+<pinref part="SUPPLY120" gate="1" pin="GND"/>
+<wire x1="-358.14" y1="170.18" x2="-342.9" y2="170.18" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$17"/>
+</segment>
+<segment>
+<pinref part="SUPPLY121" gate="1" pin="GND"/>
+<wire x1="-342.9" y1="175.26" x2="-358.14" y2="175.26" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$15"/>
+</segment>
+<segment>
+<pinref part="SUPPLY122" gate="1" pin="GND"/>
+<wire x1="-358.14" y1="180.34" x2="-342.9" y2="180.34" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$13"/>
+</segment>
+<segment>
+<pinref part="SUPPLY123" gate="1" pin="GND"/>
+<wire x1="-342.9" y1="185.42" x2="-358.14" y2="185.42" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$11"/>
+</segment>
+<segment>
+<pinref part="SUPPLY124" gate="1" pin="GND"/>
+<wire x1="-358.14" y1="190.5" x2="-342.9" y2="190.5" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$9"/>
+</segment>
+<segment>
+<pinref part="SUPPLY125" gate="1" pin="GND"/>
+<wire x1="-342.9" y1="195.58" x2="-358.14" y2="195.58" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$7"/>
+</segment>
+<segment>
+<pinref part="SUPPLY126" gate="1" pin="GND"/>
+<wire x1="-342.9" y1="200.66" x2="-358.14" y2="200.66" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$5"/>
+</segment>
+<segment>
+<pinref part="SUPPLY127" gate="1" pin="GND"/>
+<wire x1="-358.14" y1="205.74" x2="-342.9" y2="205.74" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$3"/>
+</segment>
+<segment>
+<pinref part="SUPPLY128" gate="1" pin="GND"/>
+<wire x1="-342.9" y1="210.82" x2="-358.14" y2="210.82" width="0.1524" layer="91"/>
+<pinref part="TRANSDUCERS_3" gate="G$1" pin="P$1"/>
 </segment>
 </net>
 <net name="N$5" class="0">
