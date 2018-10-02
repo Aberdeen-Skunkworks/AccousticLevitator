@@ -17607,7 +17607,6 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="-457.2" y1="353.06" x2="-182.88" y2="353.06" width="0.762" layer="92"/>
 <wire x1="-182.88" y1="292.1" x2="-396.24" y2="292.1" width="0.762" layer="92"/>
 <wire x1="-106.68" y1="434.34" x2="-106.68" y2="363.22" width="0.762" layer="92"/>
-<wire x1="-106.68" y1="434.34" x2="-106.68" y2="474.98" width="0.762" layer="92"/>
 <wire x1="-43.18" y1="434.34" x2="-40.64" y2="434.34" width="0.762" layer="92"/>
 <wire x1="-40.64" y1="434.34" x2="-20.32" y2="434.34" width="0.762" layer="92"/>
 <wire x1="-106.68" y1="434.34" x2="-50.8" y2="434.34" width="0.762" layer="92"/>
@@ -17671,7 +17670,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="-68.58" y1="33.02" x2="-68.58" y2="-27.94" width="0.762" layer="92"/>
 </segment>
 </bus>
-<bus name="TEENSY_DATA:TEENSY_DATA_0,TEENSY_DATA_1,TEENSY_DATA_2,TEENSY_DATA_3,TEENSY_DATA_4,TEENSY_DATA_5,TEENSY_DATA_6,TEENSY_DATA_7,TEENSY_DATA_8,TEENSY_DATA_9,TEENSY_DATA_10">
+<bus name="TEENSY_DATA:TEENSY_DATA_0,TEENSY_DATA_1,TEENSY_DATA_2,TEENSY_DATA_3,TEENSY_DATA_4,TEENSY_DATA_5,TEENSY_DATA_6,TEENSY_DATA_7,TEENSY_DATA_8,TEENSY_DATA_9,TEENSY_DATA_10,TEENSY_DATA_11,TEENSY_DATA_12,TEENSY_DATA_31,TEENSY_DATA_32,TEENSY_DATA_33,TEENSY_DATA_34">
 <segment>
 <wire x1="-40.64" y1="88.9" x2="-40.64" y2="180.34" width="0.762" layer="92"/>
 <wire x1="-40.64" y1="180.34" x2="-50.8" y2="180.34" width="0.762" layer="92"/>
@@ -17683,6 +17682,13 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="58.42" y1="502.92" x2="58.42" y2="264.16" width="0.762" layer="92"/>
 <wire x1="58.42" y1="502.92" x2="58.42" y2="515.62" width="0.762" layer="92"/>
 <wire x1="58.42" y1="515.62" x2="-104.14" y2="515.62" width="0.762" layer="92"/>
+<wire x1="-104.14" y1="515.62" x2="-104.14" y2="482.6" width="0.762" layer="92"/>
+<wire x1="-104.14" y1="482.6" x2="-104.14" y2="462.28" width="0.762" layer="92"/>
+<wire x1="-104.14" y1="462.28" x2="-88.9" y2="462.28" width="0.762" layer="92"/>
+<wire x1="-40.64" y1="88.9" x2="-30.48" y2="88.9" width="0.762" layer="92"/>
+<wire x1="-30.48" y1="88.9" x2="-30.48" y2="68.58" width="0.762" layer="92"/>
+<wire x1="-30.48" y1="68.58" x2="-25.4" y2="68.58" width="0.762" layer="92"/>
+<wire x1="-25.4" y1="68.58" x2="17.78" y2="68.58" width="0.762" layer="92"/>
 </segment>
 </bus>
 </busses>
@@ -23071,18 +23077,6 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="-68.58" y1="485.14" x2="-68.58" y2="487.68" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$37" class="0">
-<segment>
-<pinref part="DATA_1" gate="G$1" pin="3"/>
-<wire x1="-91.44" y1="485.14" x2="-91.44" y2="474.98" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$39" class="0">
-<segment>
-<pinref part="DATA_1" gate="G$1" pin="5"/>
-<wire x1="-88.9" y1="485.14" x2="-88.9" y2="474.98" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="TEENSY_DATA_2" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="2"/>
@@ -23211,6 +23205,84 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <pinref part="DATA_2" gate="G$1" pin="10"/>
 <wire x1="-60.96" y1="515.62" x2="-60.96" y2="502.92" width="0.1524" layer="91"/>
 <label x="-60.96" y="518.16" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="TEENSY_DATA_11" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="11/MOSI"/>
+<wire x1="-25.4" y1="101.6" x2="-40.64" y2="101.6" width="0.1524" layer="91"/>
+<label x="-40.64" y="101.6" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="-99.06" y1="515.62" x2="-99.06" y2="474.98" width="0.1524" layer="91"/>
+<wire x1="-99.06" y1="474.98" x2="-88.9" y2="474.98" width="0.1524" layer="91"/>
+<pinref part="DATA_1" gate="G$1" pin="5"/>
+<wire x1="-88.9" y1="485.14" x2="-88.9" y2="474.98" width="0.1524" layer="91"/>
+<label x="-99.06" y="515.62" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="TEENSY_DATA_12" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="12/MISO"/>
+<wire x1="-25.4" y1="99.06" x2="-40.64" y2="99.06" width="0.1524" layer="91"/>
+<label x="-40.64" y="99.06" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="-101.6" y1="515.62" x2="-101.6" y2="472.44" width="0.1524" layer="91"/>
+<wire x1="-101.6" y1="472.44" x2="-91.44" y2="472.44" width="0.1524" layer="91"/>
+<pinref part="DATA_1" gate="G$1" pin="3"/>
+<wire x1="-91.44" y1="485.14" x2="-91.44" y2="474.98" width="0.1524" layer="91"/>
+<wire x1="-91.44" y1="472.44" x2="-91.44" y2="474.98" width="0.1524" layer="91"/>
+<label x="-101.6" y="515.62" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="TEENSY_DATA_34" class="0">
+<segment>
+<wire x1="17.78" y1="68.58" x2="17.78" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="34/A15"/>
+<wire x1="17.78" y1="76.2" x2="15.24" y2="76.2" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="DIP2" gate="G$1" pin="4"/>
+<wire x1="-93.98" y1="467.36" x2="-81.28" y2="467.36" width="0.1524" layer="91"/>
+<wire x1="-93.98" y1="467.36" x2="-93.98" y2="462.28" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="TEENSY_DATA_33" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="33/A14"/>
+<wire x1="15.24" y1="68.58" x2="15.24" y2="73.66" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="-96.52" y1="462.28" x2="-96.52" y2="469.9" width="0.1524" layer="91"/>
+<pinref part="DIP2" gate="G$1" pin="2"/>
+<wire x1="-96.52" y1="469.9" x2="-78.74" y2="469.9" width="0.1524" layer="91"/>
+<wire x1="-78.74" y1="469.9" x2="-78.74" y2="467.36" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="TEENSY_DATA_31" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="31/A12"/>
+<wire x1="-30.48" y1="76.2" x2="-25.4" y2="76.2" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="-88.9" y1="462.28" x2="-88.9" y2="439.42" width="0.1524" layer="91"/>
+<pinref part="DIP2" gate="G$1" pin="3"/>
+<wire x1="-88.9" y1="439.42" x2="-78.74" y2="439.42" width="0.1524" layer="91"/>
+<wire x1="-78.74" y1="439.42" x2="-78.74" y2="447.04" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="TEENSY_DATA_32" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="32/A13"/>
+<wire x1="-30.48" y1="73.66" x2="-25.4" y2="73.66" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="-91.44" y1="462.28" x2="-86.36" y2="462.28" width="0.1524" layer="91"/>
+<wire x1="-86.36" y1="462.28" x2="-86.36" y2="441.96" width="0.1524" layer="91"/>
+<wire x1="-86.36" y1="441.96" x2="-81.28" y2="441.96" width="0.1524" layer="91"/>
+<pinref part="DIP2" gate="G$1" pin="5"/>
+<wire x1="-81.28" y1="441.96" x2="-81.28" y2="447.04" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
