@@ -14431,12 +14431,8 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 <part name="SUPPLY1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U1200" library="SnapEDA-Library (3)" deviceset="CD74HC4067SM96" device=""/>
 <part name="SUPPLY2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="+5V" device=""/>
-<part name="SUPPLY4" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="+5V" device=""/>
 <part name="DIP2" library="Parts" deviceset="CORE3S500E" device="SMT"/>
 <part name="5V-REG" library="Parts" deviceset="OKI-78SR" device=""/>
 <part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -14835,6 +14831,12 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 <part name="SUPPLY166" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SUPPLY167" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SUPPLY168" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="C51" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF"/>
+<part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="C52" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF"/>
+<part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="C53" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF"/>
+<part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -14931,23 +14933,11 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 <instance part="SUPPLY2" gate="1" x="-27.94" y="-40.64" rot="MR0">
 <attribute name="VALUE" x="-25.4" y="-43.18" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="GND3" gate="1" x="-96.52" y="421.64" rot="R270">
-<attribute name="VALUE" x="-99.06" y="424.18" size="1.778" layer="96" rot="R270"/>
-</instance>
 <instance part="GND4" gate="1" x="-96.52" y="393.7" rot="R270">
 <attribute name="VALUE" x="-99.06" y="396.24" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="GND5" gate="1" x="2.54" y="393.7" rot="R90">
-<attribute name="VALUE" x="5.08" y="391.16" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="GND6" gate="1" x="2.54" y="421.64" rot="R90">
-<attribute name="VALUE" x="5.08" y="419.1" size="1.778" layer="96" rot="R90"/>
-</instance>
 <instance part="SUPPLY3" gate="+5V" x="-60.96" y="393.7" rot="R270">
 <attribute name="VALUE" x="-57.785" y="395.605" size="1.778" layer="96" rot="R270"/>
-</instance>
-<instance part="SUPPLY4" gate="+5V" x="-33.02" y="393.7" rot="R90">
-<attribute name="VALUE" x="-36.195" y="391.795" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="DIP2" gate="G$1" x="-45.72" y="421.64"/>
 <instance part="5V-REG" gate="G$1" x="96.52" y="167.64">
@@ -16293,6 +16283,27 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 <instance part="SUPPLY168" gate="1" x="-389.382" y="41.402" rot="MR270">
 <attribute name="VALUE" x="-386.842" y="43.942" size="1.778" layer="96" rot="MR270"/>
 </instance>
+<instance part="C51" gate="G$1" x="-60.96" y="355.6" rot="R90">
+<attribute name="NAME" x="-61.341" y="357.124" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-56.261" y="357.124" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="GND3" gate="1" x="-53.34" y="355.6" rot="R90">
+<attribute name="VALUE" x="-50.8" y="353.06" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="C52" gate="G$1" x="20.32" y="134.62" rot="R180">
+<attribute name="NAME" x="18.796" y="134.239" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="18.796" y="139.319" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="GND5" gate="1" x="20.32" y="142.24" rot="R180">
+<attribute name="VALUE" x="22.86" y="144.78" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="C53" gate="G$1" x="-27.94" y="39.116" rot="R180">
+<attribute name="NAME" x="-29.464" y="38.735" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-29.464" y="43.815" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="GND6" gate="1" x="-27.94" y="46.736" rot="R180">
+<attribute name="VALUE" x="-25.4" y="49.276" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 <bus name="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100">
@@ -16444,21 +16455,6 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 <pinref part="GND4" gate="1" pin="GND"/>
 <wire x1="-88.9" y1="393.7" x2="-93.98" y2="393.7" width="0.1524" layer="91"/>
 <pinref part="DIP2" gate="G$1" pin="GND@4"/>
-</segment>
-<segment>
-<pinref part="GND3" gate="1" pin="GND"/>
-<wire x1="-88.9" y1="421.64" x2="-93.98" y2="421.64" width="0.1524" layer="91"/>
-<pinref part="DIP2" gate="G$1" pin="GND@2"/>
-</segment>
-<segment>
-<pinref part="GND6" gate="1" pin="GND"/>
-<wire x1="-5.08" y1="421.64" x2="0" y2="421.64" width="0.1524" layer="91"/>
-<pinref part="DIP2" gate="G$1" pin="GND@1"/>
-</segment>
-<segment>
-<pinref part="GND5" gate="1" pin="GND"/>
-<wire x1="-5.08" y1="393.7" x2="0" y2="393.7" width="0.1524" layer="91"/>
-<pinref part="DIP2" gate="G$1" pin="GND@3"/>
 </segment>
 <segment>
 <pinref part="5V-REG" gate="G$1" pin="GND"/>
@@ -17387,6 +17383,18 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 <pinref part="SUPPLY168" gate="1" pin="GND"/>
 <pinref part="2" gate="G$1" pin="22"/>
 </segment>
+<segment>
+<pinref part="C51" gate="G$1" pin="2"/>
+<pinref part="GND3" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C52" gate="G$1" pin="2"/>
+<pinref part="GND5" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C53" gate="G$1" pin="2"/>
+<pinref part="GND6" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="N$5" class="0">
 <segment>
@@ -17403,11 +17411,11 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 <pinref part="SUPPLY3" gate="+5V" pin="+5V"/>
 <wire x1="-66.04" y1="393.7" x2="-63.5" y2="393.7" width="0.1524" layer="91"/>
 <pinref part="DIP2" gate="G$1" pin="5V@2"/>
-</segment>
-<segment>
-<pinref part="DIP2" gate="G$1" pin="5V@1"/>
-<pinref part="SUPPLY4" gate="+5V" pin="+5V"/>
-<wire x1="-30.48" y1="393.7" x2="-27.94" y2="393.7" width="0.1524" layer="91"/>
+<wire x1="-63.5" y1="393.7" x2="-63.5" y2="355.6" width="0.1524" layer="91"/>
+<junction x="-63.5" y="393.7"/>
+<pinref part="C51" gate="G$1" pin="1"/>
+<wire x1="-63.5" y1="355.6" x2="-63.5" y2="350.52" width="0.1524" layer="91"/>
+<junction x="-63.5" y="355.6"/>
 </segment>
 <segment>
 <pinref part="5V-REG" gate="G$1" pin="OUT"/>
@@ -17418,11 +17426,16 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 <segment>
 <pinref part="U1200" gate="A" pin="VCC"/>
 <pinref part="SUPPLY82" gate="+5V" pin="+5V"/>
+<pinref part="C53" gate="G$1" pin="1"/>
+<wire x1="-27.94" y1="33.02" x2="-27.94" y2="36.576" width="0.1524" layer="91"/>
+<junction x="-27.94" y="33.02"/>
 </segment>
 <segment>
 <pinref part="SUPPLY83" gate="+5V" pin="+5V"/>
 <wire x1="15.24" y1="132.08" x2="20.32" y2="132.08" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="VIN"/>
+<pinref part="C52" gate="G$1" pin="1"/>
+<junction x="20.32" y="132.08"/>
 </segment>
 <segment>
 <pinref part="LED_1" gate="G$1" pin="VDD"/>
