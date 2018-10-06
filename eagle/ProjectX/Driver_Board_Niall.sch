@@ -14431,7 +14431,6 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 <part name="SUPPLY1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U1200" library="SnapEDA-Library (3)" deviceset="CD74HC4067SM96" device=""/>
 <part name="SUPPLY2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="+5V" device=""/>
 <part name="DIP2" library="Parts" deviceset="CORE3S500E" device="SMT"/>
 <part name="5V-REG" library="Parts" deviceset="OKI-78SR" device=""/>
@@ -14837,6 +14836,7 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C53" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF"/>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -14932,9 +14932,6 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 </instance>
 <instance part="SUPPLY2" gate="1" x="-27.94" y="-40.64" rot="MR0">
 <attribute name="VALUE" x="-25.4" y="-43.18" size="1.778" layer="96" rot="MR0"/>
-</instance>
-<instance part="GND4" gate="1" x="-96.52" y="393.7" rot="R270">
-<attribute name="VALUE" x="-99.06" y="396.24" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="SUPPLY3" gate="+5V" x="-60.96" y="393.7" rot="R270">
 <attribute name="VALUE" x="-57.785" y="395.605" size="1.778" layer="96" rot="R270"/>
@@ -16304,6 +16301,9 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 <instance part="GND6" gate="1" x="-27.94" y="46.736" rot="R180">
 <attribute name="VALUE" x="-25.4" y="49.276" size="1.778" layer="96" rot="R180"/>
 </instance>
+<instance part="GND8" gate="1" x="-91.44" y="421.64" rot="R270">
+<attribute name="VALUE" x="-93.98" y="424.18" size="1.778" layer="96" rot="R270"/>
+</instance>
 </instances>
 <busses>
 <bus name="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100">
@@ -16451,11 +16451,6 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 </segment>
 </net>
 <net name="GND" class="0">
-<segment>
-<pinref part="GND4" gate="1" pin="GND"/>
-<wire x1="-88.9" y1="393.7" x2="-93.98" y2="393.7" width="0.1524" layer="91"/>
-<pinref part="DIP2" gate="G$1" pin="GND@4"/>
-</segment>
 <segment>
 <pinref part="5V-REG" gate="G$1" pin="GND"/>
 <pinref part="GND7" gate="1" pin="GND"/>
@@ -17394,6 +17389,10 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 <segment>
 <pinref part="C53" gate="G$1" pin="2"/>
 <pinref part="GND6" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="DIP2" gate="G$1" pin="GND@2"/>
+<pinref part="GND8" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -21562,9 +21561,9 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 <label x="-350.52" y="518.16" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="DIP2" gate="G$1" pin="35"/>
-<wire x1="-88.9" y1="396.24" x2="-106.68" y2="396.24" width="0.1524" layer="91"/>
-<label x="-104.14" y="396.24" size="1.778" layer="95"/>
+<pinref part="DIP2" gate="G$1" pin="8"/>
+<wire x1="-88.9" y1="419.1" x2="-106.68" y2="419.1" width="0.1524" layer="91"/>
+<label x="-101.6" y="419.1" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="1" class="0">
