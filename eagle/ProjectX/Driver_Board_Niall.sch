@@ -14924,6 +14924,8 @@ with shutdown</description>
 <part name="SUPPLY4" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VDD" device=""/>
 <part name="UA78M05CDCY" library="linear-technology" library_urn="urn:adsk.eagle:library:261" deviceset="LT1129CST5" device="" package3d_urn="urn:adsk.eagle:package:16063/1"/>
 <part name="C54" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF"/>
+<part name="C55" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:26137/1" value="100nF"/>
+<part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -16411,6 +16413,13 @@ with shutdown</description>
 <attribute name="NAME" x="24.384" y="45.085" size="1.778" layer="95"/>
 <attribute name="VALUE" x="24.384" y="40.005" size="1.778" layer="96"/>
 </instance>
+<instance part="C55" gate="G$1" x="-60.96" y="350.52" rot="R90">
+<attribute name="NAME" x="-61.341" y="352.044" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-56.261" y="352.044" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="GND4" gate="1" x="-53.34" y="350.52" rot="R90">
+<attribute name="VALUE" x="-50.8" y="347.98" size="1.778" layer="96" rot="R90"/>
+</instance>
 </instances>
 <busses>
 <bus name="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100">
@@ -17514,6 +17523,10 @@ with shutdown</description>
 <pinref part="DIP2" gate="G$1" pin="GND@4"/>
 <wire x1="-93.98" y1="393.7" x2="-88.9" y2="393.7" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="C55" gate="G$1" pin="2"/>
+<pinref part="GND4" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="N$5" class="0">
 <segment>
@@ -17535,6 +17548,7 @@ with shutdown</description>
 <pinref part="C51" gate="G$1" pin="1"/>
 <wire x1="-63.5" y1="355.6" x2="-63.5" y2="350.52" width="0.1524" layer="91"/>
 <junction x="-63.5" y="355.6"/>
+<pinref part="C55" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="5V-REG" gate="G$1" pin="OUT"/>
