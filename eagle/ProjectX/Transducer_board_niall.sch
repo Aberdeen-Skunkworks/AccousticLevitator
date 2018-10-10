@@ -2974,6 +2974,306 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 <label x="-190.5" y="137.16" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="TEMP2" class="0">
+<segment>
+<wire x1="-157.48" y1="185.42" x2="-149.86" y2="185.42" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="50"/>
+</segment>
+</net>
+<net name="TEMP3" class="0">
+<segment>
+<wire x1="-157.48" y1="182.88" x2="-149.86" y2="182.88" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="48"/>
+</segment>
+</net>
+<net name="TEMP4" class="0">
+<segment>
+<wire x1="-157.48" y1="180.34" x2="-149.86" y2="180.34" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="46"/>
+</segment>
+</net>
+<net name="TEMP5" class="0">
+<segment>
+<wire x1="-157.48" y1="177.8" x2="-149.86" y2="177.8" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="44"/>
+</segment>
+</net>
+<net name="TEMP6" class="0">
+<segment>
+<wire x1="-157.48" y1="175.26" x2="-149.86" y2="175.26" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="42"/>
+</segment>
+</net>
+<net name="TEMP7" class="0">
+<segment>
+<wire x1="-157.48" y1="172.72" x2="-149.86" y2="172.72" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="40"/>
+</segment>
+</net>
+<net name="TEMP8" class="0">
+<segment>
+<wire x1="-157.48" y1="170.18" x2="-149.86" y2="170.18" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="38"/>
+</segment>
+</net>
+<net name="TEMP9" class="0">
+<segment>
+<wire x1="-157.48" y1="167.64" x2="-149.86" y2="167.64" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="36"/>
+</segment>
+</net>
+<net name="TEMP10" class="0">
+<segment>
+<wire x1="-157.48" y1="165.1" x2="-149.86" y2="165.1" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="34"/>
+</segment>
+</net>
+<net name="TEMP11" class="0">
+<segment>
+<wire x1="-157.48" y1="162.56" x2="-149.86" y2="162.56" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="32"/>
+</segment>
+</net>
+<net name="TEMP12" class="0">
+<segment>
+<wire x1="-157.48" y1="160.02" x2="-149.86" y2="160.02" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="30"/>
+</segment>
+</net>
+<net name="TEMP13" class="0">
+<segment>
+<wire x1="-157.48" y1="157.48" x2="-149.86" y2="157.48" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="28"/>
+</segment>
+</net>
+<net name="TEMP14" class="0">
+<segment>
+<wire x1="-157.48" y1="154.94" x2="-149.86" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="26"/>
+</segment>
+</net>
+<net name="TEMP15" class="0">
+<segment>
+<wire x1="-157.48" y1="152.4" x2="-149.86" y2="152.4" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="24"/>
+</segment>
+</net>
+<net name="TEMP16" class="0">
+<segment>
+<wire x1="-157.48" y1="149.86" x2="-149.86" y2="149.86" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="22"/>
+</segment>
+</net>
+<net name="TEMP17" class="0">
+<segment>
+<wire x1="-157.48" y1="147.32" x2="-149.86" y2="147.32" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="20"/>
+</segment>
+</net>
+<net name="TEMP18" class="0">
+<segment>
+<wire x1="-157.48" y1="144.78" x2="-149.86" y2="144.78" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="18"/>
+</segment>
+</net>
+<net name="TEMP19" class="0">
+<segment>
+<wire x1="-157.48" y1="142.24" x2="-149.86" y2="142.24" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="16"/>
+</segment>
+</net>
+<net name="TEMP20" class="0">
+<segment>
+<wire x1="-157.48" y1="139.7" x2="-149.86" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="14"/>
+</segment>
+</net>
+<net name="TEMP21" class="0">
+<segment>
+<wire x1="-157.48" y1="137.16" x2="-149.86" y2="137.16" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="12"/>
+</segment>
+</net>
+<net name="TEMP22" class="0">
+<segment>
+<wire x1="-157.48" y1="132.08" x2="-149.86" y2="132.08" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="8"/>
+</segment>
+</net>
+<net name="TEMP23" class="0">
+<segment>
+<wire x1="-157.48" y1="129.54" x2="-149.86" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="6"/>
+</segment>
+</net>
+<net name="TEMP24" class="0">
+<segment>
+<wire x1="-157.48" y1="127" x2="-149.86" y2="127" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="4"/>
+</segment>
+</net>
+<net name="TEMP25" class="0">
+<segment>
+<wire x1="-157.48" y1="124.46" x2="-149.86" y2="124.46" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="2"/>
+</segment>
+</net>
+<net name="TEMP26" class="0">
+<segment>
+<wire x1="-157.48" y1="134.62" x2="-149.86" y2="134.62" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="10"/>
+</segment>
+</net>
+<net name="TEMP27" class="0">
+<segment>
+<wire x1="-134.62" y1="124.46" x2="-127" y2="124.46" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="TEMP28" class="0">
+<segment>
+<wire x1="-134.62" y1="127" x2="-127" y2="127" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="3"/>
+</segment>
+</net>
+<net name="TEMP29" class="0">
+<segment>
+<wire x1="-134.62" y1="129.54" x2="-127" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="5"/>
+</segment>
+</net>
+<net name="TEMP30" class="0">
+<segment>
+<wire x1="-134.62" y1="132.08" x2="-127" y2="132.08" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="7"/>
+</segment>
+</net>
+<net name="TEMP31" class="0">
+<segment>
+<wire x1="-134.62" y1="134.62" x2="-127" y2="134.62" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="9"/>
+</segment>
+</net>
+<net name="TEMP32" class="0">
+<segment>
+<wire x1="-134.62" y1="137.16" x2="-127" y2="137.16" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="11"/>
+</segment>
+</net>
+<net name="TEMP33" class="0">
+<segment>
+<wire x1="-134.62" y1="139.7" x2="-127" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="13"/>
+</segment>
+</net>
+<net name="TEMP34" class="0">
+<segment>
+<wire x1="-134.62" y1="142.24" x2="-127" y2="142.24" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="15"/>
+</segment>
+</net>
+<net name="TEMP35" class="0">
+<segment>
+<wire x1="-134.62" y1="144.78" x2="-127" y2="144.78" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="17"/>
+</segment>
+</net>
+<net name="TEMP36" class="0">
+<segment>
+<wire x1="-134.62" y1="147.32" x2="-127" y2="147.32" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="19"/>
+</segment>
+</net>
+<net name="TEMP37" class="0">
+<segment>
+<wire x1="-134.62" y1="149.86" x2="-127" y2="149.86" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="21"/>
+</segment>
+</net>
+<net name="TEMP38" class="0">
+<segment>
+<wire x1="-134.62" y1="152.4" x2="-127" y2="152.4" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="23"/>
+</segment>
+</net>
+<net name="TEMP39" class="0">
+<segment>
+<wire x1="-134.62" y1="154.94" x2="-127" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="25"/>
+</segment>
+</net>
+<net name="TEMP40" class="0">
+<segment>
+<wire x1="-134.62" y1="157.48" x2="-127" y2="157.48" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="27"/>
+</segment>
+</net>
+<net name="TEMP41" class="0">
+<segment>
+<wire x1="-134.62" y1="160.02" x2="-127" y2="160.02" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="29"/>
+</segment>
+</net>
+<net name="TEMP42" class="0">
+<segment>
+<wire x1="-134.62" y1="162.56" x2="-127" y2="162.56" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="31"/>
+</segment>
+</net>
+<net name="TEMP43" class="0">
+<segment>
+<wire x1="-134.62" y1="165.1" x2="-127" y2="165.1" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="33"/>
+</segment>
+</net>
+<net name="TEMP44" class="0">
+<segment>
+<wire x1="-134.62" y1="167.64" x2="-127" y2="167.64" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="35"/>
+</segment>
+</net>
+<net name="TEMP45" class="0">
+<segment>
+<wire x1="-134.62" y1="170.18" x2="-127" y2="170.18" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="37"/>
+</segment>
+</net>
+<net name="TEMP46" class="0">
+<segment>
+<wire x1="-134.62" y1="172.72" x2="-127" y2="172.72" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="39"/>
+</segment>
+</net>
+<net name="TEMP47" class="0">
+<segment>
+<wire x1="-134.62" y1="175.26" x2="-127" y2="175.26" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="41"/>
+</segment>
+</net>
+<net name="TEMP48" class="0">
+<segment>
+<wire x1="-134.62" y1="177.8" x2="-127" y2="177.8" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="43"/>
+</segment>
+</net>
+<net name="TEMP49" class="0">
+<segment>
+<wire x1="-134.62" y1="180.34" x2="-127" y2="180.34" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="45"/>
+</segment>
+</net>
+<net name="TEMP50" class="0">
+<segment>
+<wire x1="-134.62" y1="182.88" x2="-127" y2="182.88" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="47"/>
+</segment>
+</net>
+<net name="TEMP51" class="0">
+<segment>
+<wire x1="-134.62" y1="185.42" x2="-127" y2="185.42" width="0.1524" layer="91"/>
+<pinref part="3" gate="G$1" pin="49"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
