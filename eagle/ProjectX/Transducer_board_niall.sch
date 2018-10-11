@@ -897,6 +897,7 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 <rectangle x1="-139.7" y1="241.554" x2="-118.11" y2="256.54" layer="91"/>
 <rectangle x1="-95.25" y1="241.554" x2="-73.66" y2="256.54" layer="91"/>
 <text x="-161.29" y="248.412" size="1.778" layer="91">Transievers Green</text>
+<text x="-26.162" y="288.036" size="1.778" layer="91">connected 11 and 12 grounds together</text>
 </plain>
 <instances>
 <instance part="T1" gate="G$1" x="-12.7" y="299.72"/>
@@ -1266,18 +1267,6 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 <label x="-132.08" y="228.6" size="1.778" layer="95" rot="R270"/>
 </segment>
 </net>
-<net name="FROM_T_11" class="0">
-<segment>
-<wire x1="-17.78" y1="287.02" x2="-17.78" y2="279.4" width="0.1524" layer="91"/>
-<label x="-18.288" y="286.004" size="1.778" layer="95" rot="R180"/>
-<pinref part="T11" gate="G$1" pin="1"/>
-</segment>
-<segment>
-<pinref part="4" gate="G$1" pin="49"/>
-<wire x1="-195.58" y1="185.42" x2="-170.18" y2="185.42" width="0.1524" layer="91" style="dashdot"/>
-<label x="-190.5" y="185.42" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="TO_T_11" class="0">
 <segment>
 <wire x1="-7.62" y1="271.78" x2="-7.62" y2="279.4" width="0.1524" layer="91"/>
@@ -1300,6 +1289,11 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 <pinref part="4" gate="G$1" pin="48"/>
 <wire x1="-210.82" y1="182.88" x2="-228.6" y2="182.88" width="0.1524" layer="91" style="dashdot"/>
 <label x="-226.06" y="182.88" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="-17.78" y1="287.02" x2="-17.78" y2="279.4" width="0.1524" layer="91"/>
+<label x="-18.288" y="286.004" size="1.778" layer="95" rot="R180"/>
+<pinref part="T11" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="TO_T_12" class="0">
@@ -3477,6 +3471,14 @@ Lectureship dozent-rb: &amp;nbsp;&lt;a href="http://www.dozent-rb.de/" target="_
 <net name="TEMP1" class="0">
 <segment>
 <wire x1="-101.6" y1="198.12" x2="-93.98" y2="198.12" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="SHIELD" class="0">
+<segment>
+<pinref part="4" gate="G$1" pin="49"/>
+<wire x1="-195.58" y1="185.42" x2="-193.04" y2="185.42" width="0.1524" layer="91"/>
+<wire x1="-193.04" y1="185.42" x2="-193.04" y2="200.66" width="0.1524" layer="91"/>
+<label x="-197.104" y="200.66" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
