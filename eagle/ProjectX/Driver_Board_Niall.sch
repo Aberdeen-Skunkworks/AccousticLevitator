@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.1.3">
+<eagle version="9.2.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -16404,50 +16404,50 @@ W = angled&lt;p&gt;
 <part name="SUPPLY169" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="+5V" device=""/>
 <part name="SUPPLY170" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="+5V" device=""/>
 <part name="SUPPLY171" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="+5V" device=""/>
-<part name="TP1" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP2" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP3" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP4" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP5" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP6" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP7" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP8" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP9" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP10" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP11" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP12" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP13" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP14" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP15" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP16" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP17" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP18" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP19" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
+<part name="TP1" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP2" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP3" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP4" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP5" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP6" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP7" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP8" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP9" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP10" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP11" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP12" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP13" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP14" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP15" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP16" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP17" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP18" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP19" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
 <part name="SUPPLY172" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SUPPLY173" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="+5V" device=""/>
-<part name="TP20" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
+<part name="TP20" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
 <part name="SUPPLY174" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VDD" device=""/>
-<part name="TP21" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP22" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP23" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP24" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP25" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP26" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP27" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP28" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP29" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP30" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP31" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP32" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP33" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP35" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP36" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP37" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP34" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP38" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP39" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP40" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
-<part name="TP41" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13Y" package3d_urn="urn:adsk.eagle:package:27947/1"/>
+<part name="TP21" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP22" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP23" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP24" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP25" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP26" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP27" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP28" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP29" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP30" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP31" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP32" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP33" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP35" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP36" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP37" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP34" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP38" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP39" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP40" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
+<part name="TP41" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1" value="TPSQPAD1-13"/>
 </parts>
 <sheets>
 <sheet>
@@ -17510,7 +17510,7 @@ W = angled&lt;p&gt;
 <attribute name="VALUE" x="-33.02" y="30.48" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="SUPPLY83" gate="+5V" x="27.94" y="147.32">
-<attribute name="VALUE" x="28.575" y="153.035" size="1.778" layer="96"/>
+<attribute name="VALUE" x="26.035" y="150.495" size="1.778" layer="96"/>
 </instance>
 <instance part="U$1" gate="G$1" x="-5.08" y="119.38"/>
 <instance part="R_TO_GND" gate="G$1" x="-50.8" y="66.04" rot="R90">
@@ -17825,7 +17825,7 @@ W = angled&lt;p&gt;
 <attribute name="VALUE" x="-99.06" y="396.24" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="SUPPLY4" gate="VDD" x="60.96" y="38.1" rot="R270">
-<attribute name="VALUE" x="63.754" y="33.02" size="1.778" layer="96" rot="R270" align="bottom-center"/>
+<attribute name="VALUE" x="63.754" y="38.1" size="1.778" layer="96" rot="R270" align="bottom-center"/>
 </instance>
 <instance part="UA78M05CDCY" gate="G$1" x="40.64" y="40.64" rot="R180">
 <attribute name="NAME" x="48.26" y="34.29" size="1.778" layer="95" rot="R180"/>
@@ -17889,56 +17889,179 @@ W = angled&lt;p&gt;
 <instance part="SUPPLY171" gate="+5V" x="-12.7" y="543.56">
 <attribute name="VALUE" x="-14.605" y="546.735" size="1.778" layer="96"/>
 </instance>
-<instance part="TP1" gate="G$1" x="17.78" y="127" rot="R90"/>
-<instance part="TP2" gate="G$1" x="17.78" y="124.46" rot="R90"/>
-<instance part="TP3" gate="G$1" x="17.78" y="121.92" rot="R90"/>
-<instance part="TP4" gate="G$1" x="17.78" y="119.38" rot="R90"/>
-<instance part="TP5" gate="G$1" x="17.78" y="116.84" rot="R90"/>
-<instance part="TP6" gate="G$1" x="17.78" y="114.3" rot="R90"/>
-<instance part="TP7" gate="G$1" x="17.78" y="109.22" rot="R90"/>
-<instance part="TP8" gate="G$1" x="17.78" y="111.76" rot="R90"/>
-<instance part="TP9" gate="G$1" x="17.78" y="106.68" rot="R90"/>
-<instance part="TP10" gate="G$1" x="17.78" y="104.14" rot="R90"/>
-<instance part="TP11" gate="G$1" x="17.78" y="101.6" rot="R90"/>
-<instance part="TP12" gate="G$1" x="17.78" y="99.06" rot="R90"/>
-<instance part="TP13" gate="G$1" x="17.78" y="96.52" rot="R90"/>
-<instance part="TP14" gate="G$1" x="17.78" y="93.98" rot="R90"/>
-<instance part="TP15" gate="G$1" x="17.78" y="91.44" rot="R90"/>
-<instance part="TP16" gate="G$1" x="-27.94" y="96.52" rot="R270"/>
-<instance part="TP17" gate="G$1" x="17.78" y="129.54" rot="R90"/>
-<instance part="TP18" gate="G$1" x="27.94" y="116.84" rot="R180"/>
-<instance part="TP19" gate="G$1" x="33.02" y="116.84" rot="R180"/>
+<instance part="TP1" gate="G$1" x="17.78" y="127" rot="R90">
+<attribute name="NAME" x="22.225" y="124.46" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="19.05" y="129.54" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP2" gate="G$1" x="17.78" y="124.46" rot="R90">
+<attribute name="NAME" x="22.225" y="121.92" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="19.05" y="127" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP3" gate="G$1" x="17.78" y="121.92" rot="R90">
+<attribute name="NAME" x="22.225" y="119.38" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="19.05" y="124.46" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP4" gate="G$1" x="17.78" y="119.38" rot="R90">
+<attribute name="NAME" x="22.225" y="116.84" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="19.05" y="121.92" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP5" gate="G$1" x="17.78" y="116.84" rot="R90">
+<attribute name="NAME" x="22.225" y="114.3" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="19.05" y="119.38" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP6" gate="G$1" x="17.78" y="114.3" rot="R90">
+<attribute name="NAME" x="22.225" y="111.76" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="19.05" y="116.84" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP7" gate="G$1" x="17.78" y="109.22" rot="R90">
+<attribute name="NAME" x="22.225" y="106.68" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="19.05" y="111.76" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP8" gate="G$1" x="17.78" y="111.76" rot="R90">
+<attribute name="NAME" x="22.225" y="109.22" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="19.05" y="114.3" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP9" gate="G$1" x="17.78" y="106.68" rot="R90">
+<attribute name="NAME" x="22.225" y="104.14" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="19.05" y="109.22" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP10" gate="G$1" x="17.78" y="104.14" rot="R90">
+<attribute name="NAME" x="22.225" y="101.6" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="19.05" y="106.68" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP11" gate="G$1" x="17.78" y="101.6" rot="R90">
+<attribute name="NAME" x="22.225" y="99.06" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="19.05" y="104.14" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP12" gate="G$1" x="17.78" y="99.06" rot="R90">
+<attribute name="NAME" x="22.225" y="96.52" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="19.05" y="101.6" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP13" gate="G$1" x="17.78" y="96.52" rot="R90">
+<attribute name="NAME" x="22.225" y="93.98" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="19.05" y="99.06" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP14" gate="G$1" x="17.78" y="93.98" rot="R90">
+<attribute name="NAME" x="22.225" y="91.44" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="19.05" y="96.52" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP15" gate="G$1" x="17.78" y="91.44" rot="R90">
+<attribute name="NAME" x="22.225" y="88.9" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="19.05" y="93.98" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP16" gate="G$1" x="-27.94" y="96.52" rot="R270">
+<attribute name="NAME" x="-32.385" y="99.06" size="1.778" layer="95" rot="R270"/>
+<attribute name="TP_SIGNAL_NAME" x="-29.21" y="93.98" size="1.778" layer="97" rot="R270"/>
+</instance>
+<instance part="TP17" gate="G$1" x="17.78" y="129.54" rot="R90">
+<attribute name="NAME" x="22.225" y="127" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="19.05" y="132.08" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP18" gate="G$1" x="27.94" y="116.84" rot="R180">
+<attribute name="NAME" x="30.48" y="121.285" size="1.778" layer="95" rot="R180"/>
+<attribute name="TP_SIGNAL_NAME" x="25.4" y="118.11" size="1.778" layer="97" rot="R180"/>
+</instance>
+<instance part="TP19" gate="G$1" x="33.02" y="116.84" rot="R180">
+<attribute name="NAME" x="35.56" y="121.285" size="1.778" layer="95" rot="R180"/>
+<attribute name="TP_SIGNAL_NAME" x="30.48" y="118.11" size="1.778" layer="97" rot="R180"/>
+</instance>
 <instance part="SUPPLY172" gate="1" x="33.02" y="111.76">
 <attribute name="VALUE" x="30.48" y="109.22" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY173" gate="+5V" x="27.94" y="111.76" rot="R180">
 <attribute name="VALUE" x="29.845" y="108.585" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="TP20" gate="G$1" x="38.1" y="116.84" rot="R180"/>
+<instance part="TP20" gate="G$1" x="38.1" y="116.84" rot="R180">
+<attribute name="NAME" x="40.64" y="121.285" size="1.778" layer="95" rot="R180"/>
+<attribute name="TP_SIGNAL_NAME" x="35.56" y="118.11" size="1.778" layer="97" rot="R180"/>
+</instance>
 <instance part="SUPPLY174" gate="VDD" x="38.1" y="114.3" rot="R180">
 <attribute name="VALUE" x="38.1" y="111.506" size="1.778" layer="96" rot="R180" align="bottom-center"/>
 </instance>
-<instance part="TP21" gate="G$1" x="45.72" y="91.44" rot="R180"/>
-<instance part="TP22" gate="G$1" x="-340.36" y="330.2"/>
-<instance part="TP23" gate="G$1" x="-340.36" y="347.98" rot="R90"/>
-<instance part="TP24" gate="G$1" x="-299.72" y="330.2"/>
-<instance part="TP25" gate="G$1" x="-299.72" y="347.98" rot="R270"/>
-<instance part="TP26" gate="G$1" x="-309.88" y="348.488" rot="R180"/>
-<instance part="TP27" gate="G$1" x="-233.68" y="348.488" rot="R90"/>
-<instance part="TP28" gate="G$1" x="-235.712" y="330.2"/>
-<instance part="TP29" gate="G$1" x="-189.992" y="330.2"/>
-<instance part="TP30" gate="G$1" x="-193.04" y="350.012" rot="R270"/>
-<instance part="TP31" gate="G$1" x="-203.2" y="347.98" rot="R180"/>
-<instance part="TP32" gate="G$1" x="-193.548" y="345.44" rot="R180"/>
-<instance part="TP33" gate="G$1" x="-300.482" y="344.932" rot="R90"/>
-<instance part="TP35" gate="G$1" x="-30.48" y="12.7" rot="R180"/>
-<instance part="TP36" gate="G$1" x="-28.702" y="10.16" rot="R180"/>
-<instance part="TP37" gate="G$1" x="73.66" y="30.48"/>
-<instance part="TP34" gate="G$1" x="-116.84" y="403.86"/>
-<instance part="TP38" gate="G$1" x="-114.3" y="406.4"/>
-<instance part="TP39" gate="G$1" x="-111.76" y="408.94"/>
-<instance part="TP40" gate="G$1" x="-109.22" y="411.48"/>
-<instance part="TP41" gate="G$1" x="-106.68" y="414.02"/>
+<instance part="TP21" gate="G$1" x="45.72" y="91.44" rot="R180">
+<attribute name="NAME" x="48.26" y="95.885" size="1.778" layer="95" rot="R180"/>
+<attribute name="TP_SIGNAL_NAME" x="43.18" y="92.71" size="1.778" layer="97" rot="R180"/>
+</instance>
+<instance part="TP22" gate="G$1" x="-340.36" y="330.2">
+<attribute name="NAME" x="-342.9" y="325.755" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="-337.82" y="328.93" size="1.778" layer="97"/>
+</instance>
+<instance part="TP23" gate="G$1" x="-340.36" y="347.98" rot="R90">
+<attribute name="NAME" x="-335.915" y="345.44" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="-339.09" y="350.52" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP24" gate="G$1" x="-299.72" y="330.2">
+<attribute name="NAME" x="-302.26" y="325.755" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="-297.18" y="328.93" size="1.778" layer="97"/>
+</instance>
+<instance part="TP25" gate="G$1" x="-299.72" y="347.98" rot="R270">
+<attribute name="NAME" x="-304.165" y="350.52" size="1.778" layer="95" rot="R270"/>
+<attribute name="TP_SIGNAL_NAME" x="-300.99" y="345.44" size="1.778" layer="97" rot="R270"/>
+</instance>
+<instance part="TP26" gate="G$1" x="-309.88" y="348.488" rot="R180">
+<attribute name="NAME" x="-307.34" y="352.933" size="1.778" layer="95" rot="R180"/>
+<attribute name="TP_SIGNAL_NAME" x="-312.42" y="349.758" size="1.778" layer="97" rot="R180"/>
+</instance>
+<instance part="TP27" gate="G$1" x="-233.68" y="348.488" rot="R90">
+<attribute name="NAME" x="-229.235" y="345.948" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="-232.41" y="351.028" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP28" gate="G$1" x="-235.712" y="330.2">
+<attribute name="NAME" x="-238.252" y="325.755" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="-233.172" y="328.93" size="1.778" layer="97"/>
+</instance>
+<instance part="TP29" gate="G$1" x="-189.992" y="330.2">
+<attribute name="NAME" x="-192.532" y="325.755" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="-187.452" y="328.93" size="1.778" layer="97"/>
+</instance>
+<instance part="TP30" gate="G$1" x="-193.04" y="350.012" rot="R270">
+<attribute name="NAME" x="-197.485" y="352.552" size="1.778" layer="95" rot="R270"/>
+<attribute name="TP_SIGNAL_NAME" x="-194.31" y="347.472" size="1.778" layer="97" rot="R270"/>
+</instance>
+<instance part="TP31" gate="G$1" x="-203.2" y="347.98" rot="R180">
+<attribute name="NAME" x="-200.66" y="352.425" size="1.778" layer="95" rot="R180"/>
+<attribute name="TP_SIGNAL_NAME" x="-205.74" y="349.25" size="1.778" layer="97" rot="R180"/>
+</instance>
+<instance part="TP32" gate="G$1" x="-193.548" y="345.44" rot="R180">
+<attribute name="NAME" x="-191.008" y="349.885" size="1.778" layer="95" rot="R180"/>
+<attribute name="TP_SIGNAL_NAME" x="-196.088" y="346.71" size="1.778" layer="97" rot="R180"/>
+</instance>
+<instance part="TP33" gate="G$1" x="-300.482" y="344.932" rot="R90">
+<attribute name="NAME" x="-296.037" y="342.392" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="-299.212" y="347.472" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP35" gate="G$1" x="-30.48" y="12.7" rot="R180">
+<attribute name="NAME" x="-27.94" y="17.145" size="1.778" layer="95" rot="R180"/>
+<attribute name="TP_SIGNAL_NAME" x="-33.02" y="13.97" size="1.778" layer="97" rot="R180"/>
+</instance>
+<instance part="TP36" gate="G$1" x="-28.702" y="10.16" rot="R180">
+<attribute name="NAME" x="-26.162" y="14.605" size="1.778" layer="95" rot="R180"/>
+<attribute name="TP_SIGNAL_NAME" x="-31.242" y="11.43" size="1.778" layer="97" rot="R180"/>
+</instance>
+<instance part="TP37" gate="G$1" x="73.66" y="30.48">
+<attribute name="NAME" x="71.12" y="26.035" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="76.2" y="29.21" size="1.778" layer="97"/>
+</instance>
+<instance part="TP34" gate="G$1" x="-116.84" y="403.86">
+<attribute name="NAME" x="-119.38" y="399.415" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="-114.3" y="402.59" size="1.778" layer="97"/>
+</instance>
+<instance part="TP38" gate="G$1" x="-114.3" y="406.4">
+<attribute name="NAME" x="-116.84" y="401.955" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="-111.76" y="405.13" size="1.778" layer="97"/>
+</instance>
+<instance part="TP39" gate="G$1" x="-111.76" y="408.94">
+<attribute name="NAME" x="-114.3" y="404.495" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="-109.22" y="407.67" size="1.778" layer="97"/>
+</instance>
+<instance part="TP40" gate="G$1" x="-109.22" y="411.48">
+<attribute name="NAME" x="-111.76" y="407.035" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="-106.68" y="410.21" size="1.778" layer="97"/>
+</instance>
+<instance part="TP41" gate="G$1" x="-106.68" y="414.02">
+<attribute name="NAME" x="-109.22" y="409.575" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="-104.14" y="412.75" size="1.778" layer="97"/>
+</instance>
 </instances>
 <busses>
 <bus name="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100">
