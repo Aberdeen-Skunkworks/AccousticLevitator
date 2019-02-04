@@ -192,7 +192,7 @@ class TestAccoustics(unittest.TestCase):
         pos = Vector([-0.004545454545454545,-0.004545454545454545,0.19545454545454546])
         self.assertAlmostEqual(abs(sys.pressure(pos)), 33.43931848898868)
         particle = Particle(pos, 7.176591426e-7, 0.0042)
-        self.assertAlmostEqual(sys.potential(particle), 1.3760189999640898e-06)
+        self.assertAlmostEqual(sys.Gorkov_potential(particle), 1.3760189999640898e-06)
         
 #If this file is "run", then we execute the unit tests. If it is imported then we skip them
 if __name__ == '__main__':
